@@ -1,0 +1,206 @@
+iOS开发-文件管理（一）
+
+一、iOS中的沙盒机制
+
+iOS应用程序只能对自己创建的文件系统读取文件，这个独立、封闭、安全的空间，叫做沙盒。它一般存放着程序包文件（可执行文件）、图片、音频、视频、plist文件、sqlite数据库以及其他文件。
+
+每个应用程序都有自己的独立的存储空间（沙盒）
+
+一般来说应用程序之间是不可以互相访问
+
+模拟器沙盒的位置
+
+/User/userName/Library/Application Support/iPhone Simulator
+
+当我们创建应用程序时，在每个沙盒中含有三个文件，分别是Document、Library和temp。
+
+Document：一般需要持久的数据都放在此目录中，可以在当中添加子文件夹，iTunes备份和恢复的时候，会包括此目录。
+
+Library：设置程序的默认设置和其他状态信息
+
+temp：创建临时文件的目录，当iOS设备重启时，文件会被自动清除
+
+
+
+获取沙盒目录
+
+获取程序的根目录（home）目录
+
+NSString *homePath = NSHomeDirectory()
+
+获取Document目录
+
+NSArray  *paths = NSSearchPathDorDirectoriesInDomains(NSDocumentDicrectory,, NSUserDomainMark, YES);                                                                           NSString *docPath = [paths lastObject];
+
+获取Library目录
+
+NSArray *paths = NSSearchPathForDirectoriseInDomains(NSLibraryDirectory, NSUserDomainMask, YES);                                                                                   NSString *docPath = [paths lastObject];
+
+获取Library中的Cache
+
+NSArray *paths = NSSearchPathForDirectoriseInDomains(NSCachesDirectory, NSUserDomainMask, YES);                                                                                   NSString *docPath = [paths lastObject];
+
+获取temp路径
+
+NSString *temp = NSTemporaryDirectory( );
+
+
+
+二、NSString类路径的处理方法
+
+文件路径的处理
+
+NSString *path = @"/Uesrs/apple/testfile.txt"
+
+常用方法如下
+
+获得组成此路径的各个组成部分，结果：（"/","User","apple","testfile.txt"）
+
+- (NSArray *)pathComponents;
+
+提取路径的最后一个组成部分，结果：testfile.txt
+
+- (NSString *)lastPathComponent;
+
+删除路径的最后一个组成部分，结果：/Users/apple
+
+- (NSString *)stringByDeletingLastPathCpmponent;
+
+将path添加到先邮路径的末尾，结果：/Users/apple/testfile.txt/app.txt
+
+- (NSString *)stringByAppendingPathConmponent:(NSString *)str;
+
+去路径最后部分的扩展名，结果：text
+
+- (NSString *)pathExtension;
+
+删除路径最后部分的扩展名，结果：/Users/apple/testfile
+
+- (NSString *)stringByDeletingPathExtension;
+
+路径最后部分追加扩展名，结果：/User/apple/testfile.txt.jpg
+
+- (NSString *)stringByAppendingPathExtension:(NSString *)str;
+
+
+
+三、NSData
+
+NSData是用来包装数据的
+
+NSData存储的是二进制数据，屏蔽了数据之间的差异，文本、音频、图像等数据都可用NSData来存储
+
+NSData的用法
+
+1.NSString与NSData互相转换
+
+NSData－> NSString                                                                                     NSString *aString = [[NSString alloc] initWithData:adataencoding:NSUTF8StringEncoding];
+
+NSString－>NSData                                                                                      NSString *aString = @"1234abcd";
+NSData *aData = [aString dataUsingEncoding: NSUTF8StringEncoding];
+
+将data类型的数据,转成UTF8的数据
+
++(NSString *)dataToUTF8String:(NSData *)data
+{
+NSString *buf = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+return [buf autorelease];
+}
+
+将string转换为指定编码
++(NSString *)changeDataToEncodinString:(NSData *)data encodin:(NSStringEncoding )encodin{
+NSString *buf = [[[NSString alloc] initWithData:data encoding:encodin] autorelease];
+return buf;
+}
+
+2. NSData 与 UIImage
+NSData－>UIImage
+UIImage *aimage = [UIImage imageWithData: imageData];
+
+//例：从本地文件沙盒中取图片并转换为NSData
+NSString *path = [[NSBundle mainBundle] bundlePath];
+NSString *name = [NSString stringWithFormat:@"ceshi.png"];
+NSString *finalPath = [path stringByAppendingPathComponent:name];
+NSData *imageData = [NSData dataWithContentsOfFile: finalPath];
+UIImage *aimage = [UIImage imageWithData: imageData];
+
+3.NSData与NSArray  NSDictionary
+
++(NSString *)getLocalFilePath:(NSString *) fileName
+{
+return [NSString stringWithFormat:@"%@/%@%@", NSHomeDirectory(),@“Documents”,fileName];
+}
+
+包括将NSData写进Documents目录
+从Documents目录读取数据
+在进行网络数据通信的时候，经常会遇到NSData类型的数据。在该数据是dictionary结构的情况下，系统没有提供现成的转换成NSDictionary的方法，为此可以通过Category对NSDictionary进行扩展，以支持从NSData到NSDictionary的转换。声明和实现如下：
+
++ (NSDictionary *)dictionaryWithContentsOfData:(NSData *)data {
+CFPropertyListRef list = CFPropertyListCreateFromXMLData(kCFAllocatorDefault, (CFDataRef)data, kCFPropertyListImmutable, NULL);
+if(list == nil) return nil;
+if ([(id)list isKindOfClass:[NSDictionary class]]) {
+return [(NSDictionary *)list autorelease];
+}
+else {
+CFRelease(list);
+return nil;
+}
+}
+
+
+
+四、文件管理常用方法
+
+NSFileManager
+
+创建一个文件并写入数据                                                                                    - (BOOL)createFileAtPath:(NSString *)path contents:(NSData *)data attributes:(NSDictionary *)attr;
+
+从一个文件中读取数据                                                                                       - (NSData *)contentsAtPath:(NSString *)path;
+
+scrPath路径上的文件移动到dstPath路径上，注意这里的路径是文件路径而不是目录          - (BOOL)moveItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath error:(NSError **) error;
+
+scrPath路径上的文件复制到dstPath路径上                                                            - (BOOL)copyItemAtPath:(NSString *)scrPath toPath:(NSString *)dstPath error:(NSError **) error;
+
+比较两个文件的内容是否一样                                                                               - (BOOL)contentsEqualAtPath:(NSString *)path1 andPath:(NSString *)path2;
+
+文件时候存在                                                                                                  - (BOOL)fileExistsAtPath:(NSString *)path;
+
+移除文件                                                                                                        - (BOOL)removeItemAtPath:(NSString *)path error:(NSError **) error;
+
+
+
+创建文件管理
+
+NSFileManager *fileManager = [NSFileManager defaultManager];                          NSString *path = [NSHomeDirectory( )  stringByAppendingPathComponent:@"holyBible.txt"];                                                                                                     NSString *text = @"abcdefg";
+
+将字符串转成NSData类型                                                                                 NSData *data = [text dataUsingEncoding: NSUTF8StringEncoding];
+
+写入文件                                                                                                       BOOL success = [fileManager createFileAtPath:path contents:data attributes:nil];
+
+
+
+创建文件夹
+
+NSString *filePath = [path stringByAppendingPathComponent:@"holyBible.txt"];     NSString *contect = @"abcdefg";                                                                     BOOL success = [fm createFileAtPath:filePath contents:[content dataUsingEncoding: NSUTF8StringEncoding] attributes:nil];
+
+
+
+NSFileManager-读取内容                                                                                 NSData *fileData = [fileManager contentsAtPath:filePath];                                   NSString *content = [[NSString alloc] initWithData:fileData dataUsingEncoding: NSUTF8StringEncoding];
+
+NSData-读取内容                                                                                          NSString *filePath = [path stringByAppendingPathComponent:@"holyBible.txt"];     NSData *data = [NSData dataWithContentOfFile:filePath];
+
+NSString-读取内容                                                                                         NSString *filePath = [path stringByAppendingPathComponent:@"holyBible.txt"];     NSString *content = [[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+
+移动、复制文件
+
+移动文件（重命名）                                                                                         NSString *toPath = [NSHomeDirectory( ) stringByAppendingPathComponent:@"hellogod/New Testament.txt"];                                                                              [fm createDirectoryAtPath:[toPath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];                                                   NSError *error;                                                                                             BOOL isSuccess = [fm moveItemAtPath:filePath toPath:toPath error:&error];
+
+复制文件（重命名）                                                                                         NSString *copyPath = [NSHomeDirectory( ) stringByAppendingPathComponent:@"备份/Old Testament.txt"];                                                                                  [fm createDirectoryAtPath:[toPath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];                                                   BOOL success = [fm copyItemAtPath:toPath toPath:toPath error:nil];
+
+删除文件、获取文件大小
+
+判断文件是否存在和删除文件                                                                               if([fm fileExistsAtPath])                                                                                     {                                                                                                                    if ([fm removeItemAtPath:copyPath])                                                                {                                                                                                                   NSLog(@"remove success");                                                                            }                                                                                                                  }
+
+获取文件大小                                                                                                  NSFileManager *fileManager = [NSFileManager defaultManager];                         获得文件的属性字典                                                                                         NSDictionary *attrDic = [fileManager attributesOfItemAtpath:sourcePath error:nil];  NSNumber *fileSize = [attrDic objectForKey:NSFileSize];
+
+获取目录文件信息                                                                                            NSFileManager *fileManager = [NSFileManager defaultManager];                         NSString *enuPath = [NSHomeDirectoty( ) stringByAppendingPathComponent:@"Test"];                                                                                                           NSDictionaryEnumerator *dirEnum = [fileManager enumeratorAtPath:enuPath];     NSString *path = nil;                                                                                      while ((path = [dirEnum nextObject]} != nil)                                                        {                                                                                                                  NSLog(@"%@",path);                                                                                        }
