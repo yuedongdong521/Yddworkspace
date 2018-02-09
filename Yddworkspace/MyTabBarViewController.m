@@ -27,15 +27,17 @@
 - (void)initItem
 {
     ViewController *vc = [[ViewController alloc] init];
-    vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"练习" image:nil selectedImage:nil];
+    vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:nil selectedImage:nil];
+    vc.title = @"练习";
 
     
     UINavigationController *navig1 = [[UINavigationController alloc] initWithRootViewController:vc];
     navig1.title = @"目录";
     
     MainViewController *mainVC = [[MainViewController alloc] init];
-    mainVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:nil selectedImage:nil];
+    mainVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:nil selectedImage:nil];
     UINavigationController *navig2 = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    mainVC.title = @"首页";
     navig2.title = @"主页";
 
     self.viewControllers = @[navig1, navig2];
