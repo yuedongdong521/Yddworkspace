@@ -19,6 +19,7 @@
     THCapture *capture;
     BlazeiceAudioRecordAndTransCoding *audioRecord;
     NSString *opPath;
+    NSTimer *timer;
 }
 
 @property (nonatomic, strong)PKChatMessagePlayerView *playerView;
@@ -43,7 +44,7 @@
     NSArray *nameArray = @[@"特朗普", @"四星上将", @"君莫笑",@"一叶知秋", @"景甜", @"包子入侵"];
     
     NSArray *contentArray = @[@"特朗普当选总统后关于酷刑的看法有所改观", @"包括３３名四星上将在内", @"赞",@"他们写道", @"合法、以和谐为基础的审讯手段是获取情报的最佳方式", @"一包烟和两瓶啤酒"];
-    [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
         int count = arc4random() % contentArray.count;
         int nameCount = arc4random() % nameArray.count;
         BarrageModel *model = [[BarrageModel alloc] init];
@@ -81,6 +82,14 @@
     [self.playerView play];
 //
     
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [timer invalidate];
+    timer = nil;
+    [_barrageCtrl timerInval];
     
 }
 
@@ -220,6 +229,7 @@
 {
     [super viewDidDisappear:animated];
     [self stop];
+    [self.barrageCtrl timerInval];
 }
 
 

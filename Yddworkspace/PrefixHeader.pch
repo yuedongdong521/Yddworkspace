@@ -20,7 +20,12 @@
 
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
 #define ScreenWidth   [UIScreen mainScreen].bounds.size.width
+#define ViewX(view) view.frame.origin.x
+#define ViewY(view) view.frame.origin.y
+#define ViewW(view) view.frame.size.width
+#define ViewH(view) view.frame.size.height
 
+#define GETColor(rgb,a) [UIColor colorWithRed:(rgb && 0xFF0000) >> 16 green:(rgb && 0xFF00)>> 8 blue:(rgb && 0xFF) alpha:a]
 
 
 #endif /* PrefixHeader_pch */
