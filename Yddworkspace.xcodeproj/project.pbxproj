@@ -135,6 +135,8 @@
 		609A6C611E4D561C000B2567 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609A6C601E4D561C000B2567 /* AddressBook.framework */; };
 		609DD4E82007119200E7EA86 /* text啥看电视.m in Sources */ = {isa = PBXBuildFile; fileRef = 609DD4E72007119200E7EA86 /* text啥看电视.m */; };
 		609E3C72205222FB00D9A55C /* StrToEmojiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E3C71205222FB00D9A55C /* StrToEmojiViewController.m */; };
+		609E3D0E2052787500D9A55C /* githubCommitAndUpData in Resources */ = {isa = PBXBuildFile; fileRef = 609E3D0D2052787500D9A55C /* githubCommitAndUpData */; };
+		609E3D10205278B600D9A55C /* userCocoapods in Resources */ = {isa = PBXBuildFile; fileRef = 609E3D0F205278B600D9A55C /* userCocoapods */; };
 		609E6C971F29B53100BAEB17 /* ModeloTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E6C961F29B53100BAEB17 /* ModeloTool.m */; };
 		609F68B41F4C0DB900ABC49A /* GameLiveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 609F68B31F4C0DB900ABC49A /* GameLiveHomeViewController.m */; };
 		60A0AE2D200468E3004DDA93 /* YDDpcmTOwav.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0AE2C200468E3004DDA93 /* YDDpcmTOwav.m */; };
@@ -493,6 +495,8 @@
 		609DD4E72007119200E7EA86 /* text啥看电视.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "text啥看电视.m"; sourceTree = "<group>"; };
 		609E3C70205222FB00D9A55C /* StrToEmojiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StrToEmojiViewController.h; sourceTree = "<group>"; };
 		609E3C71205222FB00D9A55C /* StrToEmojiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrToEmojiViewController.m; sourceTree = "<group>"; };
+		609E3D0D2052787500D9A55C /* githubCommitAndUpData */ = {isa = PBXFileReference; lastKnownFileType = text; path = githubCommitAndUpData; sourceTree = "<group>"; };
+		609E3D0F205278B600D9A55C /* userCocoapods */ = {isa = PBXFileReference; lastKnownFileType = text; path = userCocoapods; sourceTree = "<group>"; };
 		609E6C951F29B53100BAEB17 /* ModeloTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeloTool.h; sourceTree = "<group>"; };
 		609E6C961F29B53100BAEB17 /* ModeloTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeloTool.m; sourceTree = "<group>"; };
 		609F68B21F4C0DB900ABC49A /* GameLiveHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLiveHomeViewController.h; sourceTree = "<group>"; };
@@ -1038,6 +1042,7 @@
 		60761EA61D61B62000FC2F1F = {
 			isa = PBXGroup;
 			children = (
+				609E3D08205272C800D9A55C /* GitHub */,
 				60DB89A01E821C7C0031ED29 /* RegularExpressions */,
 				60CA61381E16538A00B03340 /* UMSocial */,
 				60BD0B8D1D824B5400837C56 /* 0.jpg */,
@@ -1306,6 +1311,15 @@
 				609E3C71205222FB00D9A55C /* StrToEmojiViewController.m */,
 			);
 			path = strTOEmoji;
+			sourceTree = "<group>";
+		};
+		609E3D08205272C800D9A55C /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				609E3D0D2052787500D9A55C /* githubCommitAndUpData */,
+				609E3D0F205278B600D9A55C /* userCocoapods */,
+			);
+			path = GitHub;
 			sourceTree = "<group>";
 		};
 		609E6C941F29B4DB00BAEB17 /* ModeloAndTools */ = {
@@ -1850,10 +1864,12 @@
 				608849091DC076C800FD819C /* guanzhu.png in Resources */,
 				60A0BA241FCE4C7400CC7082 /* iOS开发进阶_唐巧著_2015.01_244页.pdf in Resources */,
 				6088490D1DC076C800FD819C /* shoucang.png in Resources */,
+				609E3D0E2052787500D9A55C /* githubCommitAndUpData in Resources */,
 				60B9110A2015B299005EB918 /* 2.jpg in Resources */,
 				60B911082015B290005EB918 /* 1.jpg in Resources */,
 				601C8C1A1F20C076001F50B9 /* LinkMicReminderView.xib in Resources */,
 				608849051DC076C800FD819C /* dianzan.png in Resources */,
+				609E3D10205278B600D9A55C /* userCocoapods in Resources */,
 				608849121DC076C800FD819C /* yr1.png in Resources */,
 				600EF34D1D9E627400A30927 /* photograph@2x.png in Resources */,
 				60944ECA1F0F911C00C02AFB /* voice_empty@2x.png in Resources */,
