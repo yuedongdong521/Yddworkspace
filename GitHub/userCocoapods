@@ -1,0 +1,41 @@
+
+使用cocoapods导入第三方库
+1. cd 工程目录
+2. vim Podfile
+3.
+方法一的写法：
+platform :ios, '8.0'
+#use_frameworks!个别需要用到它，比如reactiveCocoa
+def pods
+  pod 'AFNetworking', '~> 2.6'
+end
+target ‘DownLoad’ do
+  pods
+end
+
+方法二的写法：
+platform
+:ios,
+'8.0'#use_frameworks!个别需要用到它，比如reactiveCocoa
+target
+'DownLoad'
+do
+pod
+'AFNetworking',
+'~> 2.6’
+end
+（终端vim文件 按 i 可编辑 ，esc 退出编辑，：wq  可保存退出）
+4. ESC
+5. :wq
+6. cd 工程目录
+7. pod install
+8. 打开工程 .xcodeproj 选择Target -> Build Settings 菜单，找到\”User Header Search Paths\”设置项
+新增一个值"${SRCROOT}"，并且选择\”Recursive\”  后关闭
+9. 打开 .xcworkspace， 以后使用此文件文件中
+
+pod 'MJRefresh', '~> 3.1.12'
+
+//查看libPushSDK.a支持的框架
+sudo lipo -info libPushSDK.a
+
+

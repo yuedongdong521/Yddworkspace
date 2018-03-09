@@ -1,0 +1,24 @@
+上传Demo到Github
+一、 首先：  cd到demo文件目录
+二、然后：
+1. git init
+2. git config --global user.name “你的账户名”
+3. git config --global user.email "你的账户邮箱"
+4. git add 直接将项目文件夹拖进来／或者 （ git add .   ---->表示添加了全部）
+5. git commit -m "对项目文件进行注释"
+这时候点击回车键，会生成一些描述，就是将项目中的各种文件都进行了创建，并创建相关的描述文件，我们可以对README.md文件进行编辑（下面会提到在哪里进行项目说明）
+6. 在登录的Github界面中创建一个New repository
+7. git remote add origin https://URL
+8. git push -u origin master
+至此上传结束
+三、更新Github上的Demo
+1. ls -all
+2. git init
+3. git statatus    (查看更新内容)
+4. git add 添加需要更新的内容,例如：
+git add git add Yddworkspace/strTOEmoji/    （添加文件夹目录）
+git add StrToEmojiViewController.h    （添加工程文件）
+5. git statatus    (查看更新内容)
+6. git commit -m “str转emoji”   (提交)
+7. git push -u origin master
+至此更新完毕
