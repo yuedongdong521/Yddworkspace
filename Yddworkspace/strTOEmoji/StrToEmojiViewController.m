@@ -7,6 +7,7 @@
 //
 
 #import "StrToEmojiViewController.h"
+#import "UIColor+ydd.h"
 
 @interface StrToEmojiViewController ()
 @property (nonatomic, strong)UILabel *myLabel;
@@ -125,7 +126,7 @@ int utf_to_unicode( unsigned long utf, unsigned char *unicode )
     
     NSString *str = [[NSString alloc] initWithBytes:new_unicode length:len_new encoding:NSUTF16StringEncoding];
     
-    self.myLabel.text = str;
+    self.myLabel.text = [NSString stringWithFormat:@"Emoji:%@,\n str:%@", str, emojiStr];
     NSLog(@"Emoji: %@", self.myLabel.text);
     
 }
@@ -136,7 +137,7 @@ int utf_to_unicode( unsigned long utf, unsigned char *unicode )
         _myLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, 320, 400)];
         _myLabel.numberOfLines = 0;
         [self.view addSubview:_myLabel];
-        _myLabel.textColor = [UIColor blackColor];
+        _myLabel.textColor = [UIColor colorWithHexStr:@"0xFF0000"];
     }
     return _myLabel;
 }

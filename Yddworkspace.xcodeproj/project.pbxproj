@@ -137,6 +137,7 @@
 		609E3C72205222FB00D9A55C /* StrToEmojiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E3C71205222FB00D9A55C /* StrToEmojiViewController.m */; };
 		609E3D0E2052787500D9A55C /* githubCommitAndUpData in Resources */ = {isa = PBXBuildFile; fileRef = 609E3D0D2052787500D9A55C /* githubCommitAndUpData */; };
 		609E3D10205278B600D9A55C /* userCocoapods in Resources */ = {isa = PBXBuildFile; fileRef = 609E3D0F205278B600D9A55C /* userCocoapods */; };
+		609E3D202052811400D9A55C /* UIColor+ydd.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E3D1F2052811400D9A55C /* UIColor+ydd.m */; };
 		609E6C971F29B53100BAEB17 /* ModeloTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E6C961F29B53100BAEB17 /* ModeloTool.m */; };
 		609F68B41F4C0DB900ABC49A /* GameLiveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 609F68B31F4C0DB900ABC49A /* GameLiveHomeViewController.m */; };
 		60A0AE2D200468E3004DDA93 /* YDDpcmTOwav.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0AE2C200468E3004DDA93 /* YDDpcmTOwav.m */; };
@@ -497,6 +498,8 @@
 		609E3C71205222FB00D9A55C /* StrToEmojiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrToEmojiViewController.m; sourceTree = "<group>"; };
 		609E3D0D2052787500D9A55C /* githubCommitAndUpData */ = {isa = PBXFileReference; lastKnownFileType = text; path = githubCommitAndUpData; sourceTree = "<group>"; };
 		609E3D0F205278B600D9A55C /* userCocoapods */ = {isa = PBXFileReference; lastKnownFileType = text; path = userCocoapods; sourceTree = "<group>"; };
+		609E3D1E2052811400D9A55C /* UIColor+ydd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ydd.h"; sourceTree = "<group>"; };
+		609E3D1F2052811400D9A55C /* UIColor+ydd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ydd.m"; sourceTree = "<group>"; };
 		609E6C951F29B53100BAEB17 /* ModeloTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeloTool.h; sourceTree = "<group>"; };
 		609E6C961F29B53100BAEB17 /* ModeloTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeloTool.m; sourceTree = "<group>"; };
 		609F68B21F4C0DB900ABC49A /* GameLiveHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLiveHomeViewController.h; sourceTree = "<group>"; };
@@ -1390,6 +1393,8 @@
 				60AFFDA3201F1F1000335E45 /* MyURLClickView.m */,
 				60AFFD9F201F162300335E45 /* MyURLClickViewController.h */,
 				60AFFDA0201F162300335E45 /* MyURLClickViewController.m */,
+				609E3D1E2052811400D9A55C /* UIColor+ydd.h */,
+				609E3D1F2052811400D9A55C /* UIColor+ydd.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -2043,6 +2048,7 @@
 				60B8F77F1FE906B400F1D2B5 /* HardwareDecompressVideo.m in Sources */,
 				60BD0B8A1D816DEB00837C56 /* PlayerViewController.m in Sources */,
 				60C48C2720061755004114F8 /* AudioPlayer.m in Sources */,
+				609E3D202052811400D9A55C /* UIColor+ydd.m in Sources */,
 				6000450F1E949CF200F3471A /* MJRefreshFooter.m in Sources */,
 				60BD0BA31D824DE000837C56 /* PKChatMessagePlayerView.m in Sources */,
 				600044D41E949CD500F3471A /* MASConstraint.m in Sources */,
