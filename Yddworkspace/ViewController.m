@@ -113,7 +113,8 @@
       @"PCMTOWAVViewController",
       @"CustomPushAnimateViewController",
       @"OperatorViewController",
-      @"MyURLClickViewController"
+      @"MyURLClickViewController",
+      @"StrToEmojiViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
