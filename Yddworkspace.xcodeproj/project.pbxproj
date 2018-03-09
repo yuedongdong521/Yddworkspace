@@ -134,6 +134,7 @@
 		609A6C5F1E4D5610000B2567 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609A6C5E1E4D5610000B2567 /* Contacts.framework */; };
 		609A6C611E4D561C000B2567 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609A6C601E4D561C000B2567 /* AddressBook.framework */; };
 		609DD4E82007119200E7EA86 /* text啥看电视.m in Sources */ = {isa = PBXBuildFile; fileRef = 609DD4E72007119200E7EA86 /* text啥看电视.m */; };
+		609E3C72205222FB00D9A55C /* StrToEmojiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E3C71205222FB00D9A55C /* StrToEmojiViewController.m */; };
 		609E6C971F29B53100BAEB17 /* ModeloTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E6C961F29B53100BAEB17 /* ModeloTool.m */; };
 		609F68B41F4C0DB900ABC49A /* GameLiveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 609F68B31F4C0DB900ABC49A /* GameLiveHomeViewController.m */; };
 		60A0AE2D200468E3004DDA93 /* YDDpcmTOwav.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0AE2C200468E3004DDA93 /* YDDpcmTOwav.m */; };
@@ -490,6 +491,8 @@
 		609A6C601E4D561C000B2567 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		609DD4E62007119200E7EA86 /* text啥看电视.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "text啥看电视.h"; sourceTree = "<group>"; };
 		609DD4E72007119200E7EA86 /* text啥看电视.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "text啥看电视.m"; sourceTree = "<group>"; };
+		609E3C70205222FB00D9A55C /* StrToEmojiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StrToEmojiViewController.h; sourceTree = "<group>"; };
+		609E3C71205222FB00D9A55C /* StrToEmojiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrToEmojiViewController.m; sourceTree = "<group>"; };
 		609E6C951F29B53100BAEB17 /* ModeloTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeloTool.h; sourceTree = "<group>"; };
 		609E6C961F29B53100BAEB17 /* ModeloTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeloTool.m; sourceTree = "<group>"; };
 		609F68B21F4C0DB900ABC49A /* GameLiveHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLiveHomeViewController.h; sourceTree = "<group>"; };
@@ -1063,6 +1066,7 @@
 		60761EB11D61B62000FC2F1F /* Yddworkspace */ = {
 			isa = PBXGroup;
 			children = (
+				609E3C6F2052229200D9A55C /* strTOEmoji */,
 				60AFFD9B201F01A700335E45 /* Tools */,
 				60B4796920173C8E00EE75F1 /* AudioQueue */,
 				60A0AE2A2004688D004DDA93 /* pcmTOwav */,
@@ -1293,6 +1297,15 @@
 				60944ED71F0F914A00C02AFB /* writer.h */,
 			);
 			path = json;
+			sourceTree = "<group>";
+		};
+		609E3C6F2052229200D9A55C /* strTOEmoji */ = {
+			isa = PBXGroup;
+			children = (
+				609E3C70205222FB00D9A55C /* StrToEmojiViewController.h */,
+				609E3C71205222FB00D9A55C /* StrToEmojiViewController.m */,
+			);
+			path = strTOEmoji;
 			sourceTree = "<group>";
 		};
 		609E6C941F29B4DB00BAEB17 /* ModeloAndTools */ = {
@@ -1971,6 +1984,7 @@
 				60988C842011B94900E1B9D6 /* HardwareViewController.m in Sources */,
 				60A0BA221FCE491A00CC7082 /* TQIOSViewController.m in Sources */,
 				6043F7D41FD151B200F2188E /* MyCoreTextScrollView.m in Sources */,
+				609E3C72205222FB00D9A55C /* StrToEmojiViewController.m in Sources */,
 				600044DC1E949CD500F3471A /* ViewController+MASAdditions.m in Sources */,
 				60BEE78C1E2CC27400F71DB8 /* TestXibViewController.m in Sources */,
 				60761EB41D61B62000FC2F1F /* main.m in Sources */,
