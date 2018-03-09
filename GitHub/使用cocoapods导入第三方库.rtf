@@ -1,0 +1,112 @@
+{\rtf1\ansi\ansicpg936\cocoartf1504\cocoasubrtf820
+{\fonttbl\f0\fnil\fcharset134 PingFangSC-Regular;\f1\fswiss\fcharset0 Helvetica;\f2\fmodern\fcharset0 Courier;
+\f3\fnil\fcharset0 HelveticaNeue;\f4\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red52\green52\blue52;\red255\green255\blue255;\red53\green53\blue53;
+\red255\green255\blue255;\red82\green0\blue83;\red38\green38\blue38;\red109\green109\blue109;\red16\green121\blue2;
+\red115\green0\blue2;\red0\green0\blue117;\red35\green35\blue35;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c26667\c26667\c26667;\cssrgb\c100000\c100000\c100000;\cssrgb\c27059\c27059\c27059;
+\csgray\c100000;\cssrgb\c40000\c0\c40000;\cssrgb\c20000\c20000\c20000;\cssrgb\c50196\c50196\c50196\c4706;\cssrgb\c0\c53333\c0;
+\cssrgb\c53333\c0\c0;\cssrgb\c0\c0\c53333;\cssrgb\c18431\c18431\c18431;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \'ca\'b9\'d3\'c3
+\f1 cocoapods
+\f0 \'b5\'bc\'c8\'eb\'b5\'da\'c8\'fd\'b7\'bd\'bf\'e2
+\f1 \
+1. 
+\f0 cd \'b9\'a4\'b3\'cc\'c4\'bf\'c2\'bc\
+2. vim Podfile\
+3.\
+
+\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\'b7\'bd\'b7\'a8\'d2\'bb\'b5\'c4\'d0\'b4\'b7\'a8\'a3\'ba
+\f1 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf4 platform :ios, '8.0'\cb5 \
+\cb3 #use_frameworks!
+\f0 \'b8\'f6\'b1\'f0\'d0\'e8\'d2\'aa\'d3\'c3\'b5\'bd\'cb\'fc\'a3\'ac\'b1\'c8\'c8\'e7
+\f1 reactiveCocoa\cb5 \
+\cb3 def pods\cb5 \
+\cb3 \'a0\'a0pod 'AFNetworking', '~> 2.6'\cb5 \
+\cb3 end\cb5 \
+\cb3 target \'91DownLoad\'92 do\cb5 \
+\cb3 \'a0\'a0pods\cb5 \
+\cb3 end\cb5 \
+\
+
+\f0 \cb3 \'b7\'bd\'b7\'a8\'b6\'fe\'b5\'c4\'d0\'b4\'b7\'a8\'a3\'ba
+\f2\fs28 \cf6 \
+platform\cf7 \cb8 \
+:ios,\cf9 \cb3 \
+'8.0'\cf10 #use_frameworks!
+\f0 \'b8\'f6\'b1\'f0\'d0\'e8\'d2\'aa\'d3\'c3\'b5\'bd\'cb\'fc\'a3\'ac\'b1\'c8\'c8\'e7
+\f2 reactiveCocoa\cf7 \cb8 \
+target\cf9 \cb3 \
+'
+\f1\fs24 \cf4 DownLoad
+\f2\fs28 \cf9 '\cf6 \
+do\cf7 \cb8 \
+pod\cf9 \cb3 \
+'AFNetworking'\cf7 \cb8 ,\cf9 \cb3 \
+'~> 2.6\'92\cf11 \
+end\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs32 \cf12 \cb1 \'a3\'a8\'d6\'d5\'b6\'cb
+\f3 vim
+\f0 \'ce\'c4\'bc\'fe
+\f3  
+\f0 \'b0\'b4
+\f3  i 
+\f0 \'bf\'c9\'b1\'e0\'bc\'ad
+\f3  
+\f0 \'a3\'ac
+\f3 esc 
+\f0 \'cd\'cb\'b3\'f6\'b1\'e0\'bc\'ad\'a3\'ac\'a3\'ba
+\f3 wq\'a0 
+\f0 \'bf\'c9\'b1\'a3\'b4\'e6\'cd\'cb\'b3\'f6\'a3\'a9
+\f2\fs28 \cf11 \cb3 \
+4. ESC\
+5. :wq\
+6. cd 
+\f0 \'b9\'a4\'b3\'cc\'c4\'bf\'c2\'bc
+\f2 \
+7. pod install\
+8. 
+\f0 \'b4\'f2\'bf\'aa\'b9\'a4\'b3\'cc .xcodeproj \cf7 \'d1\'a1\'d4\'f1
+\f3 Target -> Build Settings 
+\f0 \'b2\'cb\'b5\'a5\'a3\'ac\'d5\'d2\'b5\'bd
+\f3 \\\'94User Header Search Paths\\\'94
+\f0 \'c9\'e8\'d6\'c3\'cf\'ee
+\f3 \cb5 \
+
+\f0 \cb3 \'d0\'c2\'d4\'f6\'d2\'bb\'b8\'f6\'d6\'b5
+\f3 "$\{SRCROOT\}"
+\f0 \'a3\'ac\'b2\'a2\'c7\'d2\'d1\'a1\'d4\'f1
+\f3 \\\'94Recursive\\\'94  
+\f0 \'ba\'f3\'b9\'d8\'b1\'d5
+\f3 \
+9. 
+\f0 \'b4\'f2\'bf\'aa
+\f3  
+\f0 .xcworkspace\'a3\'ac \'d2\'d4\'ba\'f3\'ca\'b9\'d3\'c3\'b4\'cb\'ce\'c4\'bc\'fe\'ce\'c4\'bc\'fe\'d6\'d0\cf11 \
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf11 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f4\fs22 \cf13 \cb5 \kerning1\expnd0\expndtw0 \CocoaLigature0 pod 'MJRefresh', '~> 3.1.12'\
+\
+//
+\f0 \'b2\'e9\'bf\'b4
+\f4 libPushSDK.a
+\f0 \'d6\'a7\'b3\'d6\'b5\'c4\'bf\'f2\'bc\'dc
+\f4 \
+sudo lipo -info libPushSDK.a\
+\
+
+\f2\fs28 \cf11 \cb3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+}
