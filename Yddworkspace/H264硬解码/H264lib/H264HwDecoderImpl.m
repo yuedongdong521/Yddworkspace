@@ -122,7 +122,7 @@ static void didDecompress( void *decompressionOutputRefCon, void *sourceFrameRef
                                                            //因为iOS是  nv12  其他是nv21
                                                            (id)kCVPixelBufferWidthKey : [NSNumber numberWithInt:h264outputHeight*2],
                                                            (id)kCVPixelBufferHeightKey : [NSNumber numberWithInt:h264outputWidth*2],
-                                                           //这里款高和编码反的
+                                                           //这里宽高和编码反的
                                                            (id)kCVPixelBufferOpenGLCompatibilityKey : [NSNumber numberWithBool:YES]
                                                            };
         

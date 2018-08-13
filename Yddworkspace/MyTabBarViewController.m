@@ -9,8 +9,9 @@
 #import "MyTabBarViewController.h"
 #import "ViewController.h"
 #import "MainViewController.h"
+#import "BaseNavigationViewController.h"
 
-@interface MyTabBarViewController ()
+@interface MyTabBarViewController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -31,19 +32,35 @@
     vc.title = @"练习";
 
     
-    UINavigationController *navig1 = [[UINavigationController alloc] initWithRootViewController:vc];
+    BaseNavigationViewController *navig1 = [[BaseNavigationViewController alloc] initWithRootViewController:vc];
     navig1.title = @"目录";
     
     MainViewController *mainVC = [[MainViewController alloc] init];
     mainVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:nil selectedImage:nil];
-    UINavigationController *navig2 = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    BaseNavigationViewController *navig2 = [[BaseNavigationViewController alloc] initWithRootViewController:mainVC];
     mainVC.title = @"首页";
     navig2.title = @"主页";
 
     self.viewControllers = @[navig1, navig2];
     self.selectedIndex = 1;
+  self.delegate = self;
     
 }
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+  if (viewController) {
+    if ([viewController isKindOfClass:[BaseNavigationViewController class]]) {
+      [WeChatWindow shareWeChatWindow].navController = (BaseNavigationViewController *)viewController;
+    } else if (viewController.navigationController) {
+      [WeChatWindow shareWeChatWindow].navController = viewController.navigationController;
+    } else {
+      [WeChatWindow shareWeChatWindow].hidden = YES;
+    }
+  }
+  
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

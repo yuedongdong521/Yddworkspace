@@ -12,7 +12,7 @@
 #import "MyImagePickerViewController.h"
 #import "MyTableViewController.h"
 #import "AnimationViewController.h"
-#import "Yddworkspace-swift.h"
+#import "Yddworkspace-Swift.h"
 #import "CoreTextViewController.h"
 #import "IntrinsicViewController.h"
 #import "ZhengZeViewController.h"
@@ -114,13 +114,20 @@
       @"CustomPushAnimateViewController",
       @"OperatorViewController",
       @"MyURLClickViewController",
-      @"StrToEmojiViewController"
+      @"StrToEmojiViewController",
+      @"ThreadViewController",
+      @"VoiceViewController",
+      @"AudioUnitViewController",
+      @"TestDownloadViewController",
+      @"MyCollectionViewController",
+      @"TestImageCollectionViewController",
+      @"MyWebViewViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
       @"CoreTextTowViewController"
     ],
-    @[ @"MyViewController", @"ClosureViewController" ]
+    @[ @"MyViewController", @"ClosureViewController", @"UserInfoController" ]
   ];
 
   _myTestMtbArray =
@@ -148,6 +155,8 @@
   //    MyModule *myModule = [MyModule mymodule];
   //    NSString *str = [myModule getMyModuleTypeWithTag:0];
   //    NSLog(@"%@", str);
+  
+  
 }
 
 - (CGFloat)tableView:(UITableView*)tableView
@@ -236,6 +245,9 @@
       viewController.view.backgroundColor = [UIColor whiteColor];
       [self.navigationController pushViewController:viewController
                                            animated:YES];
+    } else if ([itemStr isEqualToString:@"UserInfoController"]) {
+      UserInfoController *infoVC = [[UserInfoController alloc] init];
+      [self.navigationController pushViewController:infoVC animated:YES];
     }
     self.hidesBottomBarWhenPushed = NO;
   }

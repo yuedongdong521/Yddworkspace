@@ -7,16 +7,17 @@
 //
 
 #import "HardwareViewController.h"
-#import "H264HwDecoderImpl.h"
-#import "AAPLEAGLLayer.h"
+#import "ISH246TVDecode.h"
+#import "ISH264PlayerView.h"
 
-@interface HardwareViewController ()<H264HwDecoderImplDelegate>
+@interface HardwareViewController ()<ISH264TVDecodeDelegate>
 {
-    H264HwDecoderImpl *_h264Decoder;
-    AAPLEAGLLayer *_playLayer;
+    ISH246TVDecode *_h264Decoder;
+    ISH264PlayerView *_playLayer;
 }
 
 @property (nonatomic, strong) NSData *h264Data;
+@property (nonatomic, strong) NSFileHandle *h264FileHandle;
 
 @end
 
@@ -32,22 +33,29 @@
     [button addTarget:self action:@selector(startDecode:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     button.frame = CGRectMake(20, 64, 100, 50);
-    
-    _h264Data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"ispeak" ofType:@"h264"]];
-    
-    _playLayer = [[AAPLEAGLLayer alloc] initWithFrame:CGRectMake(160, 120, 160, 300)];
-    _playLayer.backgroundColor = [UIColor blackColor].CGColor;
-    
-//    _h264Decoder = [[H264HwDecoder alloc] init];
+  
+  _h264FileHandle = [NSFileHandle fileHandleForReadingAtPath:[[NSBundle mainBundle]pathForResource:@"ispeak" ofType:@"h264"]];
+  _playLayer = [[ISH264PlayerView alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, ScreenWidth * 4 / 3.0)];
+  _h264Decoder = [[ISH246TVDecode alloc] init];
+  [_h264Decoder open:self width:ViewW(_playLayer) height:ViewH(_playLayer)];
+  [self.view addSubview:_playLayer];
+  
+ 
+//    _h264Data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"ispeak" ofType:@"h264"]];
+  
+//    _playLayer = [[AAPLEAGLLayer alloc] initWithFrame:CGRectMake(160, 120, 160, 300)];
+//    _playLayer.backgroundColor = [UIColor blackColor].CGColor;
+  
+//  _h264Decoder = [H264HwDecoderImpl init];
 //    [_h264Decoder open:self width:(uint16_t)ViewW(_playLayer) height:(uint16_t)ViewH(_playLayer)];
 }
 
 //解码回调
-- (void)displayDecodedFrame:(uint)uid imageBuffer:(CVPixelBufferRef)buffer
+- (void)displayDecodedFrameImageBuffer:(CVPixelBufferRef)buffer
 {
     if(buffer)
     {
-        _playLayer.pixelBuffer = buffer;
+        [_playLayer playForPixelBuffer:buffer];
         CVPixelBufferRelease(buffer);
     }
 }
@@ -59,17 +67,30 @@
 
 - (void)run {
     size_t out_size = 0;
-    
-    while (![[NSThread currentThread] isCancelled]) {
+  NSData *data = [_h264FileHandle readDataToEndOfFile];
+  uint8_t uintData = [self uint8FromBytes:data];
+
+  [_h264Decoder decodeNalu:&uintData withSize:data.length];
+  
+//    while (![[NSThread currentThread] isCancelled]) {
         /*这里从网路端循环获取视频数据*/
 //                if (api_video_get(_uid, _vdata, &out_size) == 0 && out_size > 0) {
 //                    if ([self decodeNalu:_vdata withSize:out_size]) {
 //                    }
 //                }
-//        _h264Decoder decodeNalu:<#(uint8_t *)#> withSize:<#(uint32_t)#>
-        
-        [NSThread sleepForTimeInterval:0.005];
-    }
+//        _h264Decoder decodeNalu:(uint8_t *) withSize:<#(uint32_t)#>
+      
+//        [NSThread sleepForTimeInterval:0.005];
+//    }
+}
+
+- (uint8_t)uint8FromBytes:(NSData *)fData
+{
+  NSAssert(fData.length == 1, @"uint8FromBytes: (data length != 1)");
+  NSData *data = fData;
+  uint8_t val = 0;
+  [data getBytes:&val length:1];
+  return val;
 }
 
 - (void)startDecode:(UIButton *)btn

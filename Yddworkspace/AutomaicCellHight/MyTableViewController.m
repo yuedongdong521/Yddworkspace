@@ -37,7 +37,8 @@ typedef enum : NSUInteger {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+  self.navigationController.navigationBar.translucent = NO;
+  
     [self initModel];
     [self initTableView];
     
@@ -220,12 +221,20 @@ typedef enum : NSUInteger {
     _myTableView.separatorColor = [UIColor grayColor];
     [_myTableView registerClass:[MyTableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:_myTableView];
+  
+  _myTableView.estimatedRowHeight = 0;
+  _myTableView.estimatedSectionFooterHeight = 0;
+  _myTableView.estimatedSectionHeaderHeight = 0;
     
     _myTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         sleep(3);
         [_myTableView.mj_header endRefreshing];
         [_myTableView reloadData];
     }];
+  MJRefreshNormalHeader *header = (MJRefreshNormalHeader *)_myTableView.mj_header;
+  header.lastUpdatedTimeLabel.hidden = YES;
+  header.stateLabel.hidden = YES;
+  
     
     _myTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         sleep(2);

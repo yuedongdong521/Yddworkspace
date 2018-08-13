@@ -7,10 +7,14 @@
 //
 
 import Foundation
+import AVFoundation
 
 typealias TestAddBlock = (Int, Int)->Int
 
 public class ClosureViewController : UIViewController {
+
+  
+  
     override public func viewDidLoad() {
         super.viewDidLoad()
 
@@ -79,8 +83,38 @@ public class ClosureViewController : UIViewController {
         button.backgroundColor = UIColor.blue
         button.addTarget(self, action: #selector(ajaxToolTow), for: UIControlEvents.touchUpInside)
         view.addSubview(button)
-        
+      
+      view.addSubview(testButton!);
+      
+      var className:String = "类名为:"
+      testBlockClassName { (name) in
+        className.append(name)
+        print(className)
+      }
+//      requestAVAuthority();
     }
+  
+  fileprivate lazy var testButton:UIButton? = {
+  let button = UIButton.init(type: UIButtonType.system);
+    button.frame = CGRect(x:20, y:200, width:60, height:40)
+    button.setTitle("textButton", for: UIControlState.normal)
+    button.backgroundColor = UIColor.red;
+    button.setTitleColor(UIColor.white, for: UIControlState.normal)
+    button.addTarget(self, action: #selector(testButtonAction), for: UIControlEvents.touchUpInside)
+  return button;
+  }()
+  
+  @objc fileprivate func testButtonAction(button: UIButton)-> Void {
+    let tmp:UIButton = button
+    if tmp.backgroundColor == UIColor.cyan {
+      print("testButtonAction ture ");
+      tmp.backgroundColor = UIColor.red
+    } else {
+      print("testButtonAction false ");
+      button.backgroundColor = UIColor.cyan
+    }
+  
+  }
     
     func doSomething(some:@escaping (Int, Int) -> Void){
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { 
@@ -98,7 +132,7 @@ public class ClosureViewController : UIViewController {
         return resStr + " - 内部函数返回" + complatedStr
     }
     
-    func ajaxToolTow() {
+    @objc func ajaxToolTow() {
         let ajax = ajaxTools(name: "肖友") { (runStr:String, isStop:Bool) -> String in
             print(runStr + String(isStop) + "2")
             return runStr + String(isStop)
@@ -106,5 +140,39 @@ public class ClosureViewController : UIViewController {
         
         print(ajax + "3")
     }
+  
+  
 
 }
+
+fileprivate extension ClosureViewController {
+  func testBlockClassName(blockClassName:@escaping(String)-> Void) -> Void {
+    let nameCoder:String = NSStringFromClass(self.classForCoder)
+    
+    let name:String = NSStringFromClass(self.classForKeyedArchiver!)
+    print("classForKeyedArchiver: " + name)
+    blockClassName(nameCoder);
+  }
+
+  func requestAVAuthority(blockAuthor:@escaping(Bool)-> Void) {
+    let statue:AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+    print("摄像头权限 statue: " + String(statue.rawValue))
+    switch statue {
+    case AVAuthorizationStatus.notDetermined:
+//      AVCaptureDevice re
+      break
+    case AVAuthorizationStatus.restricted:
+      blockAuthor(false);
+      break
+    case AVAuthorizationStatus.denied:
+      blockAuthor(true);
+      break
+    default:
+
+      break
+    }
+  }
+  
+}
+
+

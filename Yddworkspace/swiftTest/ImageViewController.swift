@@ -33,6 +33,7 @@ class ImageViewController: UIViewController {
         let tap = UITapGestureRecognizer.init()
         tap.numberOfTapsRequired = 1
         tap.numberOfTouchesRequired = 1
+      
         tap.addTarget(self, action: #selector(imageTensile))
         myImageView.addGestureRecognizer(tap)
         
@@ -63,7 +64,7 @@ class ImageViewController: UIViewController {
         return imageView;
     }
     
-    func imageTensile() {
+  @objc func imageTensile() {
         let imageView = UIImageView(frame: CGRect(x:20, y:500, width:100, height:100))
         imageView.backgroundColor = UIColor.green
         self.view.addSubview(imageView)
@@ -85,7 +86,9 @@ class ImageViewController: UIViewController {
         for index in 1...40 {
             print("index =", index);
         }
-        animationImages.addObjects(from: [UIImage(named:"0.jpg"), UIImage(named:"1.jpg")])
+    let defaultImage:UIImage! = UIImage.init(named: "0.jpg")
+    
+    animationImages.addObjects(from: [UIImage(named:"0.jpg") ?? defaultImage!, UIImage(named:"1.jpg") ?? defaultImage!])
         
         let array = animationImages as Array as? [UIImage]
         // 设置animationImages

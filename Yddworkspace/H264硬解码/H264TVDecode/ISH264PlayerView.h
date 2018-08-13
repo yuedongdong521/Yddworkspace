@@ -16,7 +16,7 @@
 
 @interface ISH264PlayerView : UIView
 
-@property (nonatomic, weak) id <ISH264PlayerViewDelegate> delegate;
+@property(nonatomic, weak) id<ISH264PlayerViewDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame;
 /**
@@ -29,5 +29,9 @@
 - (void)resetPlay;
 
 - (void)changePlayerFrameForFullScreen:(BOOL)isFull;
+
+- (void)clearBuff;
+
+- (void)appEnterBackgroundGlFinish;
 
 @end

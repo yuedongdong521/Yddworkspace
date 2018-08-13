@@ -221,13 +221,13 @@ extension UIView{
         layer.opacity = 1
     }
     
-    func XXY_willMoveToSuperview(_ newSuperView:UIView){
+  @objc func XXY_willMoveToSuperview(_ newSuperView:UIView){
         removeBoomCells()
         //XXY_willMoveToSuperview(newSuperView)
     }
     
     //MARK: - 生命周期相关，在从父View移除的时候释放粒子
-    open override class func initialize() {
+  static open func myInitialize() {
         struct Static {
             static var token: Int = 0
         }
@@ -239,12 +239,12 @@ extension UIView{
             let originalMethod = class_getInstanceMethod(self, originalSelector)
             let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
             
-            let didAddMethod = class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
+          let didAddMethod = class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod!), method_getTypeEncoding(swizzledMethod!))
             
             if didAddMethod {
-                class_replaceMethod(self, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod))
+              class_replaceMethod(self, swizzledSelector, method_getImplementation(originalMethod!), method_getTypeEncoding(originalMethod!))
             } else {
-                method_exchangeImplementations(originalMethod, swizzledMethod);
+              method_exchangeImplementations(originalMethod!, swizzledMethod!);
             }
         }
         Static.token = 1
@@ -282,7 +282,7 @@ extension UIImage{
             let bitmapBytesPerRow = pixelsWidth * 4
             let bitmapByteCount = bitmapBytesPerRow * pixelsHeitht
             let colorSpace = CGColorSpaceCreateDeviceRGB()
-            let bitmapData = UnsafeMutableRawPointer.allocate(bytes: bitmapByteCount, alignedTo: 0)
+          let bitmapData = UnsafeMutableRawPointer.allocate(byteCount: bitmapByteCount, alignment: 0)
             let context = CGContext(data: bitmapData,width: pixelsWidth,height: pixelsHeitht,bitsPerComponent: 8,bytesPerRow: bitmapBytesPerRow,space: colorSpace, bitmapInfo: CGBitmapInfo.byteOrder32Big.rawValue | CGImageAlphaInfo.premultipliedFirst.rawValue)!
             aRGBBitmapContext = context
             return context

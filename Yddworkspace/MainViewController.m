@@ -7,8 +7,17 @@
 //
 
 #import "MainViewController.h"
+#import "WeChatTestFloatViewController.h"
+#import "Yddworkspace-Swift.h"
+
+#define UIColorFromRGBAalpha(rgbValue,alpha) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 blue:((float)(rgbValue & 0x0000FF))/255.0 alpha:((float)alpha)]
 
 @interface MainViewController ()
+
+@property (nonatomic, strong) NSString *path;
+@property (nonatomic, strong) UIView *animView;
+@property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (nonatomic, strong) UIView *animbgView;
 
 @end
 
@@ -27,8 +36,123 @@
     int g = (0x7b7c84 & 0x00FF00) >> 8;
     int b = (0x7b7c84 & 0x0000FF);
     NSLog(@"color r = %x, g = %x, b = %x", r, g, b);
-
+  long long x = 4000000000;
+  if (x > 3000000000ll) {
+    NSLog(@"x > 3000000000ll");
+  } else {
+    NSLog(@"x < 3000000000ll");
+  }
+  
+  NSLog(@"3000000000sizeof : %lu", sizeof(3000000000));
+  NSLog(@"long long sizeof : %lu", sizeof(long long));
+  NSLog(@"long sizeof : %lu",sizeof(1ll));
+  NSLog(@"int sizeof : %lu", sizeof(2));
+  
+  if ([_path isEqualToString:@"ydd"]) {
+    NSLog(@"_path isEqualToString:ydd");
+  } else {
+    NSLog(@"_path unEqualToString:ydd");
+  }
+  
+  UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+  button.frame = CGRectMake(20, ScreenHeight - 180, 50, 50);
+  [button setTitle:@"show" forState:UIControlStateNormal];
+  [button setTitle:@"dismiss" forState:UIControlStateSelected];
+  [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:button];
+  
+  UIButton *push = [UIButton buttonWithType:UIButtonTypeSystem];
+  push.frame = CGRectMake(20, ScreenHeight - 300, 50, 50);
+  [push setTitle:@"pushVC" forState:UIControlStateNormal];
+  [push addTarget:self action:@selector(pushVC) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:push];
+  
+  NSString *imageStr = @"1,2";
+  NSArray *array = [imageStr componentsSeparatedByString:@","];
+  
+  NSString *imageStr2 = @"1";
+  NSArray *array2 = [imageStr2 componentsSeparatedByString:@","];
+  
+  NSString *imageStr3 = @"1,";
+  NSArray *array3 = [imageStr2 componentsSeparatedByString:@","];
+  int rgbValue = 0xff, alpha = 1;
+  [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 blue:((float)(rgbValue & 0x0000FF))/255.0 alpha:((float)alpha)];
+  NSLog(@"%@", array2);
+  [self testDataModel];
 }
+
+- (void)testDataModel
+{
+  DataModel *model = [[DataModel alloc] init];
+  [model dateString];
+}
+
+- (void)pushVC
+{
+  WeChatTestFloatViewController *vc = [[WeChatTestFloatViewController alloc] init];
+  [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (UIView *)animbgView
+{
+  if (!_animbgView) {
+    _animbgView = [[UIView alloc] initWithFrame:self.view.bounds];
+    _animbgView.backgroundColor = [UIColor clearColor];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismss)];
+    [_animbgView addGestureRecognizer:tap];
+  }
+  return _animbgView;
+}
+
+- (void)buttonAction:(UIButton *)button
+{
+  [self show];
+}
+
+- (void)dismss
+{
+  [self.animator removeAllBehaviors];
+  [UIView animateWithDuration:0.5 animations:^{
+    _animView.alpha = 0.0;
+    CGAffineTransform roat = CGAffineTransformMakeRotation(0.9 * M_PI);
+    CGAffineTransform scale = CGAffineTransformMakeScale(0.1, 0.1);
+    _animView.transform = CGAffineTransformConcat(roat, scale);
+  } completion:^(BOOL finished) {
+    [_animbgView removeFromSuperview];
+    _animbgView = nil;
+    [_animView removeFromSuperview];
+    _animView = nil;
+  }];
+  
+}
+
+- (void)show {
+//  UIView* keywindow = [[UIApplication sharedApplication] keyWindow];
+//
+//  [keywindow addSubview:self.view];
+  [self.view addSubview:self.animbgView];
+  self.animView.frame = CGRectMake(0, 0, 200, 200);
+  self.animView.alpha = 1;
+  _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.animbgView];
+  UISnapBehavior* sanp = [[UISnapBehavior alloc] initWithItem:self.animView
+                                                  snapToPoint:self.animbgView.center];
+  sanp.damping = 0.7;
+  [self.animator addBehavior:sanp];
+}
+
+- (UIView *)animView
+{
+  if (!_animView) {
+    _animView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    _animView.layer.masksToBounds = YES;
+    _animView.layer.cornerRadius = 10;
+    _animView.backgroundColor = [UIColor redColor];
+    [self.animbgView addSubview:_animView];
+  }
+  return _animView;
+}
+
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
