@@ -90,7 +90,7 @@ static CGFloat widthCallBacks(void * ref)
     [self handleActiveRectWithFrame:_frame];
     CGContextDrawImage(context, _imgFrame, image.CGImage);
     
-    UIImage *image1 = [[UIImage imageNamed:@"1.jpg"] drawRoundWithPath:cirP Mode:UIViewContentModeScaleAspectFill];
+    UIImage *image1 = [[UIImage imageNamed:@"1yasuo.jpg"] drawRoundWithPath:cirP Mode:UIViewContentModeScaleAspectFill];
     CGContextDrawImage(context, cirP.bounds,image1.CGImage);
     CFRelease(_frame);
     CFRelease(framesetter);

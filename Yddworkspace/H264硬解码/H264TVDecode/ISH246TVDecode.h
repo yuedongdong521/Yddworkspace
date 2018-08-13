@@ -10,15 +10,17 @@
 
 @protocol ISH264TVDecodeDelegate <NSObject>
 
--(void)displayDecodedFrameImageBuffer:(CVPixelBufferRef)buffer;
+- (void)displayDecodedFrameImageBuffer:(CVPixelBufferRef)buffer;
 
 @end
 
 @interface ISH246TVDecode : NSObject
 
-@property (nonatomic, weak) id<ISH264TVDecodeDelegate> delegate;
+@property(nonatomic, weak) id<ISH264TVDecodeDelegate> delegate;
 
-- (BOOL)open:(id<ISH264TVDecodeDelegate>)displayDelegate width:(uint16_t)width height:(uint16_t)height ;
-- (BOOL)decodeNalu:(uint8_t *)frame withSize:(uint32_t)frameSize;
+- (BOOL)open:(id<ISH264TVDecodeDelegate>)displayDelegate
+       width:(uint16_t)width
+      height:(uint16_t)height;
+- (BOOL)decodeNalu:(uint8_t*)frame withSize:(uint32_t)frameSize;
 
 @end

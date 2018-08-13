@@ -32,7 +32,7 @@ void unicode_print( unsigned char *unicode, int size )
     printf("\n");
 }
 
-int utf_to_unicode( unsigned long utf, unsigned char *unicode )
+int utf_to_unicode( unsigned long long utf, unsigned char *unicode )
 {
     int size = 0;
     if ( utf <= 0x7F )
@@ -101,14 +101,14 @@ int utf_to_unicode( unsigned long utf, unsigned char *unicode )
     int size_per = 0;
     memset( unicode_per, 0x00, sizeof( unicode_per ) );
     //    unsigned char utf_per[9] = "0xeda0bd";
-    unsigned long utfl_per = strtoul((const char *)utf_per, 0, 16);
+    unsigned long long utfl_per = strtoull((const char *)utf_per, 0, 16);
     size_per = utf_to_unicode( utfl_per, unicode_per );
     unicode_print( unicode_per, size_per );
     
     int size_suf = 0;
     memset( unicode_suf, 0x00, sizeof( unicode_suf ) );
     //    unsigned char utf_suf[9] = "0xedb88a";
-    unsigned long utfl_suf = strtoul((const char *)utf_suf, 0, 16);
+    unsigned long long utfl_suf = strtoull((const char *)utf_suf, 0, 16);
     size_suf = utf_to_unicode( utfl_suf, unicode_suf );
     unicode_print( unicode_suf, size_suf );
     

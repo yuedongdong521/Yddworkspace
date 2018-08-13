@@ -34,7 +34,7 @@ class MyTabeleViewCell: UITableViewCell {
         let button = UIButton.init(type: UIButtonType.system)
         button.frame = CGRect(x:self.contentView.frame.size.width - 80, y:self.decLabel.frame.origin.y, width:50, height:50)
         button.setTitle("删除", for: UIControlState.normal)
-        button.addTarget(self, action: #selector(delegateAction), for: UIControlEvents.touchUpInside)
+      button.addTarget(self, action: #selector(delegateAction), for: .touchUpInside)
         button.tag = indexRow
         self.contentView.addSubview(button)
         
@@ -48,13 +48,15 @@ class MyTabeleViewCell: UITableViewCell {
         super.init(coder: aDecoder)
         
     }
-    func delegateAction(button :UIButton) {
+  @objc func delegateAction(button :UIButton) {
         print("currentRow：%d", button.tag)
+      if (myDelegate?.responds(to: #selector(delegateAction(button:))))! {
         myDelegate?.deleteActionDelegate(index: indexRow)
+      }
     }
 }
 
-class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MyTableViewCellDelegate {
+@objcMembers class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MyTableViewCellDelegate {
     var array = NSMutableArray()
     var myTableView = UITableView()
     var currentStr = NSString()
@@ -131,12 +133,12 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return sum / Float(array.count);
     }
     
-    func navigationBarLeftAction() {
+   @objc func navigationBarLeftAction() {
         self.navigationController!.popViewController(animated: true)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        print("ksyPath = \(keyPath) \n object = \(object) \n change = \(change) \n context = \(context)")
+        print("ksyPath = \(keyPath!) \n object = \(object!) \n change = \(change!) \n context = \(context!)")
     }
     
     deinit {
@@ -178,7 +180,7 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UITableViewHeaderFooterView(reuseIdentifier:"header")
-        for var tempView:UIView in headerView.subviews {
+      for tempView:UIView in headerView.subviews {
             if tempView.isKind(of: UIImageView.self) {
                 tempView.removeFromSuperview()
             }
@@ -219,6 +221,7 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func pushViewController(viewStr:NSString) {
 //        array.addObjects(from: ["ImageView", "Label", "Button"])
+      self.hidesBottomBarWhenPushed = true
         if viewStr.isEqual(to: "ImageView") {
             let imageViewController:ImageViewController = ImageViewController()
             self.navigationController?.pushViewController(imageViewController, animated: true)
@@ -232,6 +235,7 @@ class MyViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             self.navigationController?.pushViewController(myViewController, animated: true)
             
         }
+      self.hidesBottomBarWhenPushed = false;
     }
     
     

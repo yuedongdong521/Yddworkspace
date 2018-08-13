@@ -18,4 +18,8 @@
 
 - (void)resetRenderBuffer;
 
+- (void)clearFrame;
+
+- (void)playGlFinish;
+
 @end

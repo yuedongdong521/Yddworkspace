@@ -31,7 +31,7 @@ class MyLabelViewController: UIViewController {
         
     }
     
-    func buttonClick(button:UIButton) {
+  @objc func buttonClick(button:UIButton) {
         let myLabel:UILabel = self.view.viewWithTag(1000) as! UILabel
         myLabel.text = "dhakdjslaydoqskdksh大手大脚阿里的深刻的hi请多喝水，打快点回收款打款单不上课都十点半"
         myLabel.numberOfLines = 0
@@ -52,8 +52,8 @@ class MyLabelViewController: UIViewController {
     
     func getLabelSize(labelStr:String, font:UIFont, maxSize:CGSize) -> CGSize {
         let tmpstr :NSString = labelStr as NSString
-        let dic = NSDictionary.init(object: font, forKey: NSFontAttributeName as NSCopying)
-        let returnSize = tmpstr.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: dic as? [String : Any], context: nil).size
+      let dic = NSDictionary.init(object: font, forKey: kCTFontAttributeName as! NSCopying)
+        let returnSize = tmpstr.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedStringKey : Any], context: nil).size
         return returnSize
         
     }
