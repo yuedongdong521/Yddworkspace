@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIButton (count)
+@interface UIButtonCount : UIButton
+
+@property(nonatomic, assign) int count;
 
 @end

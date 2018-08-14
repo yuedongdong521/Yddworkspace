@@ -10,4 +10,6 @@
 
 @interface NSObject (AddAttribute)
 
+- (void)setName:(NSString *)name;
+- (NSString *)name;
 @end

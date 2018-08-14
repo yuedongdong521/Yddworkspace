@@ -400,6 +400,12 @@
 		ED403D8E20D3C65000D9658A /* WeChatWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D8D20D3C65000D9658A /* WeChatWindow.m */; };
 		ED403D9220D3CB8600D9658A /* FloatCollectView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D9120D3CB8600D9658A /* FloatCollectView.m */; };
 		ED403D9520D3D09E00D9658A /* FloatRoundEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D9420D3D09E00D9658A /* FloatRoundEntryView.m */; };
+		ED752A7321227DFB00802367 /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED752A7221227DFB00802367 /* RuntimeViewController.m */; };
+		ED752A7721229CF900802367 /* NSObject+AddAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = ED752A7621229CF900802367 /* NSObject+AddAttribute.m */; };
+		ED752A7A2122A9B900802367 /* RuntimeLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = ED752A792122A9B900802367 /* RuntimeLibrary.m */; };
+		ED752A7D2122B33B00802367 /* UIButtonCount.m in Sources */ = {isa = PBXBuildFile; fileRef = ED752A7C2122B33B00802367 /* UIButtonCount.m */; };
+		ED752A802122C37B00802367 /* MyCoderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED752A7F2122C37B00802367 /* MyCoderModel.m */; };
+		ED752A832122C99E00802367 /* NSObject+KeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = ED752A822122C99E00802367 /* NSObject+KeyValue.m */; };
 		EDA36235211AFB8F00536799 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA36234211AFB8F00536799 /* DataModel.swift */; };
 		EDB91E4720DB99D200265E33 /* FloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB91E4620DB99D200265E33 /* FloadViewController.m */; };
 		EDEC452E2109C1FF008BEC94 /* FullImageAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEC452D2109C1FF008BEC94 /* FullImageAnimateView.m */; };
@@ -977,6 +983,18 @@
 		ED403D9120D3CB8600D9658A /* FloatCollectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloatCollectView.m; sourceTree = "<group>"; };
 		ED403D9320D3D09E00D9658A /* FloatRoundEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloatRoundEntryView.h; sourceTree = "<group>"; };
 		ED403D9420D3D09E00D9658A /* FloatRoundEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloatRoundEntryView.m; sourceTree = "<group>"; };
+		ED752A7121227DFB00802367 /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
+		ED752A7221227DFB00802367 /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
+		ED752A7521229CF900802367 /* NSObject+AddAttribute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+AddAttribute.h"; sourceTree = "<group>"; };
+		ED752A7621229CF900802367 /* NSObject+AddAttribute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AddAttribute.m"; sourceTree = "<group>"; };
+		ED752A782122A9B900802367 /* RuntimeLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeLibrary.h; sourceTree = "<group>"; };
+		ED752A792122A9B900802367 /* RuntimeLibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeLibrary.m; sourceTree = "<group>"; };
+		ED752A7B2122B33B00802367 /* UIButtonCount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButtonCount.h; sourceTree = "<group>"; };
+		ED752A7C2122B33B00802367 /* UIButtonCount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIButtonCount.m; sourceTree = "<group>"; };
+		ED752A7E2122C37B00802367 /* MyCoderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCoderModel.h; sourceTree = "<group>"; };
+		ED752A7F2122C37B00802367 /* MyCoderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCoderModel.m; sourceTree = "<group>"; };
+		ED752A812122C99E00802367 /* NSObject+KeyValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KeyValue.h"; sourceTree = "<group>"; };
+		ED752A822122C99E00802367 /* NSObject+KeyValue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KeyValue.m"; sourceTree = "<group>"; };
 		EDA36234211AFB8F00536799 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		EDB91E4520DB99D200265E33 /* FloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloadViewController.h; sourceTree = "<group>"; };
 		EDB91E4620DB99D200265E33 /* FloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloadViewController.m; sourceTree = "<group>"; };
@@ -1341,6 +1359,7 @@
 		60761EA61D61B62000FC2F1F = {
 			isa = PBXGroup;
 			children = (
+				ED752A7421227E0100802367 /* runtime */,
 				ED2850C22101CE5700178965 /* SDWebImage */,
 				609E3D08205272C800D9A55C /* GitHub */,
 				60DB89A01E821C7C0031ED29 /* RegularExpressions */,
@@ -2287,6 +2306,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ED752A7421227E0100802367 /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				ED752A7121227DFB00802367 /* RuntimeViewController.h */,
+				ED752A7221227DFB00802367 /* RuntimeViewController.m */,
+				ED752A812122C99E00802367 /* NSObject+KeyValue.h */,
+				ED752A822122C99E00802367 /* NSObject+KeyValue.m */,
+				ED752A7E2122C37B00802367 /* MyCoderModel.h */,
+				ED752A7F2122C37B00802367 /* MyCoderModel.m */,
+				ED752A7B2122B33B00802367 /* UIButtonCount.h */,
+				ED752A7C2122B33B00802367 /* UIButtonCount.m */,
+				ED752A782122A9B900802367 /* RuntimeLibrary.h */,
+				ED752A792122A9B900802367 /* RuntimeLibrary.m */,
+				ED752A7521229CF900802367 /* NSObject+AddAttribute.h */,
+				ED752A7621229CF900802367 /* NSObject+AddAttribute.m */,
+			);
+			path = runtime;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2512,6 +2550,7 @@
 				60A0AE2D200468E3004DDA93 /* YDDpcmTOwav.m in Sources */,
 				ED2851312101CE5800178965 /* SDAnimatedImageRep.m in Sources */,
 				60CC9C0D1F2ADD6200FF4533 /* MutableThreadViewController.m in Sources */,
+				ED752A7721229CF900802367 /* NSObject+AddAttribute.m in Sources */,
 				60691A9C1FCFDF8700009794 /* CoreTextTowView.m in Sources */,
 				60C171281FF36FA6007D5519 /* TestCollectionCellPLayCollectionViewController.m in Sources */,
 				600044DA1E949CD500F3471A /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -2525,6 +2564,7 @@
 				600045121E949CF200F3471A /* MJRefreshAutoNormalFooter.m in Sources */,
 				ED31415720AD2A080047FC21 /* TestDownloadViewController.m in Sources */,
 				ED2850122101BD2C00178965 /* UIImage+ImageSizeWithURL.m in Sources */,
+				ED752A7A2122A9B900802367 /* RuntimeLibrary.m in Sources */,
 				EDA36235211AFB8F00536799 /* DataModel.swift in Sources */,
 				60BEE7901E2CC27400F71DB8 /* MyTableViewModel.m in Sources */,
 				60BEE78F1E2CC27400F71DB8 /* MyTableViewController.m in Sources */,
@@ -2599,6 +2639,7 @@
 				ED39610720ABC26600D0658F /* ISH264Player.m in Sources */,
 				60691A991FCFDC9D00009794 /* CoreTextTowViewController.m in Sources */,
 				ED28511F2101CE5800178965 /* UIImage+MultiFormat.m in Sources */,
+				ED752A832122C99E00802367 /* NSObject+KeyValue.m in Sources */,
 				ED39610620ABC26600D0658F /* ISH264PlayerView.m in Sources */,
 				ED284FEF210179DF00178965 /* MyCollectionViewLayout.m in Sources */,
 				60BD0BA51D824DE000837C56 /* PKVideoDecoder.m in Sources */,
@@ -2606,6 +2647,7 @@
 				60944EC31F0F911C00C02AFB /* ISRDataHelper.m in Sources */,
 				600044D61E949CD500F3471A /* MASLayoutConstraint.m in Sources */,
 				6039E3D81E63CA4D002D6B7C /* BarrageItemView.mm in Sources */,
+				ED752A802122C37B00802367 /* MyCoderModel.m in Sources */,
 				ED3C00BA2114355F00131495 /* UserInfoController.swift in Sources */,
 				60B6A6301E2A282200CC6F26 /* BarrageModel.m in Sources */,
 				ED2851102101CE5800178965 /* UIImage+ForceDecode.m in Sources */,
@@ -2641,6 +2683,7 @@
 				600045151E949CF200F3471A /* MJRefreshBackNormalFooter.m in Sources */,
 				60944EC11F0F911C00C02AFB /* IFlySpeek.m in Sources */,
 				ED2851282101CE5800178965 /* SDWebImagePrefetcher.m in Sources */,
+				ED752A7321227DFB00802367 /* RuntimeViewController.m in Sources */,
 				600BC7701DF7D253007D0EBC /* File.swift in Sources */,
 				60C541BE2058B41D00674C31 /* ThreadViewController.m in Sources */,
 				60BEE7711E2CC07100F71DB8 /* BlazeiceAudioRecordAndTransCoding.m in Sources */,
@@ -2658,6 +2701,7 @@
 				ED403D8B20D3C55600D9658A /* WeChatTestFloatViewController.m in Sources */,
 				6000450F1E949CF200F3471A /* MJRefreshFooter.m in Sources */,
 				60BD0BA31D824DE000837C56 /* PKChatMessagePlayerView.m in Sources */,
+				ED752A7D2122B33B00802367 /* UIButtonCount.m in Sources */,
 				600044D41E949CD500F3471A /* MASConstraint.m in Sources */,
 				60430A791E2091FF0054656D /* UIViewXXYBoom.swift in Sources */,
 				60BEE7761E2CC07100F71DB8 /* THCaptureUtilities.m in Sources */,
