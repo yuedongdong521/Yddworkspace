@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+
+@protocol NSObjectKeyValueDelegate<NSObject>
+
+// 用在三级数组转换
+- (NSDictionary *)arrayContainModelClass;
+
+@end
+
 @interface NSObject (KeyValue)
+
++ (instancetype)modelWithDict:(NSDictionary *)dict;
 
 @end

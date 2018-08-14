@@ -10,4 +10,19 @@
 
 @implementation RuntimeLibrary
 
+- (instancetype)init
+{
+  self = [super init];
+  if (self) {
+    _project = @"";
+    _author = @"";
+  }
+  return self;
+}
+
+- (NSString *)libraryMethod
+{
+  return _project;
+}
+
 @end

@@ -121,7 +121,8 @@
       @"TestDownloadViewController",
       @"MyCollectionViewController",
       @"TestImageCollectionViewController",
-      @"MyWebViewViewController"
+      @"MyWebViewViewController",
+      @"RuntimeViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",

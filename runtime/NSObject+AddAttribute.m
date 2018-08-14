@@ -7,7 +7,19 @@
 //
 
 #import "NSObject+AddAttribute.h"
+#import <objc/runtime.h>
 
 @implementation NSObject (AddAttribute)
+
+- (void)setName:(NSString *)name
+{
+  objc_setAssociatedObject(self, @"name", name, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSString *)name
+{
+  return objc_getAssociatedObject(self, @"name");
+}
+
 
 @end

@@ -10,4 +10,9 @@
 
 @interface RuntimeLibrary : NSObject
 
+@property(nonatomic, strong) NSString *project;
+@property(nonatomic, strong) NSString *author;
+
+- (NSString *)libraryMethod;
+
 @end

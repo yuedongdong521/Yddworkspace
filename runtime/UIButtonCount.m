@@ -6,9 +6,9 @@
 //  Copyright © 2018年 QH. All rights reserved.
 //
 
-#import "UIButton+count.h"
+#import "UIButtonCount.h"
 #import <objc/runtime.h>
-@implementation UIButton (count)
+@implementation UIButtonCount
 
 
 + (void)load {
@@ -29,7 +29,7 @@
 }
 
 - (void)customSendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
-
+  _count++;
   [self customSendAction:action to:target forEvent:event];
 }
 
