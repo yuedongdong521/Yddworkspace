@@ -369,14 +369,32 @@
 		ED2D8FE52108870000DEF809 /* UIWebView+JavaScriptAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2D8FE42108870000DEF809 /* UIWebView+JavaScriptAlert.m */; };
 		ED2D902820D8DC1300C15624 /* FloadRoundEntryAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2D902720D8DC1300C15624 /* FloadRoundEntryAnimator.m */; };
 		ED2E6485213516C500ADCDFF /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2E6484213516C500ADCDFF /* Photos.framework */; };
-		ED2E649821351AF800ADCDFF /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2E648F21351AF800ADCDFF /* GPUImage.framework */; };
+		ED2E64E421355F7F00ADCDFF /* ISListVideoOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64BB21355F7E00ADCDFF /* ISListVideoOperation.mm */; };
+		ED2E64E521355F7F00ADCDFF /* ISListVideoPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64BC21355F7E00ADCDFF /* ISListVideoPlayer.mm */; };
+		ED2E64E621355F7F00ADCDFF /* PKChatMessagePlayerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64BE21355F7E00ADCDFF /* PKChatMessagePlayerView.mm */; };
+		ED2E64E721355F7F00ADCDFF /* ISVideoSessionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64BF21355F7E00ADCDFF /* ISVideoSessionViewController.mm */; };
+		ED2E64E821355F7F00ADCDFF /* ISVideoCameraTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64C521355F7F00ADCDFF /* ISVideoCameraTools.mm */; };
+		ED2E64E921355F7F00ADCDFF /* VideoCameraManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64C621355F7F00ADCDFF /* VideoCameraManager.mm */; };
+		ED2E64EA21355F7F00ADCDFF /* ISTakePhotoController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64CA21355F7F00ADCDFF /* ISTakePhotoController.mm */; };
+		ED2E64EB21355F7F00ADCDFF /* ISBrightnessFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64CC21355F7F00ADCDFF /* ISBrightnessFilter.mm */; };
+		ED2E64EC21355F7F00ADCDFF /* EditVideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64CD21355F7F00ADCDFF /* EditVideoViewController.mm */; };
+		ED2E64ED21355F7F00ADCDFF /* ISVideoCameraBeautySelecteView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64CF21355F7F00ADCDFF /* ISVideoCameraBeautySelecteView.mm */; };
+		ED2E64EE21355F7F00ADCDFF /* MusicItemCollectionViewCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64D121355F7F00ADCDFF /* MusicItemCollectionViewCell.mm */; };
+		ED2E64EF21355F7F00ADCDFF /* ISVideoCountDownView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64D421355F7F00ADCDFF /* ISVideoCountDownView.mm */; };
+		ED2E64F021355F7F00ADCDFF /* SDAVAssetExportSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64D621355F7F00ADCDFF /* SDAVAssetExportSession.mm */; };
+		ED2E64F121355F7F00ADCDFF /* GPUImageBeautifyFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64D921355F7F00ADCDFF /* GPUImageBeautifyFilter.mm */; };
+		ED2E64F221355F7F00ADCDFF /* ISCameraProgressView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64DA21355F7F00ADCDFF /* ISCameraProgressView.mm */; };
+		ED2E64F321355F7F00ADCDFF /* LFGPUImageEmptyFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64DB21355F7F00ADCDFF /* LFGPUImageEmptyFilter.mm */; };
+		ED2E64F421355F7F00ADCDFF /* ISCameraProgressViewLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64DD21355F7F00ADCDFF /* ISCameraProgressViewLayer.mm */; };
+		ED2E64F521355F7F00ADCDFF /* VideoCameraView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64DE21355F7F00ADCDFF /* VideoCameraView.mm */; };
+		ED2E64F621355F7F00ADCDFF /* ISEditingPhotoController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64DF21355F7F00ADCDFF /* ISEditingPhotoController.mm */; };
+		ED2E64F721355F7F00ADCDFF /* GiftCheckmarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED2E64E121355F7F00ADCDFF /* GiftCheckmarkIcon@2x.png */; };
+		ED2E64FB2135614800ADCDFF /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2E64FA2135614800ADCDFF /* GPUImage.framework */; };
+		ED2E64FC213561DF00ADCDFF /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2E64FA2135614800ADCDFF /* GPUImage.framework */; };
+		ED2E64FD213561DF00ADCDFF /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED2E64FA2135614800ADCDFF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED2E970E2112DCDA00BC382E /* ISChatMoreImageCollectionViewLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E970D2112DCDA00BC382E /* ISChatMoreImageCollectionViewLayout.mm */; };
 		ED31415420AD112F0047FC21 /* NetWorkURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = ED31415320AD112F0047FC21 /* NetWorkURLSession.m */; };
 		ED31415720AD2A080047FC21 /* TestDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED31415620AD2A080047FC21 /* TestDownloadViewController.m */; };
-		ED324C8A213400AE00D02F13 /* ISListVideoOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324C82213400AD00D02F13 /* ISListVideoOperation.mm */; };
-		ED324C8B213400AE00D02F13 /* ISListVideoPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324C83213400AD00D02F13 /* ISListVideoPlayer.mm */; };
-		ED324C8C213400AE00D02F13 /* PKChatMessagePlayerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324C85213400AD00D02F13 /* PKChatMessagePlayerView.mm */; };
-		ED324C8D213400AE00D02F13 /* ISVideoSessionViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324C86213400AD00D02F13 /* ISVideoSessionViewController.mm */; };
 		ED324CAA2134017500D02F13 /* TZImageManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324C8F2134017500D02F13 /* TZImageManager.mm */; };
 		ED324CAB2134017500D02F13 /* TZProgressView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324C912134017500D02F13 /* TZProgressView.mm */; };
 		ED324CAC2134017500D02F13 /* TZPhotoPickerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324C932134017500D02F13 /* TZPhotoPickerController.mm */; };
@@ -391,23 +409,7 @@
 		ED324CB52134017500D02F13 /* TZVideoPlayerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CA62134017500D02F13 /* TZVideoPlayerController.mm */; };
 		ED324CB62134017500D02F13 /* TZImageCropManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CA72134017500D02F13 /* TZImageCropManager.mm */; };
 		ED324CB72134017500D02F13 /* TZAssetCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CA82134017500D02F13 /* TZAssetCell.mm */; };
-		ED324CE02134042200D02F13 /* ISVideoCameraTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CBF2134042200D02F13 /* ISVideoCameraTools.mm */; };
-		ED324CE12134042200D02F13 /* VideoCameraManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CC02134042200D02F13 /* VideoCameraManager.mm */; };
-		ED324CE22134042200D02F13 /* ISTakePhotoController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CC42134042200D02F13 /* ISTakePhotoController.mm */; };
-		ED324CE32134042200D02F13 /* ISBrightnessFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CC62134042200D02F13 /* ISBrightnessFilter.mm */; };
-		ED324CE42134042200D02F13 /* EditVideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CC72134042200D02F13 /* EditVideoViewController.mm */; };
-		ED324CE52134042200D02F13 /* ISVideoCameraBeautySelecteView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CC92134042200D02F13 /* ISVideoCameraBeautySelecteView.mm */; };
-		ED324CE62134042200D02F13 /* MusicItemCollectionViewCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CCB2134042200D02F13 /* MusicItemCollectionViewCell.mm */; };
-		ED324CE72134042200D02F13 /* ISVideoCountDownView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CCF2134042200D02F13 /* ISVideoCountDownView.mm */; };
-		ED324CE82134042200D02F13 /* SDAVAssetExportSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CD12134042200D02F13 /* SDAVAssetExportSession.mm */; };
-		ED324CE92134042200D02F13 /* GPUImageBeautifyFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CD52134042200D02F13 /* GPUImageBeautifyFilter.mm */; };
-		ED324CEA2134042200D02F13 /* ISCameraProgressView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CD62134042200D02F13 /* ISCameraProgressView.mm */; };
-		ED324CEB2134042200D02F13 /* LFGPUImageEmptyFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CD72134042200D02F13 /* LFGPUImageEmptyFilter.mm */; };
-		ED324CEC2134042200D02F13 /* ISCameraProgressViewLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CD92134042200D02F13 /* ISCameraProgressViewLayer.mm */; };
-		ED324CED2134042200D02F13 /* VideoCameraView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CDA2134042200D02F13 /* VideoCameraView.mm */; };
-		ED324CEE2134042200D02F13 /* ISEditingPhotoController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324CDB2134042200D02F13 /* ISEditingPhotoController.mm */; };
 		ED324CF12134058E00D02F13 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ED324CEF2134058E00D02F13 /* MBProgressHUD.m */; };
-		ED324CF421340A8200D02F13 /* GiftCheckmarkIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED324CF321340A8200D02F13 /* GiftCheckmarkIcon@2x.png */; };
 		ED324D1021340B6B00D02F13 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ED324CF721340B6A00D02F13 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		ED324D1121340B6B00D02F13 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ED324D0021340B6A00D02F13 /* ViewController+MASAdditions.m */; };
 		ED324D1221340B6B00D02F13 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = ED324D0421340B6A00D02F13 /* MASCompositeConstraint.m */; };
@@ -549,6 +551,20 @@
 			remoteInfo = Yddworkspace;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED2E64FE213561DF00ADCDFF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ED2E64FD213561DF00ADCDFF /* GPUImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		600043D51E8F3EB400F3471A /* camera_focus_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_focus_red@2x.png"; sourceTree = "<group>"; };
@@ -1037,7 +1053,46 @@
 		ED2D902620D8DC1300C15624 /* FloadRoundEntryAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloadRoundEntryAnimator.h; sourceTree = "<group>"; };
 		ED2D902720D8DC1300C15624 /* FloadRoundEntryAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloadRoundEntryAnimator.m; sourceTree = "<group>"; };
 		ED2E6484213516C500ADCDFF /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
-		ED2E648F21351AF800ADCDFF /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
+		ED2E64BB21355F7E00ADCDFF /* ISListVideoOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISListVideoOperation.mm; sourceTree = "<group>"; };
+		ED2E64BC21355F7E00ADCDFF /* ISListVideoPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISListVideoPlayer.mm; sourceTree = "<group>"; };
+		ED2E64BD21355F7E00ADCDFF /* PKChatMessagePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKChatMessagePlayerView.h; sourceTree = "<group>"; };
+		ED2E64BE21355F7E00ADCDFF /* PKChatMessagePlayerView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PKChatMessagePlayerView.mm; sourceTree = "<group>"; };
+		ED2E64BF21355F7E00ADCDFF /* ISVideoSessionViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISVideoSessionViewController.mm; sourceTree = "<group>"; };
+		ED2E64C021355F7E00ADCDFF /* ISListVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISListVideoPlayer.h; sourceTree = "<group>"; };
+		ED2E64C121355F7E00ADCDFF /* ISListVideoOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISListVideoOperation.h; sourceTree = "<group>"; };
+		ED2E64C221355F7E00ADCDFF /* ISVideoSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISVideoSessionViewController.h; sourceTree = "<group>"; };
+		ED2E64C421355F7F00ADCDFF /* ISTakePhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISTakePhotoController.h; sourceTree = "<group>"; };
+		ED2E64C521355F7F00ADCDFF /* ISVideoCameraTools.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISVideoCameraTools.mm; sourceTree = "<group>"; };
+		ED2E64C621355F7F00ADCDFF /* VideoCameraManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoCameraManager.mm; sourceTree = "<group>"; };
+		ED2E64C721355F7F00ADCDFF /* LFGPUImageEmptyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFGPUImageEmptyFilter.h; sourceTree = "<group>"; };
+		ED2E64C821355F7F00ADCDFF /* MusicItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicItemCollectionViewCell.h; sourceTree = "<group>"; };
+		ED2E64C921355F7F00ADCDFF /* ISCameraProgressViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISCameraProgressViewLayer.h; sourceTree = "<group>"; };
+		ED2E64CA21355F7F00ADCDFF /* ISTakePhotoController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISTakePhotoController.mm; sourceTree = "<group>"; };
+		ED2E64CB21355F7F00ADCDFF /* ISVideoCountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISVideoCountDownView.h; sourceTree = "<group>"; };
+		ED2E64CC21355F7F00ADCDFF /* ISBrightnessFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISBrightnessFilter.mm; sourceTree = "<group>"; };
+		ED2E64CD21355F7F00ADCDFF /* EditVideoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EditVideoViewController.mm; sourceTree = "<group>"; };
+		ED2E64CE21355F7F00ADCDFF /* ISEditingPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISEditingPhotoController.h; sourceTree = "<group>"; };
+		ED2E64CF21355F7F00ADCDFF /* ISVideoCameraBeautySelecteView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISVideoCameraBeautySelecteView.mm; sourceTree = "<group>"; };
+		ED2E64D021355F7F00ADCDFF /* ISCameraProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISCameraProgressView.h; sourceTree = "<group>"; };
+		ED2E64D121355F7F00ADCDFF /* MusicItemCollectionViewCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MusicItemCollectionViewCell.mm; sourceTree = "<group>"; };
+		ED2E64D221355F7F00ADCDFF /* EditVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditVideoViewController.h; sourceTree = "<group>"; };
+		ED2E64D321355F7F00ADCDFF /* ISVideoCameraTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISVideoCameraTools.h; sourceTree = "<group>"; };
+		ED2E64D421355F7F00ADCDFF /* ISVideoCountDownView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISVideoCountDownView.mm; sourceTree = "<group>"; };
+		ED2E64D521355F7F00ADCDFF /* VideoCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCameraView.h; sourceTree = "<group>"; };
+		ED2E64D621355F7F00ADCDFF /* SDAVAssetExportSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SDAVAssetExportSession.mm; sourceTree = "<group>"; };
+		ED2E64D721355F7F00ADCDFF /* ISBrightnessFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISBrightnessFilter.h; sourceTree = "<group>"; };
+		ED2E64D821355F7F00ADCDFF /* VideoCameraManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCameraManager.h; sourceTree = "<group>"; };
+		ED2E64D921355F7F00ADCDFF /* GPUImageBeautifyFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GPUImageBeautifyFilter.mm; sourceTree = "<group>"; };
+		ED2E64DA21355F7F00ADCDFF /* ISCameraProgressView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISCameraProgressView.mm; sourceTree = "<group>"; };
+		ED2E64DB21355F7F00ADCDFF /* LFGPUImageEmptyFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LFGPUImageEmptyFilter.mm; sourceTree = "<group>"; };
+		ED2E64DC21355F7F00ADCDFF /* GPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageBeautifyFilter.h; sourceTree = "<group>"; };
+		ED2E64DD21355F7F00ADCDFF /* ISCameraProgressViewLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISCameraProgressViewLayer.mm; sourceTree = "<group>"; };
+		ED2E64DE21355F7F00ADCDFF /* VideoCameraView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoCameraView.mm; sourceTree = "<group>"; };
+		ED2E64DF21355F7F00ADCDFF /* ISEditingPhotoController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISEditingPhotoController.mm; sourceTree = "<group>"; };
+		ED2E64E121355F7F00ADCDFF /* GiftCheckmarkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GiftCheckmarkIcon@2x.png"; sourceTree = "<group>"; };
+		ED2E64E221355F7F00ADCDFF /* ISVideoCameraBeautySelecteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISVideoCameraBeautySelecteView.h; sourceTree = "<group>"; };
+		ED2E64E321355F7F00ADCDFF /* SDAVAssetExportSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAVAssetExportSession.h; sourceTree = "<group>"; };
+		ED2E64FA2135614800ADCDFF /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		ED2E970C2112DCD900BC382E /* ISChatMoreImageCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISChatMoreImageCollectionViewLayout.h; sourceTree = "<group>"; };
 		ED2E970D2112DCDA00BC382E /* ISChatMoreImageCollectionViewLayout.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISChatMoreImageCollectionViewLayout.mm; sourceTree = "<group>"; };
 		ED31415220AD112F0047FC21 /* NetWorkURLSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkURLSession.h; sourceTree = "<group>"; };
@@ -1045,14 +1100,6 @@
 		ED31415520AD2A080047FC21 /* TestDownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDownloadViewController.h; sourceTree = "<group>"; };
 		ED31415620AD2A080047FC21 /* TestDownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDownloadViewController.m; sourceTree = "<group>"; };
 		ED31BA87210EA7C400ADB2DF /* WZLSerializeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLSerializeKit.h; sourceTree = "<group>"; };
-		ED324C82213400AD00D02F13 /* ISListVideoOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISListVideoOperation.mm; sourceTree = "<group>"; };
-		ED324C83213400AD00D02F13 /* ISListVideoPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISListVideoPlayer.mm; sourceTree = "<group>"; };
-		ED324C84213400AD00D02F13 /* PKChatMessagePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKChatMessagePlayerView.h; sourceTree = "<group>"; };
-		ED324C85213400AD00D02F13 /* PKChatMessagePlayerView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PKChatMessagePlayerView.mm; sourceTree = "<group>"; };
-		ED324C86213400AD00D02F13 /* ISVideoSessionViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISVideoSessionViewController.mm; sourceTree = "<group>"; };
-		ED324C87213400AD00D02F13 /* ISListVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISListVideoPlayer.h; sourceTree = "<group>"; };
-		ED324C88213400AD00D02F13 /* ISListVideoOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISListVideoOperation.h; sourceTree = "<group>"; };
-		ED324C89213400AD00D02F13 /* ISVideoSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISVideoSessionViewController.h; sourceTree = "<group>"; };
 		ED324C8F2134017500D02F13 /* TZImageManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TZImageManager.mm; sourceTree = "<group>"; };
 		ED324C902134017500D02F13 /* TZPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewCell.h; sourceTree = "<group>"; };
 		ED324C912134017500D02F13 /* TZProgressView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TZProgressView.mm; sourceTree = "<group>"; };
@@ -1080,39 +1127,8 @@
 		ED324CA72134017500D02F13 /* TZImageCropManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TZImageCropManager.mm; sourceTree = "<group>"; };
 		ED324CA82134017500D02F13 /* TZAssetCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TZAssetCell.mm; sourceTree = "<group>"; };
 		ED324CA92134017500D02F13 /* TZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZProgressView.h; sourceTree = "<group>"; };
-		ED324CBC2134042200D02F13 /* ISTakePhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISTakePhotoController.h; sourceTree = "<group>"; };
-		ED324CBF2134042200D02F13 /* ISVideoCameraTools.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISVideoCameraTools.mm; sourceTree = "<group>"; };
-		ED324CC02134042200D02F13 /* VideoCameraManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoCameraManager.mm; sourceTree = "<group>"; };
-		ED324CC12134042200D02F13 /* LFGPUImageEmptyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFGPUImageEmptyFilter.h; sourceTree = "<group>"; };
-		ED324CC22134042200D02F13 /* MusicItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicItemCollectionViewCell.h; sourceTree = "<group>"; };
-		ED324CC32134042200D02F13 /* ISCameraProgressViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISCameraProgressViewLayer.h; sourceTree = "<group>"; };
-		ED324CC42134042200D02F13 /* ISTakePhotoController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISTakePhotoController.mm; sourceTree = "<group>"; };
-		ED324CC52134042200D02F13 /* ISVideoCountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISVideoCountDownView.h; sourceTree = "<group>"; };
-		ED324CC62134042200D02F13 /* ISBrightnessFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISBrightnessFilter.mm; sourceTree = "<group>"; };
-		ED324CC72134042200D02F13 /* EditVideoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EditVideoViewController.mm; sourceTree = "<group>"; };
-		ED324CC82134042200D02F13 /* ISEditingPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISEditingPhotoController.h; sourceTree = "<group>"; };
-		ED324CC92134042200D02F13 /* ISVideoCameraBeautySelecteView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISVideoCameraBeautySelecteView.mm; sourceTree = "<group>"; };
-		ED324CCA2134042200D02F13 /* ISCameraProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISCameraProgressView.h; sourceTree = "<group>"; };
-		ED324CCB2134042200D02F13 /* MusicItemCollectionViewCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MusicItemCollectionViewCell.mm; sourceTree = "<group>"; };
-		ED324CCC2134042200D02F13 /* EditVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditVideoViewController.h; sourceTree = "<group>"; };
-		ED324CCD2134042200D02F13 /* ISVideoCameraTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISVideoCameraTools.h; sourceTree = "<group>"; };
-		ED324CCF2134042200D02F13 /* ISVideoCountDownView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISVideoCountDownView.mm; sourceTree = "<group>"; };
-		ED324CD02134042200D02F13 /* VideoCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCameraView.h; sourceTree = "<group>"; };
-		ED324CD12134042200D02F13 /* SDAVAssetExportSession.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SDAVAssetExportSession.mm; sourceTree = "<group>"; };
-		ED324CD22134042200D02F13 /* ISBrightnessFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISBrightnessFilter.h; sourceTree = "<group>"; };
-		ED324CD42134042200D02F13 /* VideoCameraManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCameraManager.h; sourceTree = "<group>"; };
-		ED324CD52134042200D02F13 /* GPUImageBeautifyFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GPUImageBeautifyFilter.mm; sourceTree = "<group>"; };
-		ED324CD62134042200D02F13 /* ISCameraProgressView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISCameraProgressView.mm; sourceTree = "<group>"; };
-		ED324CD72134042200D02F13 /* LFGPUImageEmptyFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LFGPUImageEmptyFilter.mm; sourceTree = "<group>"; };
-		ED324CD82134042200D02F13 /* GPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageBeautifyFilter.h; sourceTree = "<group>"; };
-		ED324CD92134042200D02F13 /* ISCameraProgressViewLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISCameraProgressViewLayer.mm; sourceTree = "<group>"; };
-		ED324CDA2134042200D02F13 /* VideoCameraView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoCameraView.mm; sourceTree = "<group>"; };
-		ED324CDB2134042200D02F13 /* ISEditingPhotoController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISEditingPhotoController.mm; sourceTree = "<group>"; };
-		ED324CDC2134042200D02F13 /* ISVideoCameraBeautySelecteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISVideoCameraBeautySelecteView.h; sourceTree = "<group>"; };
-		ED324CDD2134042200D02F13 /* SDAVAssetExportSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAVAssetExportSession.h; sourceTree = "<group>"; };
 		ED324CEF2134058E00D02F13 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		ED324CF02134058E00D02F13 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		ED324CF321340A8200D02F13 /* GiftCheckmarkIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GiftCheckmarkIcon@2x.png"; sourceTree = "<group>"; };
 		ED324CF621340B6A00D02F13 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		ED324CF721340B6A00D02F13 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		ED324CF821340B6A00D02F13 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -1382,11 +1398,12 @@
 				60CA61711E16542200B03340 /* CoreTelephony.framework in Frameworks */,
 				60CA616F1E16540C00B03340 /* SystemConfiguration.framework in Frameworks */,
 				609A6C591E4D5598000B2567 /* AVFoundation.framework in Frameworks */,
-				ED2E649821351AF800ADCDFF /* GPUImage.framework in Frameworks */,
+				ED2E64FC213561DF00ADCDFF /* GPUImage.framework in Frameworks */,
 				60BEE7A01E2CC58900F71DB8 /* CoreAudio.framework in Frameworks */,
 				60A6E0421F089F0100EB7FA6 /* iflyMSC.framework in Frameworks */,
 				60BEE79E1E2CC56700F71DB8 /* CoreMedia.framework in Frameworks */,
 				60BEE79C1E2CC55300F71DB8 /* CoreVideo.framework in Frameworks */,
+				ED2E64FB2135614800ADCDFF /* GPUImage.framework in Frameworks */,
 				60AA48081E1E60E800839D8C /* CoreText.framework in Frameworks */,
 				60CA61771E16545E00B03340 /* libc++.tbd in Frameworks */,
 				60CA61751E16543A00B03340 /* libz.tbd in Frameworks */,
@@ -1676,9 +1693,9 @@
 		60761EA61D61B62000FC2F1F = {
 			isa = PBXGroup;
 			children = (
+				ED2E64C321355F7F00ADCDFF /* CustomVideoCamera */,
+				ED2E64BA21355F7E00ADCDFF /* ISChatMessageVideo */,
 				ED2E64862135184900ADCDFF /* sdk */,
-				ED324CBB2134042200D02F13 /* CustomVideoCamera */,
-				ED324C81213400AD00D02F13 /* ISChatMessageVideo */,
 				ED771B562123C67F001BEFB3 /* mytextView */,
 				ED752A852122F01400802367 /* NSInvocation */,
 				ED752A7421227E0100802367 /* runtime */,
@@ -2566,7 +2583,7 @@
 		ED2E64862135184900ADCDFF /* sdk */ = {
 			isa = PBXGroup;
 			children = (
-				ED2E648721351AE200ADCDFF /* GPUImage */,
+				ED2E64F82135614800ADCDFF /* GPUImage */,
 				ED324CF02134058E00D02F13 /* MBProgressHUD.h */,
 				ED324CEF2134058E00D02F13 /* MBProgressHUD.m */,
 				60CA61381E16538A00B03340 /* UMSocial */,
@@ -2578,43 +2595,81 @@
 			path = sdk;
 			sourceTree = "<group>";
 		};
-		ED2E648721351AE200ADCDFF /* GPUImage */ = {
+		ED2E64BA21355F7E00ADCDFF /* ISChatMessageVideo */ = {
 			isa = PBXGroup;
 			children = (
-				ED2E648821351AF800ADCDFF /* Debug-iphoneos */,
-				ED2E649221351AF800ADCDFF /* Release-iphoneos */,
+				ED2E64BB21355F7E00ADCDFF /* ISListVideoOperation.mm */,
+				ED2E64BC21355F7E00ADCDFF /* ISListVideoPlayer.mm */,
+				ED2E64BD21355F7E00ADCDFF /* PKChatMessagePlayerView.h */,
+				ED2E64BE21355F7E00ADCDFF /* PKChatMessagePlayerView.mm */,
+				ED2E64BF21355F7E00ADCDFF /* ISVideoSessionViewController.mm */,
+				ED2E64C021355F7E00ADCDFF /* ISListVideoPlayer.h */,
+				ED2E64C121355F7E00ADCDFF /* ISListVideoOperation.h */,
+				ED2E64C221355F7E00ADCDFF /* ISVideoSessionViewController.h */,
+			);
+			path = ISChatMessageVideo;
+			sourceTree = "<group>";
+		};
+		ED2E64C321355F7F00ADCDFF /* CustomVideoCamera */ = {
+			isa = PBXGroup;
+			children = (
+				ED2E64C421355F7F00ADCDFF /* ISTakePhotoController.h */,
+				ED2E64C521355F7F00ADCDFF /* ISVideoCameraTools.mm */,
+				ED2E64C621355F7F00ADCDFF /* VideoCameraManager.mm */,
+				ED2E64C721355F7F00ADCDFF /* LFGPUImageEmptyFilter.h */,
+				ED2E64C821355F7F00ADCDFF /* MusicItemCollectionViewCell.h */,
+				ED2E64C921355F7F00ADCDFF /* ISCameraProgressViewLayer.h */,
+				ED2E64CA21355F7F00ADCDFF /* ISTakePhotoController.mm */,
+				ED2E64CB21355F7F00ADCDFF /* ISVideoCountDownView.h */,
+				ED2E64CC21355F7F00ADCDFF /* ISBrightnessFilter.mm */,
+				ED2E64CD21355F7F00ADCDFF /* EditVideoViewController.mm */,
+				ED2E64CE21355F7F00ADCDFF /* ISEditingPhotoController.h */,
+				ED2E64CF21355F7F00ADCDFF /* ISVideoCameraBeautySelecteView.mm */,
+				ED2E64D021355F7F00ADCDFF /* ISCameraProgressView.h */,
+				ED2E64D121355F7F00ADCDFF /* MusicItemCollectionViewCell.mm */,
+				ED2E64D221355F7F00ADCDFF /* EditVideoViewController.h */,
+				ED2E64D321355F7F00ADCDFF /* ISVideoCameraTools.h */,
+				ED2E64D421355F7F00ADCDFF /* ISVideoCountDownView.mm */,
+				ED2E64D521355F7F00ADCDFF /* VideoCameraView.h */,
+				ED2E64D621355F7F00ADCDFF /* SDAVAssetExportSession.mm */,
+				ED2E64D721355F7F00ADCDFF /* ISBrightnessFilter.h */,
+				ED2E64D821355F7F00ADCDFF /* VideoCameraManager.h */,
+				ED2E64D921355F7F00ADCDFF /* GPUImageBeautifyFilter.mm */,
+				ED2E64DA21355F7F00ADCDFF /* ISCameraProgressView.mm */,
+				ED2E64DB21355F7F00ADCDFF /* LFGPUImageEmptyFilter.mm */,
+				ED2E64DC21355F7F00ADCDFF /* GPUImageBeautifyFilter.h */,
+				ED2E64DD21355F7F00ADCDFF /* ISCameraProgressViewLayer.mm */,
+				ED2E64DE21355F7F00ADCDFF /* VideoCameraView.mm */,
+				ED2E64DF21355F7F00ADCDFF /* ISEditingPhotoController.mm */,
+				ED2E64E021355F7F00ADCDFF /* cameraSoures */,
+				ED2E64E221355F7F00ADCDFF /* ISVideoCameraBeautySelecteView.h */,
+				ED2E64E321355F7F00ADCDFF /* SDAVAssetExportSession.h */,
+			);
+			path = CustomVideoCamera;
+			sourceTree = "<group>";
+		};
+		ED2E64E021355F7F00ADCDFF /* cameraSoures */ = {
+			isa = PBXGroup;
+			children = (
+				ED2E64E121355F7F00ADCDFF /* GiftCheckmarkIcon@2x.png */,
+			);
+			path = cameraSoures;
+			sourceTree = "<group>";
+		};
+		ED2E64F82135614800ADCDFF /* GPUImage */ = {
+			isa = PBXGroup;
+			children = (
+				ED2E64F92135614800ADCDFF /* Debug-iphoneos */,
 			);
 			path = GPUImage;
 			sourceTree = "<group>";
 		};
-		ED2E648821351AF800ADCDFF /* Debug-iphoneos */ = {
+		ED2E64F92135614800ADCDFF /* Debug-iphoneos */ = {
 			isa = PBXGroup;
 			children = (
-				ED2E648F21351AF800ADCDFF /* GPUImage.framework */,
+				ED2E64FA2135614800ADCDFF /* GPUImage.framework */,
 			);
 			path = "Debug-iphoneos";
-			sourceTree = "<group>";
-		};
-		ED2E649221351AF800ADCDFF /* Release-iphoneos */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Release-iphoneos";
-			sourceTree = "<group>";
-		};
-		ED324C81213400AD00D02F13 /* ISChatMessageVideo */ = {
-			isa = PBXGroup;
-			children = (
-				ED324C82213400AD00D02F13 /* ISListVideoOperation.mm */,
-				ED324C83213400AD00D02F13 /* ISListVideoPlayer.mm */,
-				ED324C84213400AD00D02F13 /* PKChatMessagePlayerView.h */,
-				ED324C85213400AD00D02F13 /* PKChatMessagePlayerView.mm */,
-				ED324C86213400AD00D02F13 /* ISVideoSessionViewController.mm */,
-				ED324C87213400AD00D02F13 /* ISListVideoPlayer.h */,
-				ED324C88213400AD00D02F13 /* ISListVideoOperation.h */,
-				ED324C89213400AD00D02F13 /* ISVideoSessionViewController.h */,
-			);
-			path = ISChatMessageVideo;
 			sourceTree = "<group>";
 		};
 		ED324C8E2134017500D02F13 /* TZImagePickerController */ = {
@@ -2650,52 +2705,6 @@
 				ED324CA92134017500D02F13 /* TZProgressView.h */,
 			);
 			path = TZImagePickerController;
-			sourceTree = "<group>";
-		};
-		ED324CBB2134042200D02F13 /* CustomVideoCamera */ = {
-			isa = PBXGroup;
-			children = (
-				ED324CF221340A5C00D02F13 /* cameraSoures */,
-				ED324CBC2134042200D02F13 /* ISTakePhotoController.h */,
-				ED324CBF2134042200D02F13 /* ISVideoCameraTools.mm */,
-				ED324CC02134042200D02F13 /* VideoCameraManager.mm */,
-				ED324CC12134042200D02F13 /* LFGPUImageEmptyFilter.h */,
-				ED324CC22134042200D02F13 /* MusicItemCollectionViewCell.h */,
-				ED324CC32134042200D02F13 /* ISCameraProgressViewLayer.h */,
-				ED324CC42134042200D02F13 /* ISTakePhotoController.mm */,
-				ED324CC52134042200D02F13 /* ISVideoCountDownView.h */,
-				ED324CC62134042200D02F13 /* ISBrightnessFilter.mm */,
-				ED324CC72134042200D02F13 /* EditVideoViewController.mm */,
-				ED324CC82134042200D02F13 /* ISEditingPhotoController.h */,
-				ED324CC92134042200D02F13 /* ISVideoCameraBeautySelecteView.mm */,
-				ED324CCA2134042200D02F13 /* ISCameraProgressView.h */,
-				ED324CCB2134042200D02F13 /* MusicItemCollectionViewCell.mm */,
-				ED324CCC2134042200D02F13 /* EditVideoViewController.h */,
-				ED324CCD2134042200D02F13 /* ISVideoCameraTools.h */,
-				ED324CCF2134042200D02F13 /* ISVideoCountDownView.mm */,
-				ED324CD02134042200D02F13 /* VideoCameraView.h */,
-				ED324CD12134042200D02F13 /* SDAVAssetExportSession.mm */,
-				ED324CD22134042200D02F13 /* ISBrightnessFilter.h */,
-				ED324CD42134042200D02F13 /* VideoCameraManager.h */,
-				ED324CD52134042200D02F13 /* GPUImageBeautifyFilter.mm */,
-				ED324CD62134042200D02F13 /* ISCameraProgressView.mm */,
-				ED324CD72134042200D02F13 /* LFGPUImageEmptyFilter.mm */,
-				ED324CD82134042200D02F13 /* GPUImageBeautifyFilter.h */,
-				ED324CD92134042200D02F13 /* ISCameraProgressViewLayer.mm */,
-				ED324CDA2134042200D02F13 /* VideoCameraView.mm */,
-				ED324CDB2134042200D02F13 /* ISEditingPhotoController.mm */,
-				ED324CDC2134042200D02F13 /* ISVideoCameraBeautySelecteView.h */,
-				ED324CDD2134042200D02F13 /* SDAVAssetExportSession.h */,
-			);
-			path = CustomVideoCamera;
-			sourceTree = "<group>";
-		};
-		ED324CF221340A5C00D02F13 /* cameraSoures */ = {
-			isa = PBXGroup;
-			children = (
-				ED324CF321340A8200D02F13 /* GiftCheckmarkIcon@2x.png */,
-			);
-			path = cameraSoures;
 			sourceTree = "<group>";
 		};
 		ED324CF521340B6A00D02F13 /* Masonry */ = {
@@ -3114,6 +3123,7 @@
 				60761EAB1D61B62000FC2F1F /* Sources */,
 				60761EAC1D61B62000FC2F1F /* Frameworks */,
 				60761EAD1D61B62000FC2F1F /* Resources */,
+				ED2E64FE213561DF00ADCDFF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3215,6 +3225,7 @@
 				60AA48031E1E2B8D00839D8C /* Session.png in Resources */,
 				60757E811E71712B003463F3 /* File in Resources */,
 				6088490E1DC076C800FD819C /* shoucang1.png in Resources */,
+				ED2E64F721355F7F00ADCDFF /* GiftCheckmarkIcon@2x.png in Resources */,
 				60B9110C2015B2A2005EB918 /* 3.jpg in Resources */,
 				600EF34B1D9E627400A30927 /* photograph_Select@2x.png in Resources */,
 				6088490F1DC076C800FD819C /* weizhi.png in Resources */,
@@ -3223,7 +3234,6 @@
 				60944EE11F0F914A00C02AFB /* json_internalmap.inl in Resources */,
 				60E5949D1FFB569C00476F8D /* ispeak.h264 in Resources */,
 				60761EC21D61B62000FC2F1F /* LaunchScreen.storyboard in Resources */,
-				ED324CF421340A8200D02F13 /* GiftCheckmarkIcon@2x.png in Resources */,
 				60CA61661E16538A00B03340 /* read_me.txt in Resources */,
 				6088490B1DC076C800FD819C /* homepagebannarimage@3x.jpg in Resources */,
 				60944EE41F0F914A00C02AFB /* json_valueiterator.inl in Resources */,
@@ -3310,7 +3320,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED324CE62134042200D02F13 /* MusicItemCollectionViewCell.mm in Sources */,
 				6000450E1E949CF200F3471A /* MJRefreshComponent.m in Sources */,
 				609133B31F42EF7C00D8972B /* GameLivePrepareView.m in Sources */,
 				ED2D8FD321084B1000DEF809 /* JSONKit.m in Sources */,
@@ -3329,14 +3338,12 @@
 				ED2851192101CE5800178965 /* SDWebImageDownloader.m in Sources */,
 				600AE1BC1F2F0DCB00006769 /* swift_block.swift in Sources */,
 				ED403D9520D3D09E00D9658A /* FloatRoundEntryView.m in Sources */,
-				ED324CE72134042200D02F13 /* ISVideoCountDownView.mm in Sources */,
 				ED771C3A21241F54001BEFB3 /* UITableView+YYAdd.m in Sources */,
 				ED3C00BC2114462E00131495 /* UserInfoTableCell.swift in Sources */,
 				ED771C1C21241F53001BEFB3 /* CALayer+YYWebImage.m in Sources */,
 				ED2851012101CE5800178965 /* UIImage+WebP.m in Sources */,
 				ED2D8FDF2108867900DEF809 /* LoadWebViewController.m in Sources */,
 				ED2D902820D8DC1300C15624 /* FloadRoundEntryAnimator.m in Sources */,
-				ED324CE12134042200D02F13 /* VideoCameraManager.mm in Sources */,
 				ED2851462101CE5800178965 /* SDWebImageGIFCoder.m in Sources */,
 				60A0AE2D200468E3004DDA93 /* YDDpcmTOwav.m in Sources */,
 				ED2851312101CE5800178965 /* SDAnimatedImageRep.m in Sources */,
@@ -3358,7 +3365,6 @@
 				ED28500A2101AF1C00178965 /* ISDynamicTemplate.mm in Sources */,
 				600045121E949CF200F3471A /* MJRefreshAutoNormalFooter.m in Sources */,
 				ED31415720AD2A080047FC21 /* TestDownloadViewController.m in Sources */,
-				ED324CE52134042200D02F13 /* ISVideoCameraBeautySelecteView.mm in Sources */,
 				ED2850122101BD2C00178965 /* UIImage+ImageSizeWithURL.m in Sources */,
 				ED771C3921241F54001BEFB3 /* UIApplication+YYAdd.m in Sources */,
 				ED752A7A2122A9B900802367 /* RuntimeLibrary.m in Sources */,
@@ -3369,6 +3375,7 @@
 				ED771C3521241F53001BEFB3 /* UITextField+YYAdd.m in Sources */,
 				ED771C3221241F53001BEFB3 /* YYTextAttribute.m in Sources */,
 				ED28515D2101DCC100178965 /* ISLookUpImageView.m in Sources */,
+				ED2E64F621355F7F00ADCDFF /* ISEditingPhotoController.mm in Sources */,
 				60E594B51FFB851900476F8D /* H264HwEncoderImpl.m in Sources */,
 				60CBBFE91FCBD9C2006545F1 /* CTViewController.m in Sources */,
 				ED28512B2101CE5800178965 /* SDWebImageCoder.m in Sources */,
@@ -3381,12 +3388,10 @@
 				ED771C3321241F53001BEFB3 /* YYTextArchiver.m in Sources */,
 				60B910FF20158DF4005EB918 /* CustomPushAnimateViewController.m in Sources */,
 				6000451C1E949CF200F3471A /* NSBundle+MJRefresh.m in Sources */,
-				ED324CEB2134042200D02F13 /* LFGPUImageEmptyFilter.mm in Sources */,
 				600045171E949CF200F3471A /* MJRefreshGifHeader.m in Sources */,
 				ED771C1721241F53001BEFB3 /* YYFrameImage.m in Sources */,
 				ED771C5321241F54001BEFB3 /* YYWeakProxy.m in Sources */,
 				ED325484212E959E00182DF5 /* GifViewController.m in Sources */,
-				ED324C8C213400AE00D02F13 /* PKChatMessagePlayerView.mm in Sources */,
 				ED771C2F21241F53001BEFB3 /* YYTextParser.m in Sources */,
 				600EF3461D9E612C00A30927 /* MyImagePickerViewController.m in Sources */,
 				ED771C1521241F53001BEFB3 /* YYImage.m in Sources */,
@@ -3394,9 +3399,9 @@
 				60944EE21F0F914A00C02AFB /* json_reader.cpp in Sources */,
 				6000451E1E949CF200F3471A /* UIScrollView+MJRefresh.m in Sources */,
 				60BEE7751E2CC07100F71DB8 /* THCapture.m in Sources */,
-				ED324CE32134042200D02F13 /* ISBrightnessFilter.mm in Sources */,
 				609F68B41F4C0DB900ABC49A /* GameLiveHomeViewController.m in Sources */,
 				ED771C3C21241F54001BEFB3 /* UIScreen+YYAdd.m in Sources */,
+				ED2E64EC21355F7F00ADCDFF /* EditVideoViewController.mm in Sources */,
 				6000450C1E949CF200F3471A /* MJRefreshAutoFooter.m in Sources */,
 				600BC76D1DF56CE8007D0EBC /* MyTools.m in Sources */,
 				60B7835F1F16129800BD50D7 /* DrawImageColorViewController.m in Sources */,
@@ -3405,18 +3410,18 @@
 				60BD0BAC1D82546700837C56 /* YddImagePickerViewController.m in Sources */,
 				60E87E71205A60A100B20025 /* VoiceConvertHandle.m in Sources */,
 				ED2851582101CE5800178965 /* SDWebImageWebPCoder.m in Sources */,
-				ED324C8A213400AE00D02F13 /* ISListVideoOperation.mm in Sources */,
 				ED771C2921241F53001BEFB3 /* YYTextKeyboardManager.m in Sources */,
-				ED324C8D213400AE00D02F13 /* ISVideoSessionViewController.mm in Sources */,
 				ED771C1021241F53001BEFB3 /* YYKVStorage.m in Sources */,
 				606850852008652F00878270 /* OperatorViewController.m in Sources */,
 				ED771C5721241F54001BEFB3 /* YYTransaction.m in Sources */,
 				ED771C4621241F54001BEFB3 /* NSObject+YYAdd.m in Sources */,
 				ED771C1D21241F53001BEFB3 /* YYAnimatedImageView.m in Sources */,
+				ED2E64F121355F7F00ADCDFF /* GPUImageBeautifyFilter.mm in Sources */,
 				ED2850012101AF1C00178965 /* ISTemplate.mm in Sources */,
 				60944EE51F0F914A00C02AFB /* json_writer.cpp in Sources */,
 				ED324CB22134017500D02F13 /* TZPhotoPreviewController.mm in Sources */,
 				ED771C5521241F54001BEFB3 /* YYThreadSafeDictionary.m in Sources */,
+				ED2E64EB21355F7F00ADCDFF /* ISBrightnessFilter.mm in Sources */,
 				ED284FEB210179DF00178965 /* CollectionDataModel.m in Sources */,
 				60BEE79A1E2CC39400F71DB8 /* AVCaptureSessionViewController.m in Sources */,
 				ED771C3D21241F54001BEFB3 /* UIView+YYAdd.m in Sources */,
@@ -3439,12 +3444,12 @@
 				ED771C5B21241F54001BEFB3 /* YYFileHash.m in Sources */,
 				ED324CAF2134017500D02F13 /* UIView+Layout.mm in Sources */,
 				6000451B1E949CF200F3471A /* MJRefreshConst.m in Sources */,
+				ED2E64E521355F7F00ADCDFF /* ISListVideoPlayer.mm in Sources */,
 				60AFFDA4201F1F1000335E45 /* MyURLClickView.m in Sources */,
 				ED2851252101CE5800178965 /* SDWebImageCompat.m in Sources */,
 				ED771C4821241F54001BEFB3 /* NSThread+YYAdd.m in Sources */,
 				60B91102201594F7005EB918 /* CustomTransitionPushControlle.m in Sources */,
 				ED771C4421241F54001BEFB3 /* NSNumber+YYAdd.m in Sources */,
-				ED324CEC2134042200D02F13 /* ISCameraProgressViewLayer.mm in Sources */,
 				ED771C2621241F53001BEFB3 /* YYTextLayout.m in Sources */,
 				ED771C1621241F53001BEFB3 /* YYImageCoder.m in Sources */,
 				ED324CAA2134017500D02F13 /* TZImageManager.mm in Sources */,
@@ -3456,7 +3461,6 @@
 				ED2851522101CE5800178965 /* SDWebImageImageIOCoder.m in Sources */,
 				ED771C2721241F53001BEFB3 /* YYTextLine.m in Sources */,
 				ED771C1321241F53001BEFB3 /* YYWebImageManager.m in Sources */,
-				ED324C8B213400AE00D02F13 /* ISListVideoPlayer.mm in Sources */,
 				ED771C3021241F53001BEFB3 /* NSAttributedString+YYText.m in Sources */,
 				60ED0F9220593D6A00756981 /* YddOperation.m in Sources */,
 				ED324CAE2134017500D02F13 /* TZGifPhotoPreviewController.mm in Sources */,
@@ -3473,7 +3477,10 @@
 				6043F7D41FD151B200F2188E /* MyCoreTextScrollView.m in Sources */,
 				ED771C1921241F53001BEFB3 /* UIButton+YYWebImage.m in Sources */,
 				ED28510A2101CE5800178965 /* UIImageView+HighlightedWebCache.m in Sources */,
+				ED2E64E621355F7F00ADCDFF /* PKChatMessagePlayerView.mm in Sources */,
+				ED2E64F221355F7F00ADCDFF /* ISCameraProgressView.mm in Sources */,
 				ED2851622101DEE900178965 /* ISLookUpImageCell.m in Sources */,
+				ED2E64E721355F7F00ADCDFF /* ISVideoSessionViewController.mm in Sources */,
 				ED284FEC210179DF00178965 /* CollectionCellModel.m in Sources */,
 				609E3C72205222FB00D9A55C /* StrToEmojiViewController.m in Sources */,
 				ED771C4321241F54001BEFB3 /* NSArray+YYAdd.m in Sources */,
@@ -3501,8 +3508,7 @@
 				ED752A802122C37B00802367 /* MyCoderModel.m in Sources */,
 				ED3C00BA2114355F00131495 /* UserInfoController.swift in Sources */,
 				60B6A6301E2A282200CC6F26 /* BarrageModel.m in Sources */,
-				ED324CEA2134042200D02F13 /* ISCameraProgressView.mm in Sources */,
-				ED324CE92134042200D02F13 /* GPUImageBeautifyFilter.mm in Sources */,
+				ED2E64EE21355F7F00ADCDFF /* MusicItemCollectionViewCell.mm in Sources */,
 				ED771C2821241F53001BEFB3 /* YYTextSelectionView.m in Sources */,
 				ED2851102101CE5800178965 /* UIImage+ForceDecode.m in Sources */,
 				60BEE7611E2CAB1000F71DB8 /* BarrageController.m in Sources */,
@@ -3534,13 +3540,14 @@
 				ED324CB52134017500D02F13 /* TZVideoPlayerController.mm in Sources */,
 				ED28510D2101CE5800178965 /* SDWebImageFrame.m in Sources */,
 				ED324CB32134017500D02F13 /* TZImagePickerController.mm in Sources */,
-				ED324CE22134042200D02F13 /* ISTakePhotoController.mm in Sources */,
 				ED771C5621241F54001BEFB3 /* YYSentinel.m in Sources */,
 				60AFFD9E201F02C000335E45 /* UITextView+MyURLClick.m in Sources */,
 				ED771C4F21241F54001BEFB3 /* NSDictionary+YYAdd.m in Sources */,
+				ED2E64E821355F7F00ADCDFF /* ISVideoCameraTools.mm in Sources */,
 				60757E8B1E763A94003463F3 /* IntrinsicView.m in Sources */,
 				60AF3C441F18593C00C8FBB9 /* UIViewController+KNSemiModal.m in Sources */,
 				ED771B592123C697001BEFB3 /* MyTextViewViewController.m in Sources */,
+				ED2E64F321355F7F00ADCDFF /* LFGPUImageEmptyFilter.mm in Sources */,
 				ED771C2E21241F53001BEFB3 /* NSParagraphStyle+YYText.m in Sources */,
 				ED2851072101CE5800178965 /* SDWebImageManager.m in Sources */,
 				6000450D1E949CF200F3471A /* MJRefreshBackFooter.m in Sources */,
@@ -3551,13 +3558,14 @@
 				ED752A7321227DFB00802367 /* RuntimeViewController.m in Sources */,
 				600BC7701DF7D253007D0EBC /* File.swift in Sources */,
 				60C541BE2058B41D00674C31 /* ThreadViewController.m in Sources */,
+				ED2E64ED21355F7F00ADCDFF /* ISVideoCameraBeautySelecteView.mm in Sources */,
 				60BEE7711E2CC07100F71DB8 /* BlazeiceAudioRecordAndTransCoding.m in Sources */,
 				60C48C212005E8D6004114F8 /* AudioRecorder.m in Sources */,
 				ED2850072101AF1C00178965 /* ISCollectionElementKindSectionDecorationView.m in Sources */,
+				ED2E64F021355F7F00ADCDFF /* SDAVAssetExportSession.mm in Sources */,
 				600045101E949CF200F3471A /* MJRefreshHeader.m in Sources */,
 				ED2851342101CE5800178965 /* SDImageCache.m in Sources */,
 				ED771C4021241F54001BEFB3 /* UIImage+YYAdd.m in Sources */,
-				ED324CE02134042200D02F13 /* ISVideoCameraTools.mm in Sources */,
 				60DB89A31E821CFE0031ED29 /* ZhengZeViewController.m in Sources */,
 				60B8F77F1FE906B400F1D2B5 /* HardwareDecompressVideo.m in Sources */,
 				ED324CB12134017500D02F13 /* TZPhotoPreviewCell.mm in Sources */,
@@ -3566,7 +3574,6 @@
 				609E3D202052811400D9A55C /* UIColor+ydd.m in Sources */,
 				ED2851222101CE5800178965 /* SDWebImageCoderHelper.m in Sources */,
 				ED39610520ABC26600D0658F /* ISH246TVDecode.m in Sources */,
-				ED324CEE2134042200D02F13 /* ISEditingPhotoController.mm in Sources */,
 				ED403D8B20D3C55600D9658A /* WeChatTestFloatViewController.m in Sources */,
 				ED771C2D21241F53001BEFB3 /* YYTextUtilities.m in Sources */,
 				ED324D1721340B6B00D02F13 /* MASConstraint.m in Sources */,
@@ -3585,18 +3592,15 @@
 				ED39610A20ABC32C00D0658F /* DataConversionTool.m in Sources */,
 				ED771C3121241F53001BEFB3 /* UIPasteboard+YYText.m in Sources */,
 				ED324D202134138900D02F13 /* UIButton+IS_Highlight.mm in Sources */,
-				ED324CE82134042200D02F13 /* SDAVAssetExportSession.mm in Sources */,
 				ED771C1421241F53001BEFB3 /* YYSpriteSheetImage.m in Sources */,
 				608CBA561E16338D0004BBD4 /* MySwiftViewController.swift in Sources */,
 				ED2851042101CE5800178965 /* MKAnnotationView+WebCache.m in Sources */,
 				ED403D8E20D3C65000D9658A /* WeChatWindow.m in Sources */,
 				ED771C2C21241F53001BEFB3 /* YYTextRunDelegate.m in Sources */,
 				ED284FEE210179DF00178965 /* MyCollectionViewController.m in Sources */,
-				ED324CED2134042200D02F13 /* VideoCameraView.mm in Sources */,
 				EDB91E4720DB99D200265E33 /* FloadViewController.m in Sources */,
 				60944EC21F0F911C00C02AFB /* IFlyViewController.m in Sources */,
 				ED771C4721241F54001BEFB3 /* NSData+YYAdd.m in Sources */,
-				ED324CE42134042200D02F13 /* EditVideoViewController.mm in Sources */,
 				60757E881E763A39003463F3 /* IntrinsicViewController.m in Sources */,
 				ED771C3F21241F54001BEFB3 /* UIGestureRecognizer+YYAdd.m in Sources */,
 				ED2D8FDC2108830500DEF809 /* MyWebViewViewController.m in Sources */,
@@ -3605,24 +3609,29 @@
 				ED771C1A21241F53001BEFB3 /* UIImageView+YYWebImage.m in Sources */,
 				60C48C242006005C004114F8 /* PCMTOWAVViewController.m in Sources */,
 				ED324CF12134058E00D02F13 /* MBProgressHUD.m in Sources */,
+				ED2E64E921355F7F00ADCDFF /* VideoCameraManager.mm in Sources */,
 				ED324D1921340B6B00D02F13 /* MASViewAttribute.m in Sources */,
 				60AFFDA1201F162300335E45 /* MyURLClickViewController.m in Sources */,
 				ED771C1121241F53001BEFB3 /* YYMemoryCache.m in Sources */,
 				60691AA11FCFEF8200009794 /* UIImage+DrawRound.m in Sources */,
 				ED771C3B21241F54001BEFB3 /* UIScrollView+YYAdd.m in Sources */,
+				ED2E64F421355F7F00ADCDFF /* ISCameraProgressViewLayer.mm in Sources */,
 				ED771C2121241F53001BEFB3 /* YYTextView.m in Sources */,
 				600045141E949CF200F3471A /* MJRefreshBackGifFooter.m in Sources */,
+				ED2E64F521355F7F00ADCDFF /* VideoCameraView.mm in Sources */,
 				ED771C5121241F54001BEFB3 /* YYCGUtilities.m in Sources */,
 				60CDC7A81FA9BAD2004A650A /* MyTabBarViewController.m in Sources */,
 				6047C1801E6D7D63002FC1AC /* VoiceToWordViewController.m in Sources */,
 				ED2850BB2101C38F00178965 /* TestImageModel.m in Sources */,
 				600045161E949CF200F3471A /* MJRefreshBackStateFooter.m in Sources */,
 				60AFF35E1FC81A0100985769 /* CTScrollView.m in Sources */,
+				ED2E64EF21355F7F00ADCDFF /* ISVideoCountDownView.mm in Sources */,
 				ED284FED210179DF00178965 /* MyCollectionElementKindSectionDecorationView.m in Sources */,
 				ED771C3821241F54001BEFB3 /* UIDevice+YYAdd.m in Sources */,
 				ED771C2421241F53001BEFB3 /* YYTextEffectWindow.m in Sources */,
 				600045191E949CF200F3471A /* MJRefreshStateHeader.m in Sources */,
 				ED771C5D21241F54001BEFB3 /* YYThreadSafeArray.m in Sources */,
+				ED2E64E421355F7F00ADCDFF /* ISListVideoOperation.mm in Sources */,
 				6047C16B1E6AC434002FC1AC /* HZAViewController.m in Sources */,
 				ED771C5421241F54001BEFB3 /* YYAsyncLayer.m in Sources */,
 				ED771C4121241F54001BEFB3 /* UIControl+YYAdd.m in Sources */,
@@ -3634,6 +3643,7 @@
 				ED771C5021241F54001BEFB3 /* NSObject+YYAddForKVO.m in Sources */,
 				60E87E78205A8F7600B20025 /* AudioUnitViewController.m in Sources */,
 				ED771C3621241F53001BEFB3 /* UIBezierPath+YYAdd.m in Sources */,
+				ED2E64EA21355F7F00ADCDFF /* ISTakePhotoController.mm in Sources */,
 				ED28514C2101CE5800178965 /* UIView+WebCacheOperation.m in Sources */,
 				ED771C4E21241F54001BEFB3 /* NSNotificationCenter+YYAdd.m in Sources */,
 				60DAE6ED1FD68D420066EB76 /* MyStringEdit.m in Sources */,

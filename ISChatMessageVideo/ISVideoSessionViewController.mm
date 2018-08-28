@@ -41,7 +41,7 @@
   videoCameraView.delegate = self;
   [self.view addSubview:videoCameraView];
 
-  UIImage* image = [UIImage imageNamed:@"iSpeakWatermark"];
+  UIImage* image = [UIImage imageNamed:@"1yasuo.jpg"];
   UIImageView* imageView = [[UIImageView alloc]
       initWithFrame:CGRectMake(ScreenWidth - (60 + 5),
                                (ScreenHeight - ScreenWidth) * 0.5 + 5, 60,
