@@ -86,5 +86,35 @@
     return recordSetting;
 }
 
+- (void)requestMicPermissionBlock:(void(^)(BOOL granted))permissionBlock
+{
+  AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+  if ([audioSession
+       respondsToSelector:@selector(requestRecordPermission:)]) {
+    [audioSession
+     performSelector:@selector(requestRecordPermission:)
+     withObject:^(BOOL granted) {
+       if (granted) {
+         NSLog(@"Microphone is enabled..");
+       } else {
+         NSLog(@"Microphone is disabled..");
+         dispatch_async(dispatch_get_main_queue(), ^{
+           [[[UIAlertView alloc]
+             initWithTitle:@"麦克风未打开"
+             message:@"只有麦克风在打开状态才能录音."
+             @"\n\n你可以到设置/隐私/"
+             @"麦克风下，打开麦克风。"
+             delegate:nil
+             cancelButtonTitle:@"知道了"
+             otherButtonTitles:nil] show];
+         });
+       }
+       
+       if (permissionBlock) {
+         permissionBlock(granted);
+       }
+     }];
+  }
+}
 
 @end

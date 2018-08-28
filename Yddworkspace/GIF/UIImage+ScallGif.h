@@ -9,7 +9,7 @@
 
 @interface UIImage (ScallGif)
 
+
++ (NSData *)scallGIFWithData:(NSData *)data scallSize:(CGSize)scallSize scallPath:(NSString *)scallPath;
 + (NSData *)scallGIFWithData:(NSData *)data scallSize:(CGSize)scallSize;
-
-
 @end

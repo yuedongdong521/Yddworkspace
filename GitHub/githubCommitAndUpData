@@ -18,7 +18,7 @@
 4. git add 添加需要更新的内容,例如：
 git add git add Yddworkspace/strTOEmoji/    （添加文件夹目录）
 git add StrToEmojiViewController.h    （添加工程文件）
-5. git statatus    (查看更新内容)
+5. git status    (查看更新内容)
 6. git commit -m “str转emoji”   (提交)
 7. git push -u origin master
 至此更新完毕

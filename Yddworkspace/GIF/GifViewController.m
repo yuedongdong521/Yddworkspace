@@ -7,8 +7,15 @@
 //
 
 #import "GifViewController.h"
+#import "UIImage+ScallGif.h"
+#import "UIImageView+PlayGIF.h"
+#import "UIImage+GIF.h"
+#import "SCGIFImageView.h"
 
 @interface GifViewController ()
+
+@property(nonatomic, strong) UIImageView *imageView;
+@property(nonatomic, strong) SCGIFImageView *scallImageView;
 
 @end
 
@@ -17,11 +24,117 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  self.view.backgroundColor = [UIColor whiteColor];
+  [self.view addSubview:self.imageView];
+  [self.view addSubview:self.scallImageView];
+  [self downloadGif];
+  
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+
+  
+}
+
+- (UIImageView *)imageView
+{
+  if (!_imageView) {
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 64, 300, 300)];
+    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    _imageView.backgroundColor = [UIColor grayColor];
+  }
+  return _imageView;
+}
+
+- (SCGIFImageView *)scallImageView
+{
+  if (!_scallImageView) {
+    _scallImageView = [[SCGIFImageView alloc] initWithFrame:CGRectMake(20, 400, 200, 200)];
+    _scallImageView.backgroundColor = [UIColor cyanColor];
+  }
+  return _scallImageView;
+}
+
+- (void)downloadGif
+{
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://imgs22.ispeak.cn/file/2018-08-22/10/20180822_104155115723_f928e2_0_173146354_31873.gif"]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      if (data) {
+        _imageView.image = [UIImage imageWithData:data];
+        _imageView.gifData = data;
+        [_imageView startGIF];
+        NSLog(@"data lenght = %@", @(data.length));
+        [self scallGifWidthData:data];
+      }
+    });
+  });
+}
+
+- (void)scallGifWidthData:(NSData *)data
+{
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    NSData *scallData = [UIImage scallGIFWithData:data scallSize:CGSizeMake(200, 200)];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      if (scallData) {
+//        UIImage *scallImage = [UIImage imageWithData:scallData];
+//        self.scallImageView.image = scallImage;
+//        self.scallImageView.gifData = scallData;
+//        [self.scallImageView startGIF];
+        NSLog(@"scallData lenght = %@", @(scallData.length));
+        self.scallImageView.image = [UIImage sd_animatedGIFWithData:scallData];
+//        [self.scallImageView setGifData:scallData];
+      }
+    });
+  });
+}
+
+- (NSString *)saveScallImageViewWidthData:(NSData *)gifData
+{
+
+  NSString *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
+  NSString *directory = [path stringByAppendingPathComponent:@"gif"];
+  NSFileManager *manager = [NSFileManager defaultManager];
+  BOOL isDire;
+  BOOL isExis = [manager fileExistsAtPath:directory isDirectory:&isDire];
+  if (!isExis || !isDire) {
+    [manager createDirectoryAtPath:directory withIntermediateDirectories:YES attributes:nil error:nil];
+  }
+  NSDate *curDate = [NSDate dateWithTimeIntervalSince1970:0];
+  NSTimeInterval curTime = [[NSDate date] timeIntervalSinceDate:curDate] * 1000;
+  NSString *string = [NSString stringWithFormat:@"%@.gif", @(curTime)];
+  NSString *filePath = [directory stringByAppendingPathComponent:string];
+  
+  if ([manager fileExistsAtPath:filePath]) {
+    [manager removeItemAtPath:filePath error:nil];
+  }
+  [gifData writeToFile:filePath atomically:YES];
+  
+  return filePath;
+}
+
+
+- (NSString *)getScallGifPath:(NSString *)gifName
+{
+  NSString *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
+  NSString *directory = [path stringByAppendingPathComponent:@"gif"];
+  NSFileManager *manager = [NSFileManager defaultManager];
+  BOOL isDire;
+  BOOL isExis = [manager fileExistsAtPath:directory isDirectory:&isDire];
+  if (!isExis || !isDire) {
+    [manager createDirectoryAtPath:directory withIntermediateDirectories:YES attributes:nil error:nil];
+  }
+  NSDate *curDate = [NSDate dateWithTimeIntervalSince1970:0];
+  NSTimeInterval curTime = [[NSDate date] timeIntervalSinceDate:curDate] * 1000;
+  NSString *string = [NSString stringWithFormat:@"%@-%@.gif", @(curTime), gifName];
+  NSString *filePath = [directory stringByAppendingPathComponent:string];
+  
+  if ([manager fileExistsAtPath:filePath]) {
+    [manager removeItemAtPath:filePath error:nil];
+  }
+  return filePath;
 }
 
 /*

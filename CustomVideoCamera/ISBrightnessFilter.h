@@ -6,7 +6,7 @@
 //
 //
 
-#import <GPUImage/GPUImage.h>
+#import "GPUImage.h"
 
 @interface ISBrightnessFilter : GPUImageFilter {
   GLint brightnessUniform;

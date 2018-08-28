@@ -53,7 +53,7 @@
         // 遍历字典数组，生成模型数组
         for (NSDictionary *dict in value) {
           // 字典转模型
-          id model =  [classModel modelWithDict:dict];
+          id model = [classModel modelWithDict:dict];
           [arrM addObject:model];
         }
         // 把模型数组赋值给value

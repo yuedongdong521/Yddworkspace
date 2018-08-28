@@ -86,7 +86,7 @@ static const char* kIndexDurationKey = "kIndexDurationKey";
 @dynamic timestamp;
 @dynamic indexDurations;
 
-extern "C" {
+//extern "C" {
 // +(void)load{
 //    static dispatch_once_t onceToken;
 //    dispatch_once(&onceToken, ^{
@@ -106,7 +106,7 @@ extern "C" {
 //        }
 //    });
 // }
-}
+//}
 - (void)yfgif_removeFromSuperview {
   [self stopGIF];
   [self yfgif_removeFromSuperview];

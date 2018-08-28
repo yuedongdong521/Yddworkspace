@@ -7,6 +7,7 @@
 //
 
 #import "ISVideoCameraBeautySelecteView.h"
+#import "UIColor+Hex.h"
 
 typedef NS_ENUM(NSInteger, TagType) {
   TagTypeSliderBackView = 143,

@@ -7,6 +7,7 @@
 //
 
 #import "MyTextViewViewController.h"
+#import "MyTestTextView.h"
 
 @interface MyTextViewViewController ()
 
@@ -17,7 +18,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  self.view.backgroundColor = [UIColor grayColor];
+  UIFont *font = [UIFont systemFontOfSize:16];
+  
+  MyTestTextView *textView = [[MyTestTextView alloc]initWithFrame:CGRectMake(20, 100, ScreenWidth - 40, 80)];
+  
+  
+  
+  [self.view addSubview:textView];
+  
+  
+  NSString *str = @"醉卧沙场君莫笑,古来征战几人回.🙂😢🍎http://baidu.com http://baidu.com http://baidu.com http://12306.cn weibo.com 17749757268 wei";
+  str = [str stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+  str = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+  NSMutableAttributedString *att = [[NSMutableAttributedString alloc] initWithString:str attributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName :font}];
+  for (int i = 0; i < 1; i++) {
+    NSTextAttachment *ment = [[NSTextAttachment alloc] init];
+    ment.image = [UIImage imageNamed:@"0.jpg"];
+    ment.bounds = CGRectMake(0, -font.lineHeight + font.pointSize, font.lineHeight, font.lineHeight);
+    NSAttributedString *mentAtt = [NSAttributedString attributedStringWithAttachment:ment];
+    [att appendAttributedString:mentAtt];
+  }
+  
+  [textView setMyTextViewAttributedText:att];
+  
+  
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -29,5 +29,16 @@
 
 #define GETColor(rgb,a) [UIColor colorWithRed:(rgb && 0xFF0000) >> 16 green:(rgb && 0xFF00)>> 8 blue:(rgb && 0xFF) alpha:a]
 
+#define kStatusBarHeight (IS_IPHONE_X ? 44 : 20)
+#define kNavBarHeight 44.0f
+#define kStatusAndNavBarHeight (kStatusBarHeight + kNavBarHeight)
+#define kTabBarHeight (kStatusBarHeight > 20 ? 83 : 49)
+
+#define IS_TABBAR_ADD_HEIGHT (IS_IPHONE_X ? 34.0 : 0)
+
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_IPHONE_X \
+(ScreenWidth == 375.0f && ScreenHeight == 812.0f && IS_IPHONE)
+
 
 #endif /* PrefixHeader_pch */

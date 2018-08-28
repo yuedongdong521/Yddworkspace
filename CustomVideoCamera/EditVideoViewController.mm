@@ -2,7 +2,7 @@
 // EditVideoViewController.m
 // iShow
 //
-// Created by 胡阳阳 on 17/3/8.
+// Created by ydd on 17/3/8.
 //
 //
 
@@ -10,13 +10,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import "Masonry.h"
 #import "MusicItemCollectionViewCell.h"
-// #import "QiniuSDK.h"
-#import "AFNetworking.h"
+
 #import "MBProgressHUD.h"
-// #import "SDAVAssetExportSession.h"
-#import <GPUImage/GPUImage.h>
+ #import "SDAVAssetExportSession.h"
+#import "GPUImage.h"
 #import "LFGPUImageEmptyFilter.h"
-#import "EditingPublishingDynamicViewController.h"
 #import "ISVideoCameraTools.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
@@ -118,7 +116,7 @@ typedef NS_ENUM(NSUInteger, choseType) {
 }
 - (void)dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
-  ISLog(@"EditVideoViewController 释放了");
+  NSLog(@"EditVideoViewController 释放了");
 }
 
 - (void)viewDidUnload {
@@ -166,10 +164,10 @@ typedef NS_ENUM(NSUInteger, choseType) {
   [filter addTarget:_filterView];
   // 刚进时的静态图片
   _bgImageView = [[UIImageView alloc] init];
-  _bgImageView.image = [[AppDelegate appDelegate].cmImageSize
-      getImage:[[_videoURL absoluteString]
-                   stringByReplacingOccurrencesOfString:@"file://"
-                                             withString:@""]];
+//  _bgImageView.image = [[AppDelegate appDelegate].cmImageSize
+//      getImage:[[_videoURL absoluteString]
+//                   stringByReplacingOccurrencesOfString:@"file://"
+//                                             withString:@""]];
   _bgImageView.contentMode = UIViewContentModeScaleAspectFill;
   [self.view addSubview:_bgImageView];
   [_bgImageView mas_makeConstraints:^(MASConstraintMaker* make) {
@@ -485,14 +483,10 @@ typedef NS_ENUM(NSUInteger, choseType) {
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-  [ISPageStatisticsManager
-      pageviewStartWithName:ISPageStatisticsCommonVideoEditing];
   [super viewDidAppear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-  [ISPageStatisticsManager
-      pageviewEndWithName:ISPageStatisticsCommonVideoEditing];
   [super viewDidDisappear:animated];
 }
 
@@ -892,29 +886,19 @@ typedef NS_ENUM(NSUInteger, choseType) {
           finalSize:CGSizeMake(360, 640)
          completion:^(BOOL isSucceed, NSURL* videoUrl) {
            if (isSucceed) {
-             ISLog(@"Compression Export Completed Successfully");
+             NSLog(@"Compression Export Completed Successfully");
 
              HUD.hidden = YES;
              [[NSNotificationCenter defaultCenter] removeObserver:self];
-             EditingPublishingDynamicViewController* cor =
-                 [[EditingPublishingDynamicViewController alloc] init];
-             cor.videoURL = videoUrl;
-             cor.isPriveteDynamicType = _isPrivateAlbum;
-             cor.pageFromFlg = _pageFromFlg;
-             cor.activeId = _activeId;
-             cor.actTitle = _actTitle;
-             self.hidesBottomBarWhenPushed = YES;
-             [self.navigationController pushViewController:cor animated:YES];
+           
+             [self.navigationController popViewControllerAnimated:YES];
            } else {
-             HUD.labelText = @"Compression Failed";
+             HUD.label.text = @"Compression Failed";
              dispatch_after(
                  dispatch_time(DISPATCH_TIME_NOW,
                                (int64_t)(1.5 * NSEC_PER_SEC)),
                  dispatch_get_main_queue(), ^{
                    [[NSNotificationCenter defaultCenter] removeObserver:self];
-                   [[NSNotificationCenter defaultCenter]
-                       postNotificationName:kTabBarHiddenNONotification
-                                     object:self];
                    [self.navigationController
                        popToRootViewControllerAnimated:YES];
                  });
@@ -924,7 +908,7 @@ typedef NS_ENUM(NSUInteger, choseType) {
 
 #pragma mark -添加滤镜效果
 - (void)mixFiltWithVideoAndInputVideoURL:(NSURL*)inputURL {
-  HUD.labelText = @"滤镜合成中...";
+  HUD.label.text = @"滤镜合成中...";
   _isdoing = YES;
   NSURL* sampleURL = inputURL;
   endMovieFile = [[GPUImageMovie alloc] initWithURL:sampleURL];

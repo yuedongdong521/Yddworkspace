@@ -31,13 +31,12 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-  [ISPageStatisticsManager
-      pageviewStartWithName:ISPageStatisticsCommonTakePhoto];
+
   [super viewDidAppear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-  [ISPageStatisticsManager pageviewEndWithName:ISPageStatisticsCommonTakePhoto];
+ 
   [super viewDidDisappear:animated];
 }
 
@@ -50,7 +49,7 @@
   [[UIApplication sharedApplication] setStatusBarHidden:YES];
 
   self.tabBarController.tabBar.hidden = YES;
-  ISLog(@"%@创建了", self.class);
+  
   [self createVideoCameraView];
 }
 
@@ -69,7 +68,7 @@
                                    WithMaxTime:10.0
                                    WithMinTime:3.0];
     videoCameraView.videoCameraType = VideoCameraViewTypePic;
-    ISLog(@"仅拍照");
+   
     videoCameraView.delegate = self;
     [self.view addSubview:videoCameraView];
   }
@@ -78,7 +77,7 @@
 // 退出
 - (void)didClickBackToHomeBtn {
   // [self clickBackHome];
-  ISLog(@"拍照界面 退出");
+  
   if (_ispushToController) {
     [self.navigationController popViewControllerAnimated:NO];
   } else {

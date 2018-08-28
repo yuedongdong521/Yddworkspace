@@ -2,7 +2,7 @@
 //  MusicItemCollectionViewCell.h
 //  addproject
 //
-//  Created by 胡阳阳 on 17/3/3.
+//  Created by ydd on 17/3/3.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
