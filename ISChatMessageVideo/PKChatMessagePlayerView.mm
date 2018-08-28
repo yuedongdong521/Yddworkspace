@@ -97,11 +97,11 @@
 }
 
 - (void)viewDidLayoutSubviews {
-  ISLog(@"MoivePlayerView layout");
+  NSLog(@"MoivePlayerView layout");
 }
 
 - (void)dealloc {
-  ISLog(@"MoivePlayerView dealloc");
+  NSLog(@"MoivePlayerView dealloc");
 }
 
 @end

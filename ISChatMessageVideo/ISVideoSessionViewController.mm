@@ -101,7 +101,7 @@ preparation before navigation
     if (iOS8Later) {
       PHAsset* myasset = asset;
       PHVideoRequestOptions* options = [[PHVideoRequestOptions alloc] init];
-      options.version = PHImageRequestOptionsVersionCurrent;
+      options.version = PHVideoRequestOptionsVersionCurrent;
       options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
       PHImageManager* manager = [PHImageManager defaultManager];
       [manager requestAVAssetForVideo:myasset
@@ -109,17 +109,17 @@ preparation before navigation
                         resultHandler:^(AVAsset* _Nullable asset,
                                         AVAudioMix* _Nullable audioMix,
                                         NSDictionary* _Nullable info) {
-                          ISLog(@"%@", info);
+                          NSLog(@"%@", info);
                           dispatch_async(dispatch_get_main_queue(), ^{
                             _hud = [MBProgressHUD showHUDAddedTo:self.view
                                                         animated:YES];
                             // AVComposition
                             if (![asset isKindOfClass:[AVURLAsset class]]) {
-                              _hud.labelText = @"视频格式不支持";
-                              [_hud hide:YES afterDelay:1.0];
+                              _hud.label.text = @"视频格式不支持";
+                              [_hud hideAnimated:YES afterDelay:1.0];
                               return;
                             }
-                            _hud.labelText = @"视频导出中...";
+                            _hud.label.text = @"视频导出中...";
                             [self videoCompositionForVideoPath:nil
                                                    ForURLAsset:asset
                                                   goToNextPage:goToNextPage];
@@ -144,9 +144,7 @@ preparation before navigation
 // 最后合成为 mp4
 - (NSString*)getVideoFilePathStringForType:(NSString*)type
                                   FileName:(NSString*)fileName {
-  NSString* path =
-      [[AppDelegate appDelegate]
-              .appViewService getApplicationSupportGroupForUserImageName];
+  NSString* path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
 
   NSFileManager* fileManager = [[NSFileManager alloc] init];
 
@@ -205,7 +203,7 @@ preparation before navigation
                          atTime:totalDuration
                           error:&audioError];
     if (audioError) {
-      ISLog(@"小视屏合成 audioerror = %@", audioError);
+      NSLog(@"小视屏合成 audioerror = %@", audioError);
     }
     NSError* videoError = nil;
     // 插入视频，并指定插入时长和插入时间点
@@ -217,7 +215,7 @@ preparation before navigation
                          atTime:totalDuration
                           error:&videoError];
     if (videoError) {
-      ISLog(@"小视屏合成 audioerror = %@", videoError);
+      NSLog(@"小视屏合成 audioerror = %@", videoError);
     }
     totalDuration = CMTimeAdd(totalDuration, asset.duration);
   }
@@ -372,7 +370,7 @@ preparation before navigation
                           } else {
                             _hud.labelText = @"视频导出失败";
                             [_hud hide:YES afterDelay:1.0];
-                            ISLog(@"Video export failed with error: %@ (%ld)",
+                            NSLog(@"Video export failed with error: %@ (%ld)",
                                   encoder.error.localizedDescription,
                                   (long)encoder.error.code);
                           }
@@ -449,7 +447,7 @@ preparation before navigation
                                        error:&thumbnailImageGenerationError];
 
   if (!thumbnailImageRef)
-    ISLog(@"thumbnailImageGenerationError %@", thumbnailImageGenerationError);
+    NSLog(@"thumbnailImageGenerationError %@", thumbnailImageGenerationError);
 
   UIImage* thumbnailImage =
       thumbnailImageRef ? [[UIImage alloc] initWithCGImage:thumbnailImageRef]

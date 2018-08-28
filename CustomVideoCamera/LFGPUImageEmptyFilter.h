@@ -1,5 +1,5 @@
 // #import "GPUImageFilter.h"
-#import <GPUImage/GPUImage.h>
+#import "GPUImage.h"
 @interface LFGPUImageEmptyFilter : GPUImageFilter {
 }
 

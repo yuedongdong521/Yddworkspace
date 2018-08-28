@@ -10,4 +10,7 @@
 
 @interface InvocationMethod : NSObject
 
+- (void)doSomethingWithDayStr:(NSString *)dayStr params:(NSDictionary *)paramsDict;
+
+
 @end

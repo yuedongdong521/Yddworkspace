@@ -6,7 +6,6 @@
 //
 
 #import "ISEditingPhotoController.h"
-#import "ISPublishDynamicViewController.h"
 
 @interface ISEditingPhotoController ()
 
@@ -93,8 +92,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-  [ISPageStatisticsManager
-      pageviewStartWithName:ISPageStatisticsCommonTakePhotoCompletion];
+ 
   [super viewDidAppear:animated];
   if (!_photoImage) {
     // 返回
@@ -103,8 +101,7 @@
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-  [ISPageStatisticsManager
-      pageviewEndWithName:ISPageStatisticsCommonTakePhotoCompletion];
+ 
   [super viewDidDisappear:animated];
 }
 
@@ -113,16 +110,8 @@
 }
 
 - (void)backBtnClick:(UIButton*)sender {
-  // 弹出提示框
-  [ISTools showAlertViewFromController:self
-                                 title:nil
-                               message:@"要放弃该图片吗？"
-                     CancleButtonTitle:@"取消"
-                      otherButtonTitle:@"放弃"
-                     cancleButtonClick:nil
-                      otherButtonClick:^{
-                        [self back];
-                      }];
+
+  [self back];
 }
 // 返回上一页
 - (void)back {
@@ -137,41 +126,12 @@
     [self backControl];
     return;
   }
-  NSDictionary* imageDict = @{
-    KDictKeyTypeData : imageData,
-    KDictKeyTypeString : @"",
-    KDictKeyTypeIdentifier : @""
-  };
-  [imageArr addObject:imageDict];
-  //
-  if (_isFromTakePhoto) {
-    [[NSNotificationCenter defaultCenter]
-        postNotificationName:@"NotifyAddDynamicPhoto"
-                      object:imageArr.copy];
-    [self.navigationController dismissViewControllerAnimated:YES
-                                                  completion:nil];
-
-  } else {
-    ISPublishDynamicViewController* publishDynamic =
-        [[ISPublishDynamicViewController alloc] init];
-    publishDynamic.privateType = _isPrivateAlbum;
-    publishDynamic.pageFromFlg = _pageFromFlg;
-    publishDynamic.imageArray = imageArr;
-    publishDynamic.activeId = _activeId;
-    publishDynamic.actTitle = _actTitle;
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:publishDynamic animated:YES];
-  }
+  [self.navigationController dismissViewControllerAnimated:YES
+                                                completion:nil];
 }
 
 // 返回上页面
 - (void)backControl {
-  [[AppDelegate appDelegate]
-      appDontCoverLoadingViewShowForContext:@"未获取图片，请重试"
-                                ForTypeShow:1
-                     ForChangeFrameSizeType:0
-                                ForFrameFlg:0
-                              ForCancelTime:2.0];
   [self.navigationController popViewControllerAnimated:YES];
 }
 

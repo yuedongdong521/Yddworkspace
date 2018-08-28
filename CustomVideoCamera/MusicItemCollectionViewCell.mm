@@ -2,7 +2,7 @@
 //  MusicItemCollectionViewCell.m
 //  addproject
 //
-//  Created by 胡阳阳 on 17/3/3.
+//  Created by ydd on 17/3/3.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
@@ -41,15 +41,12 @@
 
     _CheckMarkImgView = [[UIImageView alloc] init];
     _CheckMarkImgView.image =
-        [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]
-                                             pathForResource:kGiftCheckmarkIcon
-                                                      ofType:kPngName]];
+        [UIImage imageNamed:@"GiftCheckmarkIcon@2x"];
     [self addSubview:_CheckMarkImgView];
     _CheckMarkImgView.frame = CGRectMake(0, 0, 83, 115);
     _CheckMarkImgView.contentMode = UIViewContentModeScaleToFill;
     _CheckMarkImgView.hidden = YES;
   }
-  ISLog(@"MyCollectionViewCell创建");
   return self;
 }
 @end

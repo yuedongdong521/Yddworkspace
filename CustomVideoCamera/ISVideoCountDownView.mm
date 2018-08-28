@@ -7,6 +7,9 @@
 //
 
 #import "ISVideoCountDownView.h"
+#import "Masonry.h"
+#import "UIColor+Hex.h"
+
 typedef void (^Completion)(void);
 
 @interface ISVideoCountDownView ()
@@ -78,7 +81,7 @@ typedef void (^Completion)(void);
         }
         dispatch_source_cancel(_timer);
         _timer = nil;
-        ISLog(@"倒计时的定时器已摧毁1");
+        NSLog(@"倒计时的定时器已摧毁1");
       }
     });
   });

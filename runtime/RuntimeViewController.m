@@ -82,7 +82,7 @@ runtime 简称运行时，是系统在运行的时候的一些机制，其中最
 @end
 
 
-@interface RuntimeViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface RuntimeViewController ()<UITableViewDelegate, UITableViewDataSource, NSObjectKeyValueDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
 
@@ -368,6 +368,13 @@ void codingOC(id self, SEL _cmd) {
       break;
   }
   modelcount++;
+}
+
+
+#pragma mark - NSObjectKeyValueDelegate
+- (NSDictionary *)arrayContainModelClass
+{
+  return nil;
 }
 
 

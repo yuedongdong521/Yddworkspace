@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "PlayerViewController.h"
 #import "YddImagePickerViewController.h"
 #import "MyImagePickerViewController.h"
 #import "MyTableViewController.h"
@@ -122,7 +121,11 @@
       @"MyCollectionViewController",
       @"TestImageCollectionViewController",
       @"MyWebViewViewController",
-      @"RuntimeViewController"
+      @"RuntimeViewController",
+      @"InvocationMethodViewController",
+      @"MyTextViewViewController",
+      @"GifViewController",
+      @"ISVideoSessionViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
@@ -304,12 +307,6 @@
                                        animated:YES];
 }
 
-- (void)pushPlayerViewController {
-  PlayerViewController* playerViewController =
-      [[PlayerViewController alloc] init];
-  [self.navigationController pushViewController:playerViewController
-                                       animated:YES];
-}
 
 - (void)pushYddImagePickerViewController {
   YddImagePickerViewController* imagePickerVC =

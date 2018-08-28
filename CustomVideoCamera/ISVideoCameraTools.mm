@@ -7,7 +7,6 @@
 //
 
 #import "ISVideoCameraTools.h"
-#import "ISAlbumListViewController.h"
 #import "SDAVAssetExportSession.h"
 #import <AVFoundation/AVFoundation.h>
 
@@ -87,7 +86,7 @@ typedef NS_ENUM(
   @autoreleasepool {
     CMTime time = [asset duration];
     NSInteger seconds = ceil(time.value / time.timescale);
-    ISLog(@"视频时长:seconds--->>%ld秒", (long)seconds);
+    NSLog(@"视频时长:seconds--->>%ld秒", (long)seconds);
     return seconds;
   }
 }
@@ -172,19 +171,19 @@ typedef NS_ENUM(
                       };
                       [compressionEncoder
                           exportAsynchronouslyWithCompletionHandler:^{
-                            ISLog(@" 当前线程  %@", [NSThread currentThread]);
+                            NSLog(@" 当前线程  %@", [NSThread currentThread]);
                             dispatch_async(dispatch_get_main_queue(), ^{
                               // 更新UI操作
                               if (compressionEncoder.status ==
                                   AVAssetExportSessionStatusCompleted) {
-                                ISLog(
+                                NSLog(
                                     @"Compression Export Completed "
                                     @"Successfully");
                                 if (completion) {
                                   completion(YES, outputVideoUrl);
                                 }
                               } else {
-                                ISLog(@"Compression Failed");
+                                NSLog(@"Compression Failed");
                                 if (completion) {
                                   completion(NO, outputVideoUrl);
                                 }
@@ -245,7 +244,7 @@ typedef NS_ENUM(
                                               attributes:nil
                                                    error:nil];
     if (!bCreateDir) {
-      ISLog(@"创建保存视频文件夹失败");
+      NSLog(@"创建保存视频文件夹失败");
     }
   }
 }
@@ -363,7 +362,7 @@ typedef NS_ENUM(
   BOOL b = [self clearCacheWithFilePath:[self getPublicVideofolderPath]];
   BOOL c = [self clearCacheWithFilePath:[self getVideoCameraFolderPath]];
   if (a == YES && b == YES && c == YES) {
-    ISLog(@"清理小视频缓存数据成功");
+    NSLog(@"清理小视频缓存数据成功");
     return YES;
   }
   return NO;

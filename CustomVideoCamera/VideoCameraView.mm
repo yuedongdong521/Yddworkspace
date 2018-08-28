@@ -2,7 +2,7 @@
 //  VideoCameraView.m
 //  addproject
 //
-//  Created by 胡阳阳 on 17/3/3.
+//  Created by ydd on 17/3/3.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 #import "VideoCameraView.h"
@@ -18,7 +18,6 @@
 #import "ISVideoCountDownView.h"
 #import "ISVideoCameraBeautySelecteView.h"
 #import "SDAVAssetExportSession.h"
-#import <libksygpulive/KSYGPUBeautifyPlusFilter.h>
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -77,7 +76,6 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
 @property(nonatomic, strong)
     GPUImageBeautifyFilter* beautifyFilter;  // 美颜滤镜
 
-@property(nonatomic, strong) KSYGPUBeautifyPlusFilter* ksyBeautifyFilter;
 
 @property(nonatomic, strong) AVCaptureStillImageOutput* stillImageOutput;
 
@@ -90,7 +88,6 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
 #pragma mark - init -
 
 - (void)dealloc {
-  ISLog(@"%@释放了", self.class);
   [[NSNotificationCenter defaultCenter] removeObserver:self];
   //    [videoCamera UnInitFaceDetect];
 }
@@ -126,13 +123,11 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
 
   BOOL isBack = [[[NSUserDefaults standardUserDefaults]
       objectForKey:@"ISVideoCameraPositionIsBack"] boolValue];
-  // ISLog(@"是后摄像头吗：%d", isBack);
+  // NSLog(@"是后摄像头吗：%d", isBack);
   AVCaptureDevicePosition position =
       isBack ? AVCaptureDevicePositionBack : AVCaptureDevicePositionFront;
 
-  AVCaptureSessionPreset preset = SCREEN_MODE_IPHONE4
-                                      ? AVCaptureSessionPreset640x480
-                                      : AVCaptureSessionPreset1280x720;
+  AVCaptureSessionPreset preset =  AVCaptureSessionPreset1280x720;
   videoCamera = [[VideoCameraManager alloc] initWithSessionPreset:preset
                                                    cameraPosition:position];
 
@@ -216,11 +211,11 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   _beginTipLabel = [[UILabel alloc] init];
   _beginTipLabel.text = @"单击拍照，长按拍摄";
   _beginTipLabel.textAlignment = NSTextAlignmentCenter;
-  _beginTipLabel.font = IS_FONT(16);
+  _beginTipLabel.font = [UIFont systemFontOfSize:16];
   _beginTipLabel.frame =
-      CGRectMake((SCREEN_WIDTH - 200) / 2.f,
-                 SCREEN_HEIGHT - 147 - IS_TABBAR_ADD_HEIGHT, 200, 25);
-  _beginTipLabel.textColor = [UIColor colorWithHexString:@"ffffff"];
+      CGRectMake((ScreenWidth - 200) / 2.f,
+                 ScreenHeight - 147 - IS_TABBAR_ADD_HEIGHT, 200, 25);
+  _beginTipLabel.textColor = [UIColor colorWithWhite:0 alpha:1];
   _beginTipLabel.shadowColor =
       [UIColor colorWithRed:0 green:0 blue:0 alpha:0.35];
   _beginTipLabel.shadowOffset = CGSizeMake(0, 1);
@@ -423,7 +418,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   // 时间到了停止录制视频
   _photoCaptureButton.enabled = NO;
   [self completeRecording:_videoCompleteButton];
-  ISLog(@"录制完成");
+  NSLog(@"录制完成");
 }
 
 - (void)updateProgress:(NSTimeInterval)time {
@@ -456,9 +451,9 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
     // 无美颜
     //        [videoCamera openFaceDetect:NO];
     [videoCamera removeAllTargets];
-    _filter = self.ksyBeautifyFilter;
-    [videoCamera addTarget:_filter];
-    [_filter addTarget:filteredVideoView];
+//    _filter = nil;
+//    [videoCamera addTarget:_filter];
+//    [_filter addTarget:filteredVideoView];
     [_camerafilterChangeButton setImage:[UIImage imageNamed:@"beautyOFF"]
                                forState:UIControlStateNormal];
   } else {
@@ -531,7 +526,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
 - (void)captureVideoToggle:(UIGestureRecognizer*)recognizer {
   if (recognizer.state == UIGestureRecognizerStateBegan) {
     // 开始录制
-    ISLog(@"开始录制");
+    NSLog(@"开始录制");
     //        [self removeBeginTipLabel];
     _begainTakePhoto = YES;
     [self beganRecording:_photoCaptureButton];
@@ -540,7 +535,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
         recognizer.state == UIGestureRecognizerStateFailed ||
         recognizer.state == UIGestureRecognizerStateEnded) {
       // 暂停录制
-      ISLog(@"暂停录制");
+      NSLog(@"暂停录制");
       [self endRecordingVideo:_photoCaptureButton];
     }
   }
@@ -588,21 +583,21 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
       //            _isCountDown = NO;
       //            _photoCaptureButton.hidden = NO;
       //            _backBtn.hidden = NO;
-      [weakSelf takeAPicture:AVCaptureVideoOrientationPortrait];
+      [weakSelf takeAPicture:UIDeviceOrientationPortrait];
       weakCountDown.hidden = YES;
     }];
     return;
   }
   // 没开启延时拍摄，直接开始拍摄
-  [self takeAPicture:AVCaptureVideoOrientationPortrait];
+  [self takeAPicture:UIDeviceOrientationPortrait];
 }
 
 - (void)takeAPicture:(UIDeviceOrientation)deviceOrientation {
-  ISLog(@"开始拍摄");
+  NSLog(@"开始拍摄");
   AVCaptureConnection* videoConnection =
       [_stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
   if (!videoConnection) {
-    ISLog(@"拍照失败");
+    NSLog(@"拍照失败");
     return;
   }
   if ([videoConnection isVideoOrientationSupported]) {
@@ -688,7 +683,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
                                       UIImage* colorBlendFilterImage =
                                           [filter imageFromCurrentFramebuffer];
 
-                                      ISLog(@"photo succeed");
+                                      NSLog(@"photo succeed");
                                       if ([_delegate
                                               respondsToSelector:@selector
                                               (didFinishTakePhoto:
@@ -704,7 +699,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
                                                   }];
                                       }
                                     } else if (error) {
-                                      ISLog(@"222 error");
+                                      NSLog(@"222 error");
                                     }
                                   }];
 }
@@ -857,7 +852,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
 
 - (void)stopRecording {
   videoCamera.audioEncodingTarget = nil;
-  ISLog(@"Path %@", _pathToMovie);
+  NSLog(@"Path %@", _pathToMovie);
   if (_pathToMovie == nil) {
     return;
   }
@@ -886,7 +881,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   }
 
   videoCamera.audioEncodingTarget = nil;
-  ISLog(@"Path %@", _pathToMovie);
+  NSLog(@"Path %@", _pathToMovie);
   if (_pathToMovie == nil) {
     return;
   }
@@ -936,19 +931,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   }
   _dleButton.selected = YES;
   [_videoProgressView deleteClick];
-  UIViewController* currentController =
-      [[AppDelegate appDelegate] getNewCurrentViewController];
-  [ISTools showAlertViewFromController:currentController
-      title:@"\n删除最新一段录制的视频？"
-      message:@""
-      CancleButtonTitle:@"取消"
-      otherButtonTitle:@"确认"
-      cancleButtonClick:^{
-        [self dleButtonClickCancle];
-      }
-      otherButtonClick:^{
-        [self dleButtonClickSure];
-      }];
+  [self dleButtonClickSure];
 }
 
 - (void)dleButtonClickCancle {
@@ -1188,7 +1171,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
 
 - (void)cameraViewTapAction:(UITapGestureRecognizer*)tgr {
   if (tgr.state == UIGestureRecognizerStateRecognized &&
-      (_focusLayer == NO || _focusLayer.hidden)) {
+      (!_focusLayer || _focusLayer.hidden)) {
     CGPoint location = [tgr locationInView:filteredVideoView];
     [self setfocusImage];
     [self layerAnimationWithPoint:location];
@@ -1213,9 +1196,9 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
 
       [device unlockForConfiguration];
 
-      ISLog(@"FOCUS OK");
+      NSLog(@"FOCUS OK");
     } else {
-      ISLog(@"ERROR = %@", error);
+      NSLog(@"ERROR = %@", error);
     }
   }
 }
@@ -1258,14 +1241,6 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   return _beautifyFilter;
 }
 
-- (KSYGPUBeautifyPlusFilter*)ksyBeautifyFilter {
-  if (_ksyBeautifyFilter == nil) {
-    _ksyBeautifyFilter = [[KSYGPUBeautifyPlusFilter alloc] init];
-    [_ksyBeautifyFilter setBeautylevel:5];
-  }
-  return _ksyBeautifyFilter;
-}
-
 #pragma mark - Notification
 
 - (void)applicationDidEnterBackground:(NSNotification*)notification {
@@ -1287,7 +1262,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
 }
 
 - (void)applicationDidBecomeActive:(NSNotification*)notification {
-  ISLog(@"applicationDidBecomeActive");
+  NSLog(@"applicationDidBecomeActive");
   //  _filter = self.beautifyFilter;
   [videoCamera addTarget:_filter];
   [_filter addTarget:filteredVideoView];

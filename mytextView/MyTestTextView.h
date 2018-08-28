@@ -1,5 +1,5 @@
 //
-//  MyTextView.h
+//  MyTestTextView.h
 //  Yddworkspace
 //
 //  Created by ydd on 2018/8/15.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyTextView : UITextView<UIGestureRecognizerDelegate>
+@interface MyTestTextView : UITextView<UIGestureRecognizerDelegate>
+
+- (void)setMyTextViewAttributedText:(NSAttributedString *)attributedText;
 
 @end
