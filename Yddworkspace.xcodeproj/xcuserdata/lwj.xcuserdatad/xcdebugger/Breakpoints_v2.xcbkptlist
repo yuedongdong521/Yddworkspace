@@ -99,38 +99,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Yddworkspace/Tools/FullImageAnimateView.m"
-            timestampString = "554352494.322295"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "-getOriginFrameTargetView:inView:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Yddworkspace/Tools/FullImageAnimateView.m"
-            timestampString = "554352494.3226219"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "-getOriginFrameTargetView:inView:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Yddworkspace/swiftTest/UserInfoTableCell.swift"
             timestampString = "555484244.526837"
             startingColumnNumber = "9223372036854775807"
@@ -148,7 +116,7 @@
                   moduleName = "Yddworkspace"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wizjin/Documents/ydd/Yddworkspace/Yddworkspace/swiftTest/UserInfoTableCell.swift"
-                  timestampString = "557146902.876369"
+                  timestampString = "557292918.540518"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -163,7 +131,7 @@
                   moduleName = "Yddworkspace"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wizjin/Documents/ydd/Yddworkspace/Yddworkspace/swiftTest/UserInfoTableCell.swift"
-                  timestampString = "557146902.879128"
+                  timestampString = "557292918.5423959"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "108"

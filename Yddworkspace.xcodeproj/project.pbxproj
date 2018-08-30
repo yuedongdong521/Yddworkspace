@@ -363,11 +363,23 @@
 		ED2851622101DEE900178965 /* ISLookUpImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2851612101DEE900178965 /* ISLookUpImageCell.m */; };
 		ED2851632101DEE900178965 /* ISLookUpImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2851612101DEE900178965 /* ISLookUpImageCell.m */; };
 		ED2851642101DEE900178965 /* ISLookUpImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2851612101DEE900178965 /* ISLookUpImageCell.m */; };
+		ED2B7D2021378F300071F4D3 /* GCDAsyncSocket.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2B7D1C21378F300071F4D3 /* GCDAsyncSocket.mm */; };
+		ED2B7D2121378F300071F4D3 /* GameSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2B7D1E21378F300071F4D3 /* GameSocket.m */; };
+		ED2B7D24213791930071F4D3 /* CmCMethod.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2B7D22213791920071F4D3 /* CmCMethod.mm */; };
 		ED2D8FD321084B1000DEF809 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2D8FD121084B1000DEF809 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		ED2D8FDC2108830500DEF809 /* MyWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2D8FDB2108830500DEF809 /* MyWebViewViewController.m */; };
 		ED2D8FDF2108867900DEF809 /* LoadWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2D8FDE2108867900DEF809 /* LoadWebViewController.m */; };
 		ED2D8FE52108870000DEF809 /* UIWebView+JavaScriptAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2D8FE42108870000DEF809 /* UIWebView+JavaScriptAlert.m */; };
 		ED2D902820D8DC1300C15624 /* FloadRoundEntryAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2D902720D8DC1300C15624 /* FloadRoundEntryAnimator.m */; };
+		ED2DE3F121363ADC00A41531 /* FBKVOController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2DE3EE21363ADC00A41531 /* FBKVOController.mm */; };
+		ED2DE3F221363ADC00A41531 /* NSObject+FBKVOController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2DE3EF21363ADC00A41531 /* NSObject+FBKVOController.mm */; };
+		ED2DE3F521363BA500A41531 /* BaseWebViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2DE3F321363BA400A41531 /* BaseWebViewController.mm */; };
+		ED2DE3F821363F6100A41531 /* MyWeakScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2DE3F721363F6100A41531 /* MyWeakScriptMessageHandler.m */; };
+		ED2DE3FB2136416200A41531 /* MyURLTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2DE3F92136416100A41531 /* MyURLTools.mm */; };
+		ED2DE403213641F400A41531 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2DE3FE213641F300A41531 /* TFHpple.m */; };
+		ED2DE404213641F400A41531 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2DE401213641F300A41531 /* TFHppleElement.m */; };
+		ED2DE405213641F400A41531 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2DE402213641F300A41531 /* XPathQuery.m */; };
+		ED2DE43B2136478900A41531 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2DE43A2136478800A41531 /* libxml2.2.tbd */; };
 		ED2E6485213516C500ADCDFF /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2E6484213516C500ADCDFF /* Photos.framework */; };
 		ED2E64E421355F7F00ADCDFF /* ISListVideoOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64BB21355F7E00ADCDFF /* ISListVideoOperation.mm */; };
 		ED2E64E521355F7F00ADCDFF /* ISListVideoPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E64BC21355F7E00ADCDFF /* ISListVideoPlayer.mm */; };
@@ -1042,6 +1054,12 @@
 		ED28515C2101DCC100178965 /* ISLookUpImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISLookUpImageView.m; sourceTree = "<group>"; };
 		ED2851602101DEE900178965 /* ISLookUpImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISLookUpImageCell.h; sourceTree = "<group>"; };
 		ED2851612101DEE900178965 /* ISLookUpImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISLookUpImageCell.m; sourceTree = "<group>"; };
+		ED2B7D1C21378F300071F4D3 /* GCDAsyncSocket.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GCDAsyncSocket.mm; sourceTree = "<group>"; };
+		ED2B7D1D21378F300071F4D3 /* GameSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSocket.h; sourceTree = "<group>"; };
+		ED2B7D1E21378F300071F4D3 /* GameSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSocket.m; sourceTree = "<group>"; };
+		ED2B7D1F21378F300071F4D3 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		ED2B7D22213791920071F4D3 /* CmCMethod.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CmCMethod.mm; sourceTree = "<group>"; };
+		ED2B7D23213791920071F4D3 /* CmCMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmCMethod.h; sourceTree = "<group>"; };
 		ED2D8FD121084B1000DEF809 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		ED2D8FD221084B1000DEF809 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		ED2D8FDA2108830500DEF809 /* MyWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyWebViewViewController.h; sourceTree = "<group>"; };
@@ -1052,6 +1070,24 @@
 		ED2D8FE42108870000DEF809 /* UIWebView+JavaScriptAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JavaScriptAlert.m"; sourceTree = "<group>"; };
 		ED2D902620D8DC1300C15624 /* FloadRoundEntryAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloadRoundEntryAnimator.h; sourceTree = "<group>"; };
 		ED2D902720D8DC1300C15624 /* FloadRoundEntryAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloadRoundEntryAnimator.m; sourceTree = "<group>"; };
+		ED2DE3EC21363ADC00A41531 /* KVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVOController.h; sourceTree = "<group>"; };
+		ED2DE3ED21363ADC00A41531 /* FBKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBKVOController.h; sourceTree = "<group>"; };
+		ED2DE3EE21363ADC00A41531 /* FBKVOController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBKVOController.mm; sourceTree = "<group>"; };
+		ED2DE3EF21363ADC00A41531 /* NSObject+FBKVOController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+FBKVOController.mm"; sourceTree = "<group>"; };
+		ED2DE3F021363ADC00A41531 /* NSObject+FBKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FBKVOController.h"; sourceTree = "<group>"; };
+		ED2DE3F321363BA400A41531 /* BaseWebViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BaseWebViewController.mm; sourceTree = "<group>"; };
+		ED2DE3F421363BA500A41531 /* BaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
+		ED2DE3F621363F6100A41531 /* MyWeakScriptMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyWeakScriptMessageHandler.h; sourceTree = "<group>"; };
+		ED2DE3F721363F6100A41531 /* MyWeakScriptMessageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyWeakScriptMessageHandler.m; sourceTree = "<group>"; };
+		ED2DE3F92136416100A41531 /* MyURLTools.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyURLTools.mm; sourceTree = "<group>"; };
+		ED2DE3FA2136416200A41531 /* MyURLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyURLTools.h; sourceTree = "<group>"; };
+		ED2DE3FD213641F300A41531 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		ED2DE3FE213641F300A41531 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		ED2DE3FF213641F300A41531 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		ED2DE400213641F300A41531 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		ED2DE401213641F300A41531 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		ED2DE402213641F300A41531 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		ED2DE43A2136478800A41531 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		ED2E6484213516C500ADCDFF /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		ED2E64BB21355F7E00ADCDFF /* ISListVideoOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISListVideoOperation.mm; sourceTree = "<group>"; };
 		ED2E64BC21355F7E00ADCDFF /* ISListVideoPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISListVideoPlayer.mm; sourceTree = "<group>"; };
@@ -1385,6 +1421,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2DE43B2136478900A41531 /* libxml2.2.tbd in Frameworks */,
 				ED2E6485213516C500ADCDFF /* Photos.framework in Frameworks */,
 				60A6E03C1F08957200EB7FA6 /* libicucore.tbd in Frameworks */,
 				604A62821E7A606200D17ADE /* OpenGLES.framework in Frameworks */,
@@ -1442,6 +1479,7 @@
 		2D80E0507713EDE82A4B67AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED2DE43A2136478800A41531 /* libxml2.2.tbd */,
 				ED2E6484213516C500ADCDFF /* Photos.framework */,
 				60A6E0411F089F0100EB7FA6 /* iflyMSC.framework */,
 				60A6E03B1F08957200EB7FA6 /* libicucore.tbd */,
@@ -1727,6 +1765,7 @@
 		60761EB11D61B62000FC2F1F /* Yddworkspace */ = {
 			isa = PBXGroup;
 			children = (
+				ED2B7D1B21378CA70071F4D3 /* Socket */,
 				ED32547B212E93BC00182DF5 /* GIF */,
 				ED2D8FD92108829E00DEF809 /* WebView */,
 				ED284FDC210179DF00178965 /* 瀑布流 */,
@@ -2054,6 +2093,8 @@
 		60AFFD9B201F01A700335E45 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				ED2B7D23213791920071F4D3 /* CmCMethod.h */,
+				ED2B7D22213791920071F4D3 /* CmCMethod.mm */,
 				ED324D1E2134138900D02F13 /* UIButton+IS_Highlight.h */,
 				ED324D1F2134138900D02F13 /* UIButton+IS_Highlight.mm */,
 				ED324D1D21340C0D00D02F13 /* UIColor+Hex.h */,
@@ -2434,11 +2475,11 @@
 				ED284FE7210179DF00178965 /* MyCollectionElementKindSectionDecorationView.m */,
 				ED284FDF210179DF00178965 /* MyCollectionViewController.h */,
 				ED284FE8210179DF00178965 /* MyCollectionViewController.m */,
-				ED2850162101BF2200178965 /* TestImageCollectionViewController.m */,
 				ED28515B2101DCC100178965 /* ISLookUpImageView.h */,
 				ED28515C2101DCC100178965 /* ISLookUpImageView.m */,
-				ED2851602101DEE900178965 /* ISLookUpImageCell.h */,
 				ED2850152101BF2200178965 /* TestImageCollectionViewController.h */,
+				ED2850162101BF2200178965 /* TestImageCollectionViewController.m */,
+				ED2851602101DEE900178965 /* ISLookUpImageCell.h */,
 				ED2851612101DEE900178965 /* ISLookUpImageCell.m */,
 				ED2850B92101C38F00178965 /* TestImageModel.h */,
 				ED2850BA2101C38F00178965 /* TestImageModel.m */,
@@ -2558,9 +2599,27 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		ED2B7D1B21378CA70071F4D3 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				ED2B7D1D21378F300071F4D3 /* GameSocket.h */,
+				ED2B7D1E21378F300071F4D3 /* GameSocket.m */,
+				ED2B7D1F21378F300071F4D3 /* GCDAsyncSocket.h */,
+				ED2B7D1C21378F300071F4D3 /* GCDAsyncSocket.mm */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
 		ED2D8FD92108829E00DEF809 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				ED2DE3FC213641F300A41531 /* HtmlParse */,
+				ED2DE3FA2136416200A41531 /* MyURLTools.h */,
+				ED2DE3F92136416100A41531 /* MyURLTools.mm */,
+				ED2DE3F421363BA500A41531 /* BaseWebViewController.h */,
+				ED2DE3F321363BA400A41531 /* BaseWebViewController.mm */,
+				ED2DE3F621363F6100A41531 /* MyWeakScriptMessageHandler.h */,
+				ED2DE3F721363F6100A41531 /* MyWeakScriptMessageHandler.m */,
 				ED2D8FDA2108830500DEF809 /* MyWebViewViewController.h */,
 				ED2D8FDB2108830500DEF809 /* MyWebViewViewController.m */,
 				ED2D8FDD2108867900DEF809 /* LoadWebViewController.h */,
@@ -2580,9 +2639,35 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		ED2DE3EB21363ADC00A41531 /* FBKVOController */ = {
+			isa = PBXGroup;
+			children = (
+				ED2DE3EC21363ADC00A41531 /* KVOController.h */,
+				ED2DE3ED21363ADC00A41531 /* FBKVOController.h */,
+				ED2DE3EE21363ADC00A41531 /* FBKVOController.mm */,
+				ED2DE3EF21363ADC00A41531 /* NSObject+FBKVOController.mm */,
+				ED2DE3F021363ADC00A41531 /* NSObject+FBKVOController.h */,
+			);
+			path = FBKVOController;
+			sourceTree = "<group>";
+		};
+		ED2DE3FC213641F300A41531 /* HtmlParse */ = {
+			isa = PBXGroup;
+			children = (
+				ED2DE3FD213641F300A41531 /* TFHppleElement.h */,
+				ED2DE3FE213641F300A41531 /* TFHpple.m */,
+				ED2DE3FF213641F300A41531 /* XPathQuery.h */,
+				ED2DE400213641F300A41531 /* TFHpple.h */,
+				ED2DE401213641F300A41531 /* TFHppleElement.m */,
+				ED2DE402213641F300A41531 /* XPathQuery.m */,
+			);
+			path = HtmlParse;
+			sourceTree = "<group>";
+		};
 		ED2E64862135184900ADCDFF /* sdk */ = {
 			isa = PBXGroup;
 			children = (
+				ED2DE3EB21363ADC00A41531 /* FBKVOController */,
 				ED2E64F82135614800ADCDFF /* GPUImage */,
 				ED324CF02134058E00D02F13 /* MBProgressHUD.h */,
 				ED324CEF2134058E00D02F13 /* MBProgressHUD.m */,
@@ -3327,6 +3412,7 @@
 				ED284FEA210179DF00178965 /* CustomCollectionViewLayout.m in Sources */,
 				ED771C5C21241F54001BEFB3 /* YYTimer.m in Sources */,
 				ED28512E2101CE5800178965 /* NSButton+WebCache.m in Sources */,
+				ED2DE3F221363ADC00A41531 /* NSObject+FBKVOController.mm in Sources */,
 				ED28514F2101CE5800178965 /* UIView+WebCache.m in Sources */,
 				ED31415420AD112F0047FC21 /* NetWorkURLSession.m in Sources */,
 				ED771C2B21241F53001BEFB3 /* YYLabel.m in Sources */,
@@ -3392,6 +3478,7 @@
 				ED771C1721241F53001BEFB3 /* YYFrameImage.m in Sources */,
 				ED771C5321241F54001BEFB3 /* YYWeakProxy.m in Sources */,
 				ED325484212E959E00182DF5 /* GifViewController.m in Sources */,
+				ED2DE403213641F400A41531 /* TFHpple.m in Sources */,
 				ED771C2F21241F53001BEFB3 /* YYTextParser.m in Sources */,
 				600EF3461D9E612C00A30927 /* MyImagePickerViewController.m in Sources */,
 				ED771C1521241F53001BEFB3 /* YYImage.m in Sources */,
@@ -3427,6 +3514,7 @@
 				ED771C3D21241F54001BEFB3 /* UIView+YYAdd.m in Sources */,
 				ED771C2221241F53001BEFB3 /* YYTextMagnifier.m in Sources */,
 				ED284FF22101A6B800178965 /* JKRFallsLayout.m in Sources */,
+				ED2DE3F821363F6100A41531 /* MyWeakScriptMessageHandler.m in Sources */,
 				601C8C191F20C076001F50B9 /* LinkMicReminderView.mm in Sources */,
 				60B4796C20173D1F00EE75F1 /* AudioQueuePlayer.m in Sources */,
 				60B6A6351E2A31D500CC6F26 /* BarrageViewController.m in Sources */,
@@ -3467,10 +3555,12 @@
 				ED32548A212ED68900182DF5 /* SCGIFImageView.m in Sources */,
 				6039E3D91E63CA4D002D6B7C /* BarrageView.mm in Sources */,
 				6000451F1E949CF200F3471A /* UIView+MJExtension.m in Sources */,
+				ED2B7D2121378F300071F4D3 /* GameSocket.m in Sources */,
 				ED325481212E940C00182DF5 /* UIImageView+PlayGIF.m in Sources */,
 				ED2851552101CE5800178965 /* UIButton+WebCache.m in Sources */,
 				60988C842011B94900E1B9D6 /* HardwareViewController.m in Sources */,
 				ED324D1121340B6B00D02F13 /* ViewController+MASAdditions.m in Sources */,
+				ED2DE3FB2136416200A41531 /* MyURLTools.mm in Sources */,
 				60A0BA221FCE491A00CC7082 /* TQIOSViewController.m in Sources */,
 				60E87E75205A60F800B20025 /* VoiceViewController.m in Sources */,
 				ED324D1821340B6B00D02F13 /* MASViewConstraint.m in Sources */,
@@ -3482,8 +3572,10 @@
 				ED2851622101DEE900178965 /* ISLookUpImageCell.m in Sources */,
 				ED2E64E721355F7F00ADCDFF /* ISVideoSessionViewController.mm in Sources */,
 				ED284FEC210179DF00178965 /* CollectionCellModel.m in Sources */,
+				ED2DE3F121363ADC00A41531 /* FBKVOController.mm in Sources */,
 				609E3C72205222FB00D9A55C /* StrToEmojiViewController.m in Sources */,
 				ED771C4321241F54001BEFB3 /* NSArray+YYAdd.m in Sources */,
+				ED2DE3F521363BA500A41531 /* BaseWebViewController.mm in Sources */,
 				ED2D8FE52108870000DEF809 /* UIWebView+JavaScriptAlert.m in Sources */,
 				60BEE78C1E2CC27400F71DB8 /* TestXibViewController.m in Sources */,
 				ED32547E212E93CD00182DF5 /* UIImage+ScallGif.m in Sources */,
@@ -3518,6 +3610,7 @@
 				ED2851132101CE5800178965 /* SDWebImageCodersManager.m in Sources */,
 				ED771C0F21241F53001BEFB3 /* YYCache.m in Sources */,
 				60080C011E8E026D00225307 /* AVPlayerViewController.m in Sources */,
+				ED2DE404213641F400A41531 /* TFHppleElement.m in Sources */,
 				6036F4E41E8A73650028F6AF /* UIImage+help.m in Sources */,
 				ED771C1821241F53001BEFB3 /* _YYWebImageSetter.m in Sources */,
 				60BEE7741E2CC07100F71DB8 /* CGImageContainer.m in Sources */,
@@ -3543,6 +3636,7 @@
 				ED771C5621241F54001BEFB3 /* YYSentinel.m in Sources */,
 				60AFFD9E201F02C000335E45 /* UITextView+MyURLClick.m in Sources */,
 				ED771C4F21241F54001BEFB3 /* NSDictionary+YYAdd.m in Sources */,
+				ED2B7D2021378F300071F4D3 /* GCDAsyncSocket.mm in Sources */,
 				ED2E64E821355F7F00ADCDFF /* ISVideoCameraTools.mm in Sources */,
 				60757E8B1E763A94003463F3 /* IntrinsicView.m in Sources */,
 				60AF3C441F18593C00C8FBB9 /* UIViewController+KNSemiModal.m in Sources */,
@@ -3647,6 +3741,8 @@
 				ED28514C2101CE5800178965 /* UIView+WebCacheOperation.m in Sources */,
 				ED771C4E21241F54001BEFB3 /* NSNotificationCenter+YYAdd.m in Sources */,
 				60DAE6ED1FD68D420066EB76 /* MyStringEdit.m in Sources */,
+				ED2B7D24213791930071F4D3 /* CmCMethod.mm in Sources */,
+				ED2DE405213641F400A41531 /* XPathQuery.m in Sources */,
 				6039E3CD1E616EA9002D6B7C /* PriaseSendStructure.m in Sources */,
 				ED771B5C2123D36C001BEFB3 /* MyTestTextView.m in Sources */,
 				ED771C4B21241F54001BEFB3 /* NSObject+YYAddForARC.m in Sources */,
@@ -3891,6 +3987,7 @@
 					"\"$(SRCROOT)/sdk/UMSocial/UMSocialUI\"",
 					"\"$(SRCROOT)/sdk/GPUImage/Debug-iphoneos\"",
 					"\"$(SRCROOT)/sdk/GPUImage/Release-iphoneos\"",
+					/usr/include/libxml2,
 				);
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3904,6 +4001,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/framework/Source\"",
 					"\"$(SRCROOT)/framework/Source/iOS\"",
+					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = Yddworkspace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -3915,6 +4013,7 @@
 					"\"$(SRCROOT)/sdk/UMSocial/SocialLibraries/QQ\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lxml2";
 				PODS_ROOT = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jilang.hotlives;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3924,7 +4023,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Yddworkspace/Yddworkspace-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 			};
 			name = Debug;
 		};
@@ -3949,6 +4048,7 @@
 					"\"$(SRCROOT)/sdk/UMSocial/UMSocialUI\"",
 					"\"$(SRCROOT)/sdk/GPUImage/Debug-iphoneos\"",
 					"\"$(SRCROOT)/sdk/GPUImage/Release-iphoneos\"",
+					/usr/include/libxml2,
 				);
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3957,6 +4057,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/framework/Source\"",
 					"\"$(SRCROOT)/framework/Source/iOS\"",
+					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = Yddworkspace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -3968,6 +4069,7 @@
 					"\"$(SRCROOT)/sdk/UMSocial/SocialLibraries/QQ\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lxml2";
 				PODS_ROOT = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jilang.hotlives;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3976,7 +4078,7 @@
 				SHARED_PRECOMPS_DIR = /Users/ispeak/Desktop/Yddworkspace/Yddworkspace;
 				SWIFT_OBJC_BRIDGING_HEADER = "Yddworkspace/Yddworkspace-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 			};
 			name = Release;
 		};

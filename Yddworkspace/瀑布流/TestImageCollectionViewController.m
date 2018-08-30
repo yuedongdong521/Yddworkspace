@@ -201,7 +201,9 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
   
   FullImageAnimateView *fullView = [[FullImageAnimateView alloc] initWithFrame:self.view.bounds image:cell.imageview.image];
   [self.view addSubview:fullView];
-  [fullView beganAnimateTargetView:cell inView:self.view finish:^(BOOL finished) {
+  CGRect imageInCollection = [cell convertRect:cell.imageview.frame toView:collectionView];
+  CGRect imageInWin = [collectionView convertRect:imageInCollection toView:[UIApplication sharedApplication].keyWindow];
+  [fullView beganAnimateFrame:imageInWin finish:^(BOOL finished) {
     imageView.hidden = NO;
   }];
   

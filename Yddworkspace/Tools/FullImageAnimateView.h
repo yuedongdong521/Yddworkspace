@@ -13,7 +13,7 @@
 @property(nonatomic, strong) UIImageView *imageView;
 
 - (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image;
-- (void)beganAnimateTargetView:(UIView *)targetView inView:(UIView *)inView finish:(void(^)(BOOL finished))finish;
+- (void)beganAnimateFrame:(CGRect)frame finish:(void(^)(BOOL finished))finish;
 - (void)endAnimationFinish:(void(^)(bool finished))finish;
 
 @end
