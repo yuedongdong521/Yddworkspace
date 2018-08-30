@@ -169,7 +169,7 @@ preparation before navigation
     return;
   }
   _hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-  _hud.labelText = @"视频生成中";
+  _hud.label.text = @"视频生成中";
 
   AVMutableComposition* mixComposition = [[AVMutableComposition alloc] init];
 

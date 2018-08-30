@@ -178,13 +178,12 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
 
   _position = isBack ? CameraManagerDevicePositionBack
                      : CameraManagerDevicePositionFront;
-  ;
   videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
   [videoCamera updateOrientation];
   [videoCamera addAudioInputsAndOutputs];
 
-  //    _filter = [[GPUImageFilter alloc]
-  //    init];// self.beautifyFilter;// self.ksyBeautifyFilter;
+  
+  _filter = self.beautifyFilter;// self.ksyBeautifyFilter;
 
   filteredVideoView =
       [[GPUImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -198,8 +197,8 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   [filteredVideoView addGestureRecognizer:singleFingerOne];
   [self addSubview:filteredVideoView];
 
-  //  [videoCamera addTarget:_filter];
-  //  [_filter addTarget:filteredVideoView];
+    [videoCamera addTarget:_filter];
+    [_filter addTarget:filteredVideoView];
   [videoCamera addTarget:filteredVideoView];
   [videoCamera startCameraCapture];
 
@@ -449,10 +448,10 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
      didSelctedItem:(NSInteger)count {
   if (count == 0) {
     // 无美颜
-    //        [videoCamera openFaceDetect:NO];
+//            [videoCamera openFaceDetect:NO];
     [videoCamera removeAllTargets];
-//    _filter = nil;
-//    [videoCamera addTarget:_filter];
+//    _filter = [[GPUImageFilter alloc] init];
+    [videoCamera addTarget:filteredVideoView];
 //    [_filter addTarget:filteredVideoView];
     [_camerafilterChangeButton setImage:[UIImage imageNamed:@"beautyOFF"]
                                forState:UIControlStateNormal];
