@@ -43,14 +43,14 @@
   return _imageView;
 }
 
-- (void)beganAnimateTargetView:(UIView *)targetView inView:(UIView *)inView finish:(void(^)(BOOL finished))finish
+- (void)beganAnimateFrame:(CGRect)frame finish:(void(^)(BOOL finished))finish
 {
-  CGRect fullFrame = [self getImageFullFrameTargetView:targetView inView:inView];
-  _originFrame = [self getOriginFrameTargetView:targetView inView:inView];
+  _originFrame = frame;
+  CGRect fullFrame = [self getImageFullFrame:frame];
   self.imageView.frame = _originFrame;
   self.backgroundColor = [UIColor clearColor];
   __weak typeof(self) weakself = self;
-  [UIView animateWithDuration:1 animations:^{
+  [UIView animateWithDuration:0.3 animations:^{
     weakself.backgroundColor = [UIColor colorWithWhite:0 alpha:1];
     weakself.imageView.frame = fullFrame;
   } completion:^(BOOL finished) {
@@ -75,10 +75,10 @@
   }];
 }
 
-- (CGRect)getImageFullFrameTargetView:(UIView *)targetView inView:(UIView *)inView
+- (CGRect)getImageFullFrame:(CGRect)frame
 {
-  CGFloat targetWidth = targetView.frame.size.width;
-  CGFloat targetHeight = targetView.frame.size.height;
+  CGFloat targetWidth = frame.size.width;
+  CGFloat targetHeight = frame.size.height;
   
   CGFloat targetRota = targetWidth / targetHeight;
   CGFloat screenRota = ScreenWidth / ScreenHeight;
@@ -111,6 +111,11 @@
       return subView.frame;
     }
   }
+}
+
+- (void)dealloc
+{
+  NSLog(@"dealloc : %@",NSStringFromClass(self.class));
 }
 
 @end
