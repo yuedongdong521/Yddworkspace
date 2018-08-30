@@ -11,11 +11,13 @@
 #import "UIImageView+PlayGIF.h"
 #import "UIImage+GIF.h"
 #import "SCGIFImageView.h"
-
+#import "UIImageView+YYWebImage.h"
+#import "YYAnimatedImageView.h"
 @interface GifViewController ()
 
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) SCGIFImageView *scallImageView;
+@property(nonatomic, strong) YYAnimatedImageView *yyImageView;
 
 @end
 
@@ -27,6 +29,8 @@
   self.view.backgroundColor = [UIColor whiteColor];
   [self.view addSubview:self.imageView];
   [self.view addSubview:self.scallImageView];
+  [self.view addSubview:self.yyImageView];
+  
   [self downloadGif];
   
 }
@@ -36,6 +40,16 @@
     // Dispose of any resources that can be recreated.
 
   
+}
+
+- (YYAnimatedImageView *)yyImageView
+{
+  if (!_yyImageView) {
+    _yyImageView = [[YYAnimatedImageView alloc] initWithFrame:CGRectMake(20, 64, 300, 300)];
+    _yyImageView.contentMode = UIViewContentModeScaleAspectFit;
+    _yyImageView.backgroundColor = [UIColor grayColor];
+  }
+  return _yyImageView;
 }
 
 - (UIImageView *)imageView
@@ -59,18 +73,25 @@
 
 - (void)downloadGif
 {
-  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://imgs22.ispeak.cn/file/2018-08-22/10/20180822_104155115723_f928e2_0_173146354_31873.gif"]];
-    dispatch_async(dispatch_get_main_queue(), ^{
-      if (data) {
-        _imageView.image = [UIImage imageWithData:data];
-        _imageView.gifData = data;
-        [_imageView startGIF];
-        NSLog(@"data lenght = %@", @(data.length));
-        [self scallGifWidthData:data];
-      }
-    });
-  });
+  
+  [_yyImageView setImageWithURL:[NSURL URLWithString:@"http://imgs22.ispeak.cn/file/2018-08-22/10/20180822_104155115723_f928e2_0_173146354_31873.gif"] placeholder:[UIImage new] options:YYWebImageOptionProgressive completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+//    [self scallGifWidthData:[]];
+  }];
+  
+//
+//  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://imgs22.ispeak.cn/file/2018-08-22/10/20180822_104155115723_f928e2_0_173146354_31873.gif"]];
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//      if (data) {
+////        _imageView.image = [UIImage imageWithData:data];
+////        _imageView.gifData = data;
+////        [_imageView startGIF];
+//
+//        NSLog(@"data lenght = %@", @(data.length));
+//        [self scallGifWidthData:data];
+//      }
+//    });
+//  });
 }
 
 - (void)scallGifWidthData:(NSData *)data
