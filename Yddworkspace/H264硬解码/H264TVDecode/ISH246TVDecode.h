@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@class ISH246TVDecode;
 
 @protocol ISH264TVDecodeDelegate <NSObject>
 
-- (void)displayDecodedFrameImageBuffer:(CVPixelBufferRef)buffer;
+- (void)displayDecode:(ISH246TVDecode*)decode ImageBuffer:(CVPixelBufferRef)buffer;
 
 @end
 

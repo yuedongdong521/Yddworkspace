@@ -405,6 +405,11 @@
 		ED2E64FC213561DF00ADCDFF /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2E64FA2135614800ADCDFF /* GPUImage.framework */; };
 		ED2E64FD213561DF00ADCDFF /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED2E64FA2135614800ADCDFF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED2E970E2112DCDA00BC382E /* ISChatMoreImageCollectionViewLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED2E970D2112DCDA00BC382E /* ISChatMoreImageCollectionViewLayout.mm */; };
+		ED2F86D4213FB3620070482E /* ISPlayerLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2F86D2213FB3620070482E /* ISPlayerLoadingView.m */; };
+		ED2F86D6213FB3A00070482E /* VideoDefaultBgImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED2F86D5213FB39F0070482E /* VideoDefaultBgImage@2x.png */; };
+		ED2F86DC213FE7A20070482E /* MyCoreTextTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2F86DB213FE7A20070482E /* MyCoreTextTestViewController.m */; };
+		ED2F86DF213FE8590070482E /* CoreTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2F86DE213FE8590070482E /* CoreTextModel.m */; };
+		ED2F86E2213FF17D0070482E /* CoreTextImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2F86E1213FF17D0070482E /* CoreTextImageModel.m */; };
 		ED31415420AD112F0047FC21 /* NetWorkURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = ED31415320AD112F0047FC21 /* NetWorkURLSession.m */; };
 		ED31415720AD2A080047FC21 /* TestDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED31415620AD2A080047FC21 /* TestDownloadViewController.m */; };
 		ED324CAA2134017500D02F13 /* TZImageManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324C8F2134017500D02F13 /* TZImageManager.mm */; };
@@ -451,6 +456,10 @@
 		ED403D8E20D3C65000D9658A /* WeChatWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D8D20D3C65000D9658A /* WeChatWindow.m */; };
 		ED403D9220D3CB8600D9658A /* FloatCollectView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D9120D3CB8600D9658A /* FloatCollectView.m */; };
 		ED403D9520D3D09E00D9658A /* FloatRoundEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D9420D3D09E00D9658A /* FloatRoundEntryView.m */; };
+		ED6F89822140D38A004EBA26 /* CoreTextTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6F89812140D38A004EBA26 /* CoreTextTestView.m */; };
+		ED6F898721411D5B004EBA26 /* CoreTextV.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6F898421411D5B004EBA26 /* CoreTextV.m */; };
+		ED6F898821411D5B004EBA26 /* UIImage+DWImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6F898621411D5B004EBA26 /* UIImage+DWImageUtils.m */; };
+		ED6F898B21411F5B004EBA26 /* CoreTextSurroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6F898A21411F5B004EBA26 /* CoreTextSurroundViewController.m */; };
 		ED752A7321227DFB00802367 /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED752A7221227DFB00802367 /* RuntimeViewController.m */; };
 		ED752A7721229CF900802367 /* NSObject+AddAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = ED752A7621229CF900802367 /* NSObject+AddAttribute.m */; };
 		ED752A7A2122A9B900802367 /* RuntimeLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = ED752A792122A9B900802367 /* RuntimeLibrary.m */; };
@@ -1131,6 +1140,15 @@
 		ED2E64FA2135614800ADCDFF /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		ED2E970C2112DCD900BC382E /* ISChatMoreImageCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISChatMoreImageCollectionViewLayout.h; sourceTree = "<group>"; };
 		ED2E970D2112DCDA00BC382E /* ISChatMoreImageCollectionViewLayout.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISChatMoreImageCollectionViewLayout.mm; sourceTree = "<group>"; };
+		ED2F86D2213FB3620070482E /* ISPlayerLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISPlayerLoadingView.m; sourceTree = "<group>"; };
+		ED2F86D3213FB3620070482E /* ISPlayerLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPlayerLoadingView.h; sourceTree = "<group>"; };
+		ED2F86D5213FB39F0070482E /* VideoDefaultBgImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VideoDefaultBgImage@2x.png"; sourceTree = "<group>"; };
+		ED2F86DA213FE7A20070482E /* MyCoreTextTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCoreTextTestViewController.h; sourceTree = "<group>"; };
+		ED2F86DB213FE7A20070482E /* MyCoreTextTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCoreTextTestViewController.m; sourceTree = "<group>"; };
+		ED2F86DD213FE8590070482E /* CoreTextModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTextModel.h; sourceTree = "<group>"; };
+		ED2F86DE213FE8590070482E /* CoreTextModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTextModel.m; sourceTree = "<group>"; };
+		ED2F86E0213FF17D0070482E /* CoreTextImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTextImageModel.h; sourceTree = "<group>"; };
+		ED2F86E1213FF17D0070482E /* CoreTextImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTextImageModel.m; sourceTree = "<group>"; };
 		ED31415220AD112F0047FC21 /* NetWorkURLSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkURLSession.h; sourceTree = "<group>"; };
 		ED31415320AD112F0047FC21 /* NetWorkURLSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkURLSession.m; sourceTree = "<group>"; };
 		ED31415520AD2A080047FC21 /* TestDownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDownloadViewController.h; sourceTree = "<group>"; };
@@ -1225,6 +1243,14 @@
 		ED403D9120D3CB8600D9658A /* FloatCollectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloatCollectView.m; sourceTree = "<group>"; };
 		ED403D9320D3D09E00D9658A /* FloatRoundEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloatRoundEntryView.h; sourceTree = "<group>"; };
 		ED403D9420D3D09E00D9658A /* FloatRoundEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloatRoundEntryView.m; sourceTree = "<group>"; };
+		ED6F89802140D38A004EBA26 /* CoreTextTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTextTestView.h; sourceTree = "<group>"; };
+		ED6F89812140D38A004EBA26 /* CoreTextTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTextTestView.m; sourceTree = "<group>"; };
+		ED6F898321411D5B004EBA26 /* CoreTextV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextV.h; sourceTree = "<group>"; };
+		ED6F898421411D5B004EBA26 /* CoreTextV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextV.m; sourceTree = "<group>"; };
+		ED6F898521411D5B004EBA26 /* UIImage+DWImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DWImageUtils.h"; sourceTree = "<group>"; };
+		ED6F898621411D5B004EBA26 /* UIImage+DWImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DWImageUtils.m"; sourceTree = "<group>"; };
+		ED6F898921411F5B004EBA26 /* CoreTextSurroundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTextSurroundViewController.h; sourceTree = "<group>"; };
+		ED6F898A21411F5B004EBA26 /* CoreTextSurroundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTextSurroundViewController.m; sourceTree = "<group>"; };
 		ED752A7121227DFB00802367 /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
 		ED752A7221227DFB00802367 /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
 		ED752A7521229CF900802367 /* NSObject+AddAttribute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+AddAttribute.h"; sourceTree = "<group>"; };
@@ -1639,6 +1665,10 @@
 				60BEE7881E2CC27400F71DB8 /* CoreTextViewController.m */,
 				60691A971FCFDC9D00009794 /* CoreTextTowViewController.h */,
 				60691A981FCFDC9D00009794 /* CoreTextTowViewController.m */,
+				ED2F86DA213FE7A20070482E /* MyCoreTextTestViewController.h */,
+				ED2F86DB213FE7A20070482E /* MyCoreTextTestViewController.m */,
+				ED6F898921411F5B004EBA26 /* CoreTextSurroundViewController.h */,
+				ED6F898A21411F5B004EBA26 /* CoreTextSurroundViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1652,6 +1682,8 @@
 				6018DEDA1FC82E4500CDAF8E /* CTColumnView.m */,
 				60BEE7891E2CC27400F71DB8 /* MyTextView.h */,
 				60BEE78A1E2CC27400F71DB8 /* MyTextView.m */,
+				ED6F89802140D38A004EBA26 /* CoreTextTestView.h */,
+				ED6F89812140D38A004EBA26 /* CoreTextTestView.m */,
 				60691A9A1FCFDF8700009794 /* CoreTextTowView.h */,
 				60691A9B1FCFDF8700009794 /* CoreTextTowView.m */,
 				6043F7CF1FD1516800F2188E /* MyCoreTextView.h */,
@@ -1671,6 +1703,10 @@
 				6018DED71FC81DA500CDAF8E /* CTModel.m */,
 				60DAE6EB1FD68D420066EB76 /* MyStringEdit.h */,
 				60DAE6EC1FD68D420066EB76 /* MyStringEdit.m */,
+				ED2F86DD213FE8590070482E /* CoreTextModel.h */,
+				ED2F86DE213FE8590070482E /* CoreTextModel.m */,
+				ED2F86E0213FF17D0070482E /* CoreTextImageModel.h */,
+				ED2F86E1213FF17D0070482E /* CoreTextImageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1711,6 +1747,10 @@
 		60691AA21FCFEFAC00009794 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				ED6F898321411D5B004EBA26 /* CoreTextV.h */,
+				ED6F898421411D5B004EBA26 /* CoreTextV.m */,
+				ED6F898521411D5B004EBA26 /* UIImage+DWImageUtils.h */,
+				ED6F898621411D5B004EBA26 /* UIImage+DWImageUtils.m */,
 				60691A9F1FCFEF8200009794 /* UIImage+DrawRound.h */,
 				60691AA01FCFEF8200009794 /* UIImage+DrawRound.m */,
 			);
@@ -2852,6 +2892,9 @@
 		ED3960FE20ABC26500D0658F /* H264TVDecode */ = {
 			isa = PBXGroup;
 			children = (
+				ED2F86D5213FB39F0070482E /* VideoDefaultBgImage@2x.png */,
+				ED2F86D3213FB3620070482E /* ISPlayerLoadingView.h */,
+				ED2F86D2213FB3620070482E /* ISPlayerLoadingView.m */,
 				ED3960FF20ABC26500D0658F /* ISH246TVDecode.h */,
 				ED39610020ABC26500D0658F /* ISH264Player.h */,
 				ED39610120ABC26500D0658F /* ISH264PlayerView.h */,
@@ -3306,6 +3349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60CA61631E16538A00B03340 /* WeiboSDK.bundle in Resources */,
+				ED2F86D6213FB3A00070482E /* VideoDefaultBgImage@2x.png in Resources */,
 				60B243D51FCD6A440016BBAF /* frame.jpg in Resources */,
 				60AA48031E1E2B8D00839D8C /* Session.png in Resources */,
 				60757E811E71712B003463F3 /* File in Resources */,
@@ -3453,10 +3497,13 @@
 				ED31415720AD2A080047FC21 /* TestDownloadViewController.m in Sources */,
 				ED2850122101BD2C00178965 /* UIImage+ImageSizeWithURL.m in Sources */,
 				ED771C3921241F54001BEFB3 /* UIApplication+YYAdd.m in Sources */,
+				ED6F898721411D5B004EBA26 /* CoreTextV.m in Sources */,
 				ED752A7A2122A9B900802367 /* RuntimeLibrary.m in Sources */,
 				ED324D1321340B6B00D02F13 /* MASConstraintMaker.m in Sources */,
 				EDA36235211AFB8F00536799 /* DataModel.swift in Sources */,
+				ED6F898B21411F5B004EBA26 /* CoreTextSurroundViewController.m in Sources */,
 				60BEE7901E2CC27400F71DB8 /* MyTableViewModel.m in Sources */,
+				ED6F898821411D5B004EBA26 /* UIImage+DWImageUtils.m in Sources */,
 				60BEE78F1E2CC27400F71DB8 /* MyTableViewController.m in Sources */,
 				ED771C3521241F53001BEFB3 /* UITextField+YYAdd.m in Sources */,
 				ED771C3221241F53001BEFB3 /* YYTextAttribute.m in Sources */,
@@ -3546,6 +3593,7 @@
 				60AA48011E1E0F2100839D8C /* ImageViewController.swift in Sources */,
 				ED403D8820D3BE9C00D9658A /* BaseNavigationViewController.m in Sources */,
 				ED324CB62134017500D02F13 /* TZImageCropManager.mm in Sources */,
+				ED2F86E2213FF17D0070482E /* CoreTextImageModel.m in Sources */,
 				ED2851522101CE5800178965 /* SDWebImageImageIOCoder.m in Sources */,
 				ED771C2721241F53001BEFB3 /* YYTextLine.m in Sources */,
 				ED771C1321241F53001BEFB3 /* YYWebImageManager.m in Sources */,
@@ -3573,6 +3621,7 @@
 				ED2E64E721355F7F00ADCDFF /* ISVideoSessionViewController.mm in Sources */,
 				ED284FEC210179DF00178965 /* CollectionCellModel.m in Sources */,
 				ED2DE3F121363ADC00A41531 /* FBKVOController.mm in Sources */,
+				ED2F86DC213FE7A20070482E /* MyCoreTextTestViewController.m in Sources */,
 				609E3C72205222FB00D9A55C /* StrToEmojiViewController.m in Sources */,
 				ED771C4321241F54001BEFB3 /* NSArray+YYAdd.m in Sources */,
 				ED2DE3F521363BA500A41531 /* BaseWebViewController.mm in Sources */,
@@ -3602,6 +3651,7 @@
 				60B6A6301E2A282200CC6F26 /* BarrageModel.m in Sources */,
 				ED2E64EE21355F7F00ADCDFF /* MusicItemCollectionViewCell.mm in Sources */,
 				ED771C2821241F53001BEFB3 /* YYTextSelectionView.m in Sources */,
+				ED2F86D4213FB3620070482E /* ISPlayerLoadingView.m in Sources */,
 				ED2851102101CE5800178965 /* UIImage+ForceDecode.m in Sources */,
 				60BEE7611E2CAB1000F71DB8 /* BarrageController.m in Sources */,
 				EDEC452E2109C1FF008BEC94 /* FullImageAnimateView.m in Sources */,
@@ -3705,6 +3755,7 @@
 				ED324CF12134058E00D02F13 /* MBProgressHUD.m in Sources */,
 				ED2E64E921355F7F00ADCDFF /* VideoCameraManager.mm in Sources */,
 				ED324D1921340B6B00D02F13 /* MASViewAttribute.m in Sources */,
+				ED2F86DF213FE8590070482E /* CoreTextModel.m in Sources */,
 				60AFFDA1201F162300335E45 /* MyURLClickViewController.m in Sources */,
 				ED771C1121241F53001BEFB3 /* YYMemoryCache.m in Sources */,
 				60691AA11FCFEF8200009794 /* UIImage+DrawRound.m in Sources */,
@@ -3718,6 +3769,7 @@
 				6047C1801E6D7D63002FC1AC /* VoiceToWordViewController.m in Sources */,
 				ED2850BB2101C38F00178965 /* TestImageModel.m in Sources */,
 				600045161E949CF200F3471A /* MJRefreshBackStateFooter.m in Sources */,
+				ED6F89822140D38A004EBA26 /* CoreTextTestView.m in Sources */,
 				60AFF35E1FC81A0100985769 /* CTScrollView.m in Sources */,
 				ED2E64EF21355F7F00ADCDFF /* ISVideoCountDownView.mm in Sources */,
 				ED284FED210179DF00178965 /* MyCollectionElementKindSectionDecorationView.m in Sources */,

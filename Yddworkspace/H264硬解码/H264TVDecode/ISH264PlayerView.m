@@ -28,14 +28,79 @@
 }
 */
 
+- (void)layoutSubviews {
+  [super layoutSubviews];
+  _player.frame = self.bounds;
+  _loadingView.frame = self.bounds;
+  NSLog(@"_loadingView frame : %@", NSStringFromCGRect(_loadingView.frame));
+  
+}
+
+#pragma mark 视频播放画面相关 {
+- (void)setVideoContentModel:(ISVideoContentModel)model
+{
+  _player.videoModel = model;
+}
+
+- (void)playForPixelBuffer:(CVPixelBufferRef)buffer {
+  [_player playerForPixelBuffer:buffer];
+}
+
+- (void)resetPlay {
+  _loadingView.hidden = NO;
+  [_player resetRenderBuffer];
+}
+
+- (void)clearBuff {
+  [_player clearFrame];
+}
+
+- (void)appEnterBackgroundGlFinish {
+  [_player playGlFinish];
+}
+#pragma mark }
+
+- (void)showLoadingView:(NSString *)tipStr animation:(BOOL)animation
+{
+  if (self.loadingView.hidden) {
+    self.loadingView.hidden = NO;
+  }
+  if (animation) {
+    [self.loadingView startLoading:tipStr];
+  } else {
+    [self.loadingView stopLoading];
+  }
+}
+
+- (void)hiddenLoadingView
+{
+  [self.loadingView stopLoading];
+  if (!self.loadingView.hidden) {
+    self.loadingView.hidden = YES;
+  }
+}
+
+
 - (instancetype)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
   if (self) {
     _player = [[ISH264Player alloc] initWithFrame:self.bounds];
     _orignRect = frame;
     [self.layer addSublayer:_player];
+    [self addSubview:self.loadingView];
   }
   return self;
+}
+
+
+
+- (ISPlayerLoadingView *)loadingView
+{
+  if (!_loadingView) {
+//    //  视频显示UIImageView
+    _loadingView = [[ISPlayerLoadingView alloc] initWithFrame:self.bounds];
+  }
+  return _loadingView;
 }
 
 - (UIButton*)fullButton {
@@ -57,33 +122,37 @@
   return _fullButton;
 }
 
-- (void)playForPixelBuffer:(CVPixelBufferRef)buffer {
-  [_player playerForPixelBuffer:buffer];
-}
-
-- (void)resetPlay {
-  [_player resetRenderBuffer];
-}
-
-- (void)layoutSubviews {
-  [super layoutSubviews];
-  _player.frame = self.bounds;
-}
-
 - (void)changePlayerFrameForFullScreen:(BOOL)isFull {
+  if (_orignRect.size.width == 0 || _orignRect.size.height == 0) {
+    return;
+  }
   if (isFull) {
+    CGFloat videoRote = _orignRect.size.width / _orignRect.size.height;
+    CGFloat screenRote = ScreenWidth / ScreenHeight;
+    CGFloat fullH = 0;
+    CGFloat fullW = 0;
+    if (videoRote > screenRote) {
+      fullH = ScreenHeight;
+      fullW = videoRote * fullH;
+    } else {
+      fullW = ScreenWidth;
+      fullH = ScreenWidth / videoRote;
+    }
+    self.frame = CGRectMake((ScreenWidth - fullW) * 0.5,
+                            (ScreenHeight - fullH) * 0.5, fullW, fullH);
+    self.fullButton.frame = CGRectMake(
+        -self.frame.origin.x + 10, self.frame.origin.y + fullH - 56, 46, 46);
     [UIView animateWithDuration:1.0
                      animations:^{
-                       self.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
                        _player.transform = CATransform3DRotate(
                            CATransform3DIdentity, M_PI_2, 0, 0, 1);
                      }];
     self.fullButton.hidden = NO;
 
   } else {
+    self.frame = _orignRect;
     [UIView animateWithDuration:1.0
                      animations:^{
-                       self.frame = _orignRect;
                        _player.transform = CATransform3DRotate(
                            CATransform3DIdentity, 0, 0, 0, 1);
                      }];
@@ -95,15 +164,6 @@
   if ([_delegate respondsToSelector:@selector(quiteFullScreen)]) {
     [_delegate quiteFullScreen];
   }
-}
-
-- (void)clearBuff {
-  [_player clearFrame];
-}
-
-- (void)appEnterBackgroundGlFinish
-{
-  [_player playGlFinish];
 }
 
 @end
