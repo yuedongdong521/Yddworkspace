@@ -87,6 +87,7 @@ static const GLfloat kColorConversion709[] = {
     self.drawableProperties =
         @{kEAGLDrawablePropertyRetainedBacking : [NSNumber numberWithBool:YES]};
 
+    self.videoModel = ISVideoContentModelScaleAspectFit;
     [self setFrame:frame];
 
     // 设置OpenGLES的版本为2.0.
@@ -228,7 +229,19 @@ static const GLfloat kColorConversion709[] = {
                  vertexSamplingRect.size.height / viewBounds.size.height);
 
   // Normalize the quad vertices.
-  if (cropScaleAmount.width > cropScaleAmount.height) {
+  BOOL scale;
+  switch (_videoModel) {
+    case ISVideoContentModelScaleAspectFit:
+      scale = cropScaleAmount.width > cropScaleAmount.height;
+      break;
+    case ISVideoContentModelScaleAspectFull:
+      scale = cropScaleAmount.width < cropScaleAmount.height;
+      break;
+    default:
+      scale = YES;
+      break;
+  }
+  if (scale) {
     normalizedSamplingSize.width = 1.0;
     normalizedSamplingSize.height =
         cropScaleAmount.height / cropScaleAmount.width;
@@ -236,7 +249,6 @@ static const GLfloat kColorConversion709[] = {
     normalizedSamplingSize.width =
         cropScaleAmount.width / cropScaleAmount.height;
     normalizedSamplingSize.height = 1.0;
-    ;
   }
 
   /*

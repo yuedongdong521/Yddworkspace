@@ -105,7 +105,7 @@ static void didDecompress(void* decompressionOutputRefCon,
     CVPixelBufferRef* outputPixelBuffer = (CVPixelBufferRef*)sourceFrameRefCon;
     *outputPixelBuffer = CVPixelBufferRetain(imageBuffer);
 
-    [decoder.delegate displayDecodedFrameImageBuffer:imageBuffer];
+    [decoder.delegate displayDecode:decoder ImageBuffer:imageBuffer];
   }
 }
 

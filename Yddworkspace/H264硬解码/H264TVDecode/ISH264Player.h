@@ -8,9 +8,16 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+typedef enum : NSUInteger {
+  ISVideoContentModelScaleAspectFit = 0,
+  ISVideoContentModelScaleAspectFull,
+} ISVideoContentModel; // 视频画面填充方式
+
 @interface ISH264Player : CAEAGLLayer
 
 @property CVPixelBufferRef pixelBuffer;
+
+@property(nonatomic, assign) ISVideoContentModel videoModel;
 
 - (id)initWithFrame:(CGRect)frame;
 

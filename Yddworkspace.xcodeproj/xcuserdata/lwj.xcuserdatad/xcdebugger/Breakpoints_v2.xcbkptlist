@@ -116,7 +116,7 @@
                   moduleName = "Yddworkspace"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wizjin/Documents/ydd/Yddworkspace/Yddworkspace/swiftTest/UserInfoTableCell.swift"
-                  timestampString = "557305194.930068"
+                  timestampString = "557908426.795836"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -131,7 +131,7 @@
                   moduleName = "Yddworkspace"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wizjin/Documents/ydd/Yddworkspace/Yddworkspace/swiftTest/UserInfoTableCell.swift"
-                  timestampString = "557305194.931765"
+                  timestampString = "557908426.797466"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "108"
@@ -420,7 +420,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Yddworkspace/GIF/GifViewController.m"
-            timestampString = "557305191.5144449"
+            timestampString = "557375285.073894"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -436,7 +436,7 @@
                   moduleName = "Yddworkspace"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wizjin/Documents/ydd/Yddworkspace/Yddworkspace/GIF/GifViewController.m"
-                  timestampString = "557305191.8373801"
+                  timestampString = "557908426.847772"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
@@ -451,7 +451,7 @@
                   moduleName = "Yddworkspace"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wizjin/Documents/ydd/Yddworkspace/Yddworkspace/GIF/GifViewController.m"
-                  timestampString = "557305191.8392299"
+                  timestampString = "557908426.849404"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
@@ -459,6 +459,54 @@
                   offsetFromSymbolStart = "144">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yddworkspace/CoreText/Controller/MyCoreTextTestViewController.m"
+            timestampString = "557916196.515318"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yddworkspace/CoreText/View/CoreTextTestView.m"
+            timestampString = "557916196.515391"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "-drawRect:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yddworkspace/CoreText/Model/CoreTextModel.m"
+            timestampString = "557916196.515445"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "-getLocWithFrame:CTLine:CTRun:origin:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

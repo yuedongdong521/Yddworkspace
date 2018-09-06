@@ -129,7 +129,8 @@
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
-      @"CoreTextTowViewController"
+      @"CoreTextTowViewController", @"MyCoreTextTestViewController",
+      @"CoreTextSurroundViewController"
     ],
     @[ @"MyViewController", @"ClosureViewController", @"UserInfoController" ]
   ];
