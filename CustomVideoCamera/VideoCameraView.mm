@@ -839,7 +839,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   movieWriter =
       [[GPUImageMovieWriter alloc] initWithMovieURL:movieURL
                                                size:CGSizeMake(720.0, 1280.0)];
-  movieWriter.isNeedBreakAudioWhiter = YES;
+//  movieWriter.isNeedBreakAudioWhiter = YES;
   movieWriter.encodingLiveVideo = YES;
   movieWriter.shouldPassthroughAudio = YES;
   [_filter addTarget:movieWriter];

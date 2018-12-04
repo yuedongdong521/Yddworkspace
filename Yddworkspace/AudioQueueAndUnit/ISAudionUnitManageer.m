@@ -21,6 +21,26 @@
 #define BUFFER_SIZE 1024
 
 
+static void CheckError(OSStatus error,const char *operaton){
+  if (error==noErr) {
+    return;
+  }
+  char errorString[20]={};
+  *(UInt32 *)(errorString+1)=CFSwapInt32HostToBig(error);
+  if (isprint(errorString[1])&&
+      isprint(errorString[2])&&
+      isprint(errorString[3])&&
+      isprint(errorString[4]))
+  {
+    errorString[0]=errorString[5]='\'';
+    errorString[6]='\0';
+  } else {
+    sprintf(errorString, "%d",(int)error);
+  }
+  fprintf(stderr, "Error:%s (%s)\n",operaton,errorString);
+  exit(1);
+}
+
 static OSStatus recordingCallback(void *inRefCon,
                                   AudioUnitRenderActionFlags *ioActionFlags,
                                   const AudioTimeStamp *inTimeStamp,
@@ -31,11 +51,17 @@ static OSStatus recordingCallback(void *inRefCon,
     // 使用 inNumberFrames 计算有多少数据是有效的
     // 在 AudioBufferList 里存放着更多的有效空间
     
-    AudioBufferList *bufferList; // bufferList里存放着一堆 buffers， buffers的长度是动态的。
-    
-    // 获得录制的采样数据
-    OSStatus status;
-    return noErr;
+  AudioBufferList *bufferList; //bufferList里存放着一堆 buffers, buffers的长度是动态的。
+  
+  // 获得录制的采样数据
+  
+  OSStatus status;
+  
+
+  
+  // 现在，我们想要的采样数据已经在bufferList中的buffers中了。
+  
+  return noErr;
     
 }
 
@@ -51,25 +77,7 @@ static OSStatus playbackCallback(void *inRefCon,
 }
 
 
-static void CheckError(OSStatus error,const char *operaton){
-    if (error==noErr) {
-        return;
-    }
-    char errorString[20]={};
-    *(UInt32 *)(errorString+1)=CFSwapInt32HostToBig(error);
-    if (isprint(errorString[1])&&
-        isprint(errorString[2])&&
-        isprint(errorString[3])&&
-        isprint(errorString[4]))
-    {
-        errorString[0]=errorString[5]='\'';
-        errorString[6]='\0';
-    } else {
-        sprintf(errorString, "%d",(int)error);
-    }
-    fprintf(stderr, "Error:%s (%s)\n",operaton,errorString);
-    exit(1);
-}
+
 
 @interface ISAudionUnitManageer ()
 {

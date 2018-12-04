@@ -97,6 +97,10 @@ void inputBufferHandler(void *inUserData, AudioQueueRef inAQ, AudioQueueBufferRe
     // NSLog(@"实时录音的数据--%@", dataM);
     //此处是发通知将dataM 传递出去
     [[NSNotificationCenter defaultCenter] postNotificationName:@"EYRecordNotifacation" object:@{@"data" : dataM}];
+  if (_delegate && [_delegate respondsToSelector:@selector(recorderData:)]) {
+    [_delegate recorderData:dataM];
+  }
+  
 }
 
 -(void)stopRecording

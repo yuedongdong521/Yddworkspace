@@ -88,6 +88,9 @@
 
 - (void)playerWithPath:(NSString *)path
 {
+  if (!path) {
+    return;
+  }
     if (!_player) {
         _player = [[AudioPlayer alloc] initAudioPlayerWithAudioPath:[NSURL fileURLWithPath:path]];
     } else {

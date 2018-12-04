@@ -62,7 +62,7 @@
 - (void)covertedData:(NSData *)data
 {
     NSLog(@"aac data length = %d", data.length);
-    if (data) {
+    if (data && [VoiceConvertHandle shareInstance].startRecord) {
         [_aacFile writeData:data];
     }
     

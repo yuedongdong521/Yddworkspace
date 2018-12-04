@@ -12,12 +12,18 @@
 
 #define UIColorFromRGBAalpha(rgbValue,alpha) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 blue:((float)(rgbValue & 0x0000FF))/255.0 alpha:((float)alpha)]
 
+struct model {
+  int a;
+  int b;
+};
+
 @interface MainViewController ()
 
 @property (nonatomic, strong) NSString *path;
 @property (nonatomic, strong) UIView *animView;
 @property (nonatomic, strong) UIDynamicAnimator *animator;
 @property (nonatomic, strong) UIView *animbgView;
+@property (nonatomic, strong) NSString *blockStr;
 
 @end
 
@@ -79,6 +85,44 @@
   [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 blue:((float)(rgbValue & 0x0000FF))/255.0 alpha:((float)alpha)];
   NSLog(@"%@", array2);
   [self testDataModel];
+  
+  
+  NSMutableArray *mutArr = [NSMutableArray arrayWithArray:@[@"0", @"1", @"2"]];
+  NSArray *arr = @[@"3", @"4"];
+  [mutArr insertObjects:arr atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, arr.count)]];
+  
+  NSLog(@"mutArr = %@", mutArr);
+  
+  _blockStr = @"1";
+  __weak typeof(self) weakself = self;
+  
+  struct model model = {1, 2};
+  for (int i = 0; i < 2; i++) {
+    model.a = i;
+    NSLog(@"model a = %d", model.a);
+    [[self class] testStr:_blockStr block:^(NSString *str) {
+      NSLog(@"str : %@, blockStr: %@, model.a : %d", str, weakself.blockStr, model.a);
+    }];
+  }
+  model.a = 3;
+  
+  _blockStr = @"2";
+  
+  NSMutableArray *emptyArr = [NSMutableArray array];
+  NSString *emptyStr = emptyArr.firstObject;
+  
+  NSLog(@"emptyStr : %@", emptyStr);
+  
+}
+
++ (void)testStr:(NSString *)str block:(void(^)(NSString * str))blcok
+{
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    sleep(1);
+    dispatch_async(dispatch_get_main_queue(), ^{
+      blcok(str);
+    });
+  });
 }
 
 - (void)testDataModel

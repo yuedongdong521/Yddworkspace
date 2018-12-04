@@ -4,18 +4,16 @@
 //
 //  Created by admin on 2017/5/18.
 //
-//
+//ISAlbumListViewController
 
 #import "ISAlbumListViewController.h"
 #import "ISPhotoAlbumViewController.h"
 #import "ISAlbumListTableViewCell.h"
-#import "ISCustomNavigationView.h"
 #import "ISAssetsManager.h"
 
 @interface ISAlbumListViewController () <UITableViewDelegate,
                                          UITableViewDataSource>
 
-@property(nonatomic, strong) ISCustomNavigationView* customNavicationView;
 @property(nonatomic, strong) UITableView* albumListTableView;
 @property(nonatomic, strong) NSArray* albumListArray;
 
@@ -48,17 +46,7 @@
             [self createTableView];
           } else if (oldStatus != PHAuthorizationStatusNotDetermined &&
                      status == PHAuthorizationStatusDenied) {
-            UIAlertView* alertView = [[UIAlertView alloc]
-                    initWithTitle:nil
-                          message:[NSString
-                                      stringWithFormat:@"请到\"设置->隐私->"
-                                                       @"照片\"\n开启 \"%@\"",
-                                                       kISName]
-                         delegate:self
-                cancelButtonTitle:nil
-                otherButtonTitles:@"确  定", nil];
-            alertView.tag = 100;
-            [alertView show];
+        
           }
         });
       }];
@@ -68,16 +56,6 @@
   }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-  NSString* titleStr = ISPageStatisticsCommonAlbum;
-  [ISPageStatisticsManager pageviewStartWithName:titleStr];
-  [super viewDidAppear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-  [ISPageStatisticsManager pageviewEndWithName:ISPageStatisticsCommonAlbum];
-  [super viewDidDisappear:animated];
-}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -86,7 +64,6 @@
 
   _albumListArray = [[NSArray alloc] init];
   self.isFirst = NO;
-  [self.view addSubview:self.customNavicationView];
   [self.view addSubview:self.albumListTableView];
 
   [[NSNotificationCenter defaultCenter]
@@ -112,7 +89,6 @@
 - (void)didSelectImageSource:(NSNotification*)notify {
   NSArray* photoImageArray = [notify object];
   if (!photoImageArray || [photoImageArray isKindOfClass:[NSNull class]]) {
-    LOGE("go:photoImageArray is NULL !");
     return;
   }
   if (photoImageArray.count == 0) {
@@ -159,28 +135,6 @@
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
-}
-
-- (ISCustomNavigationView*)customNavicationView {
-  if (_customNavicationView == nil) {
-    _customNavicationView =
-        [[ISCustomNavigationView alloc] initWithTitle:@"相册"
-                                                 left:nil
-                                                right:@"取消"];
-    __weak typeof(&*self) weakSelf = self;
-    _customNavicationView.event = ^(ISCustomNavigationEventType eventType) {
-      if (eventType == ISCustomNavigationRightEvent) {
-        [weakSelf rightBtnPressed];
-      }
-    };
-    [_customNavicationView.rightButton setTitleColor:blackLableColor
-                                            forState:UIControlStateNormal];
-    _customNavicationView.rightButton.titleLabel.font =
-        [UIFont systemFontOfSize:17.0];
-    _customNavicationView.frame =
-        CGRectMake(0, 0, ScreenWidth, kStatusAndNavBarHeight);
-  }
-  return _customNavicationView;
 }
 
 - (UITableView*)albumListTableView {
@@ -271,34 +225,12 @@
   photoAlbum.assetCollection = assetCollection;
   photoAlbum.hasImageCount = self.hasImageCount;
   photoAlbum.albumType = self.albumType;
-  UIViewController* currentVC =
-      [[AppDelegate appDelegate] getNewCurrentViewController];
-  if (!currentVC.navigationController) {
-    [currentVC presentViewController:photoAlbum
-                            animated:self.isFirst
-                          completion:^{
-                          }];
-  } else {
-    [currentVC.navigationController pushViewController:photoAlbum
-                                              animated:self.isFirst];
-  }
+ 
   self.isFirst = YES;
 }
 
 - (void)rightBtnPressed {
-  if (self.albumType == CONTACT_PHOTOLIST_WITH_HOMEPAGE) {
-    [[NSNotificationCenter defaultCenter]
-        postNotificationName:kTabBarHiddenNONotification
-                      object:self];
-  } else {
-    [[NSNotificationCenter defaultCenter]
-        postNotificationName:kTabBarHiddenYESNotification
-                      object:self];
-  }
-  if ([AppDelegate appDelegate].sessionViewBGView.isGlobalSession == YES) {
-    [AppDelegate appDelegate].sessionBackImgView.hidden = NO;
-    [AppDelegate appDelegate].sessionChatBGView.hidden = NO;
-  }
+ 
   NSArray* viewcontrollers = self.navigationController.viewControllers;
   if (viewcontrollers.count > 1) {
     [self.navigationController popViewControllerAnimated:YES];

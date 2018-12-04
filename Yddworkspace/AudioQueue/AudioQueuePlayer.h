@@ -10,10 +10,16 @@
 
 @interface AudioQueuePlayer : NSObject
 
++ (void)initialize;
+
 - (void)playWithData:(NSData *)data;
+
+- (void)receiveAudioData:(NSData *)data;
 
 - (void)resetPlay;
 
 - (void)stop;
+
+- (void)startPlay;
 
 @end

@@ -7,18 +7,15 @@
 //
 
 #import "ISPhotoPreviewViewController.h"
-#import "ISCustomNavigationView.h"
 #import "ISPhotoAlbumModel.h"
 #import "ISAssetsManager.h"
 #import "ISPhotoImageViewCell.h"
-#import "AFNetworking.h"
 
-#import "ISMessageCentralManager.h"
+
 
 @interface ISPhotoPreviewViewController () <UICollectionViewDelegate,
                                             UICollectionViewDataSource>
 
-@property(nonatomic, strong) ISCustomNavigationView* customNavicationView;
 @property(nonatomic, strong) UICollectionView* bigImageCollectionView;
 
 @property(nonatomic, strong) UIView* toolbarView;
@@ -47,16 +44,10 @@
   self.cellNumber = self.cellCount;
 
   [self.view addSubview:self.bigImageCollectionView];
-  [self.view addSubview:self.customNavicationView];
 
   [self createToolbarView];
 
   ISPhotoAlbumModel* albumMode = self.photoArray[self.cellCount];
-  if ([self.chooseImageArray containsObject:albumMode]) {
-    self.customNavicationView.rightButton.selected = YES;
-  } else {
-    self.customNavicationView.rightButton.selected = NO;
-  }
 
   NSIndexPath* indexPath =
       [NSIndexPath indexPathForRow:self.cellCount inSection:0];
@@ -95,45 +86,6 @@
   return _bigImageCollectionView;
 }
 
-- (ISCustomNavigationView*)customNavicationView {
-  if (!_customNavicationView) {
-    _customNavicationView = [[ISCustomNavigationView alloc]
-        initWithTitle:[NSString
-                          stringWithFormat:@"%lu/%lu",
-                                           (unsigned long)self.cellCount + 1,
-                                           (unsigned long)self.photoArray.count]
-                 left:[UIImage imageWithContentsOfFile:
-                                   [[NSBundle mainBundle]
-                                       pathForResource:kBSBackBtnImage
-                                                ofType:kPngName]]
-                right:[UIImage imageWithContentsOfFile:
-                                   [[NSBundle mainBundle]
-                                       pathForResource:KSelect_no
-                                                ofType:kPngName]]];
-    __weak typeof(&*self) weakSelf = self;
-    _customNavicationView.event = ^(ISCustomNavigationEventType eventType) {
-      if (eventType == ISCustomNavigationLeftEvent) {
-        [weakSelf leftBtnPressed];
-      } else if (eventType == ISCustomNavigationRightEvent) {
-        [weakSelf rightBtnPressed];
-      }
-    };
-    _customNavicationView.backgroundColor =
-        [UIColor colorWithWhite:0.0 alpha:0.3];
-    _customNavicationView.frame =
-        CGRectMake(0, 0, ScreenWidth, kStatusAndNavBarHeight);
-    _customNavicationView.titleLabel.textColor = [UIColor whiteColor];
-    _customNavicationView.rightButton.selected = NO;
-    [_customNavicationView.rightButton
-        setImage:[UIImage
-                     imageWithContentsOfFile:[[NSBundle mainBundle]
-                                                 pathForResource:KSelect_yes
-                                                          ofType:kPngName]]
-        forState:UIControlStateSelected];
-  }
-  return _customNavicationView;
-}
-
 - (void)createToolbarView {
   self.toolbarView = [[UIView alloc]
       initWithFrame:CGRectMake(0, ScreenHeight - 44 - IS_TABBAR_ADD_HEIGHT,
@@ -145,13 +97,13 @@
   self.originalBtn.frame = CGRectMake(13, 7, 80, 30);
   [self.originalBtn
       setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]
-                                                    pathForResource:KYselect_no
-                                                             ofType:kPngName]]
+                                                    pathForResource:@"yselect_yes@2x"
+                                                             ofType:@"png"]]
       forState:UIControlStateNormal];
   [self.originalBtn
       setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]
-                                                    pathForResource:KYselect_yes
-                                                             ofType:kPngName]]
+                                                    pathForResource:@"yselect_no@2x"
+                                                             ofType:@"png"]]
       forState:UIControlStateSelected];
   [self.originalBtn setTitle:@" 原图" forState:UIControlStateNormal];
   [self.originalBtn
@@ -196,15 +148,15 @@
         setTitle:[NSString stringWithFormat:@"%@(%lu/%ld)", sendBtnTitle,
                                             (unsigned long)
                                                 self.chooseImageArray.count,
-                                            (long)(AbleToSelectPicCount -
+                                            (long)(9 -
                                                    self.hasImageCount)]
         forState:UIControlStateNormal];
   } else {
     [self.sendBtn setFrame:CGRectMake(ScreenWidth - 85, 7, 70, 30)];
     [self.sendBtn setTitle:sendBtnTitle forState:UIControlStateNormal];
   }
-  [self.sendBtn setBackgroundColor:yellowBtnColor];
-  [self.sendBtn setTitleColor:blackLableColor forState:UIControlStateNormal];
+  [self.sendBtn setBackgroundColor:[UIColor yellowColor]];
+  [self.sendBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
   [self.sendBtn.layer setCornerRadius:5.0];
   [self.sendBtn addTarget:self
                    action:@selector(sendPhotoImageToSessionChatView)
@@ -220,15 +172,7 @@
     CGPoint offset = scrollView.contentOffset;
     self.cellNumber = offset.x / ScreenWidth;
     ISPhotoAlbumModel* albumMode = self.photoArray[self.cellNumber];
-    if ([self.chooseImageArray containsObject:albumMode]) {
-      self.customNavicationView.rightButton.selected = YES;
-    } else {
-      self.customNavicationView.rightButton.selected = NO;
-    }
     NSUInteger titleNum = self.cellNumber + 1;
-    self.customNavicationView.titleLabel.text =
-        [NSString stringWithFormat:@"%ld/%lu", (long)titleNum,
-                                   (unsigned long)self.photoArray.count];
   }
 }
 
@@ -281,8 +225,7 @@
   [UIView setAnimationsEnabled:YES];
   [UIView animateWithDuration:0.3
                    animations:^{
-                     self.customNavicationView.frame = CGRectMake(
-                         0, offsetY, ScreenWidth, kStatusAndNavBarHeight);
+                 
                      self.toolbarView.frame =
                          CGRectMake(0, offsetY1, ScreenWidth, 44);
                    }
@@ -326,8 +269,7 @@
   self.imageSizeLable.text = @"";
   if (self.originalBtn.selected) {
     // 选中原图
-    if (self.chooseImageArray.count == 0 &&
-        !_customNavicationView.rightButton.selected) {
+    if (self.chooseImageArray.count == 0) {
       [self rightBtnPressed];
     } else {
       for (ISPhotoAlbumModel* albumModel in self.chooseImageArray) {
@@ -384,91 +326,9 @@
 
 // 发送或添加功能
 - (void)sendPhotoImageToSessionChatView {
-  if (self.albumType == CONTACT_PHOTOLIST_WITH_EXPRESSIONS) {
-    // 添加到表情
 
-    NSArray* viewControllers = self.navigationController.viewControllers;
-    if (viewControllers.count > 4) {
-      [[UIApplication sharedApplication] setStatusBarHidden:NO];
-      [self.navigationController
-          popToViewController:viewControllers[viewControllers.count - 4]
-                     animated:YES];
-      [self noticeAddExpressionForImageData];
-    } else {
-      [[UIApplication sharedApplication] setStatusBarHidden:NO];
-      [self.presentingViewController.presentingViewController
-              .presentingViewController dismissViewControllerAnimated:YES
-                                                           completion:nil];
-      [self noticeAddExpressionForImageData];
-    }
-
-    return;
-  }
-  // 发布动态
-  else if (self.albumType == CONTACT_PHOTOLIST_WITH_DYNAMIC) {
-    NSArray* viewControllers = self.navigationController.viewControllers;
-    if (viewControllers.count > 4) {
-      [[UIApplication sharedApplication] setStatusBarHidden:NO];
-      [self.navigationController
-          popToViewController:viewControllers[viewControllers.count - 4]
-                     animated:YES];
-    } else {
-      [[UIApplication sharedApplication] setStatusBarHidden:NO];
-      [self.presentingViewController.presentingViewController
-              .presentingViewController dismissViewControllerAnimated:YES
-                                                           completion:nil];
-    }
-
-    [self noticeAddPublishDynamicWithPageType:ISPublishDynamicNormal];
-
-    return;
-  }
-  // 发布私密动态
-  else if (self.albumType == CONTACT_PHOTOLIST_WITH_HOMEPAGE) {
-    NSArray* viewControllers = self.navigationController.viewControllers;
-    if (viewControllers.count > 4) {
-      [[UIApplication sharedApplication] setStatusBarHidden:NO];
-      [self.navigationController
-          popToViewController:viewControllers[viewControllers.count - 4]
-                     animated:YES];
-    } else {
-      [[UIApplication sharedApplication] setStatusBarHidden:NO];
-      [self.presentingViewController.presentingViewController
-              .presentingViewController dismissViewControllerAnimated:YES
-                                                           completion:nil];
-    }
-    [self noticeAddPublishDynamicWithPageType:ISPublishDynamicPrivite];
-
-    return;
-  }
-
-  if ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus <
-      AFNetworkReachabilityStatusReachableViaWWAN) {
-    UIAlertView* aleatView =
-        [[UIAlertView alloc] initWithTitle:@"温馨提示"
-                                   message:@"当前网络不可用，请检查您的网络设置"
-                                  delegate:self
-                         cancelButtonTitle:@"知道了"
-                         otherButtonTitles:nil, nil];
-    [aleatView show];
-    return;
-  }
   // 聊天逻辑
 
-  if ([[ISMessageCentralManager manager]
-          checkVersionIsIMFoundationRebuildVersion:
-              IMFoundationRebuildVersion]) {
-    [self notificationCenter];
-    return;
-  }
-
-  [[NSNotificationCenter defaultCenter]
-      postNotificationName:kTabBarHiddenYESNotification
-                    object:self];
-  if ([AppDelegate appDelegate].sessionViewBGView.isGlobalSession == YES) {
-    [AppDelegate appDelegate].sessionBackImgView.hidden = NO;
-    [AppDelegate appDelegate].sessionChatBGView.hidden = NO;
-  }
   NSArray* viewControllers = self.navigationController.viewControllers;
   if (viewControllers.count > 4) {
     [self.navigationController
@@ -512,13 +372,6 @@
                            });
                          }
                        } else {
-                         [[AppDelegate appDelegate]
-                             appDontCoverLoadingViewShowForContext:
-                                 @"请在系统相册下载iCloud图片后重试"
-                                                       ForTypeShow:1
-                                            ForChangeFrameSizeType:0
-                                                       ForFrameFlg:0
-                                                     ForCancelTime:2.0];
                        }
                      }];
     }
@@ -546,13 +399,6 @@
                                              object:chooseImageArray.copy];
                          });
                        } else {
-                         [[AppDelegate appDelegate]
-                             appDontCoverLoadingViewShowForContext:
-                                 @"请在系统相册下载iCloud图片后重试"
-                                                       ForTypeShow:1
-                                            ForChangeFrameSizeType:0
-                                                       ForFrameFlg:0
-                                                     ForCancelTime:2.0];
                        }
                      }];
     }
@@ -580,26 +426,10 @@
                          if (chooseImageDataArray.count ==
                              self.chooseImageArray.count) {
                            dispatch_async(dispatch_get_main_queue(), ^(void) {
-                             [[AppDelegate appDelegate]
-                                 appcmLoadingViewShowForContext:@"正在添加.."
-                                                    ForTypeShow:0
-                                         ForCurrentLieEventType:0
-                                                    ForFrameFlg:0];
-                             [[NSNotificationCenter defaultCenter]
-                                 postNotificationName:
-                                     @"NotifyAddExpressionsImage"
-                                               object:[chooseImageDataArray
-                                                          copy]];
+                     
                            });
                          }
                        } else {
-                         [[AppDelegate appDelegate]
-                             appDontCoverLoadingViewShowForContext:
-                                 @"请在系统相册下载iCloud图片后重试"
-                                                       ForTypeShow:1
-                                            ForChangeFrameSizeType:0
-                                                       ForFrameFlg:0
-                                                     ForCancelTime:2.0];
                        }
                      }];
     }
@@ -624,24 +454,10 @@
                          [chooseImageDataArray addObject:imageDict];
 
                          dispatch_async(dispatch_get_main_queue(), ^(void) {
-                           [[AppDelegate appDelegate]
-                               appcmLoadingViewShowForContext:@"正在添加.."
-                                                  ForTypeShow:0
-                                       ForCurrentLieEventType:0
-                                                  ForFrameFlg:0];
-                           [[NSNotificationCenter defaultCenter]
-                               postNotificationName:@"NotifyAddExpressionsImage"
-                                             object:[chooseImageDataArray
-                                                        copy]];
+                        
                          });
                        } else {
-                         [[AppDelegate appDelegate]
-                             appDontCoverLoadingViewShowForContext:
-                                 @"请在系统相册下载iCloud图片后重试"
-                                                       ForTypeShow:1
-                                            ForChangeFrameSizeType:0
-                                                       ForFrameFlg:0
-                                                     ForCancelTime:2.0];
+                      
                        }
                      }];
     }
@@ -735,46 +551,7 @@
 }
 
 - (void)rightBtnPressed {
-  if (self.chooseImageArray.count ==
-          AbleToSelectPicCount - self.hasImageCount &&
-      !_customNavicationView.rightButton.selected) {
-    NSString* tips = [NSString
-        stringWithFormat:@"你最多只能选择%ld张照片",
-                         (long)(AbleToSelectPicCount - self.hasImageCount)];
-    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                        message:tips
-                                                       delegate:self
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil, nil];
-    [alertView show];
-    return;
-  }
-  _customNavicationView.rightButton.selected =
-      !_customNavicationView.rightButton.selected;
-  ISPhotoAlbumModel* albumModel = self.photoArray[self.cellNumber];
-  if (_customNavicationView.rightButton.selected) {
-    // 选中
-    albumModel.assetBool = YES;
-    self.photoCount++;
-    [self.chooseImageArray addObject:albumModel];
-    if (self.originalBtn.selected) {
-      [self getOriginalImageSizeWithAlbumModel:albumModel];
-    }
-  } else {
-    albumModel.assetBool = NO;
-    self.photoCount--;
-    [self.chooseImageArray removeObject:albumModel];
-    if (self.originalBtn.selected) {
-      self.photoImageSize -= albumModel.imageSize;
-      if (self.photoImageSize > 0.85) {
-        self.imageSizeLable.text =
-            [NSString stringWithFormat:@"(%.1lfM)", self.photoImageSize];
-      } else {
-        self.imageSizeLable.text = [NSString
-            stringWithFormat:@"(%ldK)", (long)(self.photoImageSize * 1024.0)];
-      }
-    }
-  }
+ 
 
   // 发送按钮内容
   NSString* sendBtnTitle = @"发送";
@@ -790,7 +567,7 @@
         setTitle:[NSString stringWithFormat:@"%@(%lu/%ld)", sendBtnTitle,
                                             (unsigned long)
                                                 self.chooseImageArray.count,
-                                            (long)(AbleToSelectPicCount -
+                                            (long)(9 -
                                                    self.hasImageCount)]
         forState:UIControlStateNormal];
   } else {

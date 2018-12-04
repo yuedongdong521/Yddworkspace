@@ -138,7 +138,7 @@ class MyTabeleViewCell: UITableViewCell {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        print("ksyPath = \(keyPath!) \n object = \(object!) \n change = \(change!) \n context = \(context!)")
+      print("ksyPath = \(keyPath!) \n object = \(object!) \n change = \(change!) \n context = \(context)")
     }
     
     deinit {

@@ -70,6 +70,7 @@
   NSData *data = [_h264FileHandle readDataToEndOfFile];
   uint8_t uintData = [self uint8FromBytes:data];
 
+
   [_h264Decoder decodeNalu:&uintData withSize:data.length];
   
 //    while (![[NSThread currentThread] isCancelled]) {

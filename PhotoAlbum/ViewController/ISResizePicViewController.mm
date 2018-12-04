@@ -7,6 +7,7 @@
 
 #import "ISResizePicViewController.h"
 #import "ISImageresizerView.h"
+#import "Masonry.h"
 
 @interface ISResizePicViewController ()
 @property(nonatomic, strong) UIButton* recoveryBtn;
