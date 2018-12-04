@@ -41,6 +41,7 @@ class ImageViewController: UIViewController {
         NetWorkRequest().getNetworkRequest(requestUrlStr: "http://img06.tooopen.com/images/20170723/tooopen_sl_217707083674.jpg") { (data, response, error) in
             let imageUrl = URL.init(fileURLWithPath: Bundle.main.path(forResource: "0", ofType: "jpg")!)
             let imageData = try? Data.init(contentsOf: imageUrl)
+ 
             let image = UIImage.init(data: data ?? imageData!)
             DispatchQueue.main.async {
                 self.myImageView.image = image!

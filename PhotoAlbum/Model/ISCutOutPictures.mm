@@ -120,8 +120,8 @@
 }
 
 + (CGSize)getImageSizeByScalingAndCroppingForSize:(CGSize)imageSize {
-  CGFloat maxWidth = Screen_LayoutWidth(140);
-  CGFloat maxHeight = Screen_LayoutHeight(140);
+  CGFloat maxWidth = 140;
+  CGFloat maxHeight = 140;
 
   CGSize size =
       [ISCutOutPictures getSizeByScalingAndCroppingForImageSize:imageSize];
@@ -134,10 +134,10 @@
   CGFloat scaledWidth = imageSize.width;
   CGFloat scaledHeight = imageSize.height;
 
-  CGFloat minWidth = Screen_LayoutWidth(47);
-  CGFloat maxWidth = Screen_LayoutWidth(140);
-  CGFloat minHeight = Screen_LayoutHeight(47);
-  CGFloat maxHeight = Screen_LayoutHeight(140);
+  CGFloat minWidth = 47;
+  CGFloat maxWidth = 140;
+  CGFloat minHeight = 47;
+  CGFloat maxHeight = 140;
 
   if (imageSize.width <= minWidth && imageSize.height <= minHeight) {
     scaledWidth = minWidth;

@@ -47,61 +47,21 @@
   self.view.backgroundColor = [UIColor blackColor];
   // Do any additional setup after loading the view.
 
-  /********************异地登录引起，返回通知********************/
-  [[NSNotificationCenter defaultCenter]
-      addObserver:self
-         selector:@selector(appdelegate_ImageLibraryTwoBack)
-             name:kTopChangeLibraryTwoNotify_c
-           object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-  if ([AppDelegate appDelegate].ssSpeedingPushTag ==
-      SPEEDINGPUSHTAG_SETIFAITop) {
-    [AppDelegate appDelegate].ssSpeedingPushTag = SPEEDINGPUSHTAG_SETIFAITopTwo;
-  } else if ([AppDelegate appDelegate].ssSpeedingPushTag ==
-             SPEEDINGPUSHTAG_SCIFAITop) {
-    [AppDelegate appDelegate].ssSpeedingPushTag = SPEEDINGPUSHTAG_SCIFAITopTwo;
-  } else if ([AppDelegate appDelegate].ssSpeedingPushTag ==
-             SPEEDINGPUSHTAG_FFMIFAITop) {
-    [AppDelegate appDelegate].ssSpeedingPushTag = SPEEDINGPUSHTAG_FFMIFAITopTwo;
-  }
+
 
   [[UIApplication sharedApplication]
       setStatusBarHidden:YES
            withAnimation:UIStatusBarAnimationSlide];
   //
   if (self.pushFlg == 1) {
-    if (SCREEN_MODE_IPHONE6Plus) {
-      cropFrame = CGRectMake(0, 205.0, self.view.frame.size.width,
-                             self.view.frame.size.width);
-    } else if (SCREEN_MODE_IPHONE6) {
-      cropFrame = CGRectMake(0, 170.5, self.view.frame.size.width,
-                             self.view.frame.size.width);
-    } else if (SCREEN_MODE_IPHONE5) {
-      cropFrame = CGRectMake(0, 121, self.view.frame.size.width,
-                             self.view.frame.size.width);
-    } else {
-      cropFrame = CGRectMake(0, 77, self.view.frame.size.width,
-                             self.view.frame.size.width);
-    }
+    cropFrame = CGRectMake(0, 170.5, self.view.frame.size.width,
+                           self.view.frame.size.width);
   } else {
-    if (SCREEN_MODE_IPHONE6Plus) {
-      cropFrame = CGRectMake(0, 133.0, self.view.frame.size.width,
-                             self.view.frame.size.width);
-    } else if (SCREEN_MODE_IPHONE6) {
-      cropFrame = CGRectMake(0, 100, self.view.frame.size.width,
-                             self.view.frame.size.width);
-    } else if (SCREEN_MODE_IPHONEX) {
-      cropFrame = CGRectMake(0, 181, self.view.frame.size.width,
-                             self.view.frame.size.width);
-    } else if (VERSION_MODE_IOS_ON_SEVEN) {
-      cropFrame = CGRectMake(0, 80.0, self.view.frame.size.width,
-                             self.view.frame.size.width);
-    } else {
-      cropFrame = CGRectMake(0, 49.0, self.view.frame.size.width,
-                             self.view.frame.size.width + 34);
-    }
+    cropFrame = CGRectMake(0, 100, self.view.frame.size.width,
+                           self.view.frame.size.width);
   }
   CGFloat oriWidth = cropFrame.size.width;
   CGFloat oriHeight =
@@ -141,87 +101,14 @@
                                UIViewAutoresizingFlexibleWidth;
   [self.view addSubview:imageView];
 
-  UIImage* cropImage = nil;
-  if (SCREEN_MODE_IPHONE5) {
-    if (self.pushFlg == 1) {
-      cropImage = [UIImage
-          imageWithContentsOfFile:[[NSBundle mainBundle]
-                                      pathForResource:kCropBoardPersonallyIamge5
-                                               ofType:kPngName]];
-    } else {
-      cropImage = [UIImage
-          imageWithContentsOfFile:[[NSBundle mainBundle]
-                                      pathForResource:kCropBoardImageIphone5
-                                               ofType:kPngName]];
-    }
-  } else if (SCREEN_MODE_IPHONE6) {
-    if (self.pushFlg == 1) {
-      cropImage = [UIImage
-          imageWithContentsOfFile:[[NSBundle mainBundle]
-                                      pathForResource:kCropBoardPersonallyIamge6
-                                               ofType:kPngName]];
-    } else {
-      cropImage = [UIImage
-          imageWithContentsOfFile:[[NSBundle mainBundle]
-                                      pathForResource:kCropBoardImageIphone6
-                                               ofType:kPngName]];
-    }
-  } else if (SCREEN_MODE_IPHONE6Plus) {
-    if (self.pushFlg == 1) {
-      cropImage =
-          [UIImage imageWithContentsOfFile:
-                       [[NSBundle mainBundle]
-                           pathForResource:kCropBoardPersonallyIamge6puls
-                                    ofType:kPngName]];
-    } else {
-      cropImage = [UIImage
-          imageWithContentsOfFile:[[NSBundle mainBundle]
-                                      pathForResource:kCropBoardImageIphone6plus
-                                               ofType:kPngName]];
-    }
-  } else if (SCREEN_MODE_IPHONEX) {
-    if (self.pushFlg == 1) {
-      cropImage = [UIImage
-          imageWithContentsOfFile:[[NSBundle mainBundle]
-                                      pathForResource:kCropBoardPersonallyIamgeX
-                                               ofType:kPngName]];
-    } else {
-      cropImage = [UIImage
-          imageWithContentsOfFile:[[NSBundle mainBundle]
-                                      pathForResource:kCropBoardImageIphoneX
-                                               ofType:kPngName]];
-    }
-  } else {
-    if (self.pushFlg == 1) {
-      cropImage = [UIImage
-          imageWithContentsOfFile:
-              [[NSBundle mainBundle] pathForResource:kCropBoardPersonallyIamge4s
-                                              ofType:kPngName]];
-    } else {
-      cropImage =
-          [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]
-                                               pathForResource:kPictureCutBkg
-                                                        ofType:kPngName]];
-    }
-  }
+  UIImage* cropImage = [UIImage imageNamed:@"cropBoardImageIphone6@2x"];
 
   UIImageView* cropImageView = [[UIImageView alloc] initWithImage:cropImage];
-  if (SCREEN_MODE_IPHONE6Plus || SCREEN_MODE_IPHONE6 || SCREEN_MODE_IPHONEX) {
-    cropImageView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
-  } else if (VERSION_MODE_IOS_ON_SEVEN) {
-    cropImageView.frame =
-        CGRectMake(0, 0, cropImage.size.width, cropImage.size.height);
-  } else {
-    cropImageView.frame = CGRectMake(0, -27, 320, 480 + 27);
-  }
+  cropImageView.frame = self.view.bounds;
   [self.view addSubview:cropImageView];
 
   UIView* bottomView = [[UIView alloc] initWithFrame:CGRectZero];
-  if (SCREEN_MODE_IPHONE5) {
-    bottomView.frame = CGRectMake(0, ScreenHeight - 73, ScreenWidth, 73);
-  } else {
-    bottomView.frame = CGRectMake(0, ScreenHeight - 73, ScreenWidth, 75);
-  }
+  bottomView.frame = CGRectMake(0, ScreenHeight - 73, ScreenWidth, 75);
   bottomView.backgroundColor = [UIColor colorWithRed:0 / 256.0f
                                                green:0 / 256.0f
                                                 blue:0 / 256.0f
@@ -229,13 +116,7 @@
   [self.view addSubview:bottomView];
 
   UIButton* backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-  if (IS_IPHONE_X) {
-    backButton.frame = CGRectMake(0, ScreenHeight - 75, 60, 45);
-  } else if (SCREEN_MODE_IPHONE5) {
-    backButton.frame = CGRectMake(0, 503, 60, 73);
-  } else {
-    backButton.frame = CGRectMake(0, ScreenHeight - 75, 60, 75);
-  }
+  backButton.frame = CGRectMake(0, ScreenHeight - 75, 60, 75);
   [backButton setTitle:@"返回" forState:UIControlStateNormal];
   [backButton addTarget:self
                  action:@selector(popToDismiss)
@@ -243,15 +124,8 @@
   [self.view addSubview:backButton];
 
   UIButton* selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
-  if (IS_IPHONE_X) {
-    selectButton.frame =
-        CGRectMake(ScreenWidth - 60, ScreenHeight - 75, 60, 45);
-  } else if (SCREEN_MODE_IPHONE5) {
-    selectButton.frame = CGRectMake(ScreenWidth - 60, 503, 60, 73);
-  } else {
-    selectButton.frame =
-        CGRectMake(ScreenWidth - 60, ScreenHeight - 75, 60, 75);
-  }
+  selectButton.frame =
+  CGRectMake(ScreenWidth - 60, ScreenHeight - 75, 60, 75);
   [selectButton setTitle:@"选取" forState:UIControlStateNormal];
   [selectButton
              addTarget:self
@@ -285,26 +159,8 @@
   if (panGestureRecognizer.state == UIGestureRecognizerStateBegan ||
       panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
     if (self.pushFlg == 1) {
-      if (SCREEN_MODE_IPHONE6Plus) {
-        cropFrame = CGRectMake(87, 205.0, self.view.frame.size.width - 87,
-                               self.view.frame.size.height - 410);
-      } else if (SCREEN_MODE_IPHONE6) {
-        cropFrame = CGRectMake(67.5, 170.5, self.view.frame.size.width - 67.5,
-                               self.view.frame.size.height - 341);
-      } else if (SCREEN_MODE_IPHONEX) {
-        // 分辨率 240 * 326
-        CGFloat itemWidth = 240.0;
-        CGFloat itemHeight = 326.0;
-        CGFloat xPos = (ScreenWidth - itemWidth) / 2;
-        CGFloat yPos = (ScreenHeight - itemHeight) / 2;
-        cropFrame = CGRectMake(xPos, yPos, itemWidth, itemHeight);
-      } else if (SCREEN_MODE_IPHONE5) {
-        cropFrame = CGRectMake(40, 121, self.view.frame.size.width - 40,
-                               self.view.frame.size.height - 242);
-      } else {
-        cropFrame = CGRectMake(40, 77, self.view.frame.size.width - 40,
-                               self.view.frame.size.height - 154);
-      }
+      cropFrame = CGRectMake(67.5, 170.5, self.view.frame.size.width - 67.5,
+                             self.view.frame.size.height - 341);
     }
 
     CGFloat absCenterX = cropFrame.origin.x + cropFrame.size.width / 2;
@@ -350,26 +206,8 @@
 
 - (CGRect)handleBorderOverflow:(CGRect)newFrame {
   if (self.pushFlg == 1) {
-    if (SCREEN_MODE_IPHONE6Plus) {
-      cropFrame = CGRectMake(87, 205.0, self.view.frame.size.width - 87,
-                             self.view.frame.size.height - 410);
-    } else if (SCREEN_MODE_IPHONE6) {
-      cropFrame = CGRectMake(67.5, 170.5, self.view.frame.size.width - 67.5,
-                             self.view.frame.size.height - 341);
-    } else if (SCREEN_MODE_IPHONEX) {
-      // 分辨率 240 * 326
-      CGFloat itemWidth = 240.0;
-      CGFloat itemHeight = 326.0;
-      CGFloat xPos = (ScreenWidth - itemWidth) / 2;
-      CGFloat yPos = (ScreenHeight - itemHeight) / 2;
-      cropFrame = CGRectMake(xPos, yPos, itemWidth, itemHeight);
-    } else if (SCREEN_MODE_IPHONE5) {
-      cropFrame = CGRectMake(40, 121, self.view.frame.size.width - 40,
-                             self.view.frame.size.height - 242);
-    } else {
-      cropFrame = CGRectMake(40, 77, self.view.frame.size.width - 40,
-                             self.view.frame.size.height - 154);
-    }
+    cropFrame = CGRectMake(67.5, 170.5, self.view.frame.size.width - 67.5,
+                           self.view.frame.size.height - 341);
   }
   // horizontally
   if (newFrame.origin.x > cropFrame.origin.x) {
@@ -402,16 +240,6 @@
   [[UIApplication sharedApplication]
       setStatusBarHidden:NO
            withAnimation:UIStatusBarAnimationSlide];
-  if ([AppDelegate appDelegate].ssSpeedingPushTag ==
-      SPEEDINGPUSHTAG_SETIFAITopTwo) {
-    [AppDelegate appDelegate].ssSpeedingPushTag = SPEEDINGPUSHTAG_SETIFAITop;
-  } else if ([AppDelegate appDelegate].ssSpeedingPushTag ==
-             SPEEDINGPUSHTAG_SCIFAITopTwo) {
-    [AppDelegate appDelegate].ssSpeedingPushTag = SPEEDINGPUSHTAG_SCIFAITop;
-  } else if ([AppDelegate appDelegate].ssSpeedingPushTag ==
-             SPEEDINGPUSHTAG_FFMIFAITopTwo) {
-    [AppDelegate appDelegate].ssSpeedingPushTag = SPEEDINGPUSHTAG_FFMIFAITop;
-  }
   NSArray* viewControllers = self.navigationController.viewControllers;
   if (viewControllers.count > 1) {
     [self.navigationController popViewControllerAnimated:YES];
@@ -419,49 +247,28 @@
     [self dismissViewControllerAnimated:YES completion:nil];
   }
 }
+
+- (UIImage *)getImageViewWithViewThree:(UIView *)view{
+  if (!view) {
+    return nil;
+  }
+  UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, [UIScreen mainScreen].scale);
+  [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
+  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  return image;
+}
+
+
 - (void)saveImageImageLibraryViewControllerToPressed {
   [[UIApplication sharedApplication]
       setStatusBarHidden:NO
            withAnimation:UIStatusBarAnimationSlide];
+  self.view.layer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
+  UIImage* croppedImage = [self getImageViewWithViewThree:self.view];
   if (self.pushFlg == 1) {
-    UIImage* croppedImage = nil;
-    UIImage* letterPressImage = [MTImageSize getImageFromView:self.view];
-    CGFloat scale = [UIScreen mainScreen].scale;
-    if (SCREEN_MODE_IPHONE6Plus) {
-      croppedImage = [MTImageSize
-          interceptingImage:CGRectMake(87 * scale, 205 * scale,
-                                       (ScreenWidth - 174) * scale,
-                                       (ScreenHeight - 410) * scale)
-              completeImage:letterPressImage];
-    } else if (SCREEN_MODE_IPHONE6) {
-      croppedImage = [MTImageSize
-          interceptingImage:CGRectMake(67.5 * scale, 170.5 * scale,
-                                       (ScreenWidth - 135) * scale,
-                                       (ScreenHeight - 340) * scale)
-              completeImage:letterPressImage];
-    } else if (SCREEN_MODE_IPHONEX) {
-      // 分辨率 240 * 326
-      CGFloat itemWidth = 240.0;
-      CGFloat itemHeight = 326.0;
-      CGFloat xPos = (ScreenWidth - itemWidth) / 2;
-      CGFloat yPos = (ScreenHeight - itemHeight) / 2;
-      croppedImage = [MTImageSize
-          interceptingImage:CGRectMake(xPos * scale, yPos * scale,
-                                       itemWidth * scale, itemHeight * scale)
-              completeImage:letterPressImage];
-    } else if (SCREEN_MODE_IPHONE5) {
-      croppedImage = [MTImageSize
-          interceptingImage:CGRectMake(40 * scale, 121 * scale,
-                                       (ScreenWidth - 80) * scale,
-                                       (ScreenHeight - 242) * scale)
-              completeImage:letterPressImage];
-    } else {
-      croppedImage = [MTImageSize
-          interceptingImage:CGRectMake(40 * scale, 77 * scale,
-                                       (ScreenWidth - 80) * scale,
-                                       (ScreenHeight - 154) * scale)
-              completeImage:letterPressImage];
-    }
+    
+   
     NSArray* viewControllers = self.navigationController.viewControllers;
     if (viewControllers.count > 1) {
       [self.navigationController
@@ -479,29 +286,7 @@
                       object:nil
                     userInfo:dict];
   } else {
-    UIImage* letterPressImage = [MTImageSize getImageFromView:self.view];
-    CGFloat scale = [UIScreen mainScreen].scale;
-    UIImage* croppedImage = nil;
-    if (SCREEN_MODE_IPHONE6Plus) {
-      croppedImage = [MTImageSize
-          interceptingImage:CGRectMake(0, 134.0 * scale - 2,
-                                       ScreenWidth * scale, ScreenWidth * scale)
-              completeImage:letterPressImage];
-    } else if (SCREEN_MODE_IPHONE6) {
-      croppedImage = [MTImageSize
-          interceptingImage:CGRectMake(0, 101 * scale - 1, ScreenWidth * scale,
-                                       ScreenWidth * scale)
-              completeImage:letterPressImage];
-    } else if (SCREEN_MODE_IPHONEX) {
-      croppedImage = [MTImageSize
-          interceptingImage:CGRectMake(0, 181 * scale, ScreenWidth * scale,
-                                       ScreenWidth * scale)
-              completeImage:letterPressImage];
-    } else {
-      croppedImage = [MTImageSize
-          interceptingImage:CGRectMake(0, 80 * scale, 320 * scale, 320 * scale)
-              completeImage:letterPressImage];
-    }
+   
     NSArray* viewControllers = self.navigationController.viewControllers;
     if (viewControllers.count > 1) {
       [self.navigationController
@@ -548,9 +333,6 @@
                                                  forKey:@"HeadImage"]];
     }
   }
-  if ([AppDelegate appDelegate].sessionViewBGView.isGlobalSession == YES) {
-    [[AppDelegate appDelegate] showSessionViewTempSessionChatVIew];
-  }
 }
 #pragma mark }
 - (BOOL)shouldAutorotateToInterfaceOrientation:
@@ -564,10 +346,7 @@
 
 #pragma mark 触摸方法 {
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
-  if ([AppDelegate appDelegate].ssSpeedingPushTag ==
-      SPEEDINGPUSHTAG_SChatLibraryT) {
-    [self showAndHiddenBar];
-  }
+  [self showAndHiddenBar];
 }
 
 - (void)showAndHiddenBar {
@@ -587,26 +366,14 @@
   self.navigationController.navigationBar.frame = rect;
   [UIView commitAnimations];  // 动画结束（或者用提交也不错）
   // b.
-  if (VERSION_MODE_IOS_ON_SIX) {
-    if ([[UIApplication sharedApplication] isStatusBarHidden]) {
-      [[UIApplication sharedApplication]
-          setStatusBarHidden:NO
-               withAnimation:UIStatusBarAnimationSlide];
-    } else {
-      [[UIApplication sharedApplication]
-          setStatusBarHidden:YES
-               withAnimation:UIStatusBarAnimationSlide];
-    }
+  if ([[UIApplication sharedApplication] isStatusBarHidden]) {
+    [[UIApplication sharedApplication]
+     setStatusBarHidden:NO
+     withAnimation:UIStatusBarAnimationSlide];
   } else {
-    if ([[UIApplication sharedApplication] isStatusBarHidden]) {
-      [[UIApplication sharedApplication]
-          setStatusBarHidden:NO
-               withAnimation:UIStatusBarAnimationSlide];
-    } else {
-      [[UIApplication sharedApplication]
-          setStatusBarHidden:YES
-               withAnimation:UIStatusBarAnimationSlide];
-    }
+    [[UIApplication sharedApplication]
+     setStatusBarHidden:YES
+     withAnimation:UIStatusBarAnimationSlide];
   }
 }
 

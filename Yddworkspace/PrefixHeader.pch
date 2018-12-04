@@ -20,6 +20,7 @@
 
 #endif
 
+#define ScreenScale [UIScreen mainScreen].scale
 #define ScreenHeight  (CGFloat)[UIScreen mainScreen].bounds.size.height
 #define ScreenWidth   (CGFloat)[UIScreen mainScreen].bounds.size.width
 #define ViewX(view) view.frame.origin.x
@@ -40,5 +41,25 @@
 #define IS_IPHONE_X \
 (ScreenWidth == 375.0f && ScreenHeight == 812.0f && IS_IPHONE)
 
+// 记录进入相册页面的页面来源
+enum CONTACT_PHOTOLIST_WITH_ALBUMTYPE {
+  CONTACT_PHOTOLIST_WITH_SESSIONCHAT = 1,  // 聊天页面
+  CONTACT_PHOTOLIST_WITH_DYNAMIC = 2,  // 动态页面
+  CONTACT_PHOTOLIST_WITH_HOMEPAGE = 3,  // 首页动态
+  CONTACT_PHOTOLIST_WITH_SETTINGWALL = 4,  // 主页封面背景墙
+  CONTACT_PHOTOLIST_WITH_HEADER = 5,  // 修改头像
+  CONTACT_PHOTOLIST_WITH_GUILDCOVER = 6,  // 工会封面
+  CONTACT_PHOTOLIST_WITH_HOSTCOVER = 7,  // 主播封面
+  CONTACT_PHOTOLIST_WITH_SIGNING = 8,  // 签约实名认证
+  CONTACT_PHOTOLIST_WITH_EXPRESSIONS = 9,  // 添加自定义表情
+  CONTACT_PHOTOLIST_WITH_VIDEO_COVER = 10,  // 更换封面照
+  CONTACT_PHOTOLIST_WITH_FRIENTINFO = 11,  // 个人中心修改头像
+  CONTACT_PHOTOLIST_WITH_SIGNINGIMAGE = 12,  // 签约手持身份证
+  CONTACT_PHOTOLIST_WITH_DYNAMIC_VIDEO_COVER = 13  // 小视频封面照
+};
+
+#define KDictKeyTypeData @"KDictKeyTypeData"
+#define KDictKeyTypeString @"KDictKeyTypeString"
+#define KDictKeyTypeIdentifier @"KDictKeyTypeIdentifier"
 
 #endif /* PrefixHeader_pch */

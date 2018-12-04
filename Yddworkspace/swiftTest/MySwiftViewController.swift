@@ -8,9 +8,17 @@
 
 import Foundation
 
+struct RequestInfo : Codable {
+  let code : Int
+  let msg : String
+}
+
+
 class MySwiftViewController : UIViewController
 {
     let myView = UIView()
+ 
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,13 +35,20 @@ class MySwiftViewController : UIViewController
         viewButton.addTarget(self, action: #selector(viewButtonClick), for: UIControlEvents.touchUpInside)
         self.view.addSubview(viewButton)
         
-        
     }
     
     
   @objc  func viewButtonClick(){
 //        myView.reset()
-        myView.animateWhenClicked()
+//        myView.animateWhenClicked()
+    NetWorkRequest().getNetworkRequest(requestUrlStr: "http://test.m.v.ishow.cn/verify/token") { (data, urlResponse, error) in
+      let decode = JSONDecoder.init()
+      decode.dataDecodingStrategy = .deferredToData
+      let dic = try! decode.decode(RequestInfo.self, from: data ?? Data.init())
+      
+      print(dic)
+    }
+    
     }
     
 }

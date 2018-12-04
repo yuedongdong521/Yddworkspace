@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol AudioQueueRecorderDelegate <NSObject>
+
+- (void)recorderData:(NSData *)data;
+
+@end
+
 @interface AudioQueueRecorder : NSObject
+
+@property(nonatomic, weak) id<AudioQueueRecorderDelegate>delegate;
+
 //开始录音
 - (void)startRecording;
 

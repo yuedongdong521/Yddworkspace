@@ -22,7 +22,7 @@
 - (UIImageView*)photoImageView {
   if (!_photoImageView) {
     _photoImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-    _photoImageView.image = [UIImage imageNamed:kImgDownSucceedIconHD];
+    _photoImageView.image = [UIImage imageNamed:@"ImgDownSucceedIconHD@2x"];
     [self addSubview:_photoImageView];
   }
   return _photoImageView;
@@ -32,9 +32,9 @@
   if (!_chooseBut) {
     _chooseBut = [UIButton buttonWithType:UIButtonTypeCustom];
     [_chooseBut setFrame:CGRectMake(self.frame.size.width - 34, 4, 30, 30)];
-    [_chooseBut setImage:[UIImage imageNamed:KYselect_no]
+    [_chooseBut setImage:[UIImage imageNamed:@"yselect_no@2x"]
                 forState:UIControlStateNormal];
-    [_chooseBut setImage:[UIImage imageNamed:KYselect_yes]
+    [_chooseBut setImage:[UIImage imageNamed:@"yselect_no@2x"]
                 forState:UIControlStateSelected];
     [_chooseBut addTarget:self
                    action:@selector(chooseButton:)

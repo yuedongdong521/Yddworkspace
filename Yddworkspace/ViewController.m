@@ -20,6 +20,9 @@
 #import "UIViewController+KNSemiModal.h"
 #import "PresentationViewController.h"
 #import "TestCollectionCellPLayCollectionViewController.h"
+#import "ISAssetsManager.h"
+#import "ISPhotoAlbumViewController.h"
+
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -125,14 +128,18 @@
       @"InvocationMethodViewController",
       @"MyTextViewViewController",
       @"GifViewController",
-      @"ISVideoSessionViewController"
+      @"ISVideoSessionViewController",
+      @"H264DecodeViewController",
+      @"ISPhotoAlbumViewController",
+      @"AudioQueueViewController",
+      @"SaveCustomViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
       @"CoreTextTowViewController", @"MyCoreTextTestViewController",
       @"CoreTextSurroundViewController"
     ],
-    @[ @"MyViewController", @"ClosureViewController", @"UserInfoController" ]
+    @[ @"MyViewController", @"ClosureViewController", @"UserInfoController", @"SwiftJSONViewController" ]
   ];
 
   _myTestMtbArray =
@@ -230,6 +237,11 @@
           [viewController isKindOfClass:[PresentationViewController class]]) {
         [self presentViewController:viewController animated:YES completion:nil];
         return;
+      } else if ([viewController isKindOfClass:[ISPhotoAlbumViewController class]]) {
+        NSArray *albumListArray = [[ISAssetsManager sharedInstancetype]
+                                   fetchAllAlbumsWithAlbumContentTypeShowEmptyAlbum:NO
+                                   showSmartAlbum:NO];
+        ((ISPhotoAlbumViewController*)viewController).assetCollection = albumListArray.firstObject;
       }
       self.hidesBottomBarWhenPushed = YES;
       viewController.title = itemStr;
@@ -253,6 +265,9 @@
     } else if ([itemStr isEqualToString:@"UserInfoController"]) {
       UserInfoController *infoVC = [[UserInfoController alloc] init];
       [self.navigationController pushViewController:infoVC animated:YES];
+    } else if ([itemStr isEqualToString:@"SwiftJSONViewController"]) {
+      SwiftJSONViewController *jsonVC = [[SwiftJSONViewController alloc] init];
+      [self.navigationController pushViewController:jsonVC animated:YES];
     }
     self.hidesBottomBarWhenPushed = NO;
   }

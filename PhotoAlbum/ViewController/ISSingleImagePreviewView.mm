@@ -7,13 +7,11 @@
 //
 
 #import "ISSingleImagePreviewView.h"
-#import "ISCustomNavigationView.h"
-#import "SendMyDynamicViewController.h"
 #import "ISAssetsManager.h"
 
 @interface ISSingleImagePreviewView ()
 
-@property(nonatomic, strong) ISCustomNavigationView* customNavicationView;
+
 
 @end
 
@@ -31,7 +29,7 @@
   self.view.backgroundColor = [UIColor blackColor];
 
   UIImageView* photoImgView = [[UIImageView alloc]
-      initWithImage:[UIImage imageNamed:kImgDownSucceedIconHD]];
+      initWithImage:[UIImage imageNamed:@"ImgDownSucceedIconHD@2x"]];
   photoImgView.backgroundColor = [UIColor clearColor];
   photoImgView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
   photoImgView.contentMode = UIViewContentModeScaleAspectFit;
@@ -49,7 +47,6 @@
                     }
                   }];
 
-  [self.view addSubview:self.customNavicationView];
 }
 
 #pragma mark - 获取图片尺寸
@@ -71,41 +68,13 @@
       scaledHeight = imageSize.height * heightRatio;
     }
   }
+
   return CGSizeMake(scaledWidth * ScreenScale, scaledHeight * ScreenScale);
 }
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
-}
-
-- (ISCustomNavigationView*)customNavicationView {
-  if (!_customNavicationView) {
-    _customNavicationView = [[ISCustomNavigationView alloc]
-        initWithTitle:nil
-                 left:[UIImage imageWithContentsOfFile:
-                                   [[NSBundle mainBundle]
-                                       pathForResource:kBSBackBtnImage
-                                                ofType:kPngName]]
-                right:@"确定"];
-    __weak typeof(&*self) weakSelf = self;
-    _customNavicationView.event = ^(ISCustomNavigationEventType eventType) {
-      if (eventType == ISCustomNavigationLeftEvent) {
-        [weakSelf leftBtnPressed];
-      } else if (eventType == ISCustomNavigationRightEvent) {
-        [weakSelf rightBtnPressed];
-      }
-    };
-    _customNavicationView.backgroundColor =
-        [UIColor colorWithWhite:0.0 alpha:0.3];
-    _customNavicationView.frame =
-        CGRectMake(0, 0, ScreenWidth, kStatusAndNavBarHeight);
-    [_customNavicationView.rightButton setTitleColor:[UIColor whiteColor]
-                                            forState:UIControlStateNormal];
-    _customNavicationView.rightButton.titleLabel.font =
-        [UIFont systemFontOfSize:17.0];
-  }
-  return _customNavicationView;
 }
 
 - (void)leftBtnPressed {
@@ -158,9 +127,7 @@
                       [photoImageArray addObject:AssetImage];
                       [[UIApplication sharedApplication]
                           setStatusBarStyle:UIStatusBarStyleDefault];
-                      [[NSNotificationCenter defaultCenter]
-                          postNotificationName:kTabBarHiddenYESNotification
-                                        object:weak_self];
+                  
                       weak_self.navigationController.navigationBar.hidden = YES;
                       weak_self.hidesBottomBarWhenPushed = YES;
                       if (weak_self.albumType ==
@@ -244,13 +211,7 @@
                           dispatch_time(DISPATCH_TIME_NOW,
                                         (int64_t)(0.4 * NSEC_PER_SEC)),
                           dispatch_get_main_queue(), ^{
-                            [[AppDelegate appDelegate]
-                                appDontCoverLoadingViewShowForContext:
-                                    @"请在系统相册下载iCloud图片后重试"
-                                                          ForTypeShow:1
-                                               ForChangeFrameSizeType:0
-                                                          ForFrameFlg:YES
-                                                        ForCancelTime:2];
+                            NSLog(@"请在系统相册下载iCloud图片后重试");
                           });
                       NSArray* viewControllers =
                           weak_self.navigationController.viewControllers;

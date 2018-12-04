@@ -44,7 +44,6 @@
     self.viewControllers = @[navig1, navig2];
     self.selectedIndex = 1;
   self.delegate = self;
-    
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController

@@ -20,7 +20,7 @@
 - (UIImageView*)photoImageView {
   if (!_photoImageView) {
     _photoImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-    _photoImageView.image = [UIImage imageNamed:kImgDownSucceedIconHD];
+    _photoImageView.image = [UIImage imageNamed:@"ImgDownSucceedIconHD@2x"];
     _photoImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:_photoImageView];
   }

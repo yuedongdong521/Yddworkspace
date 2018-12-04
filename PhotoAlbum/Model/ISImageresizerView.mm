@@ -461,7 +461,7 @@ imageresizerViewWithConfigure:(JPImageresizerConfigure*)configure
     self.directionIndex = 0;
 
   JPImageresizerRotationDirection direction =
-      [self.allDirections[self.directionIndex] integerValue];
+      (JPImageresizerRotationDirection)[self.allDirections[self.directionIndex] integerValue];
 
   CGFloat scale = 1;
   if (self.isRotatedAutoScale) {

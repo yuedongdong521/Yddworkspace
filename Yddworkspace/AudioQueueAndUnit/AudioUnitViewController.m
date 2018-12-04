@@ -8,11 +8,12 @@
 
 #import "AudioUnitViewController.h"
 #import "ISAudionUnitManageer.h"
-
+#import "AudioUnitRecordController.h"
 
 @interface AudioUnitViewController ()
 
 @property (nonatomic, strong) ISAudionUnitManageer *manager;
+@property (nonatomic, strong) AudioUnitRecordController *reconderController;
 
 @end
 
@@ -29,16 +30,19 @@
     [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
-    _manager = [[ISAudionUnitManageer alloc] init];
+//    _manager = [[ISAudionUnitManageer alloc] init];
+  _reconderController = [[AudioUnitRecordController alloc] init];
 }
 
 - (void)buttonAction:(UIButton *)btn
 {
     btn.selected = !btn.selected;
     if (btn.selected) {
-        [_manager startAudioUnit];
+//        [_manager startAudioUnit];
+      [_reconderController recordAction];
     } else {
-        [_manager stopAudioUnit];
+//        [_manager stopAudioUnit];
+      [_reconderController stopRecord];
     }
 }
 
