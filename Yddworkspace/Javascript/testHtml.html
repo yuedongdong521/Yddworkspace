@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,initial-scale=1.0,user-scalable=no,viewport-fit=cover">
+<!--  <canvas height="750px" width="375px"></canvas>-->
+	<title>学习 html</title>
+	<script type="text/javascript">
+		function buttonAction() {
+			// body...
+			window.alert("点我干啥？");
+		}
+		function oc_javascriptAction() {
+			// alert("oc_javascriptAction")
+			// body.
+			return "调用 oc_javascriptAction";
+		}
+		function baiduClicked() {
+			// body...
+			// window.open('http//:baidu.com');
+			var a = document.createAttribute('a');
+			a.href = 'http://baidu.com';
+			// a.target = "_blank";
+			document.body.appendChild(a);
+			a.click();
+		}
+	</script>
+	<style type="text/css">
+		p {
+			position: fixed;
+			top: 20px;
+			left:20px;
+			width: 100px;
+			height: 50px;
+			background-color: red;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 50px;
+		}
+		body{font-size: .7rem;
+			background: gray !important;
+			padding-left: constant(safe-area-inset-left);
+			padding-right: constant(safe-area-inset-right);
+		}
+		btn1 {
+			position: fixed;
+			top: 100px;
+			left: 20px;
+			width: 200px;
+			height: 50px;
+			background-color: green;
+			border-width: 2px;
+			border-color: blue;
+			border-radius: 25px;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 50px;
+		}
+		quite {
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			width: 100px;
+			height:50px;
+			line-height: 50px;
+			text-align: center;
+			background-color: red;
+		}
+		img {
+			position: fixed;
+			top: 200px;left: 20px;width:100px;height: 100px;
+		}
+		baidu{
+			position:fixed;
+			top: 200px; left: 50px; right: 50px; height:50px;
+			text-align: center;
+			line-height: 50px;
+		}
+	</style>
+</head>
+<body style="background-color: gray">
+	
+	<p>holle world</p>
+    <btn1 type="button" onclick="buttonAction()">onclick</btn1>
+    <img src="/Users/wizjin/Desktop/旗舰.png">
+    <quite style="quite" type="button" onclick="quiteAction()">quite</quite>>
+    <!-- <baidu type="button" onclick="baiduClicked()">百度一下</baidu> -->
+    <baidu type="button" onclick="location.href='http://baidu.com'">百度一下</baidu>
+    <a href="http://baidu.com" style="left: 20px; right: 20px; position: fixed; top: 350px; align-content: center; height: 50px">
+    	<button>百度两下</button>
+    </a>
+
+</body>
+</html>

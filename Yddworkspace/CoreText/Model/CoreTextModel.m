@@ -218,15 +218,15 @@ static CGFloat coreTextWidthCallback( void* ref ){
   NSDictionary *imageAttrDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:imageModel.width],@"width", [NSNumber numberWithFloat:imageModel.height], @"height", nil];
   
   CTRunDelegateRef runDelegate = CTRunDelegateCreate(&imageCallbacks, (__bridge void *)(imageAttrDic));
+  
+  unichar placeHolder = 0xFFFC;
+  NSString * placeHolderStr = [NSString stringWithCharacters:&placeHolder length:1];
   NSMutableAttributedString* attribute = [[NSMutableAttributedString alloc]
-                                          initWithString:@" "];  // 空格用于给图片留位置
+                                          initWithString:placeHolderStr];  // 图片占位置
   [attribute addAttribute:(NSString*)kCTRunDelegateAttributeName
                     value:(__bridge id)runDelegate
                     range:NSMakeRange(0, 1)];
   CFRelease(runDelegate);
-  [attribute addAttribute:@"image"
-                    value:image
-                    range:NSMakeRange(0, 1)];
   return attribute;
 }
 
@@ -239,6 +239,8 @@ static CGFloat coreTextWidthCallback( void* ref ){
 {
   return _frameRef;
 }
+
+
 
 - (NSDictionary *)getAttributesParagraphStyleDic
 {

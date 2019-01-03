@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "WeChatTestFloatViewController.h"
 #import "Yddworkspace-Swift.h"
+#import "XMLDataAnalysis.h"
 
 #define UIColorFromRGBAalpha(rgbValue,alpha) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 blue:((float)(rgbValue & 0x0000FF))/255.0 alpha:((float)alpha)]
 
@@ -113,6 +114,30 @@ struct model {
   
   NSLog(@"emptyStr : %@", emptyStr);
   
+  [XMLDataAnalysis analysisXML];
+  
+  NSString *urlStr = @"https://h5.ispeak.cn/lingxiu?uid=142615177&partner_id=0&sub_partnerid=0&ver=1000&client_type=2&to_uid=74699911&toproomid=10000311&subroomid=118776694";
+  NSData *encodeStr = [urlStr dataUsingEncoding:NSUTF8StringEncoding];
+  NSString *str = [encodeStr base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+  
+  NSString *base64Str = [self base64Encode:urlStr];
+  NSString *decodeStr = [self base64Decode:base64Str];
+  NSLog(@"str 2 : %@", str);
+  
+}
+
+- (NSString *)base64Encode:(NSString *)str
+{
+  NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+  NSData *base64Data = [data base64EncodedDataWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+  return [[NSString alloc] initWithData:base64Data encoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)base64Decode:(NSString *)str
+{
+  NSData *data = [[NSData alloc]initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
+  NSString *decodeStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  return decodeStr;
 }
 
 + (void)testStr:(NSString *)str block:(void(^)(NSString * str))blcok

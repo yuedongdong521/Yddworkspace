@@ -10,9 +10,8 @@
 
 @interface ISPlayerLoadingView : UIView
 
-- (void)startLoading:(NSString *)tipStr;
+- (void)startLoading:(NSString*)tipStr;
 
 - (void)stopLoading;
-
 
 @end

@@ -110,6 +110,50 @@ static const GLfloat kColorConversion709[] = {
   self.pixelBuffer = pixelBuffer;
 }
 
+- (void)playForYUVData:(const unsigned char*)data
+                 width:(size_t)width
+                height:(size_t)height {
+  CVPixelBufferRef bufferref = [self copyDataFromBuffer:data toYUVPixelBufferWithWidth:width Height:height];
+  [self playerForPixelBuffer:bufferref];
+  CVPixelBufferRelease(bufferref);
+}
+
+- (CVPixelBufferRef)copyDataFromBuffer:(const unsigned char*)buffer
+             toYUVPixelBufferWithWidth:(size_t)w
+                                Height:(size_t)h {
+  NSDictionary* pixelBufferAttributes = [NSDictionary
+      dictionaryWithObjectsAndKeys:@(YES),
+//                                         kCVPixelBufferIOSurfacePropertiesKey,
+                                         kCVPixelBufferOpenGLESCompatibilityKey,
+                                         nil];
+
+  
+
+  
+  CVPixelBufferRef pixelBuffer;
+  CVPixelBufferCreate(NULL, w, h,
+                      kCVPixelFormatType_420YpCbCr8BiPlanarFullRange,
+                          (__bridge CFDictionaryRef)(pixelBufferAttributes),
+                          &pixelBuffer);
+  
+  CVPixelBufferLockBaseAddress(pixelBuffer, 0);
+  size_t d = CVPixelBufferGetBytesPerRowOfPlane(pixelBuffer, 0);
+  const unsigned char* src = buffer;
+  unsigned char* dst =
+      (unsigned char*)CVPixelBufferGetBaseAddressOfPlane(pixelBuffer, 0);
+  for (unsigned int rIdx = 0; rIdx < h; ++rIdx, dst += d, src += w) {
+    memcpy(dst, src, w);
+  }
+  d = CVPixelBufferGetBytesPerRowOfPlane(pixelBuffer, 1);
+  dst = (unsigned char*)CVPixelBufferGetBaseAddressOfPlane(pixelBuffer, 1);
+  h = h >> 1;
+  for (unsigned int rIdx = 0; rIdx < h; ++rIdx, dst += d, src += w) {
+    memcpy(dst, src, w);
+  }
+  CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
+  return pixelBuffer;
+}
+
 - (void)displayPixelBuffer:(CVPixelBufferRef)pixelBuffer
                      width:(uint32_t)frameWidth
                     height:(uint32_t)frameHeight {
@@ -607,8 +651,7 @@ const GLchar *shader_vsh = (const GLchar*)"attribute vec4 position;"
   [_context presentRenderbuffer:GL_RENDERBUFFER];
 }
 
-- (void)playGlFinish
-{
+- (void)playGlFinish {
   if (_context) {
     glFinish();
   }

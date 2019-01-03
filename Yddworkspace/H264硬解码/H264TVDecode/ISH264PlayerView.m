@@ -7,15 +7,12 @@
 //
 
 #import "ISH264PlayerView.h"
-#import "ISH264Player.h"
-#import "Masonry.h"
-
+#import "ScreenRecorder.h"
 @interface ISH264PlayerView ()
 
 @property(nonatomic, strong) ISH264Player* player;
 @property(nonatomic, assign) CGRect orignRect;
 @property(nonatomic, strong) UIButton* fullButton;
-
 @end
 
 @implementation ISH264PlayerView
@@ -33,17 +30,60 @@
   _player.frame = self.bounds;
   _loadingView.frame = self.bounds;
   NSLog(@"_loadingView frame : %@", NSStringFromCGRect(_loadingView.frame));
-  
 }
 
 #pragma mark 视频播放画面相关 {
-- (void)setVideoContentModel:(ISVideoContentModel)model
-{
+- (void)setVideoContentModel:(ISVideoContentModel)model {
   _player.videoModel = model;
 }
 
 - (void)playForPixelBuffer:(CVPixelBufferRef)buffer {
+
   [_player playerForPixelBuffer:buffer];
+  [[ScreenRecorder shareRecorder] writerVideoBuffer:buffer];
+}
+
+
+- (UIImage *)imageFromCVPixelBufferRef0:(CVPixelBufferRef)pixelBuffer{
+  // MUST READ-WRITE LOCK THE PIXEL BUFFER!!!!
+  CVPixelBufferLockBaseAddress(pixelBuffer, 0);
+  CIImage *ciImage = [CIImage imageWithCVPixelBuffer:pixelBuffer];
+  CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
+  CIContext *temporaryContext = [CIContext contextWithOptions:nil];
+  CGImageRef videoImage = [temporaryContext
+                           createCGImage:ciImage
+                           fromRect:CGRectMake(0, 0,
+                                               CVPixelBufferGetWidth(pixelBuffer),
+                                               CVPixelBufferGetHeight(pixelBuffer))];
+  
+  UIImage *uiImage = [UIImage imageWithCGImage:videoImage];
+  CGImageRelease(videoImage);
+//  CVPixelBufferRelease(pixelBuffer);
+  return uiImage;
+}
+
+
+- (CGImageRef)getImageWidth:(CVPixelBufferRef)imageBuffer
+{
+  CVPixelBufferLockBaseAddress(imageBuffer, 0);
+  // Get the number of bytes per row for the pixel buffer
+  size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+  // Get the pixel buffer width and height
+  size_t width = CVPixelBufferGetWidth(imageBuffer);
+  size_t height = CVPixelBufferGetHeight(imageBuffer);
+  // Generate image to edit
+  unsigned char* pixel =
+  (unsigned char*)CVPixelBufferGetBaseAddress(imageBuffer);
+  CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+  CGContextRef context = CGBitmapContextCreate(
+                                               pixel, width, height, 8, bytesPerRow, colorSpace,
+                                               kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+  CGImageRef image = CGBitmapContextCreateImage(context);
+  CGContextRelease(context);
+  CGColorSpaceRelease(colorSpace);
+  CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+  UIGraphicsEndImageContext();
+  return image;
 }
 
 - (void)resetPlay {
@@ -60,8 +100,7 @@
 }
 #pragma mark }
 
-- (void)showLoadingView:(NSString *)tipStr animation:(BOOL)animation
-{
+- (void)showLoadingView:(NSString*)tipStr animation:(BOOL)animation {
   if (self.loadingView.hidden) {
     self.loadingView.hidden = NO;
   }
@@ -72,14 +111,12 @@
   }
 }
 
-- (void)hiddenLoadingView
-{
+- (void)hiddenLoadingView {
   [self.loadingView stopLoading];
   if (!self.loadingView.hidden) {
     self.loadingView.hidden = YES;
   }
 }
-
 
 - (instancetype)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
@@ -87,21 +124,20 @@
     _player = [[ISH264Player alloc] initWithFrame:self.bounds];
     _orignRect = frame;
     [self.layer addSublayer:_player];
+//    [self addSubview:self.imageView];
     [self addSubview:self.loadingView];
   }
   return self;
 }
 
-
-
-- (ISPlayerLoadingView *)loadingView
-{
+- (ISPlayerLoadingView*)loadingView {
   if (!_loadingView) {
-//    //  视频显示UIImageView
+    //    //  视频显示UIImageView
     _loadingView = [[ISPlayerLoadingView alloc] initWithFrame:self.bounds];
   }
   return _loadingView;
 }
+
 
 - (UIButton*)fullButton {
   if (!_fullButton) {
@@ -111,11 +147,8 @@
                     action:@selector(fullButtonAction:)
           forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_fullButton];
-    [_fullButton mas_makeConstraints:^(MASConstraintMaker* make) {
-      make.size.mas_offset(CGSizeMake(46, 46));
-      make.left.mas_offset(10);
-      make.bottom.mas_offset(-10);
-    }];
+    _fullButton.frame = CGRectMake(self.frame.size.width - 56,
+                                   self.frame.size.height - 56, 46, 46);
     _fullButton.transform =
         CGAffineTransformRotate(CGAffineTransformIdentity, M_PI_2);
   }
@@ -161,9 +194,16 @@
 }
 
 - (void)fullButtonAction:(UIButton*)btn {
-  if ([_delegate respondsToSelector:@selector(quiteFullScreen)]) {
-    [_delegate quiteFullScreen];
+//  if ([_delegate respondsToSelector:@selector(quiteFullScreen)]) {
+//    [_delegate quiteFullScreen];
+//  }
+  btn.selected = !btn.selected;
+  if (btn.selected) {
+    [[ScreenRecorder shareRecorder] startWriter];
+  } else {
+    [[ScreenRecorder shareRecorder] stopWriter];
   }
+  
 }
 
 @end

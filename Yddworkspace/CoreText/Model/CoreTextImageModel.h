@@ -17,8 +17,16 @@
 @property(nonatomic, assign) CGFloat width;
 @property(nonatomic, assign) CGFloat height;
 @property(nonatomic, assign) NSInteger location;
-@property(nonatomic, assign) CGRect imageFrame;
+@property(nonatomic, assign) CGRect imageFrame; // 绘制区域
 
 - (instancetype)initWithImageName:(NSString *)name loaction:(NSInteger)location;
+
+/**
+ 获取在 view 上的展示区域
+
+ @param height view 的 height
+ @return <#return value description#>
+ */
+- (CGRect)getViewRectWithHeight:(CGFloat)height;
 
 @end

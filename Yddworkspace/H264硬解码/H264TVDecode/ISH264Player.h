@@ -11,7 +11,7 @@
 typedef enum : NSUInteger {
   ISVideoContentModelScaleAspectFit = 0,
   ISVideoContentModelScaleAspectFull,
-} ISVideoContentModel; // 视频画面填充方式
+} ISVideoContentModel;
 
 @interface ISH264Player : CAEAGLLayer
 
@@ -22,6 +22,7 @@ typedef enum : NSUInteger {
 - (id)initWithFrame:(CGRect)frame;
 
 - (void)playerForPixelBuffer:(CVPixelBufferRef)pixelBuffer;
+- (void)playForYUVData:(const unsigned char*)data width:(size_t)width height:(size_t)height;
 
 - (void)resetRenderBuffer;
 

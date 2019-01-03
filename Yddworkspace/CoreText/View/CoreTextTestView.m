@@ -25,8 +25,13 @@
     CGRect imageFrame = imageModel.imageFrame;
     CGContextDrawImage(context, imageFrame, image.CGImage);
   }
-  
 //  CFRelease(_frameRef);
+}
+
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
   
 }
 

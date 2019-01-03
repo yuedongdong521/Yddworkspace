@@ -8,6 +8,7 @@
 
 #import "ISH246TVDecode.h"
 #import <VideoToolbox/VideoToolbox.h>
+#import "H264DecodeInfo.h"
 
 #define kH264outputWidth 1280
 #define kH264outputHeight 720
@@ -192,7 +193,12 @@ static void didDecompress(void* decompressionOutputRefCon,
   if (!_sps || !_pps || _spsSize == 0 || _ppsSize == 0) {
     return NO;
   }
-
+  
+//  int width, height, fps;
+//  [H264DecodeInfo decodeSpsBuf:_sps spsLenght:_spsSize width:width height:height fps:fps];
+//  ISLog(@"h264Video Info Width : %d, height : %d, fps : %d", width, height, fps);
+//  NSData *data = [NSData dataWithBytes:_sps length:_spsSize];
+//  ISLog(@"sps data : %@", data);
   const uint8_t* const parameterSetPointers[2] = {_sps, _pps};
   const size_t parameterSetSizes[2] = {_spsSize, _ppsSize};
   OSStatus status = CMVideoFormatDescriptionCreateFromH264ParameterSets(
@@ -239,6 +245,7 @@ static void didDecompress(void* decompressionOutputRefCon,
   return YES;
 }
 
+
 - (BOOL)resetH264Decoder {
   if (_deocderSession) {
     VTDecompressionSessionWaitForAsynchronousFrames(_deocderSession);
@@ -249,26 +256,29 @@ static void didDecompress(void* decompressionOutputRefCon,
   return [self initH264Decoder];
 }
 
+
 - (CVPixelBufferRef)decode:(uint8_t*)frame withSize:(uint32_t)frameSize {
   if (frame == NULL || _deocderSession == nil) return NULL;
 
   CVPixelBufferRef outputPixelBuffer = NULL;
   CMBlockBufferRef blockBuffer = NULL;
 
+//  [H264DecodeInfo decode_emulation_prevention:frame lenght:&frameSize];
+  
   OSStatus status = CMBlockBufferCreateWithMemoryBlock(
       NULL, (void*)frame, frameSize, kCFAllocatorNull, NULL, 0, frameSize,
       FALSE, &blockBuffer);
   if (status == kCMBlockBufferNoErr) {
     CMSampleBufferRef sampleBuffer = NULL;
-    //    const size_t sampleSizeArray[] = {frameSize};
-    //        status = CMSampleBufferCreateReady(kCFAllocatorDefault,
-    //                                           blockBuffer,
-    //                                           _decoderFormatDescription ,
-    //                                           1, 0, NULL, 1, sampleSizeArray,
-    //                                           &sampleBuffer);
-    status = CMSampleBufferCreate(NULL, blockBuffer, TRUE, 0, 0,
-                                  _decoderFormatDescription, 1, 0, NULL, 0,
-                                  NULL, &sampleBuffer);
+        const size_t sampleSizeArray[] = {frameSize};
+            status = CMSampleBufferCreateReady(kCFAllocatorDefault,
+                                               blockBuffer,
+                                               _decoderFormatDescription ,
+                                               1, 0, NULL, 1, sampleSizeArray,
+                                               &sampleBuffer);
+//    status = CMSampleBufferCreate(NULL, blockBuffer, TRUE, 0, 0,
+//                                  _decoderFormatDescription, 1, 0, NULL, 0,
+//                                  NULL, &sampleBuffer);
 
     if (status == kCMBlockBufferNoErr && sampleBuffer) {
       VTDecodeFrameFlags flags = 0;
@@ -293,10 +303,13 @@ static void didDecompress(void* decompressionOutputRefCon,
   return outputPixelBuffer;
 }
 
+
 - (BOOL)decodeNalu:(uint8_t*)frame withSize:(uint32_t)frameSize {
   // LOGD(@">>>>>>>>>>开始解码");
   if (frame == NULL || frameSize == 0) return NO;
 
+//  [H264DecodeInfo decode_emulation_prevention:frame lenght:&frameSize];
+  
   int size = frameSize;
   const uint8_t* p = frame;
   const uint8_t* end = p + size;
@@ -329,6 +342,15 @@ static void didDecompress(void* decompressionOutputRefCon,
         memcpy(_pps, nal_start, _ppsSize);
       }
     } else {
+      if (nalu_type == 0x05)
+      {
+        // IDR / I frame
+        [self resetH264Decoder];
+      }
+//      if (nalu_type == 12) {
+//        nal_start = nal_end;
+//        continue;
+//      }
       _buf_out[size + 0] = (uint8_t)(nal_len >> 24);
       _buf_out[size + 1] = (uint8_t)(nal_len >> 16);
       _buf_out[size + 2] = (uint8_t)(nal_len >> 8);
@@ -344,6 +366,7 @@ static void didDecompress(void* decompressionOutputRefCon,
   if ([self initH264Decoder]) {
     CVPixelBufferRef pixelBuffer = NULL;
     pixelBuffer = [self decode:_buf_out withSize:size];
+//    [self.delegate displayDecode:self ImageBuffer:pixelBuffer];
   }
 
   return size > 0 ? YES : NO;

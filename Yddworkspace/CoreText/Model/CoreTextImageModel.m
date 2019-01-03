@@ -27,5 +27,11 @@
   return self;
 }
 
+- (CGRect)getViewRectWithHeight:(CGFloat)height
+{
+  CGRect viewRect = self.imageFrame;
+  viewRect.origin.y = height - CGRectGetMaxY(viewRect);
+  return viewRect;
+}
 
 @end

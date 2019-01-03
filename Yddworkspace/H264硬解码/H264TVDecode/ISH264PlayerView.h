@@ -20,7 +20,7 @@
 
 @property(nonatomic, weak) id<ISH264PlayerViewDelegate> delegate;
 
-@property(nonatomic, strong) ISPlayerLoadingView *loadingView;
+@property(nonatomic, strong) ISPlayerLoadingView* loadingView;
 
 - (instancetype)initWithFrame:(CGRect)frame;
 
@@ -42,8 +42,10 @@
 - (void)appEnterBackgroundGlFinish;
 
 /** 显示视频加载画面 */
-- (void)showLoadingView:(NSString *)tipStr animation:(BOOL)animation;
+- (void)showLoadingView:(NSString*)tipStr animation:(BOOL)animation;
 /** 影藏视频加载画面 */
 - (void)hiddenLoadingView;
+
+- (void)fullButtonAction:(UIButton*)btn;
 
 @end
