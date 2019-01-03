@@ -11,7 +11,8 @@
 
 @protocol ISH264TVDecodeDelegate <NSObject>
 
-- (void)displayDecode:(ISH246TVDecode*)decode ImageBuffer:(CVPixelBufferRef)buffer;
+- (void)displayDecode:(ISH246TVDecode*)decode
+          ImageBuffer:(CVPixelBufferRef)buffer;
 
 @end
 

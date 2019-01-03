@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>testJavascript</title>
+	<script type="text/javascript">
+		function displayDate() {
+			// body...
+			document.getElementById("displayerDate").innerHTML=Date();
+		}
+
+		function learnString() {
+			var strA = "john";
+			var strB = new String("tom");
+
+			document.getElementById("StringObject").innerHTML = typeof strA + " " + typeof strB;
+			document.getElementById("StringEqual").innerHTML = strA === strB + "=== 为绝对相等";
+			var strA1 = strA.charAt(1);
+			var strAB = strA.concat(strB,strA1);
+			var subStr = strAB.substr(strAB.length - 4, 3);
+			var n = 1;
+	        n = n > 10 ? 10 : n++;
+
+	        var titleArr = ["ydd", "wyy", "like", "each", "other"];
+
+			document.getElementById("StringConcat").innerHTML = strAB + "\r subStr " + subStr + " n = " + n + " arrSize = " + titleArr.length;
+		}
+
+		function javaScriptDataType() {
+			document.getElementById("dataType").innerHTML = typeof "ydd" + "<br>" + 
+															typeof 3.14 + "<br>" +
+															typeof NaN  + "<br>" +
+															typeof false + "<br>" +
+															typeof [1, 2] + "<br>" +
+															typeof {name : "ydd", age : 18} + "<br>" +
+															typeof new Date() + "<br>" +
+															typeof function() {} + "<br>" + 
+															typeof myCar + "<br>" +
+															typeof null;
+
+		    document.getElementById("Constructor").innerHTML = "ydd".constructor + "<br>" + 
+															   (3.14).constructor + "<br>" +
+															   NaN.constructor  + "<br>" +
+															false.constructor + "<br>" +
+															[1, 2].constructor + "<br>" +
+															{name : "ydd", age : 18}.constructor + "<br>" +
+															new Date().constructor + "<br>" +
+															function() {}.constructor; 
+
+
+
+
+		}
+
+		function judgeObectIsArr() {
+			var objectArr = ["ydd", "wyy"];
+			var result = isArray(objectArr);
+			document.getElementById("isArray").innerHTML = result;
+		}
+
+		function isArray(myArray) {
+			document.getElementById("toString").innerHTML = myArray.constructor.toString();
+			return myArray.constructor.toString().indexOf("Array") > -1;
+
+		}
+
+		// 闭包测试， 自我调用函数只执行一次，初始化 count 并将函数表达式赋值给 add()
+        var add = (function () {
+        	var count = 0;
+        	return function(){return count++;}
+        	})();
+        
+        function addUpAction() {
+        	document.getElementById("addUp").innerHTML = add();
+        }
+
+
+	</script>
+</head>
+<body onload="checkCookies()">
+	<script type="text/javascript"> 
+		var titleArr = ["ydd", "wyy", "like", "each", "other"];
+
+			for (var i = titleArr.length - 1; i >= 0; i--) {
+				document.write(titleArr[i] + "<br>")
+			}
+		function checkCookies() {
+			if (navigator.cookieEnabled==true) {
+				alert("cookies 可用");
+			} else {
+				alert("cookies 不可用");
+			}
+		}
+	</script>
+<button onclick='getElementById("demo").innerHTML=Date()'>当前时间是？</button>
+<p id = "demo"></p>
+
+<button onclick="this.innerHTML=Date()">the time is ?</button>
+<br>
+<button id="displayerDate" onclick="displayDate()">displayDate</button>
+<br>
+<button onclick="learnString()"> learnString </button>
+<p id="StringObject"></p>
+<p id="StringEqual"></p>
+<p id="StringConcat"></p>
+<button onclick="javaScriptDataType()">数据类型</button>
+<p id="dataType"></p>
+<p>获取构造函数（constructor）</p>
+<p id="Constructor"></p>
+
+<button onclick="judgeObectIsArr()">判断对象是否为数组</button>
+<p id="isArray">isArray</p>
+<p id="toString">toString</p>
+<button type="button" onclick="addUpAction()">点击次数统计</button>
+<p id="addUp"></p>
+<div id="main">
+	<p id="holle">你好世界！</p>
+    <p>该实例展示了<b>getElementById</b> 方法</p>
+</div>
+
+<script type="text/javascript">
+	x = document.getElementById("holle");
+	document.write("<p> 本文为 id 为 holle的段落：" + x.innerHTML + "</p>");
+
+	var main = document.getElementById("main");
+	var tag = main.getElementsByTagName("p");
+	document.write('id="mian"元素中的第一个段落为：' + tag[1].innerHTML);
+	document.write("<p>id=main元素中的第0个段落" + tag[0].innerHTML + "</p>");
+
+	var parent = document.getElementById("main");
+	var para = document.createElement("p");
+	var node = document.createTextNode("这是一个新段落");
+	para.appendChild(node);
+	parent.appendChild(para);
+
+	var child = document.getElementById("holle");
+	parent.removeChild(child);
+
+</script>
+
+
+<p class="intro">holle world</p>
+<p>该实例展示了 <b>getElementByClassName</b>方法！</p>
+
+<button id="addAction">点我</button>
+
+<script type="text/javascript">
+	x = document.getElementsByClassName("intro");
+	document.write("<p>文本来自 class 为 intro 的段落：" + x[0].innerHTML + "</p>")
+
+	function onchangeName() {
+		var x = document.getElementById("fname");
+		x.value = x.value.toUpperCase();
+	}
+	function mOver(obj) {
+		obj.innerHTML = "thank you";
+	}
+	function mOut(obj) {
+		obj.innerHTML = "mouse over me";
+	}
+	var btn = document.getElementById("addAction");
+	btn.addEventListener("click", clickDisplayDate);
+	function clickDisplayDate() { 
+		var p = document.getElementById("clickDisplayDate");
+		p.innerHTML = p.innerHTML + Date();
+		btn.removeEventListener("click", clickDisplayDate);
+	}
+</script>
+
+输入你的名字：<input type="text" id="fname" onchange="onchangeName()">
+<p>当你离开输入框后，函数将被触发，将小写字母转为大写字母。</p>
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color: red; width: 120px;height: 20px;padding: 40px; left: 100px;">mouse over me</div>
+<p id="clickDisplayDate">显示时间：</p>
+
+
+
+</body>
+</html>

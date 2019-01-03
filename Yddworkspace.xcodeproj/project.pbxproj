@@ -241,6 +241,7 @@
 		ED01F67621B13092006DAC28 /* Play.m in Sources */ = {isa = PBXBuildFile; fileRef = ED01F67521B13091006DAC28 /* Play.m */; };
 		ED01F67B21B13607006DAC28 /* AudioQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED01F67A21B13607006DAC28 /* AudioQueueViewController.m */; };
 		ED06276621B1481400B23E8A /* AudioUnitRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED06276521B1481400B23E8A /* AudioUnitRecordController.m */; };
+		ED1177E421DCB74700CA45F4 /* MyTask.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1177E321DCB74700CA45F4 /* MyTask.m */; };
 		ED1B742D2177263500D51FF5 /* UIImage+JPExtension.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED1B740E2177263500D51FF5 /* UIImage+JPExtension.mm */; };
 		ED1B742E2177263500D51FF5 /* ISImageresizerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED1B74102177263500D51FF5 /* ISImageresizerView.mm */; };
 		ED1B742F2177263500D51FF5 /* ISPhotoImageViewCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED1B74112177263500D51FF5 /* ISPhotoImageViewCell.mm */; };
@@ -434,6 +435,12 @@
 		ED2F86E2213FF17D0070482E /* CoreTextImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2F86E1213FF17D0070482E /* CoreTextImageModel.m */; };
 		ED31415420AD112F0047FC21 /* NetWorkURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = ED31415320AD112F0047FC21 /* NetWorkURLSession.m */; };
 		ED31415720AD2A080047FC21 /* TestDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED31415620AD2A080047FC21 /* TestDownloadViewController.m */; };
+		ED31ECCF21B934F300124752 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED31ECCB21B934F200124752 /* ProgressView.m */; };
+		ED31ECD021B934F300124752 /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED31ECCE21B934F200124752 /* ProgressViewController.m */; };
+		ED31ECD321B9350500124752 /* TestHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED31ECD121B9350500124752 /* TestHtmlViewController.m */; };
+		ED31ECD521B9350D00124752 /* testHtml.html in Resources */ = {isa = PBXBuildFile; fileRef = ED31ECD421B9350D00124752 /* testHtml.html */; };
+		ED31ECD721B9354D00124752 /* testJavascript.html in Resources */ = {isa = PBXBuildFile; fileRef = ED31ECD621B9354C00124752 /* testJavascript.html */; };
+		ED31ECD921B9358700124752 /* JavaScriptObject.html in Resources */ = {isa = PBXBuildFile; fileRef = ED31ECD821B9358700124752 /* JavaScriptObject.html */; };
 		ED324CAA2134017500D02F13 /* TZImageManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324C8F2134017500D02F13 /* TZImageManager.mm */; };
 		ED324CAB2134017500D02F13 /* TZProgressView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324C912134017500D02F13 /* TZProgressView.mm */; };
 		ED324CAC2134017500D02F13 /* TZPhotoPickerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED324C932134017500D02F13 /* TZPhotoPickerController.mm */; };
@@ -466,6 +473,9 @@
 		ED325484212E959E00182DF5 /* GifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED325483212E959E00182DF5 /* GifViewController.m */; };
 		ED325487212EAA9100182DF5 /* VideoToGif.m in Sources */ = {isa = PBXBuildFile; fileRef = ED325486212EAA9100182DF5 /* VideoToGif.m */; };
 		ED32548A212ED68900182DF5 /* SCGIFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED325488212ED68800182DF5 /* SCGIFImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ED32EB3621B7652300B9EBA8 /* ScreenShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED32EB3521B7652300B9EBA8 /* ScreenShotViewController.m */; };
+		ED38AFF621BE53460002508A /* XMLDataAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = ED38AFF521BE53460002508A /* XMLDataAnalysis.m */; };
+		ED38AFF921BE536C0002508A /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = ED38AFF821BE536C0002508A /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		ED39610520ABC26600D0658F /* ISH246TVDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = ED39610220ABC26500D0658F /* ISH246TVDecode.m */; };
 		ED39610620ABC26600D0658F /* ISH264PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED39610320ABC26600D0658F /* ISH264PlayerView.m */; };
 		ED39610720ABC26600D0658F /* ISH264Player.m in Sources */ = {isa = PBXBuildFile; fileRef = ED39610420ABC26600D0658F /* ISH264Player.m */; };
@@ -573,6 +583,10 @@
 		ED771C5C21241F54001BEFB3 /* YYTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED771C0A21241F53001BEFB3 /* YYTimer.m */; };
 		ED771C5D21241F54001BEFB3 /* YYThreadSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ED771C0B21241F53001BEFB3 /* YYThreadSafeArray.m */; };
 		ED771C5E21241F54001BEFB3 /* YYReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = ED771C0C21241F53001BEFB3 /* YYReachability.m */; };
+		ED8B185921C3442500D7364A /* H264DecodeInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED8B185621C3442400D7364A /* H264DecodeInfo.mm */; };
+		ED8B185A21C3442500D7364A /* ScreenRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED8B185721C3442500D7364A /* ScreenRecorder.mm */; };
+		ED9BDB9A21BA071E00F3CB9A /* UIImage+ydd.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9BDB9921BA071E00F3CB9A /* UIImage+ydd.m */; };
+		ED9E0C7221B8C7DE00AF239D /* LoadPickerImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9E0C7121B8C7DE00AF239D /* LoadPickerImageTool.m */; };
 		EDA36235211AFB8F00536799 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA36234211AFB8F00536799 /* DataModel.swift */; };
 		EDB91E4720DB99D200265E33 /* FloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB91E4620DB99D200265E33 /* FloadViewController.m */; };
 		EDC8D437218ACBE6000B3D6C /* GPUImageContext.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8D2EE218ACBE5000B3D6C /* GPUImageContext.m */; };
@@ -742,6 +756,7 @@
 		EDCFD95E21B53DBB00C9E913 /* SaveCustomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFD95D21B53DBB00C9E913 /* SaveCustomModel.m */; };
 		EDCFD96121B53DDF00C9E913 /* SaveCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFD96021B53DDF00C9E913 /* SaveCustomViewController.m */; };
 		EDEC452E2109C1FF008BEC94 /* FullImageAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEC452D2109C1FF008BEC94 /* FullImageAnimateView.m */; };
+		EDFB35AB21DC585A009D8212 /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFB35AA21DC585A009D8212 /* RunLoopViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1164,6 +1179,8 @@
 		ED01F67A21B13607006DAC28 /* AudioQueueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioQueueViewController.m; sourceTree = "<group>"; };
 		ED06276421B1481300B23E8A /* AudioUnitRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioUnitRecordController.h; sourceTree = "<group>"; };
 		ED06276521B1481400B23E8A /* AudioUnitRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioUnitRecordController.m; sourceTree = "<group>"; };
+		ED1177E221DCB74700CA45F4 /* MyTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTask.h; sourceTree = "<group>"; };
+		ED1177E321DCB74700CA45F4 /* MyTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTask.m; sourceTree = "<group>"; };
 		ED1B740C2177263500D51FF5 /* ISPhotoAlbumProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPhotoAlbumProtocol.h; sourceTree = "<group>"; };
 		ED1B740E2177263500D51FF5 /* UIImage+JPExtension.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+JPExtension.mm"; sourceTree = "<group>"; };
 		ED1B740F2177263500D51FF5 /* ISPhotoImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPhotoImageViewCell.h; sourceTree = "<group>"; };
@@ -1387,6 +1404,15 @@
 		ED31415520AD2A080047FC21 /* TestDownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDownloadViewController.h; sourceTree = "<group>"; };
 		ED31415620AD2A080047FC21 /* TestDownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDownloadViewController.m; sourceTree = "<group>"; };
 		ED31BA87210EA7C400ADB2DF /* WZLSerializeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLSerializeKit.h; sourceTree = "<group>"; };
+		ED31ECCB21B934F200124752 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		ED31ECCC21B934F200124752 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		ED31ECCD21B934F200124752 /* ProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
+		ED31ECCE21B934F200124752 /* ProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
+		ED31ECD121B9350500124752 /* TestHtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHtmlViewController.m; sourceTree = "<group>"; };
+		ED31ECD221B9350500124752 /* TestHtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHtmlViewController.h; sourceTree = "<group>"; };
+		ED31ECD421B9350D00124752 /* testHtml.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testHtml.html; sourceTree = "<group>"; };
+		ED31ECD621B9354C00124752 /* testJavascript.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testJavascript.html; sourceTree = "<group>"; };
+		ED31ECD821B9358700124752 /* JavaScriptObject.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = JavaScriptObject.html; sourceTree = "<group>"; };
 		ED324C8F2134017500D02F13 /* TZImageManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TZImageManager.mm; sourceTree = "<group>"; };
 		ED324C902134017500D02F13 /* TZPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewCell.h; sourceTree = "<group>"; };
 		ED324C912134017500D02F13 /* TZProgressView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TZProgressView.mm; sourceTree = "<group>"; };
@@ -1455,6 +1481,12 @@
 		ED325486212EAA9100182DF5 /* VideoToGif.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoToGif.m; sourceTree = "<group>"; };
 		ED325488212ED68800182DF5 /* SCGIFImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGIFImageView.m; sourceTree = "<group>"; };
 		ED325489212ED68900182DF5 /* SCGIFImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGIFImageView.h; sourceTree = "<group>"; };
+		ED32EB3421B7652300B9EBA8 /* ScreenShotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenShotViewController.h; sourceTree = "<group>"; };
+		ED32EB3521B7652300B9EBA8 /* ScreenShotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenShotViewController.m; sourceTree = "<group>"; };
+		ED38AFF421BE53460002508A /* XMLDataAnalysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMLDataAnalysis.h; sourceTree = "<group>"; };
+		ED38AFF521BE53460002508A /* XMLDataAnalysis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMLDataAnalysis.m; sourceTree = "<group>"; };
+		ED38AFF721BE536B0002508A /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		ED38AFF821BE536C0002508A /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		ED3960FF20ABC26500D0658F /* ISH246TVDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISH246TVDecode.h; sourceTree = "<group>"; };
 		ED39610020ABC26500D0658F /* ISH264Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISH264Player.h; sourceTree = "<group>"; };
 		ED39610120ABC26500D0658F /* ISH264PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISH264PlayerView.h; sourceTree = "<group>"; };
@@ -1669,6 +1701,14 @@
 		ED771C0B21241F53001BEFB3 /* YYThreadSafeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYThreadSafeArray.m; sourceTree = "<group>"; };
 		ED771C0C21241F53001BEFB3 /* YYReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYReachability.m; sourceTree = "<group>"; };
 		ED771C0D21241F53001BEFB3 /* YYSentinel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSentinel.h; sourceTree = "<group>"; };
+		ED8B185521C3442400D7364A /* H264DecodeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H264DecodeInfo.h; sourceTree = "<group>"; };
+		ED8B185621C3442400D7364A /* H264DecodeInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = H264DecodeInfo.mm; sourceTree = "<group>"; };
+		ED8B185721C3442500D7364A /* ScreenRecorder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenRecorder.mm; sourceTree = "<group>"; };
+		ED8B185821C3442500D7364A /* ScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenRecorder.h; sourceTree = "<group>"; };
+		ED9BDB9821BA071E00F3CB9A /* UIImage+ydd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ydd.h"; sourceTree = "<group>"; };
+		ED9BDB9921BA071E00F3CB9A /* UIImage+ydd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ydd.m"; sourceTree = "<group>"; };
+		ED9E0C7021B8C7DE00AF239D /* LoadPickerImageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadPickerImageTool.h; sourceTree = "<group>"; };
+		ED9E0C7121B8C7DE00AF239D /* LoadPickerImageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadPickerImageTool.m; sourceTree = "<group>"; };
 		EDA36234211AFB8F00536799 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		EDB91E4520DB99D200265E33 /* FloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloadViewController.h; sourceTree = "<group>"; };
 		EDB91E4620DB99D200265E33 /* FloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloadViewController.m; sourceTree = "<group>"; };
@@ -2007,6 +2047,8 @@
 		EDCFD96021B53DDF00C9E913 /* SaveCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaveCustomViewController.m; sourceTree = "<group>"; };
 		EDEC452C2109C1FF008BEC94 /* FullImageAnimateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullImageAnimateView.h; sourceTree = "<group>"; };
 		EDEC452D2109C1FF008BEC94 /* FullImageAnimateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullImageAnimateView.m; sourceTree = "<group>"; };
+		EDFB35A921DC585A009D8212 /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
+		EDFB35AA21DC585A009D8212 /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2337,12 +2379,13 @@
 		60761EA61D61B62000FC2F1F = {
 			isa = PBXGroup;
 			children = (
-				ED1B740A2177263500D51FF5 /* PhotoAlbum */,
-				ED2E64C321355F7F00ADCDFF /* CustomVideoCamera */,
-				ED2E64BA21355F7E00ADCDFF /* ISChatMessageVideo */,
-				ED2E64862135184900ADCDFF /* sdk */,
-				ED771B562123C67F001BEFB3 /* mytextView */,
 				ED752A852122F01400802367 /* NSInvocation */,
+				ED771B562123C67F001BEFB3 /* mytextView */,
+				ED2E64862135184900ADCDFF /* sdk */,
+				ED2E64BA21355F7E00ADCDFF /* ISChatMessageVideo */,
+				ED2E64C321355F7F00ADCDFF /* CustomVideoCamera */,
+				ED1B740A2177263500D51FF5 /* PhotoAlbum */,
+				EDFB35A821DC55A4009D8212 /* runloop */,
 				ED752A7421227E0100802367 /* runtime */,
 				609E3D08205272C800D9A55C /* GitHub */,
 				60DB89A01E821C7C0031ED29 /* RegularExpressions */,
@@ -2372,6 +2415,9 @@
 		60761EB11D61B62000FC2F1F /* Yddworkspace */ = {
 			isa = PBXGroup;
 			children = (
+				ED31ECCA21B934DB00124752 /* Progress */,
+				ED31ECC921B934AB00124752 /* Javascript */,
+				ED32EB3321B764A100B9EBA8 /* screenShot */,
 				EDCFD95B21B53D5100C9E913 /* SaveCustomModel */,
 				ED2B7D1B21378CA70071F4D3 /* Socket */,
 				ED32547B212E93BC00182DF5 /* GIF */,
@@ -2637,6 +2683,8 @@
 		609E6C941F29B4DB00BAEB17 /* ModeloAndTools */ = {
 			isa = PBXGroup;
 			children = (
+				ED38AFF721BE536B0002508A /* GDataXMLNode.h */,
+				ED38AFF821BE536C0002508A /* GDataXMLNode.m */,
 				600BC76B1DF56CE8007D0EBC /* MyTools.h */,
 				600BC76C1DF56CE8007D0EBC /* MyTools.m */,
 				609E6C951F29B53100BAEB17 /* ModeloTool.h */,
@@ -2645,6 +2693,8 @@
 				ED39610920ABC32C00D0658F /* DataConversionTool.m */,
 				ED31415220AD112F0047FC21 /* NetWorkURLSession.h */,
 				ED31415320AD112F0047FC21 /* NetWorkURLSession.m */,
+				ED38AFF421BE53460002508A /* XMLDataAnalysis.h */,
+				ED38AFF521BE53460002508A /* XMLDataAnalysis.m */,
 				ED31415520AD2A080047FC21 /* TestDownloadViewController.h */,
 				ED31415620AD2A080047FC21 /* TestDownloadViewController.m */,
 			);
@@ -2723,6 +2773,10 @@
 				ED2850112101BD2C00178965 /* UIImage+ImageSizeWithURL.m */,
 				EDEC452C2109C1FF008BEC94 /* FullImageAnimateView.h */,
 				EDEC452D2109C1FF008BEC94 /* FullImageAnimateView.m */,
+				ED9E0C7021B8C7DE00AF239D /* LoadPickerImageTool.h */,
+				ED9E0C7121B8C7DE00AF239D /* LoadPickerImageTool.m */,
+				ED9BDB9821BA071E00F3CB9A /* UIImage+ydd.h */,
+				ED9BDB9921BA071E00F3CB9A /* UIImage+ydd.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -3450,6 +3504,29 @@
 			path = GPUImage;
 			sourceTree = "<group>";
 		};
+		ED31ECC921B934AB00124752 /* Javascript */ = {
+			isa = PBXGroup;
+			children = (
+				ED31ECD621B9354C00124752 /* testJavascript.html */,
+				ED31ECD821B9358700124752 /* JavaScriptObject.html */,
+				ED31ECD421B9350D00124752 /* testHtml.html */,
+				ED31ECD221B9350500124752 /* TestHtmlViewController.h */,
+				ED31ECD121B9350500124752 /* TestHtmlViewController.m */,
+			);
+			path = Javascript;
+			sourceTree = "<group>";
+		};
+		ED31ECCA21B934DB00124752 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				ED31ECCC21B934F200124752 /* ProgressView.h */,
+				ED31ECCB21B934F200124752 /* ProgressView.m */,
+				ED31ECCD21B934F200124752 /* ProgressViewController.h */,
+				ED31ECCE21B934F200124752 /* ProgressViewController.m */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
 		ED324C8E2134017500D02F13 /* TZImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3541,9 +3618,22 @@
 			path = GIF;
 			sourceTree = "<group>";
 		};
+		ED32EB3321B764A100B9EBA8 /* screenShot */ = {
+			isa = PBXGroup;
+			children = (
+				ED32EB3421B7652300B9EBA8 /* ScreenShotViewController.h */,
+				ED32EB3521B7652300B9EBA8 /* ScreenShotViewController.m */,
+			);
+			path = screenShot;
+			sourceTree = "<group>";
+		};
 		ED3960FE20ABC26500D0658F /* H264TVDecode */ = {
 			isa = PBXGroup;
 			children = (
+				ED8B185521C3442400D7364A /* H264DecodeInfo.h */,
+				ED8B185621C3442400D7364A /* H264DecodeInfo.mm */,
+				ED8B185821C3442500D7364A /* ScreenRecorder.h */,
+				ED8B185721C3442500D7364A /* ScreenRecorder.mm */,
 				ED2F86D5213FB39F0070482E /* VideoDefaultBgImage@2x.png */,
 				ED2F86D3213FB3620070482E /* ISPlayerLoadingView.h */,
 				ED2F86D2213FB3620070482E /* ISPlayerLoadingView.m */,
@@ -4250,6 +4340,17 @@
 			path = SaveCustomModel;
 			sourceTree = "<group>";
 		};
+		EDFB35A821DC55A4009D8212 /* runloop */ = {
+			isa = PBXGroup;
+			children = (
+				EDFB35A921DC585A009D8212 /* RunLoopViewController.h */,
+				EDFB35AA21DC585A009D8212 /* RunLoopViewController.m */,
+				ED1177E221DCB74700CA45F4 /* MyTask.h */,
+				ED1177E321DCB74700CA45F4 /* MyTask.m */,
+			);
+			path = runloop;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -4392,6 +4493,7 @@
 				608849051DC076C800FD819C /* dianzan.png in Resources */,
 				609E3D10205278B600D9A55C /* userCocoapods in Resources */,
 				608849121DC076C800FD819C /* yr1.png in Resources */,
+				ED31ECD721B9354D00124752 /* testJavascript.html in Resources */,
 				600EF34D1D9E627400A30927 /* photograph@2x.png in Resources */,
 				ED1B744221772AE800D51FF5 /* cropBoardImageIphone6@2x.png in Resources */,
 				60944ECA1F0F911C00C02AFB /* voice_empty@2x.png in Resources */,
@@ -4438,8 +4540,10 @@
 				60E594A21FFB72A000476F8D /* test.h264 in Resources */,
 				608849031DC076C800FD819C /* cool.jpg in Resources */,
 				60B783601F16129800BD50D7 /* DrawImageColorViewController.xib in Resources */,
+				ED31ECD921B9358700124752 /* JavaScriptObject.html in Resources */,
 				60AA47FD1E1DF5B900839D8C /* 1yasuo.jpg in Resources */,
 				60AF3C4A1F18604F00C8FBB9 /* background_01@2x.png in Resources */,
+				ED31ECD521B9350D00124752 /* testHtml.html in Resources */,
 				60CBBFF21FCBDA7F006545F1 /* zombies.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4496,6 +4600,7 @@
 				ED403D9520D3D09E00D9658A /* FloatRoundEntryView.m in Sources */,
 				EDC8D465218ACBE7000B3D6C /* GPUImageAlphaBlendFilter.m in Sources */,
 				EDC8D489218ACBE7000B3D6C /* GPUImageXYDerivativeFilter.m in Sources */,
+				ED8B185A21C3442500D7364A /* ScreenRecorder.mm in Sources */,
 				ED771C3A21241F54001BEFB3 /* UITableView+YYAdd.m in Sources */,
 				ED3C00BC2114462E00131495 /* UserInfoTableCell.swift in Sources */,
 				EDC8D4AA218ACBE7000B3D6C /* GPUImageBuffer.m in Sources */,
@@ -4552,8 +4657,10 @@
 				EDC8D494218ACBE7000B3D6C /* GPUImageGaussianBlurFilter.m in Sources */,
 				ED752A7A2122A9B900802367 /* RuntimeLibrary.m in Sources */,
 				ED324D1321340B6B00D02F13 /* MASConstraintMaker.m in Sources */,
+				ED9BDB9A21BA071E00F3CB9A /* UIImage+ydd.m in Sources */,
 				ED1B742E2177263500D51FF5 /* ISImageresizerView.mm in Sources */,
 				EDC8D4BC218ACBE7000B3D6C /* GPUImageGlassSphereFilter.m in Sources */,
+				ED9E0C7221B8C7DE00AF239D /* LoadPickerImageTool.m in Sources */,
 				EDA36235211AFB8F00536799 /* DataModel.swift in Sources */,
 				EDC8D4D0218ACBE7000B3D6C /* GPUImageLuminanceRangeFilter.m in Sources */,
 				EDC8D4A6218ACBE7000B3D6C /* GPUImageVoronoiConsumerFilter.m in Sources */,
@@ -4572,6 +4679,7 @@
 				60E594B51FFB851900476F8D /* H264HwEncoderImpl.m in Sources */,
 				60CBBFE91FCBD9C2006545F1 /* CTViewController.m in Sources */,
 				ED28512B2101CE5800178965 /* SDWebImageCoder.m in Sources */,
+				ED32EB3621B7652300B9EBA8 /* ScreenShotViewController.m in Sources */,
 				ED1B743C2177263500D51FF5 /* ISImageLibraryViewController.mm in Sources */,
 				EDC8D472218ACBE7000B3D6C /* GPUImageToonFilter.m in Sources */,
 				ED324D1C21340BE500D02F13 /* UIColor+Hex.mm in Sources */,
@@ -4604,6 +4712,7 @@
 				60944EE21F0F914A00C02AFB /* json_reader.cpp in Sources */,
 				6000451E1E949CF200F3471A /* UIScrollView+MJRefresh.m in Sources */,
 				60BEE7751E2CC07100F71DB8 /* THCapture.m in Sources */,
+				EDFB35AB21DC585A009D8212 /* RunLoopViewController.m in Sources */,
 				609F68B41F4C0DB900ABC49A /* GameLiveHomeViewController.m in Sources */,
 				ED771C3C21241F54001BEFB3 /* UIScreen+YYAdd.m in Sources */,
 				ED2E64EC21355F7F00ADCDFF /* EditVideoViewController.mm in Sources */,
@@ -4655,6 +4764,7 @@
 				609DD4E82007119200E7EA86 /* text啥看电视.m in Sources */,
 				ED324D1421340B6B00D02F13 /* MASLayoutConstraint.m in Sources */,
 				600045111E949CF200F3471A /* MJRefreshAutoGifFooter.m in Sources */,
+				ED31ECD321B9350500124752 /* TestHtmlViewController.m in Sources */,
 				ED403D9220D3CB8600D9658A /* FloatCollectView.m in Sources */,
 				ED324D1521340B6B00D02F13 /* NSArray+MASAdditions.m in Sources */,
 				ED771C2521241F53001BEFB3 /* YYTextInput.m in Sources */,
@@ -4775,6 +4885,7 @@
 				EDC8D477218ACBE7000B3D6C /* GPUImagePixellateFilter.m in Sources */,
 				ED2E64EE21355F7F00ADCDFF /* MusicItemCollectionViewCell.mm in Sources */,
 				EDC8D4D5218ACBE7000B3D6C /* GPUImageLookupFilter.m in Sources */,
+				ED1177E421DCB74700CA45F4 /* MyTask.m in Sources */,
 				ED771C2821241F53001BEFB3 /* YYTextSelectionView.m in Sources */,
 				EDC8D4B2218ACBE7000B3D6C /* GPUImageHoughTransformLineDetector.m in Sources */,
 				ED2F86D4213FB3620070482E /* ISPlayerLoadingView.m in Sources */,
@@ -4873,6 +4984,7 @@
 				ED2851342101CE5800178965 /* SDImageCache.m in Sources */,
 				EDC8D4BB218ACBE7000B3D6C /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
 				ED771C4021241F54001BEFB3 /* UIImage+YYAdd.m in Sources */,
+				ED8B185921C3442500D7364A /* H264DecodeInfo.mm in Sources */,
 				60DB89A31E821CFE0031ED29 /* ZhengZeViewController.m in Sources */,
 				ED324CB12134017500D02F13 /* TZPhotoPreviewCell.mm in Sources */,
 				ED771C4221241F54001BEFB3 /* UIFont+YYAdd.m in Sources */,
@@ -4910,6 +5022,7 @@
 				ED771C1421241F53001BEFB3 /* YYSpriteSheetImage.m in Sources */,
 				EDC8D4B1218ACBE7000B3D6C /* GPUImageMonochromeFilter.m in Sources */,
 				EDC8D460218ACBE6000B3D6C /* GPUImageAmatorkaFilter.m in Sources */,
+				ED38AFF921BE536C0002508A /* GDataXMLNode.m in Sources */,
 				EDC8D49A218ACBE7000B3D6C /* GPUImageSwirlFilter.m in Sources */,
 				608CBA561E16338D0004BBD4 /* MySwiftViewController.swift in Sources */,
 				EDC8D437218ACBE6000B3D6C /* GPUImageContext.m in Sources */,
@@ -4918,6 +5031,7 @@
 				EDCFD95E21B53DBB00C9E913 /* SaveCustomModel.m in Sources */,
 				ED771C2C21241F53001BEFB3 /* YYTextRunDelegate.m in Sources */,
 				EDC8D497218ACBE7000B3D6C /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
+				ED31ECD021B934F300124752 /* ProgressViewController.m in Sources */,
 				ED284FEE210179DF00178965 /* MyCollectionViewController.m in Sources */,
 				EDB91E4720DB99D200265E33 /* FloadViewController.m in Sources */,
 				60944EC21F0F911C00C02AFB /* IFlyViewController.m in Sources */,
@@ -4926,6 +5040,7 @@
 				EDC8D448218ACBE6000B3D6C /* GPUImageGaussianBlurPositionFilter.m in Sources */,
 				ED1B74312177263500D51FF5 /* ISPhotoAlbumModel.mm in Sources */,
 				ED771C4721241F54001BEFB3 /* NSData+YYAdd.m in Sources */,
+				ED38AFF621BE53460002508A /* XMLDataAnalysis.m in Sources */,
 				60757E881E763A39003463F3 /* IntrinsicViewController.m in Sources */,
 				ED771C3F21241F54001BEFB3 /* UIGestureRecognizer+YYAdd.m in Sources */,
 				ED2D8FDC2108830500DEF809 /* MyWebViewViewController.m in Sources */,
@@ -4978,6 +5093,7 @@
 				ED771C4121241F54001BEFB3 /* UIControl+YYAdd.m in Sources */,
 				60944EC01F0F911C00C02AFB /* IATConfig.m in Sources */,
 				EDC8D491218ACBE7000B3D6C /* GPUImageTiltShiftFilter.m in Sources */,
+				ED31ECCF21B934F300124752 /* ProgressView.m in Sources */,
 				ED771C4D21241F54001BEFB3 /* NSString+YYAdd.m in Sources */,
 				608B2EB41E49B28800E254ED /* GraffitiViewController.m in Sources */,
 				ED324D1621340B6B00D02F13 /* View+MASAdditions.m in Sources */,

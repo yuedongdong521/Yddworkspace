@@ -3,18 +3,18 @@
 //  ViewsTalk
 //
 //  Created by ydd on 2018/9/4.
-//  Copyright © 2018年 ydd. All rights reserved.
+//  Copyright © 2018年 ywx. All rights reserved.
 //
 
 #import "ISPlayerLoadingView.h"
-#import "Masonry.h"
+
 
 @interface ISPlayerLoadingView ()
 
-@property(nonatomic, strong) UIActivityIndicatorView *loadView;
-@property(nonatomic, strong) UILabel *label;
-@property(nonatomic, strong) UIView *bgView;
-@property (nonatomic, strong) UIImageView *bgImageView;
+@property(nonatomic, strong) UIActivityIndicatorView* loadView;
+@property(nonatomic, strong) UILabel* label;
+@property(nonatomic, strong) UIView* bgView;
+@property(nonatomic, strong) UIImageView* bgImageView;
 
 @end
 
@@ -28,8 +28,7 @@
 }
 */
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
   if (self) {
     [self addSubview:self.bgImageView];
@@ -41,8 +40,7 @@
   return self;
 }
 
-- (void)startLoading:(NSString *)tipStr
-{
+- (void)startLoading:(NSString*)tipStr {
   if (self.label.hidden) {
     self.label.hidden = NO;
   }
@@ -52,8 +50,7 @@
   }
 }
 
-- (void)stopLoading
-{
+- (void)stopLoading {
   if (!self.label.hidden) {
     self.label.hidden = YES;
   }
@@ -62,32 +59,29 @@
   }
 }
 
-- (void)loyoutUI
-{
-  [_bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.edges.mas_equalTo(UIEdgeInsetsZero);
-  }];
-  
-  [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+- (void)loyoutUI {
+  [_bgImageView mas_makeConstraints:^(MASConstraintMaker* make) {
     make.edges.mas_equalTo(UIEdgeInsetsZero);
   }];
 
-  [_loadView mas_makeConstraints:^(MASConstraintMaker *make) {
+  [_bgView mas_makeConstraints:^(MASConstraintMaker* make) {
+    make.edges.mas_equalTo(UIEdgeInsetsZero);
+  }];
+
+  [_loadView mas_makeConstraints:^(MASConstraintMaker* make) {
     make.size.mas_equalTo(CGSizeMake(32, 32));
     make.centerX.mas_equalTo(self.mas_centerX);
     make.bottom.mas_equalTo(self.mas_centerY);
   }];
-  
-  [_label mas_makeConstraints:^(MASConstraintMaker *make) {
+
+  [_label mas_makeConstraints:^(MASConstraintMaker* make) {
     make.left.mas_equalTo(10);
     make.right.mas_equalTo(-10);
     make.top.mas_equalTo(self.mas_centerY);
   }];
-  
 }
 
-- (UIView *)bgView
-{
+- (UIView*)bgView {
   if (!_bgView) {
     _bgView = [[UIView alloc] init];
     _bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
@@ -95,8 +89,7 @@
   return _bgView;
 }
 
-- (UILabel*)label
-{
+- (UILabel*)label {
   if (!_label) {
     _label = [[UILabel alloc] init];
     _label.backgroundColor = [UIColor clearColor];
@@ -108,23 +101,25 @@
   return _label;
 }
 
-- (UIActivityIndicatorView *)loadView
-{
+- (UIActivityIndicatorView*)loadView {
   if (!_loadView) {
     _loadView = [[UIActivityIndicatorView alloc] init];
-    [_loadView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [_loadView
+        setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
     _loadView.hidesWhenStopped = YES;
   }
   return _loadView;
 }
 
-- (UIImageView *)bgImageView
-{
+- (UIImageView*)bgImageView {
   if (!_bgImageView) {
     _bgImageView = [[UIImageView alloc] init];
     _bgImageView.contentMode = UIViewContentModeScaleAspectFill;
-    UIImage* image = [UIImage imageNamed:@"VideoDefaultBgImage@2x"];
-    
+    UIImage* image = [[UIImage alloc]
+        initWithContentsOfFile:[[NSBundle mainBundle]
+                                   pathForResource:@"0"
+                                            ofType:@"jpg"]];
+
     CGSize size = self.bounds.size;
     UIGraphicsBeginImageContext(size);
     [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
@@ -135,7 +130,5 @@
   }
   return _bgImageView;
 }
-
-
 
 @end

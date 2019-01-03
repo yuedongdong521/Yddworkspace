@@ -23,6 +23,8 @@
 #import "ISAssetsManager.h"
 #import "ISPhotoAlbumViewController.h"
 
+#define IS_iPhoneX [UIScreen mainScreen].bounds.size.height >= 812
+
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -132,7 +134,9 @@
       @"H264DecodeViewController",
       @"ISPhotoAlbumViewController",
       @"AudioQueueViewController",
-      @"SaveCustomViewController"
+      @"SaveCustomViewController",
+      @"ScreenShotViewController",
+      @"RunLoopViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
@@ -142,10 +146,13 @@
     @[ @"MyViewController", @"ClosureViewController", @"UserInfoController", @"SwiftJSONViewController" ]
   ];
 
+  
   _myTestMtbArray =
       [NSMutableArray arrayWithObjects:@"1", @"2", @"3", @"4", nil];
+  CGFloat navigMaxY = IS_iPhoneX ? 24 + 64 : 64;
+  CGFloat tabHight = IS_iPhoneX ? 49 + 34 : 49;
   self.myTableView = [[UITableView alloc]
-      initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight - 64 - 49)
+      initWithFrame:CGRectMake(0, navigMaxY, ScreenWidth, ScreenHeight - navigMaxY - tabHight)
               style:UITableViewStylePlain];
   self.myTableView.delegate = self;
   self.myTableView.dataSource = self;

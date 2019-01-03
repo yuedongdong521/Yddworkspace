@@ -21,4 +21,13 @@ git add StrToEmojiViewController.h    （添加工程文件）
 5. git status    (查看更新内容)
 6. git commit -m “str转emoji”   (提交)
 7. git push -u origin master
+或者需要全部更新：
+1. cd ”工程目录“
+2. git init
+3. git status
+4. git commit -a 
+5. git push
 至此更新完毕
+
+
+

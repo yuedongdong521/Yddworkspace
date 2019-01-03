@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript_Object</title>
+	<script type="text/javascript">
+		function person(name, age, sex, job) {
+			this.name = name;
+			this.age = age;
+			this.sex = sex;
+			this.job = job;
+			return this;
+		}
+		function buttonAction() {
+			var text = document.getElementById("person1");
+			var personObject = person("ydd", 18, "男", "iOS developer");
+			text.innerHTML = personObject.name + " " + personObject.age + " " + personObject.sex + " " + personObject.job;
+		}
+	</script>
+</head>
+<body>
+	<button onclick="buttonAction()">person 对象</button>
+	<p id="person1"></p>
+
+</body>
+</html>
+

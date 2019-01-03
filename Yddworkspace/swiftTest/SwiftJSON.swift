@@ -50,6 +50,7 @@ class SwiftJSONViewController: UIViewController {
     let btn2 = createButton(btnFrame: CGRect(x: x, y: Int(y), width: btnW, height: btnH), btnTitle: "正常", btnTag: 1002)
     self.view.addSubview(btn2)
     
+    jsonDecode()
     
   }
   
@@ -78,7 +79,7 @@ class SwiftJSONViewController: UIViewController {
   func eazyJSON() {
     
     let jsonStr = ["name":"ydd", "sex":"男", "job":"Programmer", "number":927] as [String : Any]
-    let arr = [1,2,3]
+    _ = [1,2,3]
     let data = try! JSONSerialization.data(withJSONObject: jsonStr, options: .prettyPrinted)
     
     do {
@@ -94,7 +95,7 @@ class SwiftJSONViewController: UIViewController {
     
     
     do {
-      let personInfo = try decode.decode(Person.self, from: data ?? Data.init())
+      let personInfo = try decode.decode(Person.self, from: data )
       
       print("eazyJSON 解析成功" + personInfo.name!)
       
@@ -120,6 +121,26 @@ class SwiftJSONViewController: UIViewController {
   func normalJSON() {
    
     
+    
+  }
+  
+  func jsonDecode() {
+    
+    let person = Person(name: "ydd", sex: "男", job: "iOS", number: 18)
+    
+    do {
+      let data = try JSONEncoder().encode(person)
+      let jsonStr = String(decoding: data, as: UTF8.self)
+      let person1 = try JSONDecoder().decode(Person.self, from: data)
+      
+      print(jsonStr + " persion1 : " + person1.name!)
+    } catch {
+      print(error.localizedDescription)
+    }
+    
+    
+    
+   
     
   }
   

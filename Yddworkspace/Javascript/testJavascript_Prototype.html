@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototype</title>
+	<meta charset="utf-8">
+	<script src="http://apps.bdimg.com/libs/prototype/1.7.1.0/prototype.js"></script>
+</head>
+<head>
+	<script type="text/javascript">
+		function setCookie(cname, cvalue, exdays) {
+			if (exdays != 0) {
+				var d = new Date();
+				d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+				var expires = "expires="+d.toGMTString();
+				document.cookie = cname+"="+cvalue+"; "+expires;
+			} else {
+				document.cookie = cname + "=" + escape(cvalue);
+			}
+			
+
+		}
+
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(";");
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i].trim();
+				if (c.indexOf(name)==0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+
+		function checkCookie() {
+			var user = getCookie("username");
+			console.log("checkCookie");
+			if (user != "") {
+				alert("welcome agin " + user);
+			} else {
+				user = prompt("please enter your name:", "");
+				if (user != "" && user != null) {
+					setCookie("username", user, 30);
+				}
+			}
+		}
+
+		function deleteCookie(name) {
+			setCookie(name, ' ',-1);
+		}
+
+		function delayAction(time_s) {
+			setTimeout(function(){alert("Hello")}, time_s * 1000);
+		}
+
+		function delayUpdataText() {
+			var text =  document.getElementById("txt");
+			setTimeout(function(){text.value="2秒"}, 2 * 1000);
+			setTimeout(function(){text.value="4秒"}, 4 * 1000);
+			setTimeout(function(){text.value="6秒"}, 6 * 1000);
+		}
+		var time_is_start = 0;
+		var c=0;
+		var t;
+		function startCount() {
+			if (time_is_start == 0) {
+				time_is_start = 1;
+				timeCount();
+			}
+		}
+		function stopCount() {
+			time_is_start = 0;
+			clearTimeout(t);
+		}
+		function timeCount() {
+			document.getElementById("count").value = c;
+			c=c+1;
+			t = setTimeout("timeCount()", 1000);
+		}
+
+
+		var timeFunction;
+		function getTime() {
+			var date = new Date();
+			var h = date.getHours();
+			var m = date.getMinutes();
+			var s = date.getSeconds();
+
+			var time = h + ":" + checkTime(m) + ":" + checkTime(s);
+			document.getElementById("time").value = time;
+			timeFunction = setTimeout(function(){getTime()}, 500);
+		}
+
+		function checkTime(time) {
+			return time >= 10 ? time : ("0" + time);
+		}
+
+	</script>
+</head>
+<body onload="checkCookie()">
+	<script type="text/javascript">
+		function prototypeFunction() {
+			$("h2").insert("prototype")
+		}
+		Event.observe(window,"load",prototypeFunction);
+
+		// deleteCookie("username");
+	</script>
+	<h1 id="h1">例一：Prototype</h1>
+	<p id="h2"></p>
+	<h2>例二：cookie</h2>
+	<button onclick="deleteCookie('username')">deleteCookie</button>
+	<h3>例三：延时操作</h3>
+    <p>点击按钮，3s 后弹出“Hello”</p>
+    <button onclick="delayAction(3)">点我</button>
+    <p>点击下面按钮，输出的文本告诉你2秒、4秒、6秒已经过去</p>
+    <form>
+    	<input type="button" value="显示文本时间！" onclick="delayUpdataText()" />
+    	<input type="text" id="txt" />
+    </form>
+    <p> 点击下面按钮，开启计时器</p>
+    <form>
+    	<input type="button" value="start count!" onclick="startCount()">
+    	<input type="text" id="count" >
+    	<input type="button" value="stop count" onclick="stopCount()">
+    </form>
+
+    <form>
+    	<input type="button" value="北京时间:" onclick="getTime()">
+    	<input type="text" id="time" >
+    </form>
+
+
+</body>
+</html>
