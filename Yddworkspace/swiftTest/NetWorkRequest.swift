@@ -30,9 +30,10 @@ public class NetWorkRequest {
             request.httpBody = getBodyParameter(parameterDic: parametDic!)
         }
         
-        session.dataTask(with: request) { (data, response, error) in
+        let task = session.dataTask(with: request) { (data, response, error) in
             resultBlock(data, error)
         }
+        task.resume()
         
     }
     

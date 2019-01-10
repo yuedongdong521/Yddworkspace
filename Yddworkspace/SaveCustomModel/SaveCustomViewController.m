@@ -17,6 +17,8 @@
 
 @property (nonatomic, strong) SaveCustomModel *model;
 
+@property (nonatomic, strong) UIView *inputView;
+
 @end
 
 @implementation SaveCustomViewController
@@ -46,8 +48,62 @@
       _numField.text = [NSString stringWithFormat:@"%d", self.model.num];
     }
   }
+  [self inputView];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardHeightNotify:) name:UIKeyboardDidChangeFrameNotification object:nil];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardHeightNotify:) name:UIKeyboardDidShowNotification object:nil];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardHeightNotify:) name:UIKeyboardDidHideNotification object:nil];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardHeightNotify:) name:UIKeyboardWillChangeFrameNotification object:nil];
+  
   
 
+  
+}
+
+- (UIView *)inputView
+{
+  if (!_inputView) {
+    _inputView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenHeight - 80, ScreenWidth, 80)];
+    _inputView.backgroundColor = [UIColor grayColor];
+    _inputView.layer.cornerRadius = 10;
+    _inputView.layer.masksToBounds = YES;
+    [self.view addSubview:_inputView];
+  }
+  return _inputView;
+}
+
+- (void)changeInputFrameWithKeyBoardY:(CGFloat)y
+{
+  CGRect inputFrame = self.inputView.frame;
+  CGFloat inputY = y - inputFrame.size.height;
+  if (inputFrame.origin.y == inputY) {
+    return;
+  }
+  inputFrame.origin.y = inputY;
+  [UIView animateWithDuration:0.25 animations:^{
+    self.inputView.frame = inputFrame;
+  } completion:^(BOOL finished) {
+    
+  }];
+}
+
+- (void)keyBoardHeightNotify:(NSNotification *)notify
+{
+  NSDictionary *dic = notify.userInfo;
+  NSLog(@"name = %@,\n dic : %@", notify.name, dic);
+  CGRect keyBoardFrame = [dic[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+  NSString *notifyName = notify.name;
+  if ([notifyName isEqualToString:UIKeyboardDidChangeFrameNotification]) {
+//    [self changeInputFrameWithKeyBoardY:keyBoardFrame.origin.y];
+  } else if ([notifyName isEqualToString:UIKeyboardDidShowNotification]) {
+//    [self changeInputFrameWithKeyBoardY:keyBoardFrame.origin.y];
+  } else if ([notifyName isEqualToString:UIKeyboardDidHideNotification]) {
+//    [self changeInputFrameWithKeyBoardY:keyBoardFrame.origin.y];
+  } else if ([notifyName isEqualToString:UIKeyboardWillChangeFrameNotification]) {
+    [self changeInputFrameWithKeyBoardY:keyBoardFrame.origin.y];
+  }
   
 }
 
@@ -71,6 +127,10 @@
 {
   [textField resignFirstResponder];
   return YES;
+}
+
+- (void)dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 /*

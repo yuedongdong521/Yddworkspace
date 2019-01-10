@@ -122,7 +122,11 @@ struct model {
   
   NSString *base64Str = [self base64Encode:urlStr];
   NSString *decodeStr = [self base64Decode:base64Str];
+  
+  [self oc_quzheng];
   NSLog(@"str 2 : %@", str);
+  
+  
   
 }
 
@@ -231,11 +235,65 @@ struct model {
     NSLog(@"MainViewController.view.bounds2 = %@", NSStringFromCGRect(self.view.bounds));
      NSLog(@"MainViewController.edgesForExtendedLayout = %lu", (unsigned long)self.edgesForExtendedLayout);
     NSLog(@"MainViewController.translucent = %d", self.navigationController.navigationBar.translucent);
+  
+  [self wechatRedPackage:0.1 num:10];
+  
+  [self wechatRedPackage:10 num:10];
+}
+
+#pragma mark 取整
+- (void)oc_quzheng
+{
+  // 向上取整
+  CGFloat x = 1.6;
+  int a = (int)ceilf(x);
+  
+  // 向下取整
+  int b = (int)floor(x);
+  NSLog(@"a = %d, b = %d", a, b);
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     self.navigationController.navigationBarHidden = NO;
+}
+
+
+- (void)wechatRedPackage:(CGFloat)total num:(NSInteger)num
+{
+  static CGFloat minValue = 0.01;
+  NSInteger totalInt = total * 100;
+  NSMutableArray *mutArr = [NSMutableArray array];
+  CGFloat sum = 0;
+  NSInteger average = 0;
+  NSInteger value = 0;
+  NSInteger maxValue = 0;
+  while (num > 0) {
+    if (num == 1) {
+      [mutArr addObject:@(totalInt * minValue)];
+      sum += totalInt;
+      break;
+    }
+    NSInteger arc = arc4random();
+    average = totalInt / num;
+    if (average <= 1) {
+      value = 1;
+    } else {
+      maxValue = average * 2;
+      if (num <= 2 || maxValue <= num) {
+        maxValue = totalInt;
+      }
+      value = arc % (maxValue - num) + 1;
+    }
+    totalInt -= value;
+    num--;
+    [mutArr addObject:@(value * minValue)];
+    sum += value;
+  }
+  
+  NSLog(@"mutArr = %@, sum = %f", mutArr, sum * minValue);
+  
+  
 }
 
 

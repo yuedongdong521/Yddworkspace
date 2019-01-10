@@ -116,7 +116,7 @@
                   moduleName = "Yddworkspace"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wizjin/Documents/ydd/Yddworkspace/Yddworkspace/swiftTest/UserInfoTableCell.swift"
-                  timestampString = "568201695.92316"
+                  timestampString = "568798434.489368"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -131,12 +131,12 @@
                   moduleName = "Yddworkspace"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wizjin/Documents/ydd/Yddworkspace/Yddworkspace/swiftTest/UserInfoTableCell.swift"
-                  timestampString = "568201695.925248"
+                  timestampString = "568798434.491748"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "108"
                   endingLineNumber = "108"
-                  offsetFromSymbolStart = "46">
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -436,12 +436,12 @@
                   moduleName = "Yddworkspace"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wizjin/Documents/ydd/Yddworkspace/Yddworkspace/GIF/GifViewController.m"
-                  timestampString = "568201695.979821"
+                  timestampString = "568798434.564085"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "27">
+                  offsetFromSymbolStart = "56">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -451,12 +451,12 @@
                   moduleName = "Yddworkspace"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wizjin/Documents/ydd/Yddworkspace/Yddworkspace/GIF/GifViewController.m"
-                  timestampString = "568201695.981523"
+                  timestampString = "568798434.56744"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
                   endingLineNumber = "79"
-                  offsetFromSymbolStart = "137">
+                  offsetFromSymbolStart = "144">
                </Location>
             </Locations>
          </BreakpointContent>
