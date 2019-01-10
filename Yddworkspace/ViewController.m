@@ -136,7 +136,9 @@
       @"AudioQueueViewController",
       @"SaveCustomViewController",
       @"ScreenShotViewController",
-      @"RunLoopViewController"
+      @"RunLoopViewController",
+      @"TestKVOViewController",
+      @"TestResponderViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
