@@ -10,6 +10,7 @@
 #import <CoreText/CoreText.h>
 #import <UIKit/UIKit.h>
 #import "UIImage+DWImageUtils.h"
+#import "ISAlertController.h"
 
 @interface CoreTextV ()
 {
@@ -143,7 +144,21 @@ static CGFloat widthCallBacks(void * ref)
     CGPoint location = [touch locationInView:self];
     CGRect imageFrmToScreen = [self convertRectFromLoc:_imgFrm];
     if (CGRectContainsPoint(imageFrmToScreen, location)) {
-        [[[UIAlertView alloc] initWithTitle:nil message:@"你点击了图片" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil] show];
+//        [[[UIAlertView alloc] initWithTitle:nil message:@"你点击了图片" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil] show];
+//    ancelBlock:^{
+//
+//    } actionBlock:nil];
+//      ISAlertController *alert = [ISAlertController alertWithTitel:@"" message:@"你点击了图片" cancelBtnTitle:@"好的" otherBtnTitles:nil style:UIAlertControllerStyleAlert c
+//
+//      UIResponder *respondView = [self nextResponder];
+//      while (respondView) {
+//        if ([respondView isKindOfClass:[UIViewController class]]) {
+//          [((UIViewController*)respondView) presentViewController:alert animated:YES completion:nil];
+//          break;
+//        }
+//        respondView = respondView.nextResponder;
+//      }
+//
         return;
     }
     [arrText enumerateObjectsUsingBlock:^(NSValue * rectV, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -158,7 +173,19 @@ static CGFloat widthCallBacks(void * ref)
 
 -(void)click
 {
-    [[[UIAlertView alloc] initWithTitle:nil message:@"你点击了文字" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil] show];
-    
+//    [[[UIAlertView alloc] initWithTitle:nil message:@"你点击了文字" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil] show];
+
+//  ISAlertController *alert = [ISAlertController alertWithTitel:@"" message:@"你点击了文字" cancelBtnTitle:@"好的" otherBtnTitles:nil style:UIAlertControllerStyleAlert cancelBlock:^{
+//
+//  } actionBlock:nil];
+//
+//  UIResponder *respondView = [self nextResponder];
+//  while (respondView) {
+//    if ([respondView isKindOfClass:[UIViewController class]]) {
+//      [((UIViewController*)respondView) presentViewController:alert animated:YES completion:nil];
+//      break;
+//    }
+//    respondView = respondView.nextResponder;
+//  }
 }
 @end

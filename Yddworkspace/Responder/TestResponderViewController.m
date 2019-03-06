@@ -8,6 +8,8 @@
 
 #import "TestResponderViewController.h"
 #import "MyResponderBtn.h"
+#import "ResponderView.h"
+
 @interface TestResponderViewController ()
 
 @property (nonatomic, strong) UIButton *btn3;
@@ -30,8 +32,12 @@
   [btn1 addSubview:btn3];
   _btn3 = btn3;
   
-  MyResponderBtn *responderBtn = [MyResponderBtn createBtn:@"responderBtn" color:[UIColor cyanColor] tag:1 frame:CGRectMake(40, 400, 10, 10) target:self action:@selector(buttonAction:)];
-  [self.view addSubview:responderBtn];
+  ResponderView *responderView = [[ResponderView alloc] initWithFrame:CGRectMake(40, 400, 100, 100)];
+  responderView.backgroundColor = [UIColor greenColor];
+  [self.view addSubview:responderView];
+  
+  MyResponderBtn *responderBtn = [MyResponderBtn createBtn:@"responderBtn" color:[UIColor cyanColor] tag:1 frame:CGRectMake(40, 40, 10, 10) target:self action:@selector(buttonAction:)];
+  [responderView addSubview:responderBtn];
   
 }
 

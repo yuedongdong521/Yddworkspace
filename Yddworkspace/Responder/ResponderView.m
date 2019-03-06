@@ -27,6 +27,13 @@
 // return 本次点击事件需要的最佳 view
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
+  if (CGRectContainsPoint(self.bounds, point)) {
+    for (UIView *view in self.subviews) {
+      if ([view isKindOfClass:[UIButton class]]) {
+        return view;
+      }
+    }
+  }
   return [super hitTest:point withEvent:event];
 }
 

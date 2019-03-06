@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VideoFilter : NSObject
-
++(CVPixelBufferRef)addFilterForPixelbuffer:(CVPixelBufferRef)pixelbuffer;
++ (void)lookupFilter;
 @end
 
 NS_ASSUME_NONNULL_END

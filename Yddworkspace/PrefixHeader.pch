@@ -18,6 +18,7 @@
 
 #import "WeChatWindow.h"
 #import "Masonry.h"
+#import "ISAlertController.h"
 
 #endif
 

@@ -45,10 +45,10 @@
       [self recoder:btn];
       break;
     case 1:
-      [self recoder:btn];
+      [self play];
       break;
     case 2:
-      [self recoder:btn];
+      [self recoderFinish];
       break;
       
     default:
@@ -65,6 +65,15 @@
   }
 }
 
+- (void)play
+{
+  
+}
+
+- (void)recoderFinish
+{
+  [self.recorder stop];
+}
 - (void)player:(UIButton *)btn
 {
   [self.player Play:[self.recorder getBytes] Length:self.recorder.audioDataLength];
@@ -75,9 +84,22 @@
   
 }
 
+- (Record *)recorder
+{
+  if (!_recorder) {
+    _recorder = [[Record alloc] init];
+    __weak typeof(self) weakself = self;
+    _recorder.processAudioBuffer = ^(Byte * _Nonnull audioData, long lenght) {
+      [weakself.player Play:audioData Length:lenght];
+    };
+  }
+  return _recorder;
+}
+
 - (Play *)player{
   if (!_player) {
     _player = [[Play alloc] init];
+    
   }
   return _player;
 }

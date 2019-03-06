@@ -47,7 +47,7 @@
   CIImage *ciImage = [CIImage imageWithCVImageBuffer:imageBuffer];
   ciImage = [ciImage imageByCroppingToRect:rect];
   // ciimage get real image不在执行裁剪后的原始点中。所以我们需要平移。
-  ciImage = [ciImage imageByApplyingTransform:CGAffineTransformMakeTranslation(rect.origin.x, rect.origin.y)];
+  ciImage = [ciImage imageByApplyingTransform:CGAffineTransformMakeTranslation(-rect.origin.x, -rect.origin.y)];
   static CIContext *ciContext = nil;
   if (ciContext == nil) {
     EAGLContext *eaglContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
@@ -151,5 +151,40 @@
   return cropBuffer;
 }
 
+
++ (CVPixelBufferRef)useGPUCupPixelBuffer:(CVPixelBufferRef)buffer cupRect:(CGRect)rect
+{
+  static CVPixelBufferRef pixbuffer = NULL;
+  static OSStatus status;
+  /*
+   如果要进行页面渲染，需要一个和OpenGL缓冲兼容的图像。用相机API创建的图像已经兼容，您可以马上映射他们进行输入。假设你从已有画面中截取一个新的画面，用作其他处理，你必须创建一种特殊的属性用来创建图像。对于图像的属性必须有kCVPixelBufferIOSurfacePropertiesKey 作为字典的Key.因此以下步骤不可省略
+   */
+  if (pixbuffer == NULL) {
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:rect.size.width], kCVPixelBufferWidthKey, [NSNumber numberWithInt:rect.size.height], kCVPixelBufferHeightKey, nil];
+    status = CVPixelBufferCreate(kCFAllocatorSystemDefault, rect.size.width, rect.size.height, kCVPixelFormatType_420YpCbCr8BiPlanarFullRange, (__bridge CFDictionaryRef)options, &pixbuffer);
+    if (status != noErr) {
+      NSLog(@"Crop CVPixelBufferCreate error %d",(int)status);
+      return NULL;
+    }
+  }
+  CIImage *ciImage = [CIImage imageWithCVPixelBuffer:buffer];
+  ciImage = [ciImage imageByCroppingToRect:rect];
+  ciImage = [ciImage imageByApplyingTransform:CGAffineTransformMakeTranslation(rect.origin.x, rect.origin.y)];
+  static CIContext *ciContext = nil;
+  if (ciContext == nil) {
+    EAGLContext *eaglContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
+    ciContext = [CIContext contextWithEAGLContext:eaglContext options:nil];
+  }
+  [ciContext render:ciImage toCVPixelBuffer:pixbuffer];
+  buffer = CVPixelBufferRetain(pixbuffer);
+  CVPixelBufferRelease(pixbuffer);
+  return pixbuffer;
+}
+
++ (CMSampleBufferRef)getSampleBufferWithPixelBuffer:(CVPixelBufferRef)pixelBuffer
+{
+  
+  return NULL;
+}
 
 @end

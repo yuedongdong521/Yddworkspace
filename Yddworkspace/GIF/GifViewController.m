@@ -114,7 +114,6 @@
 
 - (NSString *)saveScallImageViewWidthData:(NSData *)gifData
 {
-
   NSString *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
   NSString *directory = [path stringByAppendingPathComponent:@"gif"];
   NSFileManager *manager = [NSFileManager defaultManager];

@@ -22,6 +22,7 @@
     GLfloat backgroundColorRed, backgroundColorGreen, backgroundColorBlue, backgroundColorAlpha;
 
     CGSize boundsSizeAtFrameBufferEpoch;
+    CGRect _selfFrame;
 }
 
 @property (assign, nonatomic) NSUInteger aspectRatio;
@@ -75,6 +76,12 @@
     [self commonInit];
 
 	return self;
+}
+
+- (void)setFrame:(CGRect)frame
+{
+  [super setFrame:frame];
+  _selfFrame = frame;
 }
 
 - (void)commonInit;
@@ -429,12 +436,12 @@
 {
     if ([self respondsToSelector:@selector(setContentScaleFactor:)])
     {
-        CGSize pointSize = self.bounds.size;
+        CGSize pointSize = _selfFrame.size;
         return CGSizeMake(self.contentScaleFactor * pointSize.width, self.contentScaleFactor * pointSize.height);
     }
     else
     {
-        return self.bounds.size;
+        return _selfFrame.size;
     }
 }
 
