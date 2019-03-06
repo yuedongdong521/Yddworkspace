@@ -10,6 +10,9 @@
 #import "WeChatTestFloatViewController.h"
 #import "Yddworkspace-Swift.h"
 #import "XMLDataAnalysis.h"
+#import "NSString+CharacterSet.h"
+#import "ISAlertController.h"
+
 
 #define UIColorFromRGBAalpha(rgbValue,alpha) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 blue:((float)(rgbValue & 0x0000FF))/255.0 alpha:((float)alpha)]
 
@@ -60,7 +63,6 @@ struct model {
   } else {
     NSLog(@"_path unEqualToString:ydd");
   }
-  
   UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
   button.frame = CGRectMake(20, ScreenHeight - 180, 50, 50);
   [button setTitle:@"show" forState:UIControlStateNormal];
@@ -126,9 +128,63 @@ struct model {
   [self oc_quzheng];
   NSLog(@"str 2 : %@", str);
   
+  NSString *utf8str = @"http://mongoapi.ispeak.cn/anchor/64301766/user_page_v2/0/10?act=1&client_type=2&follow_uid=104015397&relay=1&sign_type=md5&time=1551176775&ver=1000&sign=ae99107eef68866c2976be1038553d25月%";
+  NSString *utf8Encode = [utf8str stringUTF8Encode];
+  NSLog(@"utf8Encode : %@", utf8Encode);
   
+  utf8Encode = [utf8str urlUTF8Encode];
+  NSLog(@"utf8Encode : %@", utf8Encode);
+  
+  
+  UIButton *alertButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  alertButton.frame = CGRectMake(20, 88, 100, 50);
+  [alertButton setTitle:@"alertController" forState:UIControlStateNormal];
+  alertButton.backgroundColor = [UIColor greenColor];
+  [alertButton addTarget:self action:@selector(alertBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:alertButton];
+  
+
   
 }
+
+- (void)alertBtnAction:(UIButton *)btn
+{
+  [self alertShowFlag:0];
+}
+
+- (void)alertShowFlag:(int)flag
+{
+  /*
+  if (flag == 0) {
+    ISAlertController *alert = [ISAlertController alertTextFieldsWithTitle:@"提示" message:@"解锁" textFieldsPlaceholder:@[@"请输入密码"] cancelTitle:@"取消" otherTitle:@"确定" cancelBlock:^{
+      
+    } actionBlock:^(NSArray<UITextField *> * _Nonnull textValues) {
+      NSLog(@"密码： %@", textValues.firstObject.text);
+    }];
+    
+    
+    [alert showInWindow];
+  } else {
+    [[ISAlertController alertWithTitle:@"提示" message:@"我好帅！" cancelTitle:@"是" otherTitle:@"确定" cancelBlock:nil actionBlock:nil] showInWindow];
+  }
+  */
+  
+  UITextField *textField = [[UITextField alloc] init];
+  ISAlertController *alert = [ISAlertController alertCustomTextFieldWithTitle:@"提示" message:@"解锁" customTextField:&textField cancelTitle:@"取消" otherTitle:@"确定" cancelBlock:^{
+    
+  } actionBlock:^(NSString * _Nonnull text) {
+    NSLog(@"密码：%@",text);
+  }];
+  alert.textFields.firstObject.placeholder = @"请输入密码";
+//  textField.placeholder = @"请输入密码";
+  [alert showInWindow];
+ 
+  if (flag == 0) {
+    return;
+  }
+  [self alertShowFlag:flag + 1];
+}
+
 
 - (NSString *)base64Encode:(NSString *)str
 {
@@ -180,6 +236,8 @@ struct model {
 - (void)buttonAction:(UIButton *)button
 {
   [self show];
+  NSArray *titles = @[@"很帅", @"非常帅"];
+
 }
 
 - (void)dismss

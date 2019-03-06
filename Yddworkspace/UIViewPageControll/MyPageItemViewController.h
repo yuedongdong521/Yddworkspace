@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MyPageItemViewController : UIViewController
 
+@property (nonatomic, assign) NSUInteger index;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -42,6 +42,10 @@ typedef struct AQCallbackStruct
   long audioDataIndex;
 }
 
+@property (nonatomic, strong) NSFileHandle *fileHandle;
+@property (nonatomic, strong) NSMutableData *mutData;
+@property (nonatomic, copy) void(^processAudioBuffer)(Byte* audioData, long lenght);
+
 - (id) init;
 - (void) start;
 - (void) stop;

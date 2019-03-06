@@ -177,9 +177,6 @@ typedef NS_ENUM(NSInteger, GIFSize) {
     {
       CGImageDestinationAddImage(destination, imageRef, (CFDictionaryRef)frameProperties);
     }
-    
-    
-    
     CGImageRelease(imageRef);
   }
   CGImageRelease(previousImageRefCopy);

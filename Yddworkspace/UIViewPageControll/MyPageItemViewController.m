@@ -7,6 +7,7 @@
 //
 
 #import "MyPageItemViewController.h"
+#import "PlayOrPausButton.h"
 
 @interface MyPageItemViewController ()
 
@@ -17,6 +18,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  
+  PlayOrPausButton *btn = [PlayOrPausButton buttonWithType:UIButtonTypeCustom frame:CGRectMake(20, 100, 100, 100) imgSize:25];
+  [btn addTarget:self action:@selector(playOrPausBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+  btn.backgroundColor = [UIColor whiteColor];
+  [self.view addSubview:btn];
+  [btn setPlay:btn.selected animated:NO];
+  
+  
+  
+}
+
+- (void)playOrPausBtnAction:(PlayOrPausButton *)btn
+{
+  btn.selected = !btn.selected;
+  [btn setPlay:btn.selected animated:YES];
 }
 
 /*

@@ -22,7 +22,7 @@
   NSString *path = [[NSBundle mainBundle] pathForResource:@"testHtml" ofType:@"html"];
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]];
   [self.webView loadRequest:request];
-  
+
 }
 
 - (UIWebView *)webView

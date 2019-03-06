@@ -35,8 +35,15 @@
     [self testC_strToOC_str];
     
     [self test16Str];
+  [self getAppInfo];
     
     return YES;
+}
+
+- (void)getAppInfo
+{
+  NSDictionary *dic = [[NSBundle mainBundle] infoDictionary];
+  NSLog(@"AppInfo : %@", dic);
 }
 
 - (void)initTabBar

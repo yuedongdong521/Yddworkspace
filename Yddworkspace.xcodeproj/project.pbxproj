@@ -244,6 +244,7 @@
 		ED03F71821E6E569005C4D27 /* TestKVOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED03F71721E6E569005C4D27 /* TestKVOModel.m */; };
 		ED06276621B1481400B23E8A /* AudioUnitRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED06276521B1481400B23E8A /* AudioUnitRecordController.m */; };
 		ED1177E421DCB74700CA45F4 /* MyTask.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1177E321DCB74700CA45F4 /* MyTask.m */; };
+		ED13778C21EC2A6100917013 /* TestVideoCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED13778B21EC2A6100917013 /* TestVideoCaptureViewController.m */; };
 		ED1B742D2177263500D51FF5 /* UIImage+JPExtension.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED1B740E2177263500D51FF5 /* UIImage+JPExtension.mm */; };
 		ED1B742E2177263500D51FF5 /* ISImageresizerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED1B74102177263500D51FF5 /* ISImageresizerView.mm */; };
 		ED1B742F2177263500D51FF5 /* ISPhotoImageViewCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED1B74112177263500D51FF5 /* ISPhotoImageViewCell.mm */; };
@@ -489,9 +490,12 @@
 		ED403D8E20D3C65000D9658A /* WeChatWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D8D20D3C65000D9658A /* WeChatWindow.m */; };
 		ED403D9220D3CB8600D9658A /* FloatCollectView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D9120D3CB8600D9658A /* FloatCollectView.m */; };
 		ED403D9520D3D09E00D9658A /* FloatRoundEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D9420D3D09E00D9658A /* FloatRoundEntryView.m */; };
+		ED49E93822151333004B86D1 /* ISAVWindowManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED49E93722151333004B86D1 /* ISAVWindowManager.mm */; };
+		ED49E93C221538A2004B86D1 /* AddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED49E93B221538A2004B86D1 /* AddressListViewController.m */; };
 		ED5BAA2D21E7271000BF2656 /* TestResponderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5BAA2C21E7271000BF2656 /* TestResponderViewController.m */; };
 		ED5BAA3021E7315C00BF2656 /* ResponderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5BAA2F21E7315C00BF2656 /* ResponderView.m */; };
 		ED5BAA3321E7343500BF2656 /* MyResponderBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5BAA3221E7343500BF2656 /* MyResponderBtn.m */; };
+		ED5BAA5F21E7651800BF2656 /* TestAutoreleasepoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5BAA5E21E7651800BF2656 /* TestAutoreleasepoolViewController.m */; };
 		ED6F89822140D38A004EBA26 /* CoreTextTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6F89812140D38A004EBA26 /* CoreTextTestView.m */; };
 		ED6F898721411D5B004EBA26 /* CoreTextV.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6F898421411D5B004EBA26 /* CoreTextV.m */; };
 		ED6F898821411D5B004EBA26 /* UIImage+DWImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6F898621411D5B004EBA26 /* UIImage+DWImageUtils.m */; };
@@ -593,6 +597,9 @@
 		ED9BDB9A21BA071E00F3CB9A /* UIImage+ydd.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9BDB9921BA071E00F3CB9A /* UIImage+ydd.m */; };
 		ED9E0C7221B8C7DE00AF239D /* LoadPickerImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9E0C7121B8C7DE00AF239D /* LoadPickerImageTool.m */; };
 		EDA36235211AFB8F00536799 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA36234211AFB8F00536799 /* DataModel.swift */; };
+		EDAB8A1321EC739800708AB7 /* VideoFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAB8A1221EC739800708AB7 /* VideoFilter.m */; };
+		EDB335E121E863AC0027F2F7 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB335E021E863AC0027F2F7 /* PageViewController.m */; };
+		EDB335E421E86BC60027F2F7 /* MyPageItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB335E321E86BC60027F2F7 /* MyPageItemViewController.m */; };
 		EDB91E4720DB99D200265E33 /* FloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB91E4620DB99D200265E33 /* FloadViewController.m */; };
 		EDC8D437218ACBE6000B3D6C /* GPUImageContext.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8D2EE218ACBE5000B3D6C /* GPUImageContext.m */; };
 		EDC8D438218ACBE6000B3D6C /* GPUImageMovieWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8D2EF218ACBE5000B3D6C /* GPUImageMovieWriter.m */; };
@@ -758,11 +765,14 @@
 		EDC8D4D8218ACBE7000B3D6C /* GPUImageLightenBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8D42D218ACBE6000B3D6C /* GPUImageLightenBlendFilter.m */; };
 		EDC8D4D9218ACBE7000B3D6C /* GPUImageCGAColorspaceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8D430218ACBE6000B3D6C /* GPUImageCGAColorspaceFilter.m */; };
 		EDC8D4DA218ACBE7000B3D6C /* GPUImageDarkenBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC8D434218ACBE6000B3D6C /* GPUImageDarkenBlendFilter.m */; };
+		EDCBF12821FAFC95007C2F9E /* NSString+CharacterSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCBF12721FAFC95007C2F9E /* NSString+CharacterSet.m */; };
+		EDCBF12E21FB19BD007C2F9E /* ISAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCBF12D21FB19BD007C2F9E /* ISAlertController.m */; };
 		EDCFD95E21B53DBB00C9E913 /* SaveCustomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFD95D21B53DBB00C9E913 /* SaveCustomModel.m */; };
 		EDCFD96121B53DDF00C9E913 /* SaveCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCFD96021B53DDF00C9E913 /* SaveCustomViewController.m */; };
 		EDE2280221E6059B00A52EF0 /* VideoDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE2280121E6059B00A52EF0 /* VideoDataManager.m */; };
 		EDEC452E2109C1FF008BEC94 /* FullImageAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEC452D2109C1FF008BEC94 /* FullImageAnimateView.m */; };
 		EDFB35AB21DC585A009D8212 /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFB35AA21DC585A009D8212 /* RunLoopViewController.m */; };
+		EDFD80DD21ED87DE00BE788D /* PlayOrPausButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFD80DC21ED87DE00BE788D /* PlayOrPausButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1191,6 +1201,8 @@
 		ED06276521B1481400B23E8A /* AudioUnitRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioUnitRecordController.m; sourceTree = "<group>"; };
 		ED1177E221DCB74700CA45F4 /* MyTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTask.h; sourceTree = "<group>"; };
 		ED1177E321DCB74700CA45F4 /* MyTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTask.m; sourceTree = "<group>"; };
+		ED13778A21EC2A6100917013 /* TestVideoCaptureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVideoCaptureViewController.h; sourceTree = "<group>"; };
+		ED13778B21EC2A6100917013 /* TestVideoCaptureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVideoCaptureViewController.m; sourceTree = "<group>"; };
 		ED1B740C2177263500D51FF5 /* ISPhotoAlbumProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPhotoAlbumProtocol.h; sourceTree = "<group>"; };
 		ED1B740E2177263500D51FF5 /* UIImage+JPExtension.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+JPExtension.mm"; sourceTree = "<group>"; };
 		ED1B740F2177263500D51FF5 /* ISPhotoImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPhotoImageViewCell.h; sourceTree = "<group>"; };
@@ -1517,12 +1529,18 @@
 		ED403D9120D3CB8600D9658A /* FloatCollectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloatCollectView.m; sourceTree = "<group>"; };
 		ED403D9320D3D09E00D9658A /* FloatRoundEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloatRoundEntryView.h; sourceTree = "<group>"; };
 		ED403D9420D3D09E00D9658A /* FloatRoundEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloatRoundEntryView.m; sourceTree = "<group>"; };
+		ED49E93622151333004B86D1 /* ISAVWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAVWindowManager.h; sourceTree = "<group>"; };
+		ED49E93722151333004B86D1 /* ISAVWindowManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ISAVWindowManager.mm; sourceTree = "<group>"; };
+		ED49E93A221538A2004B86D1 /* AddressListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressListViewController.h; sourceTree = "<group>"; };
+		ED49E93B221538A2004B86D1 /* AddressListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressListViewController.m; sourceTree = "<group>"; };
 		ED5BAA2B21E7271000BF2656 /* TestResponderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestResponderViewController.h; sourceTree = "<group>"; };
 		ED5BAA2C21E7271000BF2656 /* TestResponderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestResponderViewController.m; sourceTree = "<group>"; };
 		ED5BAA2E21E7315C00BF2656 /* ResponderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponderView.h; sourceTree = "<group>"; };
 		ED5BAA2F21E7315C00BF2656 /* ResponderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResponderView.m; sourceTree = "<group>"; };
 		ED5BAA3121E7343500BF2656 /* MyResponderBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyResponderBtn.h; sourceTree = "<group>"; };
 		ED5BAA3221E7343500BF2656 /* MyResponderBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyResponderBtn.m; sourceTree = "<group>"; };
+		ED5BAA5D21E7651800BF2656 /* TestAutoreleasepoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAutoreleasepoolViewController.h; sourceTree = "<group>"; };
+		ED5BAA5E21E7651800BF2656 /* TestAutoreleasepoolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAutoreleasepoolViewController.m; sourceTree = "<group>"; };
 		ED6F89802140D38A004EBA26 /* CoreTextTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTextTestView.h; sourceTree = "<group>"; };
 		ED6F89812140D38A004EBA26 /* CoreTextTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTextTestView.m; sourceTree = "<group>"; };
 		ED6F898321411D5B004EBA26 /* CoreTextV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextV.h; sourceTree = "<group>"; };
@@ -1726,6 +1744,12 @@
 		ED9E0C7021B8C7DE00AF239D /* LoadPickerImageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadPickerImageTool.h; sourceTree = "<group>"; };
 		ED9E0C7121B8C7DE00AF239D /* LoadPickerImageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadPickerImageTool.m; sourceTree = "<group>"; };
 		EDA36234211AFB8F00536799 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		EDAB8A1121EC739800708AB7 /* VideoFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoFilter.h; sourceTree = "<group>"; };
+		EDAB8A1221EC739800708AB7 /* VideoFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoFilter.m; sourceTree = "<group>"; };
+		EDB335DF21E863AC0027F2F7 /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		EDB335E021E863AC0027F2F7 /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		EDB335E221E86BC60027F2F7 /* MyPageItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPageItemViewController.h; sourceTree = "<group>"; };
+		EDB335E321E86BC60027F2F7 /* MyPageItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPageItemViewController.m; sourceTree = "<group>"; };
 		EDB91E4520DB99D200265E33 /* FloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloadViewController.h; sourceTree = "<group>"; };
 		EDB91E4620DB99D200265E33 /* FloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloadViewController.m; sourceTree = "<group>"; };
 		EDC8D2ED218ACBE5000B3D6C /* GPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageView.h; sourceTree = "<group>"; };
@@ -2057,6 +2081,10 @@
 		EDC8D434218ACBE6000B3D6C /* GPUImageDarkenBlendFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageDarkenBlendFilter.m; sourceTree = "<group>"; };
 		EDC8D435218ACBE6000B3D6C /* GPUImagePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImagePicture.h; sourceTree = "<group>"; };
 		EDC8D436218ACBE6000B3D6C /* GPUImagePicture+TextureSubimage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GPUImagePicture+TextureSubimage.h"; sourceTree = "<group>"; };
+		EDCBF12621FAFC95007C2F9E /* NSString+CharacterSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CharacterSet.h"; sourceTree = "<group>"; };
+		EDCBF12721FAFC95007C2F9E /* NSString+CharacterSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CharacterSet.m"; sourceTree = "<group>"; };
+		EDCBF12C21FB19BD007C2F9E /* ISAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISAlertController.h; sourceTree = "<group>"; };
+		EDCBF12D21FB19BD007C2F9E /* ISAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISAlertController.m; sourceTree = "<group>"; };
 		EDCFD95C21B53DBB00C9E913 /* SaveCustomModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveCustomModel.h; sourceTree = "<group>"; };
 		EDCFD95D21B53DBB00C9E913 /* SaveCustomModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaveCustomModel.m; sourceTree = "<group>"; };
 		EDCFD95F21B53DDF00C9E913 /* SaveCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveCustomViewController.h; sourceTree = "<group>"; };
@@ -2067,6 +2095,8 @@
 		EDEC452D2109C1FF008BEC94 /* FullImageAnimateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullImageAnimateView.m; sourceTree = "<group>"; };
 		EDFB35A921DC585A009D8212 /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
 		EDFB35AA21DC585A009D8212 /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
+		EDFD80DB21ED87DE00BE788D /* PlayOrPausButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayOrPausButton.h; sourceTree = "<group>"; };
+		EDFD80DC21ED87DE00BE788D /* PlayOrPausButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayOrPausButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2433,6 +2463,9 @@
 		60761EB11D61B62000FC2F1F /* Yddworkspace */ = {
 			isa = PBXGroup;
 			children = (
+				ED49E9392215384A004B86D1 /* AddressList */,
+				EDB335DE21E863790027F2F7 /* UIViewPageControll */,
+				ED5BAA5C21E764E300BF2656 /* TestAutoreleasepool */,
 				ED5BAA2A21E726BA00BF2656 /* Responder */,
 				ED03F71221E6E46A005C4D27 /* kvo */,
 				ED31ECCA21B934DB00124752 /* Progress */,
@@ -2772,8 +2805,12 @@
 		60AFFD9B201F01A700335E45 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				ED49E93622151333004B86D1 /* ISAVWindowManager.h */,
+				ED49E93722151333004B86D1 /* ISAVWindowManager.mm */,
 				ED2B7D23213791920071F4D3 /* CmCMethod.h */,
 				ED2B7D22213791920071F4D3 /* CmCMethod.mm */,
+				EDCBF12C21FB19BD007C2F9E /* ISAlertController.h */,
+				EDCBF12D21FB19BD007C2F9E /* ISAlertController.m */,
 				ED324D1E2134138900D02F13 /* UIButton+IS_Highlight.h */,
 				ED324D1F2134138900D02F13 /* UIButton+IS_Highlight.mm */,
 				ED324D1D21340C0D00D02F13 /* UIColor+Hex.h */,
@@ -2797,6 +2834,8 @@
 				ED9E0C7121B8C7DE00AF239D /* LoadPickerImageTool.m */,
 				ED9BDB9821BA071E00F3CB9A /* UIImage+ydd.h */,
 				ED9BDB9921BA071E00F3CB9A /* UIImage+ydd.m */,
+				EDCBF12621FAFC95007C2F9E /* NSString+CharacterSet.h */,
+				EDCBF12721FAFC95007C2F9E /* NSString+CharacterSet.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -2974,6 +3013,10 @@
 				6036F4E31E8A73650028F6AF /* UIImage+help.m */,
 				60BEE7981E2CC39400F71DB8 /* AVCaptureSessionViewController.h */,
 				60BEE7991E2CC39400F71DB8 /* AVCaptureSessionViewController.m */,
+				ED13778A21EC2A6100917013 /* TestVideoCaptureViewController.h */,
+				ED13778B21EC2A6100917013 /* TestVideoCaptureViewController.m */,
+				EDAB8A1121EC739800708AB7 /* VideoFilter.h */,
+				EDAB8A1221EC739800708AB7 /* VideoFilter.m */,
 				EDE2280021E6059B00A52EF0 /* VideoDataManager.h */,
 				EDE2280121E6059B00A52EF0 /* VideoDataManager.m */,
 				60080BFF1E8E026D00225307 /* AVPlayerViewController.h */,
@@ -3710,6 +3753,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ED49E9392215384A004B86D1 /* AddressList */ = {
+			isa = PBXGroup;
+			children = (
+				ED49E93A221538A2004B86D1 /* AddressListViewController.h */,
+				ED49E93B221538A2004B86D1 /* AddressListViewController.m */,
+			);
+			path = AddressList;
+			sourceTree = "<group>";
+		};
 		ED5BAA2A21E726BA00BF2656 /* Responder */ = {
 			isa = PBXGroup;
 			children = (
@@ -3721,6 +3773,15 @@
 				ED5BAA3221E7343500BF2656 /* MyResponderBtn.m */,
 			);
 			path = Responder;
+			sourceTree = "<group>";
+		};
+		ED5BAA5C21E764E300BF2656 /* TestAutoreleasepool */ = {
+			isa = PBXGroup;
+			children = (
+				ED5BAA5D21E7651800BF2656 /* TestAutoreleasepoolViewController.h */,
+				ED5BAA5E21E7651800BF2656 /* TestAutoreleasepoolViewController.m */,
+			);
+			path = TestAutoreleasepool;
 			sourceTree = "<group>";
 		};
 		ED752A7421227E0100802367 /* runtime */ = {
@@ -4029,6 +4090,19 @@
 				ED771C0D21241F53001BEFB3 /* YYSentinel.h */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		EDB335DE21E863790027F2F7 /* UIViewPageControll */ = {
+			isa = PBXGroup;
+			children = (
+				EDB335DF21E863AC0027F2F7 /* PageViewController.h */,
+				EDB335E021E863AC0027F2F7 /* PageViewController.m */,
+				EDB335E221E86BC60027F2F7 /* MyPageItemViewController.h */,
+				EDB335E321E86BC60027F2F7 /* MyPageItemViewController.m */,
+				EDFD80DB21ED87DE00BE788D /* PlayOrPausButton.h */,
+				EDFD80DC21ED87DE00BE788D /* PlayOrPausButton.m */,
+			);
+			path = UIViewPageControll;
 			sourceTree = "<group>";
 		};
 		EDC8D2EC218ACBE5000B3D6C /* GPUImage */ = {
@@ -4465,9 +4539,9 @@
 				TargetAttributes = {
 					60761EAE1D61B62000FC2F1F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 8F7D4C878S;
+						DevelopmentTeam = WUFQ2E5U2G;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					60761EC71D61B62000FC2F1F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -4623,6 +4697,7 @@
 				EDC8D4A5218ACBE7000B3D6C /* GPUImageSmoothToonFilter.m in Sources */,
 				EDC8D45A218ACBE6000B3D6C /* GPUImageSketchFilter.m in Sources */,
 				ED2D8FD321084B1000DEF809 /* JSONKit.m in Sources */,
+				EDAB8A1321EC739800708AB7 /* VideoFilter.m in Sources */,
 				600045131E949CF200F3471A /* MJRefreshAutoStateFooter.m in Sources */,
 				ED284FEA210179DF00178965 /* CustomCollectionViewLayout.m in Sources */,
 				ED771C5C21241F54001BEFB3 /* YYTimer.m in Sources */,
@@ -4683,6 +4758,7 @@
 				EDC8D4B7218ACBE7000B3D6C /* GPUImageMedianFilter.m in Sources */,
 				EDC8D4BD218ACBE7000B3D6C /* GPUImageMotionBlurFilter.m in Sources */,
 				EDC8D4CA218ACBE7000B3D6C /* GPUImageHighlightShadowFilter.m in Sources */,
+				EDFD80DD21ED87DE00BE788D /* PlayOrPausButton.m in Sources */,
 				EDC8D45B218ACBE6000B3D6C /* GPUImageiOSBlurFilter.m in Sources */,
 				ED324CAB2134017500D02F13 /* TZProgressView.mm in Sources */,
 				ED771C4C21241F54001BEFB3 /* NSDate+YYAdd.m in Sources */,
@@ -4701,6 +4777,7 @@
 				ED771C3921241F54001BEFB3 /* UIApplication+YYAdd.m in Sources */,
 				EDC8D446218ACBE6000B3D6C /* GPUImageSoftEleganceFilter.m in Sources */,
 				ED6F898721411D5B004EBA26 /* CoreTextV.m in Sources */,
+				ED5BAA5F21E7651800BF2656 /* TestAutoreleasepoolViewController.m in Sources */,
 				EDC8D494218ACBE7000B3D6C /* GPUImageGaussianBlurFilter.m in Sources */,
 				ED752A7A2122A9B900802367 /* RuntimeLibrary.m in Sources */,
 				ED324D1321340B6B00D02F13 /* MASConstraintMaker.m in Sources */,
@@ -4790,6 +4867,7 @@
 				ED1D8B3E218942330056FD19 /* SwiftJSON.swift in Sources */,
 				ED2850012101AF1C00178965 /* ISTemplate.mm in Sources */,
 				60944EE51F0F914A00C02AFB /* json_writer.cpp in Sources */,
+				ED13778C21EC2A6100917013 /* TestVideoCaptureViewController.m in Sources */,
 				ED324CB22134017500D02F13 /* TZPhotoPreviewController.mm in Sources */,
 				EDC8D498218ACBE7000B3D6C /* GPUImageLuminosity.m in Sources */,
 				ED771C5521241F54001BEFB3 /* YYThreadSafeDictionary.m in Sources */,
@@ -4874,6 +4952,7 @@
 				EDC8D475218ACBE7000B3D6C /* GPUImageOpacityFilter.m in Sources */,
 				EDC8D44D218ACBE6000B3D6C /* GPUImageTwoInputFilter.m in Sources */,
 				EDC8D47A218ACBE7000B3D6C /* GPUImageSphereRefractionFilter.m in Sources */,
+				EDCBF12821FAFC95007C2F9E /* NSString+CharacterSet.m in Sources */,
 				EDC8D4DA218ACBE7000B3D6C /* GPUImageDarkenBlendFilter.m in Sources */,
 				60A0BA221FCE491A00CC7082 /* TQIOSViewController.m in Sources */,
 				EDC8D4D2218ACBE7000B3D6C /* GPUImageFalseColorFilter.m in Sources */,
@@ -4882,6 +4961,7 @@
 				6043F7D41FD151B200F2188E /* MyCoreTextScrollView.m in Sources */,
 				ED771C1921241F53001BEFB3 /* UIButton+YYWebImage.m in Sources */,
 				EDC8D453218ACBE6000B3D6C /* GPUImageCannyEdgeDetectionFilter.m in Sources */,
+				ED49E93822151333004B86D1 /* ISAVWindowManager.mm in Sources */,
 				EDC8D49B218ACBE7000B3D6C /* GPUImageSoftLightBlendFilter.m in Sources */,
 				ED28510A2101CE5800178965 /* UIImageView+HighlightedWebCache.m in Sources */,
 				ED2E64E621355F7F00ADCDFF /* PKChatMessagePlayerView.mm in Sources */,
@@ -4920,6 +5000,7 @@
 				ED771C4521241F54001BEFB3 /* NSBundle+YYAdd.m in Sources */,
 				ED39610620ABC26600D0658F /* ISH264PlayerView.m in Sources */,
 				ED771C2021241F53001BEFB3 /* YYClassInfo.m in Sources */,
+				EDCBF12E21FB19BD007C2F9E /* ISAlertController.m in Sources */,
 				EDC8D46E218ACBE7000B3D6C /* GPUImagePolarPixellateFilter.m in Sources */,
 				ED771C1F21241F53001BEFB3 /* NSObject+YYModel.m in Sources */,
 				ED771C5221241F54001BEFB3 /* CALayer+YYAdd.m in Sources */,
@@ -4959,6 +5040,7 @@
 				EDC8D4C6218ACBE7000B3D6C /* GPUImageDilationFilter.m in Sources */,
 				ED03F71821E6E569005C4D27 /* TestKVOModel.m in Sources */,
 				ED771C3421241F53001BEFB3 /* YYTextRubyAnnotation.m in Sources */,
+				EDB335E421E86BC60027F2F7 /* MyPageItemViewController.m in Sources */,
 				ED01F67B21B13607006DAC28 /* AudioQueueViewController.m in Sources */,
 				ED28513A2101CE5800178965 /* SDWebImageTransition.m in Sources */,
 				60944EC81F0F911C00C02AFB /* SpeekViewController.m in Sources */,
@@ -4977,6 +5059,7 @@
 				ED325487212EAA9100182DF5 /* VideoToGif.m in Sources */,
 				EDC8D461218ACBE6000B3D6C /* GPUImageThresholdedNonMaximumSuppressionFilter.m in Sources */,
 				EDC8D4A3218ACBE7000B3D6C /* GPUImageHalftoneFilter.m in Sources */,
+				EDB335E121E863AC0027F2F7 /* PageViewController.m in Sources */,
 				ED771C5821241F54001BEFB3 /* YYDispatchQueuePool.m in Sources */,
 				60944EE81F0F93FC00C02AFB /* BezierPathViewController.m in Sources */,
 				6018DEDB1FC82E4500CDAF8E /* CTColumnView.m in Sources */,
@@ -5109,6 +5192,7 @@
 				ED324D1921340B6B00D02F13 /* MASViewAttribute.m in Sources */,
 				ED2F86DF213FE8590070482E /* CoreTextModel.m in Sources */,
 				60AFFDA1201F162300335E45 /* MyURLClickViewController.m in Sources */,
+				ED49E93C221538A2004B86D1 /* AddressListViewController.m in Sources */,
 				ED771C1121241F53001BEFB3 /* YYMemoryCache.m in Sources */,
 				EDC8D451218ACBE6000B3D6C /* GPUImageMovie.m in Sources */,
 				EDC8D438218ACBE6000B3D6C /* GPUImageMovieWriter.m in Sources */,
@@ -5403,10 +5487,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8F7D4C878S;
+				DEVELOPMENT_TEAM = WUFQ2E5U2G;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5426,7 +5510,8 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 					"COPY=0",
-					"FACE=1",
+					CHECK_QRCode,
+					"CHECK_FACE=0",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5446,9 +5531,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
 				PODS_ROOT = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ydd.demo.ydd;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.qinhe.-.iShow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ISDevelopment;
 				SHARED_PRECOMPS_DIR = /Users/ispeak/Desktop/Yddworkspace/Yddworkspace;
 				SWIFT_OBJC_BRIDGING_HEADER = "Yddworkspace/Yddworkspace-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -5466,9 +5551,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8F7D4C878S;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5502,7 +5587,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
 				PODS_ROOT = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ydd.demo.ydd;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.qinhe.-.iShow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

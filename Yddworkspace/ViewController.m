@@ -138,7 +138,11 @@
       @"ScreenShotViewController",
       @"RunLoopViewController",
       @"TestKVOViewController",
-      @"TestResponderViewController"
+      @"TestResponderViewController",
+      @"TestAutoreleasepoolViewController",
+      @"PageViewController",
+      @"TestVideoCaptureViewController",
+      @"AddressListViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
