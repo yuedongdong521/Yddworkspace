@@ -37,7 +37,8 @@
     
     
     [self careteBtn:@selector(buttonActionGCD) Title:@"GCD" Frame:CGRectMake(20, 200, 100, 50)];
-    
+  
+ 
 
 }
                         

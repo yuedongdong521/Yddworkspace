@@ -187,4 +187,65 @@
   return NULL;
 }
 
+
+- (UIImage *)imageCropFromPixelBuffer:(CVPixelBufferRef)pixelBufferRef {
+  
+  CVPixelBufferLockBaseAddress(pixelBufferRef, 0);
+  
+  CGFloat SW = [UIScreen mainScreen].bounds.size.width;
+  CGFloat SH = [UIScreen mainScreen].bounds.size.height;
+  
+  float width = CVPixelBufferGetWidth(pixelBufferRef);
+  float height = CVPixelBufferGetHeight(pixelBufferRef);
+  
+  float dw = width / SW;
+  float dh = height / SH;
+  
+  float cropW = width;
+  float cropH = height;
+  
+  if (dw > dh) {
+    cropW = SW * dh;
+  }else
+  {
+    cropH = SH * dw;
+  }
+  
+  CGFloat cropX = (width - cropW) * 0.5;
+  CGFloat cropY = (height - cropH) * 0.5;
+  
+  CIImage *ciImage = [CIImage imageWithCVPixelBuffer:pixelBufferRef];
+  
+  CIContext *temporaryContext = [CIContext contextWithOptions:nil];
+  CGImageRef videoImage = [temporaryContext
+                           createCGImage:ciImage
+                           fromRect:CGRectMake(cropX, cropY,
+                                               cropW,
+                                               cropH)];
+  
+  UIImage *image = [UIImage imageWithCGImage:videoImage];
+  CGImageRelease(videoImage);
+  CVPixelBufferUnlockBaseAddress(pixelBufferRef, 0);
+  return image;
+}
+
+- (UIImage*)imageFromPixelBuffer:(CVPixelBufferRef)pixelBufferRef {
+  if (!pixelBufferRef) {
+    return nil;
+  }
+  CVPixelBufferLockBaseAddress(pixelBufferRef, 0);
+  CIImage* ciImage = [CIImage imageWithCVPixelBuffer:pixelBufferRef];
+  // 由于 gpuimage 的输出方向是横向，所以对图片顺时针旋转90度
+  UIImage* image = [UIImage imageWithCIImage:ciImage
+                                       scale:1
+                                 orientation:UIImageOrientationRight];
+  UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
+  [image drawInRect:(CGRect){0, 0, image.size}];
+  UIImage* normalizedImage = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  CVPixelBufferUnlockBaseAddress(pixelBufferRef, 0);
+  return normalizedImage;
+}
+
+
 @end

@@ -265,6 +265,7 @@
 		ED1B744521772F4D00D51FF5 /* yselect_no@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B744321772F4D00D51FF5 /* yselect_no@2x.png */; };
 		ED1B744621772F4D00D51FF5 /* yselect_yes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1B744421772F4D00D51FF5 /* yselect_yes@2x.png */; };
 		ED1D8B3E218942330056FD19 /* SwiftJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D8B3D218942330056FD19 /* SwiftJSON.swift */; };
+		ED20A5982240B48200565BA4 /* SendLoactionNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = ED20A5972240B48200565BA4 /* SendLoactionNotification.m */; };
 		ED284FEA210179DF00178965 /* CustomCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ED284FDD210179DF00178965 /* CustomCollectionViewLayout.m */; };
 		ED284FEB210179DF00178965 /* CollectionDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED284FE3210179DF00178965 /* CollectionDataModel.m */; };
 		ED284FEC210179DF00178965 /* CollectionCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED284FE6210179DF00178965 /* CollectionCellModel.m */; };
@@ -485,6 +486,7 @@
 		ED39610A20ABC32C00D0658F /* DataConversionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = ED39610920ABC32C00D0658F /* DataConversionTool.m */; };
 		ED3C00BA2114355F00131495 /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C00B92114355F00131495 /* UserInfoController.swift */; };
 		ED3C00BC2114462E00131495 /* UserInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C00BB2114462E00131495 /* UserInfoTableCell.swift */; };
+		ED3F271E22327A1F00EC1E6B /* TestMassoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3F271D22327A1F00EC1E6B /* TestMassoryViewController.m */; };
 		ED403D8820D3BE9C00D9658A /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D8720D3BE9C00D9658A /* BaseNavigationViewController.m */; };
 		ED403D8B20D3C55600D9658A /* WeChatTestFloatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D8A20D3C55600D9658A /* WeChatTestFloatViewController.m */; };
 		ED403D8E20D3C65000D9658A /* WeChatWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ED403D8D20D3C65000D9658A /* WeChatWindow.m */; };
@@ -594,6 +596,8 @@
 		ED771C5E21241F54001BEFB3 /* YYReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = ED771C0C21241F53001BEFB3 /* YYReachability.m */; };
 		ED8B185921C3442500D7364A /* H264DecodeInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED8B185621C3442400D7364A /* H264DecodeInfo.mm */; };
 		ED8B185A21C3442500D7364A /* ScreenRecorder.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED8B185721C3442500D7364A /* ScreenRecorder.mm */; };
+		ED8FB4AB223A232B005EFD99 /* RunInBackground.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED8FB4AA223A232B005EFD99 /* RunInBackground.mm */; };
+		ED8FB4AD223A2349005EFD99 /* mysong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED8FB4AC223A2349005EFD99 /* mysong.mp3 */; };
 		ED9BDB9A21BA071E00F3CB9A /* UIImage+ydd.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9BDB9921BA071E00F3CB9A /* UIImage+ydd.m */; };
 		ED9E0C7221B8C7DE00AF239D /* LoadPickerImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9E0C7121B8C7DE00AF239D /* LoadPickerImageTool.m */; };
 		EDA36235211AFB8F00536799 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA36234211AFB8F00536799 /* DataModel.swift */; };
@@ -1239,6 +1243,8 @@
 		ED1B744421772F4D00D51FF5 /* yselect_yes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yselect_yes@2x.png"; sourceTree = "<group>"; };
 		ED1B74472177304700D51FF5 /* ISAlbumListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAlbumListViewController.h; sourceTree = "<group>"; };
 		ED1D8B3D218942330056FD19 /* SwiftJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftJSON.swift; sourceTree = "<group>"; };
+		ED20A5962240B48200565BA4 /* SendLoactionNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendLoactionNotification.h; sourceTree = "<group>"; };
+		ED20A5972240B48200565BA4 /* SendLoactionNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendLoactionNotification.m; sourceTree = "<group>"; };
 		ED284FDD210179DF00178965 /* CustomCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewLayout.m; sourceTree = "<group>"; };
 		ED284FDE210179DF00178965 /* MyCollectionElementKindSectionDecorationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionElementKindSectionDecorationView.h; sourceTree = "<group>"; };
 		ED284FDF210179DF00178965 /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
@@ -1519,6 +1525,8 @@
 		ED39610920ABC32C00D0658F /* DataConversionTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataConversionTool.m; sourceTree = "<group>"; };
 		ED3C00B92114355F00131495 /* UserInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoController.swift; sourceTree = "<group>"; };
 		ED3C00BB2114462E00131495 /* UserInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableCell.swift; sourceTree = "<group>"; };
+		ED3F271C22327A1F00EC1E6B /* TestMassoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestMassoryViewController.h; sourceTree = "<group>"; };
+		ED3F271D22327A1F00EC1E6B /* TestMassoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMassoryViewController.m; sourceTree = "<group>"; };
 		ED403D8620D3BE9C00D9658A /* BaseNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationViewController.h; sourceTree = "<group>"; };
 		ED403D8720D3BE9C00D9658A /* BaseNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationViewController.m; sourceTree = "<group>"; };
 		ED403D8920D3C55600D9658A /* WeChatTestFloatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChatTestFloatViewController.h; sourceTree = "<group>"; };
@@ -1739,6 +1747,9 @@
 		ED8B185621C3442400D7364A /* H264DecodeInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = H264DecodeInfo.mm; sourceTree = "<group>"; };
 		ED8B185721C3442500D7364A /* ScreenRecorder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ScreenRecorder.mm; sourceTree = "<group>"; };
 		ED8B185821C3442500D7364A /* ScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenRecorder.h; sourceTree = "<group>"; };
+		ED8FB4AA223A232B005EFD99 /* RunInBackground.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RunInBackground.mm; sourceTree = "<group>"; };
+		ED8FB4AC223A2349005EFD99 /* mysong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mysong.mp3; sourceTree = "<group>"; };
+		ED8FB4AE223A235A005EFD99 /* RunInBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunInBackground.h; sourceTree = "<group>"; };
 		ED9BDB9821BA071E00F3CB9A /* UIImage+ydd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ydd.h"; sourceTree = "<group>"; };
 		ED9BDB9921BA071E00F3CB9A /* UIImage+ydd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ydd.m"; sourceTree = "<group>"; };
 		ED9E0C7021B8C7DE00AF239D /* LoadPickerImageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadPickerImageTool.h; sourceTree = "<group>"; };
@@ -2463,6 +2474,7 @@
 		60761EB11D61B62000FC2F1F /* Yddworkspace */ = {
 			isa = PBXGroup;
 			children = (
+				ED3F271B223279D500EC1E6B /* testMassory */,
 				ED49E9392215384A004B86D1 /* AddressList */,
 				EDB335DE21E863790027F2F7 /* UIViewPageControll */,
 				ED5BAA5C21E764E300BF2656 /* TestAutoreleasepool */,
@@ -2805,6 +2817,9 @@
 		60AFFD9B201F01A700335E45 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				ED8FB4AE223A235A005EFD99 /* RunInBackground.h */,
+				ED8FB4AC223A2349005EFD99 /* mysong.mp3 */,
+				ED8FB4AA223A232B005EFD99 /* RunInBackground.mm */,
 				ED49E93622151333004B86D1 /* ISAVWindowManager.h */,
 				ED49E93722151333004B86D1 /* ISAVWindowManager.mm */,
 				ED2B7D23213791920071F4D3 /* CmCMethod.h */,
@@ -2836,6 +2851,8 @@
 				ED9BDB9921BA071E00F3CB9A /* UIImage+ydd.m */,
 				EDCBF12621FAFC95007C2F9E /* NSString+CharacterSet.h */,
 				EDCBF12721FAFC95007C2F9E /* NSString+CharacterSet.m */,
+				ED20A5962240B48200565BA4 /* SendLoactionNotification.h */,
+				ED20A5972240B48200565BA4 /* SendLoactionNotification.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -3725,6 +3742,15 @@
 			path = H264TVDecode;
 			sourceTree = "<group>";
 		};
+		ED3F271B223279D500EC1E6B /* testMassory */ = {
+			isa = PBXGroup;
+			children = (
+				ED3F271C22327A1F00EC1E6B /* TestMassoryViewController.h */,
+				ED3F271D22327A1F00EC1E6B /* TestMassoryViewController.m */,
+			);
+			path = testMassory;
+			sourceTree = "<group>";
+		};
 		ED403D8520D3BE4200D9658A /* weChatFloatView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4607,6 +4633,7 @@
 				60A0BA241FCE4C7400CC7082 /* iOS开发进阶_唐巧著_2015.01_244页.pdf in Resources */,
 				6088490D1DC076C800FD819C /* shoucang.png in Resources */,
 				609E3D0E2052787500D9A55C /* githubCommitAndUpData in Resources */,
+				ED8FB4AD223A2349005EFD99 /* mysong.mp3 in Resources */,
 				60B9110A2015B299005EB918 /* 2.jpg in Resources */,
 				60B911082015B290005EB918 /* 1.jpg in Resources */,
 				601C8C1A1F20C076001F50B9 /* LinkMicReminderView.xib in Resources */,
@@ -4965,6 +4992,7 @@
 				EDC8D49B218ACBE7000B3D6C /* GPUImageSoftLightBlendFilter.m in Sources */,
 				ED28510A2101CE5800178965 /* UIImageView+HighlightedWebCache.m in Sources */,
 				ED2E64E621355F7F00ADCDFF /* PKChatMessagePlayerView.mm in Sources */,
+				ED20A5982240B48200565BA4 /* SendLoactionNotification.m in Sources */,
 				EDC8D496218ACBE7000B3D6C /* GPUImageSharpenFilter.m in Sources */,
 				EDC8D473218ACBE7000B3D6C /* GPUImageDissolveBlendFilter.m in Sources */,
 				ED2E64F221355F7F00ADCDFF /* ISCameraProgressView.mm in Sources */,
@@ -5089,6 +5117,7 @@
 				ED2E64E821355F7F00ADCDFF /* ISVideoCameraTools.mm in Sources */,
 				60757E8B1E763A94003463F3 /* IntrinsicView.m in Sources */,
 				60AF3C441F18593C00C8FBB9 /* UIViewController+KNSemiModal.m in Sources */,
+				ED8FB4AB223A232B005EFD99 /* RunInBackground.mm in Sources */,
 				ED771B592123C697001BEFB3 /* MyTextViewViewController.m in Sources */,
 				EDC8D43D218ACBE6000B3D6C /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
 				ED2E64F321355F7F00ADCDFF /* LFGPUImageEmptyFilter.mm in Sources */,
@@ -5235,6 +5264,7 @@
 				ED324D1621340B6B00D02F13 /* View+MASAdditions.m in Sources */,
 				EDC8D44A218ACBE6000B3D6C /* GPUImageWeakPixelInclusionFilter.m in Sources */,
 				EDC8D4CB218ACBE7000B3D6C /* GPUImageKuwaharaFilter.m in Sources */,
+				ED3F271E22327A1F00EC1E6B /* TestMassoryViewController.m in Sources */,
 				ED752A882122F05D00802367 /* InvocationMethod.m in Sources */,
 				ED771C5021241F54001BEFB3 /* NSObject+YYAddForKVO.m in Sources */,
 				60E87E78205A8F7600B20025 /* AudioUnitViewController.m in Sources */,
