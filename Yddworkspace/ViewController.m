@@ -142,7 +142,8 @@
       @"TestAutoreleasepoolViewController",
       @"PageViewController",
       @"TestVideoCaptureViewController",
-      @"AddressListViewController"
+      @"AddressListViewController",
+      @"TestMassoryViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",

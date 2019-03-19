@@ -7,6 +7,7 @@
 //  https://www.cnblogs.com/Biaoac/p/5317012.html
 
 #import "VideoFilter.h"
+#import "GPUImage.h"
 
 @implementation VideoFilter
 
@@ -71,5 +72,20 @@
   return filter.outputImage;
 }
 
+- (UIImage *)imageAddFiler:(UIImage *)image
+{
+  GPUImageOutput<GPUImageInput>* filter = [[GPUImageFilter alloc] init];
+  GPUImagePicture* pic =
+  [[GPUImagePicture alloc]
+   initWithImage:image];
+  [pic addTarget:filter];
+  
+  [pic processImage];
+  [filter useNextFrameForImageCapture];
+  // 最终的 image
+  UIImage* colorBlendFilterImage =
+  [filter imageFromCurrentFramebuffer];
+  return colorBlendFilterImage;
+}
 
 @end
