@@ -183,7 +183,7 @@
 
 + (CMSampleBufferRef)getSampleBufferWithPixelBuffer:(CVPixelBufferRef)pixelBuffer
 {
-  
+
   return NULL;
 }
 
