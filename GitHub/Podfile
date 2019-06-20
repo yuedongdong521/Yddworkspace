@@ -1,0 +1,7 @@
+platform :ios, '8.0'
+target 'Yddworkspace' do
+  pod 'WMPageController'
+  pod 'FDFullscreenPopGesture'  #侧滑隐藏导航栏
+  pod 'TOCropViewController'  #图片裁剪
+  pod 'NJKWebViewProgress'  #webView进度条
+end

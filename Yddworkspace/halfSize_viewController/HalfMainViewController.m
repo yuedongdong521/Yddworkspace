@@ -1,27 +1,22 @@
 //
-//  TestXibViewController.m
+//  HalfMainViewController.m
 //  Yddworkspace
 //
-//  Created by ispeak on 2016/11/14.
-//  Copyright © 2016年 QH. All rights reserved.
+//  Created by ydd on 2019/4/11.
+//  Copyright © 2019 QH. All rights reserved.
 //
 
-#import "TestXibViewController.h"
+#import "HalfMainViewController.h"
 
-@interface TestXibViewController ()
+@interface HalfMainViewController ()
 
 @end
 
-@implementation TestXibViewController
+@implementation HalfMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // Do any additional setup after loading the view.
 }
 
 /*
