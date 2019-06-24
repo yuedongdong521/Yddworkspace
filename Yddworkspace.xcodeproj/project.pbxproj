@@ -159,10 +159,7 @@
 		60B910FF20158DF4005EB918 /* CustomPushAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B910FE20158DF4005EB918 /* CustomPushAnimateViewController.m */; };
 		60B91102201594F7005EB918 /* CustomTransitionPushControlle.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B91101201594F7005EB918 /* CustomTransitionPushControlle.m */; };
 		60B911052015AE1B005EB918 /* CustomPopAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B911042015AE1B005EB918 /* CustomPopAnimateViewController.m */; };
-		60B911082015B290005EB918 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60B911072015B290005EB918 /* 1.jpg */; };
 		60B9110A2015B299005EB918 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60B911092015B298005EB918 /* 2.jpg */; };
-		60B9110C2015B2A2005EB918 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60B9110B2015B2A2005EB918 /* 3.jpg */; };
-		60B9110E2015B2AA005EB918 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60B9110D2015B2AA005EB918 /* 4.jpg */; };
 		60B911102015B2B3005EB918 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60B9110F2015B2B2005EB918 /* 5.jpg */; };
 		60B911132015B43E005EB918 /* CustomTransitionPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B911122015B43E005EB918 /* CustomTransitionPop.m */; };
 		60BD0B8C1D81720900837C56 /* Cat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 60BD0B8B1D81720900837C56 /* Cat.mp4 */; };
@@ -175,8 +172,6 @@
 		60BEE7751E2CC07100F71DB8 /* THCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BEE76E1E2CC07100F71DB8 /* THCapture.m */; };
 		60BEE7761E2CC07100F71DB8 /* THCaptureUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BEE7701E2CC07100F71DB8 /* THCaptureUtilities.m */; };
 		60BEE78B1E2CC27400F71DB8 /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BEE77B1E2CC27400F71DB8 /* AnimationViewController.m */; };
-		60BEE78C1E2CC27400F71DB8 /* TestXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BEE77D1E2CC27400F71DB8 /* TestXibViewController.m */; };
-		60BEE78D1E2CC27400F71DB8 /* TestXibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60BEE77E1E2CC27400F71DB8 /* TestXibViewController.xib */; };
 		60BEE78E1E2CC27400F71DB8 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BEE7811E2CC27400F71DB8 /* MyTableViewCell.m */; };
 		60BEE78F1E2CC27400F71DB8 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BEE7831E2CC27400F71DB8 /* MyTableViewController.m */; };
 		60BEE7901E2CC27400F71DB8 /* MyTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BEE7851E2CC27400F71DB8 /* MyTableViewModel.m */; };
@@ -236,6 +231,27 @@
 		60ED0F9220593D6A00756981 /* YddOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED0F9120593D6A00756981 /* YddOperation.m */; };
 		60FA5B111E8BC9BC00292181 /* qbScanbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FA5B0F1E8BC9BC00292181 /* qbScanbg@2x.png */; };
 		60FA5B121E8BC9BC00292181 /* qbScanLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FA5B101E8BC9BC00292181 /* qbScanLight@2x.png */; };
+		8429B2EF225F0B04007BEB10 /* HalfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8429B2EE225F0B04007BEB10 /* HalfViewController.m */; };
+		8429B2F2225F16AD007BEB10 /* HalfMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8429B2F1225F16AD007BEB10 /* HalfMainViewController.m */; };
+		8429B2F5225F17D8007BEB10 /* HalfSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8429B2F4225F17D8007BEB10 /* HalfSecondViewController.m */; };
+		842E0452228BB90700BD2C46 /* AppCrashManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 842E0451228BB90700BD2C46 /* AppCrashManager.m */; };
+		842E0455228BFD0200BD2C46 /* TimeTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 842E0454228BFD0200BD2C46 /* TimeTools.m */; };
+		842F1BD6228950740005A338 /* TextHashTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F1BD5228950740005A338 /* TextHashTableViewController.m */; };
+		842F1BD9228950A30005A338 /* HashTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F1BD8228950A30005A338 /* HashTable.m */; };
+		8430103022B0EB3F0034A2AD /* TestXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8430102E22B0EB3F0034A2AD /* TestXibViewController.m */; };
+		8430103122B0EB3F0034A2AD /* TestXibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8430102F22B0EB3F0034A2AD /* TestXibViewController.xib */; };
+		8430103322B0ED6C0034A2AD /* customXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8430103222B0ED6C0034A2AD /* customXibView.xib */; };
+		8430103622B0ED8D0034A2AD /* CustomXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8430103522B0ED8D0034A2AD /* CustomXibView.m */; };
+		8431034C22B7800B0072C11F /* CustomGradBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8431034B22B7800B0072C11F /* CustomGradBtn.m */; };
+		84342AE2229783C900C36314 /* ReplayKitDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84342AE1229783C900C36314 /* ReplayKitDemo.swift */; };
+		843445D6229241DE005EDCB3 /* mac添加zip密码 in Resources */ = {isa = PBXBuildFile; fileRef = 843445D5229241DE005EDCB3 /* mac添加zip密码 */; };
+		8435D20C22BCB263009ED8A9 /* YDDWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435D20B22BCB263009ED8A9 /* YDDWebView.m */; };
+		8438083122BB4DC80094708D /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8438083022BB4DC80094708D /* CustomSlider.m */; };
+		8438083522BB8D430094708D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8438083422BB8D430094708D /* Podfile */; };
+		8438143D2271B7F700436CD8 /* NSString+yddSubByte.m in Sources */ = {isa = PBXBuildFile; fileRef = 8438143C2271B7F700436CD8 /* NSString+yddSubByte.m */; };
+		847137E022BCDAA3003BC0E4 /* YDDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137DF22BCDAA3003BC0E4 /* YDDWebViewController.m */; };
+		847137E622BCE093003BC0E4 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137E322BCE092003BC0E4 /* NJKWebViewProgress.m */; };
+		847137E722BCE093003BC0E4 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */; };
 		ED01F67021B12F2F006DAC28 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = ED01F66F21B12F2F006DAC28 /* Record.m */; };
 		ED01F67321B13071006DAC28 /* AudioConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = ED01F67221B13071006DAC28 /* AudioConstant.m */; };
 		ED01F67621B13092006DAC28 /* Play.m in Sources */ = {isa = PBXBuildFile; fileRef = ED01F67521B13091006DAC28 /* Play.m */; };
@@ -810,6 +826,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02E575522A7470D4899F6087 /* libPods-Yddworkspace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yddworkspace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		600043D51E8F3EB400F3471A /* camera_focus_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_focus_red@2x.png"; sourceTree = "<group>"; };
 		600044DF1E949CF200F3471A /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		600044E01E949CF200F3471A /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
@@ -1060,10 +1077,7 @@
 		60B91101201594F7005EB918 /* CustomTransitionPushControlle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTransitionPushControlle.m; sourceTree = "<group>"; };
 		60B911032015AE1B005EB918 /* CustomPopAnimateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPopAnimateViewController.h; sourceTree = "<group>"; };
 		60B911042015AE1B005EB918 /* CustomPopAnimateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPopAnimateViewController.m; sourceTree = "<group>"; };
-		60B911072015B290005EB918 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		60B911092015B298005EB918 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
-		60B9110B2015B2A2005EB918 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
-		60B9110D2015B2AA005EB918 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		60B9110F2015B2B2005EB918 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
 		60B911112015B43D005EB918 /* CustomTransitionPop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTransitionPop.h; sourceTree = "<group>"; };
 		60B911122015B43E005EB918 /* CustomTransitionPop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTransitionPop.m; sourceTree = "<group>"; };
@@ -1085,9 +1099,6 @@
 		60BEE7701E2CC07100F71DB8 /* THCaptureUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THCaptureUtilities.m; sourceTree = "<group>"; };
 		60BEE77A1E2CC27400F71DB8 /* AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
 		60BEE77B1E2CC27400F71DB8 /* AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
-		60BEE77C1E2CC27400F71DB8 /* TestXibViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestXibViewController.h; sourceTree = "<group>"; };
-		60BEE77D1E2CC27400F71DB8 /* TestXibViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestXibViewController.m; sourceTree = "<group>"; };
-		60BEE77E1E2CC27400F71DB8 /* TestXibViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestXibViewController.xib; sourceTree = "<group>"; };
 		60BEE7801E2CC27400F71DB8 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
 		60BEE7811E2CC27400F71DB8 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 		60BEE7821E2CC27400F71DB8 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
@@ -1189,6 +1200,43 @@
 		60ED0F9120593D6A00756981 /* YddOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YddOperation.m; sourceTree = "<group>"; };
 		60FA5B0F1E8BC9BC00292181 /* qbScanbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qbScanbg@2x.png"; sourceTree = "<group>"; };
 		60FA5B101E8BC9BC00292181 /* qbScanLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qbScanLight@2x.png"; sourceTree = "<group>"; };
+		8429B2ED225F0B04007BEB10 /* HalfViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfViewController.h; sourceTree = "<group>"; };
+		8429B2EE225F0B04007BEB10 /* HalfViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfViewController.m; sourceTree = "<group>"; };
+		8429B2F0225F16AD007BEB10 /* HalfMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfMainViewController.h; sourceTree = "<group>"; };
+		8429B2F1225F16AD007BEB10 /* HalfMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfMainViewController.m; sourceTree = "<group>"; };
+		8429B2F3225F17D8007BEB10 /* HalfSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfSecondViewController.h; sourceTree = "<group>"; };
+		8429B2F4225F17D8007BEB10 /* HalfSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfSecondViewController.m; sourceTree = "<group>"; };
+		842E0450228BB90700BD2C46 /* AppCrashManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCrashManager.h; sourceTree = "<group>"; };
+		842E0451228BB90700BD2C46 /* AppCrashManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCrashManager.m; sourceTree = "<group>"; };
+		842E0453228BFD0200BD2C46 /* TimeTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeTools.h; sourceTree = "<group>"; };
+		842E0454228BFD0200BD2C46 /* TimeTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeTools.m; sourceTree = "<group>"; };
+		842F1BD4228950740005A338 /* TextHashTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextHashTableViewController.h; sourceTree = "<group>"; };
+		842F1BD5228950740005A338 /* TextHashTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextHashTableViewController.m; sourceTree = "<group>"; };
+		842F1BD7228950A30005A338 /* HashTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashTable.h; sourceTree = "<group>"; };
+		842F1BD8228950A30005A338 /* HashTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HashTable.m; sourceTree = "<group>"; };
+		8430102D22B0EB3F0034A2AD /* TestXibViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestXibViewController.h; sourceTree = "<group>"; };
+		8430102E22B0EB3F0034A2AD /* TestXibViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestXibViewController.m; sourceTree = "<group>"; };
+		8430102F22B0EB3F0034A2AD /* TestXibViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestXibViewController.xib; sourceTree = "<group>"; };
+		8430103222B0ED6C0034A2AD /* customXibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = customXibView.xib; sourceTree = "<group>"; };
+		8430103422B0ED8D0034A2AD /* CustomXibView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomXibView.h; sourceTree = "<group>"; };
+		8430103522B0ED8D0034A2AD /* CustomXibView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomXibView.m; sourceTree = "<group>"; };
+		8431034A22B7800B0072C11F /* CustomGradBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomGradBtn.h; sourceTree = "<group>"; };
+		8431034B22B7800B0072C11F /* CustomGradBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomGradBtn.m; sourceTree = "<group>"; };
+		84342AE1229783C900C36314 /* ReplayKitDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplayKitDemo.swift; sourceTree = "<group>"; };
+		843445D5229241DE005EDCB3 /* mac添加zip密码 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "mac添加zip密码"; sourceTree = "<group>"; };
+		8435D20A22BCB263009ED8A9 /* YDDWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDDWebView.h; sourceTree = "<group>"; };
+		8435D20B22BCB263009ED8A9 /* YDDWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDDWebView.m; sourceTree = "<group>"; };
+		8438082F22BB4DC80094708D /* CustomSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSlider.h; sourceTree = "<group>"; };
+		8438083022BB4DC80094708D /* CustomSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSlider.m; sourceTree = "<group>"; };
+		8438083422BB8D430094708D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		8438143B2271B7F700436CD8 /* NSString+yddSubByte.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+yddSubByte.h"; sourceTree = "<group>"; };
+		8438143C2271B7F700436CD8 /* NSString+yddSubByte.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+yddSubByte.m"; sourceTree = "<group>"; };
+		847137DE22BCDAA3003BC0E4 /* YDDWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDDWebViewController.h; sourceTree = "<group>"; };
+		847137DF22BCDAA3003BC0E4 /* YDDWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDDWebViewController.m; sourceTree = "<group>"; };
+		847137E222BCE092003BC0E4 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		847137E322BCE092003BC0E4 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		847137E422BCE092003BC0E4 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
 		ED01F66E21B12F2F006DAC28 /* Record.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
 		ED01F66F21B12F2F006DAC28 /* Record.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		ED01F67121B13071006DAC28 /* AudioConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioConstant.h; sourceTree = "<group>"; };
@@ -2196,6 +2244,7 @@
 				60CA61701E16542200B03340 /* CoreTelephony.framework */,
 				60CA616E1E16540C00B03340 /* SystemConfiguration.framework */,
 				60CA616C1E1653F200B03340 /* libsqlite3.tbd */,
+				02E575522A7470D4899F6087 /* libPods-Yddworkspace.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2474,6 +2523,9 @@
 		60761EB11D61B62000FC2F1F /* Yddworkspace */ = {
 			isa = PBXGroup;
 			children = (
+				8430102C22B0EB090034A2AD /* testXib */,
+				842F1BD3228950380005A338 /* HashTable */,
+				8429B2EC225F0ABB007BEB10 /* halfSize_viewController */,
 				ED3F271B223279D500EC1E6B /* testMassory */,
 				ED49E9392215384A004B86D1 /* AddressList */,
 				EDB335DE21E863790027F2F7 /* UIViewPageControll */,
@@ -2514,6 +2566,8 @@
 				608CBA541E16335D0004BBD4 /* swiftTest */,
 				60761EB51D61B62000FC2F1F /* AppDelegate.h */,
 				60761EB61D61B62000FC2F1F /* AppDelegate.m */,
+				842E0450228BB90700BD2C46 /* AppCrashManager.h */,
+				842E0451228BB90700BD2C46 /* AppCrashManager.m */,
 				60B910FC20158D0B005EB918 /* 转场动画 */,
 				60CDC7A61FA9BAD2004A650A /* MyTabBarViewController.h */,
 				60CDC7A71FA9BAD2004A650A /* MyTabBarViewController.m */,
@@ -2654,6 +2708,7 @@
 				ED3C00B92114355F00131495 /* UserInfoController.swift */,
 				ED3C00BB2114462E00131495 /* UserInfoTableCell.swift */,
 				EDA36234211AFB8F00536799 /* DataModel.swift */,
+				84342AE1229783C900C36314 /* ReplayKitDemo.swift */,
 			);
 			path = swiftTest;
 			sourceTree = "<group>";
@@ -2739,8 +2794,10 @@
 		609E3D08205272C800D9A55C /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
+				8438083422BB8D430094708D /* Podfile */,
 				609E3D0D2052787500D9A55C /* githubCommitAndUpData */,
 				609E3D0F205278B600D9A55C /* userCocoapods */,
+				843445D5229241DE005EDCB3 /* mac添加zip密码 */,
 			);
 			path = GitHub;
 			sourceTree = "<group>";
@@ -2851,8 +2908,16 @@
 				ED9BDB9921BA071E00F3CB9A /* UIImage+ydd.m */,
 				EDCBF12621FAFC95007C2F9E /* NSString+CharacterSet.h */,
 				EDCBF12721FAFC95007C2F9E /* NSString+CharacterSet.m */,
+				8438143B2271B7F700436CD8 /* NSString+yddSubByte.h */,
+				8438143C2271B7F700436CD8 /* NSString+yddSubByte.m */,
 				ED20A5962240B48200565BA4 /* SendLoactionNotification.h */,
 				ED20A5972240B48200565BA4 /* SendLoactionNotification.m */,
+				842E0453228BFD0200BD2C46 /* TimeTools.h */,
+				842E0454228BFD0200BD2C46 /* TimeTools.m */,
+				8431034A22B7800B0072C11F /* CustomGradBtn.h */,
+				8431034B22B7800B0072C11F /* CustomGradBtn.m */,
+				8438082F22BB4DC80094708D /* CustomSlider.h */,
+				8438083022BB4DC80094708D /* CustomSlider.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -2924,10 +2989,7 @@
 		60B911062015B256005EB918 /* backImages */ = {
 			isa = PBXGroup;
 			children = (
-				60B9110D2015B2AA005EB918 /* 4.jpg */,
-				60B9110B2015B2A2005EB918 /* 3.jpg */,
 				60B911092015B298005EB918 /* 2.jpg */,
-				60B911072015B290005EB918 /* 1.jpg */,
 				60B9110F2015B2B2005EB918 /* 5.jpg */,
 			);
 			path = backImages;
@@ -2986,9 +3048,6 @@
 			children = (
 				60BEE77A1E2CC27400F71DB8 /* AnimationViewController.h */,
 				60BEE77B1E2CC27400F71DB8 /* AnimationViewController.m */,
-				60BEE77C1E2CC27400F71DB8 /* TestXibViewController.h */,
-				60BEE77D1E2CC27400F71DB8 /* TestXibViewController.m */,
-				60BEE77E1E2CC27400F71DB8 /* TestXibViewController.xib */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -3206,6 +3265,54 @@
 				608A492F205B5EE4009E26E3 /* ISAudionUnitManageer.m */,
 			);
 			path = AudioQueueAndUnit;
+			sourceTree = "<group>";
+		};
+		8429B2EC225F0ABB007BEB10 /* halfSize_viewController */ = {
+			isa = PBXGroup;
+			children = (
+				8429B2ED225F0B04007BEB10 /* HalfViewController.h */,
+				8429B2EE225F0B04007BEB10 /* HalfViewController.m */,
+				8429B2F0225F16AD007BEB10 /* HalfMainViewController.h */,
+				8429B2F1225F16AD007BEB10 /* HalfMainViewController.m */,
+				8429B2F3225F17D8007BEB10 /* HalfSecondViewController.h */,
+				8429B2F4225F17D8007BEB10 /* HalfSecondViewController.m */,
+			);
+			path = halfSize_viewController;
+			sourceTree = "<group>";
+		};
+		842F1BD3228950380005A338 /* HashTable */ = {
+			isa = PBXGroup;
+			children = (
+				842F1BD4228950740005A338 /* TextHashTableViewController.h */,
+				842F1BD5228950740005A338 /* TextHashTableViewController.m */,
+				842F1BD7228950A30005A338 /* HashTable.h */,
+				842F1BD8228950A30005A338 /* HashTable.m */,
+			);
+			path = HashTable;
+			sourceTree = "<group>";
+		};
+		8430102C22B0EB090034A2AD /* testXib */ = {
+			isa = PBXGroup;
+			children = (
+				8430102D22B0EB3F0034A2AD /* TestXibViewController.h */,
+				8430102E22B0EB3F0034A2AD /* TestXibViewController.m */,
+				8430103222B0ED6C0034A2AD /* customXibView.xib */,
+				8430103422B0ED8D0034A2AD /* CustomXibView.h */,
+				8430103522B0ED8D0034A2AD /* CustomXibView.m */,
+				8430102F22B0EB3F0034A2AD /* TestXibViewController.xib */,
+			);
+			path = testXib;
+			sourceTree = "<group>";
+		};
+		847137E122BCE092003BC0E4 /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				847137E222BCE092003BC0E4 /* NJKWebViewProgressView.h */,
+				847137E322BCE092003BC0E4 /* NJKWebViewProgress.m */,
+				847137E422BCE092003BC0E4 /* NJKWebViewProgress.h */,
+				847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */,
+			);
+			path = NJKWebViewProgress;
 			sourceTree = "<group>";
 		};
 		ED01F66D21B12EED006DAC28 /* audioQueueTest */ = {
@@ -3515,6 +3622,7 @@
 		ED2E64862135184900ADCDFF /* sdk */ = {
 			isa = PBXGroup;
 			children = (
+				847137E122BCE092003BC0E4 /* NJKWebViewProgress */,
 				ED2DE3EB21363ADC00A41531 /* FBKVOController */,
 				ED2E64F82135614800ADCDFF /* GPUImage */,
 				ED324CF02134058E00D02F13 /* MBProgressHUD.h */,
@@ -3605,6 +3713,10 @@
 				ED31ECD421B9350D00124752 /* testHtml.html */,
 				ED31ECD221B9350500124752 /* TestHtmlViewController.h */,
 				ED31ECD121B9350500124752 /* TestHtmlViewController.m */,
+				8435D20A22BCB263009ED8A9 /* YDDWebView.h */,
+				8435D20B22BCB263009ED8A9 /* YDDWebView.m */,
+				847137DE22BCDAA3003BC0E4 /* YDDWebViewController.h */,
+				847137DF22BCDAA3003BC0E4 /* YDDWebViewController.m */,
 			);
 			path = Javascript;
 			sourceTree = "<group>";
@@ -4565,9 +4677,9 @@
 				TargetAttributes = {
 					60761EAE1D61B62000FC2F1F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = WUFQ2E5U2G;
+						DevelopmentTeam = 8F7D4C878S;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					60761EC71D61B62000FC2F1F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -4588,6 +4700,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -4616,7 +4729,6 @@
 				6088490E1DC076C800FD819C /* shoucang1.png in Resources */,
 				ED2E64F721355F7F00ADCDFF /* GiftCheckmarkIcon@2x.png in Resources */,
 				ED1B744521772F4D00D51FF5 /* yselect_no@2x.png in Resources */,
-				60B9110C2015B2A2005EB918 /* 3.jpg in Resources */,
 				600EF34B1D9E627400A30927 /* photograph_Select@2x.png in Resources */,
 				6088490F1DC076C800FD819C /* weizhi.png in Resources */,
 				600EF34E1D9E627400A30927 /* photograph@3x.png in Resources */,
@@ -4635,13 +4747,13 @@
 				609E3D0E2052787500D9A55C /* githubCommitAndUpData in Resources */,
 				ED8FB4AD223A2349005EFD99 /* mysong.mp3 in Resources */,
 				60B9110A2015B299005EB918 /* 2.jpg in Resources */,
-				60B911082015B290005EB918 /* 1.jpg in Resources */,
 				601C8C1A1F20C076001F50B9 /* LinkMicReminderView.xib in Resources */,
 				608849051DC076C800FD819C /* dianzan.png in Resources */,
 				609E3D10205278B600D9A55C /* userCocoapods in Resources */,
 				608849121DC076C800FD819C /* yr1.png in Resources */,
 				ED31ECD721B9354D00124752 /* testJavascript.html in Resources */,
 				600EF34D1D9E627400A30927 /* photograph@2x.png in Resources */,
+				843445D6229241DE005EDCB3 /* mac添加zip密码 in Resources */,
 				ED1B744221772AE800D51FF5 /* cropBoardImageIphone6@2x.png in Resources */,
 				60944ECA1F0F911C00C02AFB /* voice_empty@2x.png in Resources */,
 				60CA61671E16538A00B03340 /* README.txt in Resources */,
@@ -4650,19 +4762,20 @@
 				608849041DC076C800FD819C /* cool1.png in Resources */,
 				608849111DC076C800FD819C /* yr.jpg in Resources */,
 				600EF34C1D9E627400A30927 /* photograph_Select@3x.png in Resources */,
+				8430103322B0ED6C0034A2AD /* customXibView.xib in Resources */,
 				ED1B744621772F4D00D51FF5 /* yselect_yes@2x.png in Resources */,
 				60BD0B8E1D824B5400837C56 /* 0.jpg in Resources */,
 				60CA616A1E16538A00B03340 /* UMSocialSDKResources.bundle in Resources */,
 				608849131DC076C800FD819C /* zhibo.png in Resources */,
+				8430103122B0EB3F0034A2AD /* TestXibViewController.xib in Resources */,
 				60944EC61F0F911C00C02AFB /* speekTouchDown@2x.png in Resources */,
 				60CA61601E16538A00B03340 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				60944EE01F0F914A00C02AFB /* json_internalarray.inl in Resources */,
 				ED324CB02134017500D02F13 /* TZImagePickerController.bundle in Resources */,
-				60BEE78D1E2CC27400F71DB8 /* TestXibViewController.xib in Resources */,
 				60691AA41FCFFA4400009794 /* run边距.gif in Resources */,
 				608849101DC076C800FD819C /* yiguanzhu.png in Resources */,
-				60B9110E2015B2AA005EB918 /* 4.jpg in Resources */,
 				608849071DC076C800FD819C /* duo.jpg in Resources */,
+				8438083522BB8D430094708D /* Podfile in Resources */,
 				608848EF1DC05F5100FD819C /* Unknown-1.png in Resources */,
 				60944ECB1F0F911C00C02AFB /* voice_full@2x.png in Resources */,
 				60AFF34B1FC7F3AC00985769 /* test.text in Resources */,
@@ -4764,6 +4877,7 @@
 				ED1B74332177263500D51FF5 /* ISCutOutPictures.mm in Sources */,
 				EDC8D4BE218ACBE7000B3D6C /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
 				60A0AE2D200468E3004DDA93 /* YDDpcmTOwav.m in Sources */,
+				84342AE2229783C900C36314 /* ReplayKitDemo.swift in Sources */,
 				ED2851312101CE5800178965 /* SDAnimatedImageRep.m in Sources */,
 				EDCFD96121B53DDF00C9E913 /* SaveCustomViewController.m in Sources */,
 				60CC9C0D1F2ADD6200FF4533 /* MutableThreadViewController.m in Sources */,
@@ -4825,6 +4939,7 @@
 				ED771C3221241F53001BEFB3 /* YYTextAttribute.m in Sources */,
 				ED28515D2101DCC100178965 /* ISLookUpImageView.m in Sources */,
 				EDC8D469218ACBE7000B3D6C /* GPUImageColorMatrixFilter.m in Sources */,
+				8435D20C22BCB263009ED8A9 /* YDDWebView.m in Sources */,
 				ED1B74362177263500D51FF5 /* ISImageresizerFrameView.mm in Sources */,
 				ED2E64F621355F7F00ADCDFF /* ISEditingPhotoController.mm in Sources */,
 				60E594B51FFB851900476F8D /* H264HwEncoderImpl.m in Sources */,
@@ -4845,6 +4960,7 @@
 				60AFF3491FC7C64900985769 /* MyAttributedString.m in Sources */,
 				6000451D1E949CF200F3471A /* UIScrollView+MJExtension.m in Sources */,
 				ED771C3321241F53001BEFB3 /* YYTextArchiver.m in Sources */,
+				8429B2EF225F0B04007BEB10 /* HalfViewController.m in Sources */,
 				EDC8D440218ACBE6000B3D6C /* GPUImageChromaKeyFilter.m in Sources */,
 				60B910FF20158DF4005EB918 /* CustomPushAnimateViewController.m in Sources */,
 				6000451C1E949CF200F3471A /* NSBundle+MJRefresh.m in Sources */,
@@ -4857,6 +4973,7 @@
 				EDC8D449218ACBE6000B3D6C /* GPUImageColorPackingFilter.m in Sources */,
 				600EF3461D9E612C00A30927 /* MyImagePickerViewController.m in Sources */,
 				ED771C1521241F53001BEFB3 /* YYImage.m in Sources */,
+				842E0455228BFD0200BD2C46 /* TimeTools.m in Sources */,
 				ED1B74352177263500D51FF5 /* ISAlbumListTableViewCell.mm in Sources */,
 				ED1B74372177263500D51FF5 /* ISPhotoAlbumViewController.mm in Sources */,
 				608A4930205B5EE4009E26E3 /* ISAudionUnitManageer.m in Sources */,
@@ -4865,6 +4982,7 @@
 				60BEE7751E2CC07100F71DB8 /* THCapture.m in Sources */,
 				EDFB35AB21DC585A009D8212 /* RunLoopViewController.m in Sources */,
 				609F68B41F4C0DB900ABC49A /* GameLiveHomeViewController.m in Sources */,
+				8430103022B0EB3F0034A2AD /* TestXibViewController.m in Sources */,
 				ED771C3C21241F54001BEFB3 /* UIScreen+YYAdd.m in Sources */,
 				ED2E64EC21355F7F00ADCDFF /* EditVideoViewController.mm in Sources */,
 				ED1B74322177263500D51FF5 /* ISAssetsManager.mm in Sources */,
@@ -4901,6 +5019,7 @@
 				ED2E64EB21355F7F00ADCDFF /* ISBrightnessFilter.mm in Sources */,
 				ED284FEB210179DF00178965 /* CollectionDataModel.m in Sources */,
 				60BEE79A1E2CC39400F71DB8 /* AVCaptureSessionViewController.m in Sources */,
+				8438143D2271B7F700436CD8 /* NSString+yddSubByte.m in Sources */,
 				ED771C3D21241F54001BEFB3 /* UIView+YYAdd.m in Sources */,
 				ED771C2221241F53001BEFB3 /* YYTextMagnifier.m in Sources */,
 				ED284FF22101A6B800178965 /* JKRFallsLayout.m in Sources */,
@@ -4942,6 +5061,7 @@
 				EDC8D48A218ACBE7000B3D6C /* GPUImageColorDodgeBlendFilter.m in Sources */,
 				ED771C2621241F53001BEFB3 /* YYTextLayout.m in Sources */,
 				ED771C1621241F53001BEFB3 /* YYImageCoder.m in Sources */,
+				842F1BD9228950A30005A338 /* HashTable.m in Sources */,
 				ED324CAA2134017500D02F13 /* TZImageManager.mm in Sources */,
 				EDC8D486218ACBE7000B3D6C /* GPUImageAverageLuminanceThresholdFilter.m in Sources */,
 				EDC8D4A9218ACBE7000B3D6C /* GPUImageShiTomasiFeatureDetectionFilter.m in Sources */,
@@ -4978,6 +5098,7 @@
 				ED2DE3FB2136416200A41531 /* MyURLTools.mm in Sources */,
 				EDC8D475218ACBE7000B3D6C /* GPUImageOpacityFilter.m in Sources */,
 				EDC8D44D218ACBE6000B3D6C /* GPUImageTwoInputFilter.m in Sources */,
+				842F1BD6228950740005A338 /* TextHashTableViewController.m in Sources */,
 				EDC8D47A218ACBE7000B3D6C /* GPUImageSphereRefractionFilter.m in Sources */,
 				EDCBF12821FAFC95007C2F9E /* NSString+CharacterSet.m in Sources */,
 				EDC8D4DA218ACBE7000B3D6C /* GPUImageDarkenBlendFilter.m in Sources */,
@@ -5009,7 +5130,6 @@
 				ED771C4321241F54001BEFB3 /* NSArray+YYAdd.m in Sources */,
 				ED2DE3F521363BA500A41531 /* BaseWebViewController.mm in Sources */,
 				ED2D8FE52108870000DEF809 /* UIWebView+JavaScriptAlert.m in Sources */,
-				60BEE78C1E2CC27400F71DB8 /* TestXibViewController.m in Sources */,
 				ED1B743B2177263500D51FF5 /* ISAlbumListViewController.mm in Sources */,
 				EDC8D4B8218ACBE7000B3D6C /* GPUImageLocalBinaryPatternFilter.m in Sources */,
 				ED32547E212E93CD00182DF5 /* UIImage+ScallGif.m in Sources */,
@@ -5062,6 +5182,7 @@
 				EDC8D43B218ACBE6000B3D6C /* GPUImageView.m in Sources */,
 				ED2DE404213641F400A41531 /* TFHppleElement.m in Sources */,
 				6036F4E41E8A73650028F6AF /* UIImage+help.m in Sources */,
+				8429B2F2225F16AD007BEB10 /* HalfMainViewController.m in Sources */,
 				ED771C1821241F53001BEFB3 /* _YYWebImageSetter.m in Sources */,
 				EDC8D4C5218ACBE7000B3D6C /* GPUImageNormalBlendFilter.m in Sources */,
 				60BEE7741E2CC07100F71DB8 /* CGImageContainer.m in Sources */,
@@ -5105,6 +5226,7 @@
 				EDC8D482218ACBE7000B3D6C /* GPUImageDivideBlendFilter.m in Sources */,
 				ED324CB52134017500D02F13 /* TZVideoPlayerController.mm in Sources */,
 				ED28510D2101CE5800178965 /* SDWebImageFrame.m in Sources */,
+				847137E022BCDAA3003BC0E4 /* YDDWebViewController.m in Sources */,
 				EDC8D4C8218ACBE7000B3D6C /* GPUImageNobleCornerDetectionFilter.m in Sources */,
 				ED324CB32134017500D02F13 /* TZImagePickerController.mm in Sources */,
 				ED771C5621241F54001BEFB3 /* YYSentinel.m in Sources */,
@@ -5145,6 +5267,7 @@
 				ED2E64F021355F7F00ADCDFF /* SDAVAssetExportSession.mm in Sources */,
 				600045101E949CF200F3471A /* MJRefreshHeader.m in Sources */,
 				EDC8D4C9218ACBE7000B3D6C /* GPUImageCrosshatchFilter.m in Sources */,
+				8430103622B0ED8D0034A2AD /* CustomXibView.m in Sources */,
 				ED2851342101CE5800178965 /* SDImageCache.m in Sources */,
 				EDC8D4BB218ACBE7000B3D6C /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
 				ED771C4021241F54001BEFB3 /* UIImage+YYAdd.m in Sources */,
@@ -5192,6 +5315,7 @@
 				EDC8D437218ACBE6000B3D6C /* GPUImageContext.m in Sources */,
 				ED2851042101CE5800178965 /* MKAnnotationView+WebCache.m in Sources */,
 				ED403D8E20D3C65000D9658A /* WeChatWindow.m in Sources */,
+				847137E622BCE093003BC0E4 /* NJKWebViewProgress.m in Sources */,
 				EDCFD95E21B53DBB00C9E913 /* SaveCustomModel.m in Sources */,
 				ED771C2C21241F53001BEFB3 /* YYTextRunDelegate.m in Sources */,
 				EDC8D497218ACBE7000B3D6C /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
@@ -5237,8 +5361,10 @@
 				6047C1801E6D7D63002FC1AC /* VoiceToWordViewController.m in Sources */,
 				ED2850BB2101C38F00178965 /* TestImageModel.m in Sources */,
 				600045161E949CF200F3471A /* MJRefreshBackStateFooter.m in Sources */,
+				8431034C22B7800B0072C11F /* CustomGradBtn.m in Sources */,
 				ED6F89822140D38A004EBA26 /* CoreTextTestView.m in Sources */,
 				60AFF35E1FC81A0100985769 /* CTScrollView.m in Sources */,
+				847137E722BCE093003BC0E4 /* NJKWebViewProgressView.m in Sources */,
 				ED2E64EF21355F7F00ADCDFF /* ISVideoCountDownView.mm in Sources */,
 				EDC8D462218ACBE6000B3D6C /* GPUImageBilateralFilter.m in Sources */,
 				EDC8D44E218ACBE6000B3D6C /* GPUImageEmbossFilter.m in Sources */,
@@ -5250,6 +5376,7 @@
 				ED771C2421241F53001BEFB3 /* YYTextEffectWindow.m in Sources */,
 				600045191E949CF200F3471A /* MJRefreshStateHeader.m in Sources */,
 				EDC8D447218ACBE6000B3D6C /* GPUImageTwoPassFilter.m in Sources */,
+				8438083122BB4DC80094708D /* CustomSlider.m in Sources */,
 				ED771C5D21241F54001BEFB3 /* YYThreadSafeArray.m in Sources */,
 				ED2E64E421355F7F00ADCDFF /* ISListVideoOperation.mm in Sources */,
 				6047C16B1E6AC434002FC1AC /* HZAViewController.m in Sources */,
@@ -5269,6 +5396,7 @@
 				ED771C5021241F54001BEFB3 /* NSObject+YYAddForKVO.m in Sources */,
 				60E87E78205A8F7600B20025 /* AudioUnitViewController.m in Sources */,
 				ED771C3621241F53001BEFB3 /* UIBezierPath+YYAdd.m in Sources */,
+				8429B2F5225F17D8007BEB10 /* HalfSecondViewController.m in Sources */,
 				ED2E64EA21355F7F00ADCDFF /* ISTakePhotoController.mm in Sources */,
 				ED28514C2101CE5800178965 /* UIView+WebCacheOperation.m in Sources */,
 				ED771C4E21241F54001BEFB3 /* NSNotificationCenter+YYAdd.m in Sources */,
@@ -5279,6 +5407,7 @@
 				6039E3CD1E616EA9002D6B7C /* PriaseSendStructure.m in Sources */,
 				EDC8D468218ACBE7000B3D6C /* GPUImageOverlayBlendFilter.m in Sources */,
 				EDC8D47F218ACBE7000B3D6C /* GPUImageBrightnessFilter.m in Sources */,
+				842E0452228BB90700BD2C46 /* AppCrashManager.m in Sources */,
 				ED771B5C2123D36C001BEFB3 /* MyTestTextView.m in Sources */,
 				ED06276621B1481400B23E8A /* AudioUnitRecordController.m in Sources */,
 				EDC8D4BA218ACBE7000B3D6C /* GPUImageScreenBlendFilter.m in Sources */,
@@ -5517,10 +5646,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WUFQ2E5U2G;
+				DEVELOPMENT_TEAM = 8F7D4C878S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5561,9 +5690,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lxml2";
 				PODS_ROOT = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.qinhe.-.iShow";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ydd.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ISDevelopment;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SHARED_PRECOMPS_DIR = /Users/ispeak/Desktop/Yddworkspace/Yddworkspace;
 				SWIFT_OBJC_BRIDGING_HEADER = "Yddworkspace/Yddworkspace-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -5581,9 +5710,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8F7D4C878S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5617,7 +5746,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
 				PODS_ROOT = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.qinhe.-.iShow";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ydd.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

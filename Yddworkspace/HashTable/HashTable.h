@@ -12,6 +12,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HashTable : NSObject
 
++ (instancetype)shareHashTable;
+
+- (void)addObjc:(id)objc;
+
+- (void)intersectHashTable:(NSHashTable *)hashTab;
+
+- (void)removeObjc:(id)objc;
+
+- (void)removeAllObjc;
+
+- (NSArray *)getHashTableArray;
+
 @end
 
 NS_ASSUME_NONNULL_END

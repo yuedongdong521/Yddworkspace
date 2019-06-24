@@ -28,6 +28,16 @@
     self.window.rootViewController = VC;
     [self.window makeKeyAndVisible];
     
+    [UIFont.familyNames enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"UIFont name : %@", obj);
+    }];
+    
+
+    
+    UIFont *pfFont1 = [UIFont fontWithName:@"PingFang SC" size:18];
+    UIFont *pfFont2 = [UIFont fontWithName:@"PingFangSC" size:18];
+    UIFont *pfFont3 = [UIFont fontWithName:@"PingFangSC-Medium" size:18];
+    
 //    NSString *str = [NSString stringWithUTF8String:nil];
     
     [self initTabBar];

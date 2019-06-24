@@ -64,4 +64,35 @@ enum CONTACT_PHOTOLIST_WITH_ALBUMTYPE {
 #define KDictKeyTypeString @"KDictKeyTypeString"
 #define KDictKeyTypeIdentifier @"KDictKeyTypeIdentifier"
 
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+
+
+/*iPhone X
+ 2436×1125
+ {375, 812}
+ @3x
+ 
+ iPhone XR
+ 1792x828
+ {414, 896}
+ @2x
+ 
+ iPhone XS
+ 2436×1125
+ {375, 812}
+ @3x
+ 
+ iPhone XS Max
+ 2688x1242
+ {414, 896}
+ @3x*/
+#define IS_STANDARD_IPHONE_X (IS_IPHONE && ([[UIScreen mainScreen] bounds].size.height == 812.0 || [[UIScreen mainScreen] bounds].size.height == 896 ))
+
+#define IPHONE_X_SAFE_BOTTOM IS_STANDARD_IPHONE_X ? 34 : 0
+
+#define IPHONE_X_SAFE_TOP IS_STANDARD_IPHONE_X ? 44 : 0
+
+#define UIColorHexRGBA(rgb,a) [UIColor colorWithRed:((float)((rgb & 0xFF0000) >> 16))/255.0 green:((float)((rgb & 0x00FF00) >> 8))/255.0 blue:((float)(rgb & 0x0000FF))/255.0 alpha:((float)a)]
+
+
 #endif /* PrefixHeader_pch */

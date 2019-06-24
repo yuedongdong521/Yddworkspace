@@ -110,6 +110,8 @@
     [_playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];//监听loadedTimeRanges属性
     _player = [[AVPlayer alloc] initWithPlayerItem:_playerItem];
     _playerView.player = _player;
+    _player.externalPlaybackVideoGravity = AVLayerVideoGravityResizeAspectFill;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayDidEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.playerItem];//用于监听视频是否已经播放完毕
 }
 

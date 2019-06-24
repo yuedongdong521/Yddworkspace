@@ -12,9 +12,9 @@
 #import "XMLDataAnalysis.h"
 #import "NSString+CharacterSet.h"
 #import "ISAlertController.h"
-
-
-#define UIColorFromRGBAalpha(rgbValue,alpha) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 blue:((float)(rgbValue & 0x0000FF))/255.0 alpha:((float)alpha)]
+#import "TimeTools.h"
+#import "CustomGradBtn.h"
+#import "CustomSlider.h"
 
 struct model {
   int a;
@@ -28,6 +28,7 @@ struct model {
 @property (nonatomic, strong) UIDynamicAnimator *animator;
 @property (nonatomic, strong) UIView *animbgView;
 @property (nonatomic, strong) NSString *blockStr;
+@property (nonatomic, strong) CustomSlider *slider;
 
 @end
 
@@ -38,6 +39,13 @@ struct model {
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = [UIColor grayColor];
+    
+    NSUInteger timeStamp = [TimeTools timeStampSincel1970];
+    NSLog(@"timeStamp = %lu", timeStamp);
+    NSString *date = [TimeTools timeWithStyle:@"yyyy/MM/dd - HH:mm:ss" timeStamp:timeStamp];
+    NSLog(@"date = %@", date);
+//    NSString *dateStr = [TimeTools timeWithStyle:(nonnull NSString *) date:<#(nonnull NSDate *)#>]
+    
     UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
     label.text = self.title;
     [self.view addSubview:label];
@@ -76,17 +84,10 @@ struct model {
   [push addTarget:self action:@selector(pushVC) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:push];
   
-  NSString *imageStr = @"1,2";
-  NSArray *array = [imageStr componentsSeparatedByString:@","];
-  
-  NSString *imageStr2 = @"1";
-  NSArray *array2 = [imageStr2 componentsSeparatedByString:@","];
-  
-  NSString *imageStr3 = @"1,";
-  NSArray *array3 = [imageStr2 componentsSeparatedByString:@","];
+ 
   int rgbValue = 0xff, alpha = 1;
-  [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 blue:((float)(rgbValue & 0x0000FF))/255.0 alpha:((float)alpha)];
-  NSLog(@"%@", array2);
+    [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 blue:((float)(rgbValue & 0x0000FF))/255.0 alpha:((float)alpha)];
+    
   [self testDataModel];
   
   
@@ -142,9 +143,52 @@ struct model {
   alertButton.backgroundColor = [UIColor greenColor];
   [alertButton addTarget:self action:@selector(alertBtnAction:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:alertButton];
+    
+    // 渐变色button
+    CustomGradBtn *gradBtn = [CustomGradBtn buttonWithType:UIButtonTypeCustom];
+    GradLayerModel *gradModel = [[GradLayerModel alloc] init];
+    [gradModel setGradColors:@[UIColorHexRGBA(0XFFA692, 1), UIColorHexRGBA(0XD15FFF, 1)]];
+    gradModel.startPoint = CGPointMake(0, 1);
+    gradModel.endPoint = CGPointMake(1, 1);
+    gradModel.type = kCAGradientLayerAxial;
+    [gradBtn setGradModel:nil gradState:NO];
+    [gradBtn setGradModel:gradModel gradState:YES];
+    gradBtn.backgroundColor = [UIColor cyanColor];
+    [gradBtn addTarget:self action:@selector(gradBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:gradBtn];
+    [gradBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-20);
+        make.bottom.mas_equalTo(-80);
+        make.width.height.mas_equalTo(100);
+    }];
   
+    _slider = [[CustomSlider alloc] initWithHeight:10];
+    _slider.bgColor = [UIColor whiteColor];
+    [self.view addSubview:_slider];
+   
+    [_slider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-20);
+        make.bottom.mas_equalTo(gradBtn.mas_top).mas_offset(-10);
+        make.width.mas_equalTo(200);
+        make.height.mas_equalTo(10);
+    }];
+    
+    [_slider setNeedsLayout];
+    [_slider layoutIfNeeded];
+    
+     _slider.progress = 0.5;
+    
+    
 
   
+}
+
+- (void)gradBtnAction:(CustomGradBtn *)btn
+{
+    btn.gradLayerSelected = !btn.gradLayerSelected;
+
+    _slider.progress = arc4random() % 1000 * 0.001;
+    
 }
 
 - (void)alertBtnAction:(UIButton *)btn
@@ -316,7 +360,7 @@ struct model {
     self.navigationController.navigationBarHidden = NO;
 }
 
-
+/** 仿微信红包计算方法 */
 - (void)wechatRedPackage:(CGFloat)total num:(NSInteger)num
 {
   static CGFloat minValue = 0.01;

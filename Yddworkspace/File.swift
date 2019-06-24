@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Photos
 /*
  如果Swift类想要被OC发现，必须继承自NSObject并且使用public标记，并且该类中想要被OC访问的方法也必须使用public标记，具体知识可以去看Swift的访问控制
  原因：Swift的代码对于OC来说是作为一个module存在的
@@ -50,6 +50,27 @@ public class MyModule : NSObject {
         let time = date.timeIntervalSince1970
         let intTime = Int(time)
         return String(intTime)
+    }
+    
+    func test(name :String, completion:@escaping(Bool,PHAssetCollection?)->Void) {
+        var placeHolderIdentifier :String? = nil
+        PHPhotoLibrary.shared().performChanges({
+            
+            let createRequest = PHAssetCollectionChangeRequest.creationRequestForAssetCollection(withTitle: name)
+            placeHolderIdentifier = createRequest.placeholderForCreatedAssetCollection.localIdentifier
+            
+        }, completionHandler: {
+            success, error in
+            if success {
+                var createdCollection: PHAssetCollection? = nil
+                if placeHolderIdentifier != nil {
+                    createdCollection = PHAssetCollection.fetchAssetCollections(withLocalIdentifiers: [placeHolderIdentifier!], options: nil).firstObject
+                }
+//                completion(success, createdCollection as? T)
+            } else {
+                completion(success, nil)
+            }
+        })
     }
     
 }

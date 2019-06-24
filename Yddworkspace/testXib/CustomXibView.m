@@ -8,6 +8,13 @@
 
 #import "CustomXibView.h"
 
+@interface CustomXibView ()
+
+@property (weak, nonatomic) IBOutlet UIButton *topBtn;
+
+
+@end
+
 @implementation CustomXibView
 
 /*
@@ -17,5 +24,21 @@
     // Drawing code
 }
 */
+- (IBAction)backAction:(id)sender {
+    
+    NSLog(@"customView clicked");
+    
+}
+
+
+- (instancetype)init
+{
+    self = [[NSBundle mainBundle] loadNibNamed:@"customXibView" owner:nil options:nil].lastObject;
+    if (self) {
+        
+    }
+    return self;
+}
+
 
 @end

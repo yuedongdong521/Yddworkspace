@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CustomSlider : UIView
 
+@property (nonatomic, assign) CGFloat progress;
+
+@property (nonatomic, strong) UIColor *bgColor;
+
+- (instancetype)initWithHeight:(CGFloat)height;
+
 @end
 
 NS_ASSUME_NONNULL_END
