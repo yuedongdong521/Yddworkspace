@@ -6,9 +6,9 @@
 //  Copyright © 2019 QH. All rights reserved.
 //
 
-#import "UINavigationController+yddSubByte.h"
+#import "NSString+yddSubByte.h"
 
-@implementation UINavigationController (yddSubByte)
+@implementation NSString (yddSubByte)
 
 - (NSString *)subStringToByteIndex:(NSInteger)index
 {

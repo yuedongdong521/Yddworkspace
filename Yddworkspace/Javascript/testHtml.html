@@ -15,6 +15,12 @@
 			// body.
 			return "调用 oc_javascriptAction";
 		}
+        // 扫描结果回调方法    app->h5
+        function scanResult(result){
+            document.getElementById("result").innerHTML = '扫描结果：' + result;
+        }
+    
+   
 		function baiduClicked() {
 			// body...
 			// window.open('http//:baidu.com');
@@ -24,6 +30,11 @@
 			document.body.appendChild(a);
 			a.click();
 		}
+    
+    function quiteAction() {
+        window.webkit.messageHandlers.ocQuiteAction.postMessage("quite");
+    }
+    
 	</script>
 	<style type="text/css">
 		p {
@@ -89,6 +100,7 @@
     <a href="http://baidu.com" style="left: 20px; right: 20px; position: fixed; top: 350px; align-content: center; height: 50px">
     	<button>百度两下</button>
     </a>
+    <p id = "result">oc->js</p>
 
 </body>
 </html>

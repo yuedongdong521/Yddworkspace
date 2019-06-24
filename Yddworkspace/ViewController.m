@@ -22,6 +22,7 @@
 #import "TestCollectionCellPLayCollectionViewController.h"
 #import "ISAssetsManager.h"
 #import "ISPhotoAlbumViewController.h"
+#import "HalfViewController.h"
 
 #define IS_iPhoneX [UIScreen mainScreen].bounds.size.height >= 812
 
@@ -143,7 +144,13 @@
       @"PageViewController",
       @"TestVideoCaptureViewController",
       @"AddressListViewController",
-      @"TestMassoryViewController"
+      @"TestMassoryViewController",
+      @"HalfViewController",
+      @"TextHashTableViewController",
+      @"TestXibViewController",
+      @"YDDWebViewController",
+      @"TestHtmlViewController"
+      
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
@@ -248,7 +255,8 @@
       if ([viewController isKindOfClass:[MyImagePickerViewController class]] ||
           [viewController
               isKindOfClass:[AVCaptureSessionViewController class]] ||
-          [viewController isKindOfClass:[PresentationViewController class]]) {
+          [viewController isKindOfClass:[PresentationViewController class]] ||
+          [viewController isKindOfClass:[HalfViewController class]]) {
         [self presentViewController:viewController animated:YES completion:nil];
         return;
       } else if ([viewController isKindOfClass:[ISPhotoAlbumViewController class]]) {

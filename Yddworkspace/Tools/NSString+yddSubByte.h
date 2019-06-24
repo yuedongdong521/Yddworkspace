@@ -1,5 +1,5 @@
 //
-//  UINavigationController+yddSubByte.h
+//  NSString+yddSubByte.h
 //  Yddworkspace
 //
 //  Created by ydd on 2019/4/25.
@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UINavigationController (yddSubByte)
+@interface NSString (yddSubByte)
+
+/** 按照字节长度截取子串 */
+- (NSString *)subStringToByteIndex:(NSInteger)index;
+- (NSString *)subStringFormByteIndex:(NSInteger)index;
 
 @end
 
