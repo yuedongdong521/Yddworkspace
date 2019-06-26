@@ -15,6 +15,7 @@
 #import "TimeTools.h"
 #import "CustomGradBtn.h"
 #import "CustomSlider.h"
+#import "UIView+Extend.h"
 
 struct model {
   int a;
@@ -41,7 +42,7 @@ struct model {
     self.view.backgroundColor = [UIColor grayColor];
     
     NSUInteger timeStamp = [TimeTools timeStampSincel1970];
-    NSLog(@"timeStamp = %lu", timeStamp);
+    NSLog(@"timeStamp = %lu", (unsigned long)timeStamp);
     NSString *date = [TimeTools timeWithStyle:@"yyyy/MM/dd - HH:mm:ss" timeStamp:timeStamp];
     NSLog(@"date = %@", date);
 //    NSString *dateStr = [TimeTools timeWithStyle:(nonnull NSString *) date:<#(nonnull NSDate *)#>]
@@ -72,7 +73,9 @@ struct model {
     NSLog(@"_path unEqualToString:ydd");
   }
   UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-  button.frame = CGRectMake(20, ScreenHeight - 180, 50, 50);
+  button.frame = CGRectMake(20, ScreenHeight - 180, 10, 10);
+    [button setResponsEdge:UIEdgeInsetsMake(-20, -20, -20, -20)];
+//    button.frame = UIEdgeInsetsInsetRect(button.frame, UIEdgeInsetsMake(-20, -20, -20, -20));
   [button setTitle:@"show" forState:UIControlStateNormal];
   [button setTitle:@"dismiss" forState:UIControlStateSelected];
   [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];

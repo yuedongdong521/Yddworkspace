@@ -170,4 +170,45 @@ static NSString* const kInputCorrectionLevel = @"inputCorrectionLevel";
   return message ? message : @"";
 }
 
+
+- (UIImage *)scallImageWidthScallSize:(CGSize)scallSize{
+    CGFloat width = self.size.width;
+    CGFloat height = self.size.height;
+    
+    CGFloat scaleFactor = 0.0;
+    CGFloat scaledWidth = scallSize.width;
+    CGFloat scaledHeight = scallSize.height;
+    CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
+    
+    if (!CGSizeEqualToSize(self.size, scallSize))
+    {
+        CGFloat widthFactor = scaledWidth / width;
+        CGFloat heightFactor = scaledHeight / height;
+        
+        scaleFactor = MAX(widthFactor, heightFactor);
+        
+        scaledWidth= width * scaleFactor;
+        scaledHeight = height * scaleFactor;
+        
+        // center the image
+        if (widthFactor > heightFactor)
+        {
+            thumbnailPoint.y = (scallSize.height - scaledHeight) * 0.5;
+        }
+        else if (widthFactor < heightFactor)
+        {
+            thumbnailPoint.x = (scallSize.width - scaledWidth) * 0.5;
+        }
+    }
+    CGRect rect;
+    rect.origin = thumbnailPoint;
+    rect.size = CGSizeMake(scaledWidth, scaledHeight);
+    UIGraphicsBeginImageContext(rect.size);
+    [self drawInRect:rect];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return  image;
+}
+
+
 @end

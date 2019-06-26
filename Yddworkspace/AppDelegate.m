@@ -11,6 +11,9 @@
 #import <iflyMSC/IFlyMSC.h>
 #import "MyTabBarViewController.h"
 
+#import "CustomTabBar/CustomTabBarController.h"
+#import "CustomTabBar/CustomNavigationController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -23,9 +26,10 @@
     
     [self initIFlySDK];
     
-    MyTabBarViewController *VC = [[MyTabBarViewController alloc]init];
-//    UINavigationController *navig = [[UINavigationController alloc] initWithRootViewController:VC];
-    self.window.rootViewController = VC;
+   
+    CustomTabBarController *tabBar = [[CustomTabBarController alloc] init];
+    CustomNavigationController *navig = [[CustomNavigationController alloc] initWithRootViewController:tabBar];
+    self.window.rootViewController = navig;
     [self.window makeKeyAndVisible];
     
     [UIFont.familyNames enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
