@@ -252,6 +252,9 @@
 		847137E022BCDAA3003BC0E4 /* YDDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137DF22BCDAA3003BC0E4 /* YDDWebViewController.m */; };
 		847137E622BCE093003BC0E4 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137E322BCE092003BC0E4 /* NJKWebViewProgress.m */; };
 		847137E722BCE093003BC0E4 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */; };
+		84F48C4222C368C7001E0C8F /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F48C3E22C368C7001E0C8F /* CustomNavigationController.m */; };
+		84F48C4322C368C7001E0C8F /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F48C4122C368C7001E0C8F /* CustomTabBarController.m */; };
+		84F48C4722C36E9F001E0C8F /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F48C4622C36E9F001E0C8F /* UIView+Extend.m */; };
 		ED01F67021B12F2F006DAC28 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = ED01F66F21B12F2F006DAC28 /* Record.m */; };
 		ED01F67321B13071006DAC28 /* AudioConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = ED01F67221B13071006DAC28 /* AudioConstant.m */; };
 		ED01F67621B13092006DAC28 /* Play.m in Sources */ = {isa = PBXBuildFile; fileRef = ED01F67521B13091006DAC28 /* Play.m */; };
@@ -1237,6 +1240,12 @@
 		847137E322BCE092003BC0E4 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
 		847137E422BCE092003BC0E4 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
 		847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		84F48C3E22C368C7001E0C8F /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
+		84F48C3F22C368C7001E0C8F /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
+		84F48C4022C368C7001E0C8F /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
+		84F48C4122C368C7001E0C8F /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
+		84F48C4522C36E9F001E0C8F /* UIView+Extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extend.h"; sourceTree = "<group>"; };
+		84F48C4622C36E9F001E0C8F /* UIView+Extend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extend.m"; sourceTree = "<group>"; };
 		ED01F66E21B12F2F006DAC28 /* Record.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
 		ED01F66F21B12F2F006DAC28 /* Record.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		ED01F67121B13071006DAC28 /* AudioConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioConstant.h; sourceTree = "<group>"; };
@@ -2523,6 +2532,7 @@
 		60761EB11D61B62000FC2F1F /* Yddworkspace */ = {
 			isa = PBXGroup;
 			children = (
+				84F48C3D22C368A4001E0C8F /* CustomTabBar */,
 				8430102C22B0EB090034A2AD /* testXib */,
 				842F1BD3228950380005A338 /* HashTable */,
 				8429B2EC225F0ABB007BEB10 /* halfSize_viewController */,
@@ -2874,6 +2884,7 @@
 		60AFFD9B201F01A700335E45 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				84F48C4422C36E36001E0C8F /* Category */,
 				ED8FB4AE223A235A005EFD99 /* RunInBackground.h */,
 				ED8FB4AC223A2349005EFD99 /* mysong.mp3 */,
 				ED8FB4AA223A232B005EFD99 /* RunInBackground.mm */,
@@ -3313,6 +3324,26 @@
 				847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */,
 			);
 			path = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
+		84F48C3D22C368A4001E0C8F /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				84F48C4022C368C7001E0C8F /* CustomNavigationController.h */,
+				84F48C3E22C368C7001E0C8F /* CustomNavigationController.m */,
+				84F48C3F22C368C7001E0C8F /* CustomTabBarController.h */,
+				84F48C4122C368C7001E0C8F /* CustomTabBarController.m */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		84F48C4422C36E36001E0C8F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				84F48C4522C36E9F001E0C8F /* UIView+Extend.h */,
+				84F48C4622C36E9F001E0C8F /* UIView+Extend.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		ED01F66D21B12EED006DAC28 /* audioQueueTest */ = {
@@ -4864,6 +4895,7 @@
 				ED8B185A21C3442500D7364A /* ScreenRecorder.mm in Sources */,
 				ED771C3A21241F54001BEFB3 /* UITableView+YYAdd.m in Sources */,
 				ED3C00BC2114462E00131495 /* UserInfoTableCell.swift in Sources */,
+				84F48C4722C36E9F001E0C8F /* UIView+Extend.m in Sources */,
 				EDC8D4AA218ACBE7000B3D6C /* GPUImageBuffer.m in Sources */,
 				EDC8D44B218ACBE6000B3D6C /* GPUImageUIElement.m in Sources */,
 				EDC8D4B6218ACBE7000B3D6C /* GPUImageLinearBurnBlendFilter.m in Sources */,
@@ -5223,6 +5255,7 @@
 				ED1B74342177263500D51FF5 /* ISPhotoAlbumViewCell.mm in Sources */,
 				EDC8D45C218ACBE6000B3D6C /* GPUImageJFAVoronoiFilter.m in Sources */,
 				ED2851372101CE5800178965 /* SDWebImageDownloaderOperation.m in Sources */,
+				84F48C4222C368C7001E0C8F /* CustomNavigationController.m in Sources */,
 				EDC8D482218ACBE7000B3D6C /* GPUImageDivideBlendFilter.m in Sources */,
 				ED324CB52134017500D02F13 /* TZVideoPlayerController.mm in Sources */,
 				ED28510D2101CE5800178965 /* SDWebImageFrame.m in Sources */,
@@ -5306,6 +5339,7 @@
 				ED39610A20ABC32C00D0658F /* DataConversionTool.m in Sources */,
 				ED771C3121241F53001BEFB3 /* UIPasteboard+YYText.m in Sources */,
 				ED324D202134138900D02F13 /* UIButton+IS_Highlight.mm in Sources */,
+				84F48C4322C368C7001E0C8F /* CustomTabBarController.m in Sources */,
 				ED771C1421241F53001BEFB3 /* YYSpriteSheetImage.m in Sources */,
 				EDC8D4B1218ACBE7000B3D6C /* GPUImageMonochromeFilter.m in Sources */,
 				EDC8D460218ACBE6000B3D6C /* GPUImageAmatorkaFilter.m in Sources */,

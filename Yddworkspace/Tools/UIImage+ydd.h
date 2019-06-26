@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
                                  logoImage:(UIImage*)logoImage
                              logoSizeScale:(CGFloat)logoSizeScale;
 + (NSString*)scanCodeImage:(UIImage*)image;
+
+- (UIImage *)scallImageWidthScallSize:(CGSize)scallSize;
 @end
 
 NS_ASSUME_NONNULL_END
