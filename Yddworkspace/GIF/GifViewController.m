@@ -73,8 +73,9 @@
 
 - (void)downloadGif
 {
-  
-  [_yyImageView setImageWithURL:[NSURL URLWithString:@"http://imgs22.ispeak.cn/file/2018-08-22/10/20180822_104155115723_f928e2_0_173146354_31873.gif"] placeholder:[UIImage new] options:YYWebImageOptionProgressive completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+
+    
+  [_yyImageView yy_setImageWithURL:[NSURL URLWithString:@"http://imgs22.ispeak.cn/file/2018-08-22/10/20180822_104155115723_f928e2_0_173146354_31873.gif"] placeholder:[UIImage new] options:YYWebImageOptionProgressive completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
 //    [self scallGifWidthData:[]];
   }];
   

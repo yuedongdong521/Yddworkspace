@@ -95,6 +95,7 @@
       @"YddImagePickerViewController",
       @"MyImagePickerViewController",
       @"MyTableViewController",
+      @"TabHeaderViewController",
       @"AnimationViewController",
       @"BarrageViewController",
       @"GraffitiViewController",
@@ -149,8 +150,8 @@
       @"TextHashTableViewController",
       @"TestXibViewController",
       @"YDDWebViewController",
-      @"TestHtmlViewController"
-      
+      @"TestHtmlViewController",
+      @"DeleteCellViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
