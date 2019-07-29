@@ -16,6 +16,22 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)subStringToByteIndex:(NSInteger)index;
 - (NSString *)subStringFormByteIndex:(NSInteger)index;
 
+- (CGSize)getTextSizeWithMaxSize:(CGSize)maxSize font:(UIFont *)font;
+
+/**
+ *  判断身份证是否合法
+ */
+- (BOOL)checkIdentityNumber;
+
+/** 过滤特殊字符串 */
+- (NSString *)filterSpecialString;
+
+/** 过滤非中文字符 */
+- (NSString *)filter_zhHans;
+
+/** 按照过滤不匹配正则规则regex的字符 */
+- (NSString *)filterCharactorWithRegex:(NSString *)regexStr;
+
 @end
 
 NS_ASSUME_NONNULL_END

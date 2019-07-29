@@ -165,7 +165,7 @@ class ScreenRecorder
                 print("Save")
             }else{
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "isScreenRecordFaildToSave"), object: nil)
-                print("error to save - \(error)")
+                print("error to save - \(String(describing: error))")
             }
         }
     }

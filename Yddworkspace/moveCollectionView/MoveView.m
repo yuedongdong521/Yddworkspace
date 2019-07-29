@@ -10,16 +10,16 @@
 #import "CustomFlowLayout.h"
 #import "YYPhotoGroupView.h"
 #import "YYWebImage.h"
-#import "KXPhotoGroupView.h"
+#import "PhotoGroupView.h"
 #import "CollectionCell.h"
 
-@interface MoveView ()<UICollectionViewDelegate, UICollectionViewDataSource, YYPhotoGroupViewDelegate, KXPhotoGroupViewDelegate>
+@interface MoveView ()<UICollectionViewDelegate, UICollectionViewDataSource, YYPhotoGroupViewDelegate, PhotoGroupViewDelegate>
 {
     dispatch_semaphore_t _deleteCellSemaphore;
 }
 @property (nonatomic, strong) UICollectionView *collectionView;
 
-@property (nonatomic, strong) NSMutableArray <KXPhotoGroupItem *>*mutArr;
+@property (nonatomic, strong) NSMutableArray <PhotoGroupItem *>*mutArr;
 @property (nonatomic, strong) NSMutableArray *deleteDataArr;
 
 @property (nonatomic, assign) BOOL canMove;
@@ -32,6 +32,8 @@
 
 @property (nonatomic, weak) CollectionCell *curMoveCell;
 
+@property (nonatomic, copy) NSString *photosDirePath;
+
 
 @end
 
@@ -42,7 +44,6 @@
     self = [super init];
     if (self) {
         self.backgroundColor = [UIColor grayColor];
-        
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:@"button" forState:UIControlStateNormal];
@@ -237,7 +238,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-    KXPhotoGroupItem *item = self.mutArr[sourceIndexPath.item];
+    PhotoGroupItem *item = self.mutArr[sourceIndexPath.item];
     [self.mutArr removeObjectAtIndex:sourceIndexPath.item];
     [self.mutArr insertObject:item atIndex:destinationIndexPath.item];
 //    [self.collectionView reloadData];
@@ -250,21 +251,19 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    YYPhotoGroupItem *item = self.mutArr[indexPath.item];
-    //    item.thumbView = [collectionView cellForItemAtIndexPath:indexPath];
-    
-    //    YYPhotoGroupView *v = [[YYPhotoGroupView alloc] initWithGroupItems:self.mutArr];
-    //    v.delegate = self;
-    ////    [v presentFromImageView:item.thumbView toContainer:self.view animated:YES completion:nil];
-    //    [v presentFromCurItem:indexPath.item toContainer:self.view animated:YES ompletion:nil];
-    
-    KXPhotoGroupView *view = [[KXPhotoGroupView alloc] initWithGroupItems:self.mutArr];
-    view.delegate = self;
-    [view hiddenPageControl:YES];
-    [view presentFromCurItem:indexPath.item toContainer:self animated:YES ompletion:^{
 
-    }];
-    
+    if (indexPath.item == self.mutArr.count - 1) {
+        if (_addImage) {
+            _addImage();
+        }
+    } else {
+        PhotoGroupView *view = [[PhotoGroupView alloc] initWithGroupItems:self.mutArr];
+        view.delegate = self;
+        [view hiddenPageControl:YES];
+        [view presentFromCurItem:indexPath.item toContainer:self.superview animated:YES ompletion:^{
+            
+        }];
+    }
 }
 
 - (UIView *)getCurrentThumbViewWithPage:(NSInteger)page
@@ -272,12 +271,12 @@
     return [self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:page inSection:0]];
 }
 
-- (UIView *)photoGroupView:(KXPhotoGroupView *)photoGroupView getThumbViewWithPage:(NSInteger)page
+- (UIView *)photoGroupView:(PhotoGroupView *)photoGroupView getThumbViewWithPage:(NSInteger)page
 {
     return [self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:page inSection:0]];
 }
 
-- (UIImage *)photoGroupView:(KXPhotoGroupView *)photoGroupView getImageWithPage:(NSInteger)page
+- (UIImage *)photoGroupView:(PhotoGroupView *)photoGroupView getImageWithPage:(NSInteger)page
 {
     CollectionCell *cell = (CollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:page inSection:0]];
     return cell.imageView.image;
@@ -300,13 +299,13 @@
         
         
         [imageArr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            KXPhotoGroupItem *item = [[KXPhotoGroupItem alloc] init];
+            PhotoGroupItem *item = [[PhotoGroupItem alloc] init];
             item.largeImageURL = [NSURL URLWithString:obj];
             item.index = idx;
             [_mutArr addObject:item];
         }];
         
-        KXPhotoGroupItem *addItem = [[KXPhotoGroupItem alloc] init];
+        PhotoGroupItem *addItem = [[PhotoGroupItem alloc] init];
         addItem.largeImageURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"addImage" ofType:@"jpg"]];
         addItem.index = _mutArr.count;
         [_mutArr addObject:addItem];
@@ -315,6 +314,29 @@
     return _mutArr;
 }
 
+
+- (NSString *)photosDirePath
+{
+    if (!_photosDirePath) {
+        _photosDirePath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+        _photosDirePath = [_photosDirePath stringByAppendingPathComponent:@"cropPhotos"];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:_photosDirePath isDirectory:nil]) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:_photosDirePath withIntermediateDirectories:YES attributes:nil error:nil];
+        }
+    }
+    return _photosDirePath;
+}
+
+- (void)addImage:(UIImage *)image
+{
+    NSString *path = [NSString stringWithFormat:@"%@/%@.png", self.photosDirePath, @([[NSDate date] timeIntervalSince1970])];
+    [UIImagePNGRepresentation(image) writeToFile:path atomically:YES];
+    PhotoGroupItem *addItem = [[PhotoGroupItem alloc] init];
+    addItem.largeImageURL = [NSURL fileURLWithPath:path];
+    addItem.index = self.mutArr.count;
+    [self.mutArr insertObject:addItem atIndex:self.mutArr.count - 1];
+    [self.collectionView reloadData];
+}
 
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event

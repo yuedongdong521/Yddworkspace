@@ -140,8 +140,8 @@
 - (UITableView*)albumListTableView {
   if (!_albumListTableView) {
     _albumListTableView = [[UITableView alloc]
-        initWithFrame:CGRectMake(0, kStatusAndNavBarHeight, ScreenWidth,
-                                 ScreenHeight - kStatusAndNavBarHeight)];
+        initWithFrame:CGRectMake(0, kNavBarHeight, ScreenWidth,
+                                 ScreenHeight - kNavBarHeight)];
     _albumListTableView.delegate = self;
     _albumListTableView.dataSource = self;
     _albumListTableView.rowHeight = 80;

@@ -354,7 +354,7 @@
   CGRect rect = self.navigationController.navigationBar.frame;
   if (rect.origin.y >= 0) {
     self.navigationController.navigationBarHidden = YES;
-    rect.origin.y = -kStatusAndNavBarHeight;
+    rect.origin.y = -kNavBarHeight;
   } else {
     self.navigationController.navigationBarHidden = NO;
     rect.origin.y = 0;

@@ -83,8 +83,8 @@
     [self createToolbarView];
   } else {
     self.photoCollectionView.frame =
-        CGRectMake(0, kStatusAndNavBarHeight, ScreenWidth,
-                   ScreenHeight - kStatusAndNavBarHeight);
+        CGRectMake(0, kNavBarHeight, ScreenWidth,
+                   ScreenHeight - kNavBarHeight);
   }
   [self getAllAlbumsPhoto];
 }
@@ -215,9 +215,9 @@
     photoFlowLayout.minimumLineSpacing = 2;
     self.automaticallyAdjustsScrollViewInsets = NO;
     _photoCollectionView = [[UICollectionView alloc]
-               initWithFrame:CGRectMake(0, kStatusAndNavBarHeight, ScreenWidth,
+               initWithFrame:CGRectMake(0, kNavBarHeight, ScreenWidth,
                                         ScreenHeight - 50 -
-                                            kStatusAndNavBarHeight -
+                                            kNavBarHeight -
                                             IS_TABBAR_ADD_HEIGHT)
         collectionViewLayout:photoFlowLayout];
     _photoCollectionView.delegate = self;

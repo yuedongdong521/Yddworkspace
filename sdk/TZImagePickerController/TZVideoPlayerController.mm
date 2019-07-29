@@ -84,7 +84,7 @@
 
 - (void)configPlayButton {
     _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _playButton.frame = CGRectMake(0, kStatusAndNavBarHeight, self.view.tz_width, self.view.tz_height - kStatusAndNavBarHeight - 44);
+    _playButton.frame = CGRectMake(0, kNavBarHeight, self.view.tz_width, self.view.tz_height - kNavBarHeight - 44);
     [_playButton setImage:[UIImage imageNamedFromMyBundle:@"MMVideoPreviewPlay.png"] forState:UIControlStateNormal];
     [_playButton setImage:[UIImage imageNamedFromMyBundle:@"MMVideoPreviewPlayHL.png"] forState:UIControlStateHighlighted];
     [_playButton addTarget:self action:@selector(playButtonClick) forControlEvents:UIControlEventTouchUpInside];

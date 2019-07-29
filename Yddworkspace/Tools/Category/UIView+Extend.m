@@ -43,9 +43,69 @@ static void *BtnResponsEdgeKey = &"BtnResponsEdgeKey";
     return  NO;
 }
 
+- (void)transformToSacleFrame:(CGRect)sacleFrame
+                     duration:(CGFloat)duration
+                      options:(UIViewAnimationOptions)options
+                    animation:(BOOL)animation
+                   completion:(void(^)(BOOL finished))completion;
+{
+    CGRect orignFrame = self.frame;
+    CGFloat rateW = sacleFrame.size.width / orignFrame.size.width;
+    CGFloat rateH = sacleFrame.size.height / orignFrame.size.height;
+    CGFloat offsetX = sacleFrame.origin.x + sacleFrame.size.width * 0.5 - (orignFrame.origin.x + orignFrame.size.width * 0.5);
+    CGFloat offsetY = sacleFrame.origin.y + sacleFrame.size.height * 0.5 - (orignFrame.origin.y + orignFrame.size.height * 0.5);
+    if (!animation) {
+        self.transform = CGAffineTransformMake(rateW, 0, 0, rateH, offsetX, offsetY);
+        return;
+    }
+    
+    [UIView animateWithDuration:duration delay:0 options:options animations:^{
+        self.transform = CGAffineTransformMake(rateW, 0, 0, rateH, offsetX, offsetY);
+    } completion:completion];
+}
+
+- (CGAffineTransform)transformFrame:(CGRect)frame
+{
+    CGRect orignFrame = self.frame;
+    CGFloat a = frame.size.width / orignFrame.size.width;
+    CGFloat d = frame.size.height / orignFrame.size.height;
+    
+    CGFloat offsetX = CGRectGetMidX(frame) - CGRectGetMidX(orignFrame);
+    CGFloat offsetY = CGRectGetMidY(frame) - CGRectGetMidY(orignFrame);
+    
+    return CGAffineTransformMake(a, 0, 0, d, offsetX, offsetY);
+}
 
 
+- (void)setAnchorPoint:(CGPoint)anchorPoint
+{
+    CGPoint oldOrigin = self.frame.origin;
+    self.layer.anchorPoint = anchorPoint;
+    CGPoint newOrigin = self.frame.origin;
+    
+    CGPoint transition;
+    transition.x = newOrigin.x - oldOrigin.x;
+    transition.y = newOrigin.y - oldOrigin.y;
+    
+    self.center = CGPointMake (self.center.x - transition.x, self.center.y - transition.y);
+}
 
+- (void)setDefaultAnchorPoint
+{
+    [self setAnchorPoint:CGPointMake(0.5f, 0.5f)];
+}
+
+- (UIViewController *)superViewController
+{
+    UIResponder *responder = self.nextResponder;
+    while (responder) {
+        if ([responder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)responder;
+        }
+        responder = responder.nextResponder;
+    }
+    return nil;
+}
 
 
 

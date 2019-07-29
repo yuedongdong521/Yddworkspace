@@ -151,7 +151,8 @@
       @"TestXibViewController",
       @"YDDWebViewController",
       @"TestHtmlViewController",
-      @"DeleteCellViewController"
+      @"DeleteCellViewController",
+      @"MoveCollectionViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
@@ -182,6 +183,7 @@
         UIScrollViewContentInsetAdjustmentNever;
   } else {
     // Fallback on earlier versions
+      self.automaticallyAdjustsScrollViewInsets = YES;
   }
 
   [self.myTableView registerClass:[UITableViewCell class]
@@ -257,7 +259,8 @@
           [viewController
               isKindOfClass:[AVCaptureSessionViewController class]] ||
           [viewController isKindOfClass:[PresentationViewController class]] ||
-          [viewController isKindOfClass:[HalfViewController class]]) {
+          [viewController isKindOfClass:[HalfViewController class]] ||
+          [viewController isKindOfClass:NSClassFromString(@"DeleteCellViewController")]) {
         [self presentViewController:viewController animated:YES completion:nil];
         return;
       } else if ([viewController isKindOfClass:[ISPhotoAlbumViewController class]]) {

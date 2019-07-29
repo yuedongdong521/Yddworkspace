@@ -5,3 +5,7 @@
 #import "MyTools.h"
 
 #import "Masonry.h"
+
+#import "TOCropViewController.h"
+
+#import "lame.h"

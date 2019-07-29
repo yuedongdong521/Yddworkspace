@@ -102,7 +102,7 @@ NSString* const kWebViewURL = @"URL";
     [_progressView setTrackTintColor:[UIColor colorWithRed:240.0 / 255 green:240.0 / 255 blue:240.0 / 255 alpha:240.0 / 255]];
     _progressView.progressTintColor = [UIColor colorWithRed:254.0 / 255 green:219.0 / 255 blue:50.0 / 255 alpha:1];
     _progressView.frame =
-        CGRectMake(0, kStatusAndNavBarHeight, ScreenWidth, 2.5);
+        CGRectMake(0, kNavBarHeight, ScreenWidth, 2.5);
   }
   return _progressView;
 }
@@ -130,8 +130,8 @@ NSString* const kWebViewURL = @"URL";
     configuration.preferences = preferences;
 
     _webView = [[WKWebView alloc]
-        initWithFrame:CGRectMake(0, kStatusAndNavBarHeight, ScreenWidth,
-                                 ScreenHeight - kStatusAndNavBarHeight)
+        initWithFrame:CGRectMake(0, kNavBarHeight, ScreenWidth,
+                                 ScreenHeight - kNavBarHeight)
         configuration:configuration];
     _webView.backgroundColor = [UIColor whiteColor];
     _webView.navigationDelegate = self;
@@ -146,8 +146,8 @@ NSString* const kWebViewURL = @"URL";
     _errorPlaceHolderView = [[UIScrollView alloc] init];
     _errorPlaceHolderView.backgroundColor = [UIColor whiteColor];
     _errorPlaceHolderView.frame =
-        CGRectMake(0, kStatusAndNavBarHeight, ScreenWidth,
-                   ScreenHeight - kStatusAndNavBarHeight);
+        CGRectMake(0, kNavBarHeight, ScreenWidth,
+                   ScreenHeight - kNavBarHeight);
     _errorPlaceHolderView.showsVerticalScrollIndicator = NO;
     _errorPlaceHolderView.showsHorizontalScrollIndicator = NO;
     _errorPlaceHolderView.alwaysBounceVertical = YES;
@@ -157,7 +157,7 @@ NSString* const kWebViewURL = @"URL";
                   action:@selector(reloadWebView:)
         forControlEvents:UIControlEventTouchUpInside];
     button.frame =
-        CGRectMake(0, 0, ScreenWidth, ScreenHeight - kStatusAndNavBarHeight);
+        CGRectMake(0, 0, ScreenWidth, ScreenHeight - kNavBarHeight);
     [_errorPlaceHolderView addSubview:button];
   }
   return _errorPlaceHolderView;

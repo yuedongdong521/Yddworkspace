@@ -10,20 +10,23 @@
 #import "CustomFlowLayout.h"
 #import "YYPhotoGroupView.h"
 #import "YYWebImage.h"
-#import "KXPhotoGroupView.h"
+#import "PhotoGroupView.h"
 #import "CollectionCell.h"
 //#import "MoveView.h"
+#import "PhotosDetailsViewController.h"
+#import "CustomTransition.h"
 
-@interface MoveCollectionViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, YYPhotoGroupViewDelegate, KXPhotoGroupViewDelegate>
+@interface MoveCollectionViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, YYPhotoGroupViewDelegate, PhotoGroupViewDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
-@property (nonatomic, strong) NSMutableArray <KXPhotoGroupItem*>*mutArr;
+@property (nonatomic, strong) NSMutableArray <PhotoGroupItem*>*mutArr;
 
 @property (nonatomic, assign) BOOL canMove;
 
 @property (nonatomic, strong) UILabel *deleteTipsLabel;
 
+@property (nonatomic, assign) NSIndexPath *seletedIndexPath;
 
 @end
 
@@ -60,17 +63,16 @@
 //        make.height.mas_equalTo(100);
 //    }];
 //
-//    [self.view addSubview:self.collectionView];
-//
-//    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.bottom.left.right.mas_equalTo(0);
-//       ;
-//    }];
-//
+    [self.view addSubview:self.collectionView];
+
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.left.right.mas_equalTo(0);
+       ;
+    }];
+
 //
     
 }
-
 
 
 - (void)buttonAction:(UIButton *)btn
@@ -218,7 +220,7 @@
 - (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     NSLog(@"moveItem : %d, toIndex : %d", sourceIndexPath.item, destinationIndexPath.item);
-    KXPhotoGroupItem *item = self.mutArr[sourceIndexPath.item];
+    PhotoGroupItem *item = self.mutArr[sourceIndexPath.item];
     [self.mutArr removeObjectAtIndex:sourceIndexPath.item];
     [self.mutArr insertObject:item atIndex:destinationIndexPath.item];
 }
@@ -226,21 +228,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    YYPhotoGroupItem *item = self.mutArr[indexPath.item];
-//    item.thumbView = [collectionView cellForItemAtIndexPath:indexPath];
+
+    self.seletedIndexPath = indexPath;
+    PhotosDetailsViewController *vc = [[PhotosDetailsViewController alloc] init];
+    vc.imageUrl = self.mutArr[indexPath.item].largeImageURL;
     
-//    YYPhotoGroupView *v = [[YYPhotoGroupView alloc] initWithGroupItems:self.mutArr];
-//    v.delegate = self;
-////    [v presentFromImageView:item.thumbView toContainer:self.view animated:YES completion:nil];
-//    [v presentFromCurItem:indexPath.item toContainer:self.view animated:YES ompletion:nil];
-    
-    KXPhotoGroupView *view = [[KXPhotoGroupView alloc] initWithGroupItems:self.mutArr];
-    view.delegate = self;
-    [view hiddenPageControl:YES];
-    [view presentFromCurItem:indexPath.item toContainer:self.view animated:YES ompletion:^{
-        
-    }];
-    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (UIView *)getCurrentThumbViewWithPage:(NSInteger)page
@@ -248,12 +241,12 @@
     return [self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:page inSection:0]];
 }
 
-- (UIView *)photoGroupView:(KXPhotoGroupView *)photoGroupView getThumbViewWithPage:(NSInteger)page
+- (UIView *)photoGroupView:(PhotoGroupView *)photoGroupView getThumbViewWithPage:(NSInteger)page
 {
     return [self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:page inSection:0]];
 }
 
-- (UIImage *)photoGroupView:(KXPhotoGroupView *)photoGroupView getImageWithPage:(NSInteger)page
+- (UIImage *)photoGroupView:(PhotoGroupView *)photoGroupView getImageWithPage:(NSInteger)page
 {
     CollectionCell *cell = (CollectionCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:page inSection:0]];
     return cell.imageView.image;
@@ -299,7 +292,7 @@
       
         
         [imageArr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            KXPhotoGroupItem *item = [[KXPhotoGroupItem alloc] init];
+            PhotoGroupItem *item = [[PhotoGroupItem alloc] init];
             item.largeImageURL = [NSURL URLWithString:obj];
             item.index = idx;
             [_mutArr addObject:item];
@@ -317,6 +310,44 @@
 {
     NSLog(@"dealloc %@", NSStringFromClass(self.class));
 }
+
+- (UIView *)transitionAnmateView
+{
+    UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:self.seletedIndexPath];
+    return cell;
+}
+///**
+// 为这个动画添加用户交互
+// */
+//- (nullable id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
+//                                   interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController NS_AVAILABLE_IOS(7_0)
+//{
+//
+//
+//    return nil;
+//}
+//
+///**
+// 用来自定义转场动画
+// 要返回一个准守UIViewControllerInteractiveTransitioning协议的对象,并在里面实现动画即可
+// 1.创建继承自 NSObject 并且声明 UIViewControllerAnimatedTransitioning 的的动画类。
+// 2.重载 UIViewControllerAnimatedTransitioning 中的协议方法。
+// */
+//- (nullable id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+//                                            animationControllerForOperation:(UINavigationControllerOperation)operation
+//                                                         fromViewController:(UIViewController *)fromVC
+//                                                           toViewController:(UIViewController *)toVC  NS_AVAILABLE_IOS(7_0)
+//{
+//    CustomTransition *transition = [[CustomTransition alloc] init];
+//    if (operation == UINavigationControllerOperationPush) {
+//        transition.animationStatus = AnimationStatus_push;
+//        return transition;
+//    } else {
+//        transition.animationStatus = AnimationStatus_pop;
+//        return transition;
+//    }
+//
+//}
 
 
 /*

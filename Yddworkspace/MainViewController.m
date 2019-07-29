@@ -181,8 +181,16 @@ struct model {
     
      _slider.progress = 0.5;
     
+    CustomURLRequest *request = [[CustomURLRequest alloc] initWithUrl:@"http://pic1.win4000.com/pic/b/e9/b6c3874c76_250_350.jpg"];
     
-
+//    [request addConstructingBodyBlock];
+    [request startRequestCompletionBlock:^(ResponseModel * _Nonnull responseModel) {
+        if (!responseModel.error || responseModel.error.code == 0) {
+            UIImage *image = [UIImage imageWithData:responseModel.data];
+            NSLog(@"size : %@", NSStringFromCGSize(image.size));
+        }
+        
+    }];
   
 }
 

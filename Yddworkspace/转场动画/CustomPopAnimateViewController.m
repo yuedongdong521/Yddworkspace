@@ -15,7 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"转场动画";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor grayColor];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
     imageView.frame = self.view.bounds;
     [self.view addSubview:imageView];
@@ -95,7 +95,7 @@
 //为这个动画添加用户交互
 - (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
                           interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController {
-    return self.interactiveTransition;
+    return  self.interactiveTransition;
 }
 
 #pragma mark -- UINavigationControllerDelegate --
@@ -108,4 +108,11 @@
     }
 }
 
+- (void)dealloc
+{
+    NSLog(@"dealloc : %@", NSStringFromClass(self.class));
+}
+
 @end
+
+

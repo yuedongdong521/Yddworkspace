@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MoveView : UIView
 
+@property (nonatomic, copy) void(^addImage)(void);
+
+- (void)addImage:(UIImage *)image;
+
 @end
 
 NS_ASSUME_NONNULL_END

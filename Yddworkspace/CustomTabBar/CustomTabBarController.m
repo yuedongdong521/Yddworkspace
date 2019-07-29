@@ -82,7 +82,6 @@
 
 
 static CustomTabBarController *_tabBar;
-
 @interface CustomTabBarController ()
 
 
@@ -129,8 +128,6 @@ static CustomTabBarController *_tabBar;
 }
 
 
-
-
 - (void)centerAction:(UIButton *)btn
 {
     btn.selected = !btn.selected;
@@ -156,6 +153,7 @@ static CustomTabBarController *_tabBar;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
     
     
 }

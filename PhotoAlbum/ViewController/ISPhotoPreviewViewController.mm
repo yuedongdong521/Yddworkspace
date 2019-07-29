@@ -214,7 +214,7 @@
   float offsetY = 0.0;
   float offsetY1 = 0.0;
   if (self.isSelectItem) {
-    offsetY = -kStatusAndNavBarHeight;
+    offsetY = -kNavBarHeight;
     offsetY1 = ScreenHeight;
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
   } else {

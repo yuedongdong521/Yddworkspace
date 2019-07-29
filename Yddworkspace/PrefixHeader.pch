@@ -19,12 +19,15 @@
 #import "WeChatWindow.h"
 #import "Masonry.h"
 #import "ISAlertController.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "CustomURLRequest.h"
+
 
 #endif
 
 #define ScreenScale [UIScreen mainScreen].scale
-#define ScreenHeight  (CGFloat)[UIScreen mainScreen].bounds.size.height
-#define ScreenWidth   (CGFloat)[UIScreen mainScreen].bounds.size.width
+#define ScreenHeight  [UIScreen mainScreen].bounds.size.height
+#define ScreenWidth   [UIScreen mainScreen].bounds.size.width
 #define ViewX(view) view.frame.origin.x
 #define ViewY(view) view.frame.origin.y
 #define ViewW(view) view.frame.size.width
@@ -33,15 +36,15 @@
 #define GETColor(rgb,a) [UIColor colorWithRed:(rgb && 0xFF0000) >> 16 green:(rgb && 0xFF00)>> 8 blue:(rgb && 0xFF) alpha:a]
 
 #define kStatusBarHeight (IS_IPHONE_X ? 44 : 20)
-#define kNavBarHeight 44.0f
-#define kStatusAndNavBarHeight (kStatusBarHeight + kNavBarHeight)
+#define kNavBarCententHeight 44.0f
+#define kNavBarHeight (kStatusBarHeight + kNavBarCententHeight)
 #define kTabBarHeight (kStatusBarHeight > 20 ? 83 : 49)
 
 #define IS_TABBAR_ADD_HEIGHT (IS_IPHONE_X ? 34.0 : 0)
 
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IS_IPHONE_X \
-(ScreenWidth == 375.0f && ScreenHeight == 812.0f && IS_IPHONE)
+(ScreenWidth >= 375.0f && ScreenHeight >= 812.0f && IS_IPHONE)
 
 // 记录进入相册页面的页面来源
 enum CONTACT_PHOTOLIST_WITH_ALBUMTYPE {
