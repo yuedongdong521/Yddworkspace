@@ -63,6 +63,8 @@
     CustomTransition *transition = [[CustomTransition alloc] init];
     if (operation == UINavigationControllerOperationPush) {
         transition.animationStatus = AnimationStatus_push;
+    } else {
+        transition.animationStatus = AnimationStatus_pop;
     }
     return transition;
 }

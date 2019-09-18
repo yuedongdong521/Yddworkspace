@@ -72,13 +72,7 @@ RunLoop负责处理消息事件，即输入源事件和计时器事件
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  
-  
-  
   [self testAction];
-  
-  
-  
 }
 
 

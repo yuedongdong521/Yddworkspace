@@ -96,7 +96,13 @@
     }
     
     UIView *containerView =  [transitionContext containerView];
-    [containerView addSubview:fromVC.view];
+    
+    __block UIView *animateBackgroundView = [[UIView alloc] initWithFrame:containerView.bounds];
+    animateBackgroundView.backgroundColor = [UIColor whiteColor];
+    [containerView addSubview:animateBackgroundView];
+    
+    [containerView addSubview:toVC.view];
+    toVC.view.hidden = YES;
     fromVC.view.hidden = YES;
     
     CGRect fromFrame = [fromView convertRect:fromView.bounds toView:nil];
@@ -109,18 +115,23 @@
 
     
     
-    [containerView addSubview:toImageView];
+//    [containerView addSubview:toImageView];
     [containerView addSubview:fromImageView];
     
    
-    fromImageView.hidden = YES;
+//    fromImageView.hidden = YES;
     
     [UIView animateWithDuration:self.animationDuration delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        toImageView.frame = fromFrame;;
+        fromImageView.frame = toFrame;
+        animateBackgroundView.alpha = 0;
     } completion:^(BOOL finished) {
-        fromImageView.hidden = NO;
-        [toImageView removeFromSuperview];
-        toImageView = nil;
+        animateBackgroundView.alpha = 0;
+        [animateBackgroundView removeFromSuperview];
+        animateBackgroundView = nil;
+        
+        toVC.view.hidden = NO;
+        [fromImageView removeFromSuperview];
+        fromImageView = nil;
         [transitionContext completeTransition:YES];
     }];
 }

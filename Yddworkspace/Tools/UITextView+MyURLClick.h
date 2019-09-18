@@ -16,4 +16,10 @@ typedef void(^ClickURL)(NSURL *url);
 
 - (void)addURLClickAction:(ClickURL)clickURL;
 
+
+- (NSRange)getCurSeletedRange;
+
+- (void)setCurSelectedRange:(NSRange)range;
+
+
 @end

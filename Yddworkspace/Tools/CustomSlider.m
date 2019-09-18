@@ -57,6 +57,7 @@
         [self addSubview:self.coverView];
         [self addSubview:self.thumView];
         self.thumView.frame = CGRectMake(0, 0, height, height);
+    
     }
     return self;
 }

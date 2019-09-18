@@ -326,22 +326,32 @@
 		8435198B22C4E64000FA0852 /* MoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435198A22C4E64000FA0852 /* MoveView.m */; };
 		8435198E22C4E91000FA0852 /* DeleteCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435198D22C4E91000FA0852 /* DeleteCellViewController.m */; };
 		8435D20C22BCB263009ED8A9 /* YDDWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8435D20B22BCB263009ED8A9 /* YDDWebView.m */; };
+		84373A1C22EFF23800645962 /* TestStructVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84373A1B22EFF23800645962 /* TestStructVC.m */; };
+		84373A2122F0452900645962 /* UILabel+YDDExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 84373A2022F0452900645962 /* UILabel+YDDExtend.m */; };
+		84373A2522F18D7700645962 /* SecneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84373A2422F18D7700645962 /* SecneViewController.m */; };
 		8438083122BB4DC80094708D /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8438083022BB4DC80094708D /* CustomSlider.m */; };
 		8438083522BB8D430094708D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8438083422BB8D430094708D /* Podfile */; };
 		8438143D2271B7F700436CD8 /* NSString+yddSubByte.m in Sources */ = {isa = PBXBuildFile; fileRef = 8438143C2271B7F700436CD8 /* NSString+yddSubByte.m */; };
+		84382D1B232F22E500B11239 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84382D1A232F22E500B11239 /* DateManager.swift */; };
+		84382D1D232F770100B11239 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84382D1C232F770100B11239 /* CalendarViewController.swift */; };
 		8438D7BF22D4490B00439BDA /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8438D7BC22D4490B00439BDA /* UINavigationController+FDFullscreenPopGesture.m */; };
 		8438D7C022D4490B00439BDA /* FD_README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8438D7BD22D4490B00439BDA /* FD_README.md */; };
 		8438D7C222D45EAA00439BDA /* AVAudioRecordAndPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438D7C122D45EAA00439BDA /* AVAudioRecordAndPlayer.swift */; };
+		8439388322FBFA3F008669D8 /* CompressGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439388222FBFA3F008669D8 /* CompressGif.swift */; };
 		8439761222E01C5F006491FF /* YDDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439761022E01C5E006491FF /* YDDUtils.m */; };
 		8439761522E02112006491FF /* YDDTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439761422E02112006491FF /* YDDTextField.m */; };
+		84398E8322FD1B8D0034B888 /* bikaqiu.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84398E8222FD1B8C0034B888 /* bikaqiu.gif */; };
 		843A0C5122E54D6900DB8661 /* SideBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A0C5022E54D6900DB8661 /* SideBarView.m */; };
 		843A0C5B22E5568300DB8661 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A0C5A22E5568300DB8661 /* AppManager.m */; };
 		843A0C5D22E5684000DB8661 /* resourInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 843A0C5C22E5684000DB8661 /* resourInfo.json */; };
 		843A0C6022E59C3B00DB8661 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A0C5F22E59C3B00DB8661 /* FileManager.m */; };
 		843A0C6322E5ACD000DB8661 /* TCMediaFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A0C6222E5ACD000DB8661 /* TCMediaFileReader.m */; };
+		843A4D5F232A1A5600BE3D24 /* TextFieldPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A4D5E232A1A5600BE3D24 /* TextFieldPosition.swift */; };
 		843B282D22E7F7B000D39F07 /* PhotosDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B282C22E7F7B000D39F07 /* PhotosDetailsViewController.m */; };
 		843B283022E80DB000D39F07 /* CustomTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B282F22E80DB000D39F07 /* CustomTransitionViewController.m */; };
 		843B283322E829B100D39F07 /* CustomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B283222E829B100D39F07 /* CustomTransition.m */; };
+		843B924F233079EE00D8EA1F /* DDPlainFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B924E233079EE00D8EA1F /* DDPlainFlowLayout.swift */; };
+		843B925123308CF300D8EA1F /* CalendarYearSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B925023308CF300D8EA1F /* CalendarYearSelectedView.swift */; };
 		843F033322D6CEB90012AE17 /* AFN_README.md in Resources */ = {isa = PBXBuildFile; fileRef = 843F030D22D6CEB90012AE17 /* AFN_README.md */; };
 		843F033422D6CEB90012AE17 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 843F030F22D6CEB90012AE17 /* UIProgressView+AFNetworking.m */; };
 		843F033522D6CEB90012AE17 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 843F031122D6CEB90012AE17 /* UIRefreshControl+AFNetworking.m */; };
@@ -374,7 +384,10 @@
 		8442D36622D2EC9800FAB6C4 /* CropPhotoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8442D36522D2EC9800FAB6C4 /* CropPhotoHelper.m */; };
 		8442D36B22D3083700FAB6C4 /* CustomAlertSheepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442D36A22D3083700FAB6C4 /* CustomAlertSheepView.swift */; };
 		8442D36D22D3321400FAB6C4 /* DeviceTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442D36C22D3321400FAB6C4 /* DeviceTools.swift */; };
+		84462B1C231CF8D900106FB8 /* SelecteToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84462B1B231CF8D900106FB8 /* SelecteToolsViewController.swift */; };
+		84462B1E231D194800106FB8 /* DateSelecteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84462B1D231D194800106FB8 /* DateSelecteViewController.swift */; };
 		8447147522DECF6500B69CE7 /* HalfBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447147422DECF6500B69CE7 /* HalfBaseViewController.m */; };
+		845BBF6C2325FA3100F994B1 /* BezierMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BBF6B2325FA3100F994B1 /* BezierMaskViewController.swift */; };
 		847137E022BCDAA3003BC0E4 /* YDDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137DF22BCDAA3003BC0E4 /* YDDWebViewController.m */; };
 		847137E622BCE093003BC0E4 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137E322BCE092003BC0E4 /* NJKWebViewProgress.m */; };
 		847137E722BCE093003BC0E4 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */; };
@@ -1444,19 +1457,29 @@
 		8435198D22C4E91000FA0852 /* DeleteCellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeleteCellViewController.m; sourceTree = "<group>"; };
 		8435D20A22BCB263009ED8A9 /* YDDWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDDWebView.h; sourceTree = "<group>"; };
 		8435D20B22BCB263009ED8A9 /* YDDWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDDWebView.m; sourceTree = "<group>"; };
+		84373A1A22EFF23800645962 /* TestStructVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestStructVC.h; sourceTree = "<group>"; };
+		84373A1B22EFF23800645962 /* TestStructVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestStructVC.m; sourceTree = "<group>"; };
+		84373A1F22F0452900645962 /* UILabel+YDDExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+YDDExtend.h"; sourceTree = "<group>"; };
+		84373A2022F0452900645962 /* UILabel+YDDExtend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YDDExtend.m"; sourceTree = "<group>"; };
+		84373A2322F18D7700645962 /* SecneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecneViewController.h; sourceTree = "<group>"; };
+		84373A2422F18D7700645962 /* SecneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecneViewController.m; sourceTree = "<group>"; };
 		8438082F22BB4DC80094708D /* CustomSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSlider.h; sourceTree = "<group>"; };
 		8438083022BB4DC80094708D /* CustomSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSlider.m; sourceTree = "<group>"; };
 		8438083422BB8D430094708D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		8438143B2271B7F700436CD8 /* NSString+yddSubByte.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+yddSubByte.h"; sourceTree = "<group>"; };
 		8438143C2271B7F700436CD8 /* NSString+yddSubByte.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+yddSubByte.m"; sourceTree = "<group>"; };
+		84382D1A232F22E500B11239 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		84382D1C232F770100B11239 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8438D7BB22D4490B00439BDA /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		8438D7BC22D4490B00439BDA /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		8438D7BD22D4490B00439BDA /* FD_README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = FD_README.md; sourceTree = "<group>"; };
 		8438D7C122D45EAA00439BDA /* AVAudioRecordAndPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioRecordAndPlayer.swift; sourceTree = "<group>"; };
+		8439388222FBFA3F008669D8 /* CompressGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressGif.swift; sourceTree = "<group>"; };
 		8439761022E01C5E006491FF /* YDDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDDUtils.m; sourceTree = "<group>"; };
 		8439761122E01C5E006491FF /* YDDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDDUtils.h; sourceTree = "<group>"; };
 		8439761322E02112006491FF /* YDDTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDDTextField.h; sourceTree = "<group>"; };
 		8439761422E02112006491FF /* YDDTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDDTextField.m; sourceTree = "<group>"; };
+		84398E8222FD1B8C0034B888 /* bikaqiu.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bikaqiu.gif; sourceTree = "<group>"; };
 		843A0C4F22E54D6900DB8661 /* SideBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SideBarView.h; sourceTree = "<group>"; };
 		843A0C5022E54D6900DB8661 /* SideBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideBarView.m; sourceTree = "<group>"; };
 		843A0C5922E5568300DB8661 /* AppManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
@@ -1466,12 +1489,15 @@
 		843A0C5F22E59C3B00DB8661 /* FileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
 		843A0C6122E5ACD000DB8661 /* TCMediaFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMediaFileReader.h; sourceTree = "<group>"; };
 		843A0C6222E5ACD000DB8661 /* TCMediaFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMediaFileReader.m; sourceTree = "<group>"; };
+		843A4D5E232A1A5600BE3D24 /* TextFieldPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPosition.swift; sourceTree = "<group>"; };
 		843B282B22E7F7B000D39F07 /* PhotosDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosDetailsViewController.h; sourceTree = "<group>"; };
 		843B282C22E7F7B000D39F07 /* PhotosDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosDetailsViewController.m; sourceTree = "<group>"; };
 		843B282E22E80DB000D39F07 /* CustomTransitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTransitionViewController.h; sourceTree = "<group>"; };
 		843B282F22E80DB000D39F07 /* CustomTransitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTransitionViewController.m; sourceTree = "<group>"; };
 		843B283122E829B100D39F07 /* CustomTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTransition.h; sourceTree = "<group>"; };
 		843B283222E829B100D39F07 /* CustomTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTransition.m; sourceTree = "<group>"; };
+		843B924E233079EE00D8EA1F /* DDPlainFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDPlainFlowLayout.swift; sourceTree = "<group>"; };
+		843B925023308CF300D8EA1F /* CalendarYearSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarYearSelectedView.swift; sourceTree = "<group>"; };
 		843F030D22D6CEB90012AE17 /* AFN_README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = AFN_README.md; sourceTree = "<group>"; };
 		843F030F22D6CEB90012AE17 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		843F031022D6CEB90012AE17 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
@@ -1537,8 +1563,11 @@
 		8442D36522D2EC9800FAB6C4 /* CropPhotoHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CropPhotoHelper.m; sourceTree = "<group>"; };
 		8442D36A22D3083700FAB6C4 /* CustomAlertSheepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertSheepView.swift; sourceTree = "<group>"; };
 		8442D36C22D3321400FAB6C4 /* DeviceTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTools.swift; sourceTree = "<group>"; };
+		84462B1B231CF8D900106FB8 /* SelecteToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelecteToolsViewController.swift; sourceTree = "<group>"; };
+		84462B1D231D194800106FB8 /* DateSelecteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelecteViewController.swift; sourceTree = "<group>"; };
 		8447147322DECF6500B69CE7 /* HalfBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfBaseViewController.h; sourceTree = "<group>"; };
 		8447147422DECF6500B69CE7 /* HalfBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfBaseViewController.m; sourceTree = "<group>"; };
+		845BBF6B2325FA3100F994B1 /* BezierMaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierMaskViewController.swift; sourceTree = "<group>"; };
 		847137DE22BCDAA3003BC0E4 /* YDDWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDDWebViewController.h; sourceTree = "<group>"; };
 		847137DF22BCDAA3003BC0E4 /* YDDWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDDWebViewController.m; sourceTree = "<group>"; };
 		847137E222BCE092003BC0E4 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
@@ -2660,6 +2689,7 @@
 				60BD0B8B1D81720900837C56 /* Cat.mp4 */,
 				60E594A11FFB72A000476F8D /* test.h264 */,
 				60AA47FC1E1DF5B900839D8C /* 1yasuo.jpg */,
+				84398E8222FD1B8C0034B888 /* bikaqiu.gif */,
 				60E5949C1FFB569B00476F8D /* ispeak.h264 */,
 				60761EB11D61B62000FC2F1F /* Yddworkspace */,
 				60761ECB1D61B62000FC2F1F /* YddworkspaceTests */,
@@ -2682,6 +2712,8 @@
 		60761EB11D61B62000FC2F1F /* Yddworkspace */ = {
 			isa = PBXGroup;
 			children = (
+				84462B1A231CF88E00106FB8 /* SelecteTools */,
+				84373A2222F18D2D00645962 /* SceneKitTest */,
 				8442D36322D2EC1800FAB6C4 /* CropPhotoHelper */,
 				843516D922C45D6F00FA0852 /* moveCollectionView */,
 				84F48C3D22C368A4001E0C8F /* CustomTabBar */,
@@ -2736,6 +2768,8 @@
 				60CDC7A71FA9BAD2004A650A /* MyTabBarViewController.m */,
 				60CDC7A91FA9BD36004A650A /* MainViewController.h */,
 				60CDC7AA1FA9BD36004A650A /* MainViewController.m */,
+				84373A1A22EFF23800645962 /* TestStructVC.h */,
+				84373A1B22EFF23800645962 /* TestStructVC.m */,
 				606850822008649B00878270 /* 位运算符 */,
 				60761EB81D61B62000FC2F1F /* ViewController.h */,
 				60761EB91D61B62000FC2F1F /* ViewController.m */,
@@ -2866,6 +2900,7 @@
 				ED1D8B3D218942330056FD19 /* SwiftJSON.swift */,
 				60AA47FA1E1DF58D00839D8C /* MyViewController.swift */,
 				600AE1BB1F2F0DCB00006769 /* swift_block.swift */,
+				843A4D5E232A1A5600BE3D24 /* TextFieldPosition.swift */,
 				843FAE8A22EEF04C00D380F4 /* Swift_GCD.swift */,
 				60AA48041E1E390200839D8C /* MyLabelViewController.swift */,
 				60AA48001E1E0F2100839D8C /* ImageViewController.swift */,
@@ -2874,6 +2909,11 @@
 				EDA36234211AFB8F00536799 /* DataModel.swift */,
 				84342AE1229783C900C36314 /* ReplayKitDemo.swift */,
 				8438D7C122D45EAA00439BDA /* AVAudioRecordAndPlayer.swift */,
+				845BBF6B2325FA3100F994B1 /* BezierMaskViewController.swift */,
+				84382D1A232F22E500B11239 /* DateManager.swift */,
+				84382D1C232F770100B11239 /* CalendarViewController.swift */,
+				843B925023308CF300D8EA1F /* CalendarYearSelectedView.swift */,
+				843B924E233079EE00D8EA1F /* DDPlainFlowLayout.swift */,
 			);
 			path = swiftTest;
 			sourceTree = "<group>";
@@ -3095,6 +3135,7 @@
 				8442D36A22D3083700FAB6C4 /* CustomAlertSheepView.swift */,
 				8478BE3222CEE94E0034B87D /* CustomNavigationBarView.swift */,
 				8442D36C22D3321400FAB6C4 /* DeviceTools.swift */,
+				8439388222FBFA3F008669D8 /* CompressGif.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -3815,6 +3856,15 @@
 			path = Quartz;
 			sourceTree = "<group>";
 		};
+		84373A2222F18D2D00645962 /* SceneKitTest */ = {
+			isa = PBXGroup;
+			children = (
+				84373A2322F18D7700645962 /* SecneViewController.h */,
+				84373A2422F18D7700645962 /* SecneViewController.m */,
+			);
+			path = SceneKitTest;
+			sourceTree = "<group>";
+		};
 		8438D7B822D4490B00439BDA /* FDFullscreenPopGesture */ = {
 			isa = PBXGroup;
 			children = (
@@ -3984,6 +4034,15 @@
 			path = CropPhotoHelper;
 			sourceTree = "<group>";
 		};
+		84462B1A231CF88E00106FB8 /* SelecteTools */ = {
+			isa = PBXGroup;
+			children = (
+				84462B1B231CF8D900106FB8 /* SelecteToolsViewController.swift */,
+				84462B1D231D194800106FB8 /* DateSelecteViewController.swift */,
+			);
+			path = SelecteTools;
+			sourceTree = "<group>";
+		};
 		847137E122BCE092003BC0E4 /* NJKWebViewProgress */ = {
 			isa = PBXGroup;
 			children = (
@@ -4017,6 +4076,8 @@
 				84F48C4622C36E9F001E0C8F /* UIView+Extend.m */,
 				84C5E94522CD995900846CDC /* UIImage+Compress.h */,
 				84C5E94622CD995900846CDC /* UIImage+Compress.m */,
+				84373A1F22F0452900645962 /* UILabel+YDDExtend.h */,
+				84373A2022F0452900645962 /* UILabel+YDDExtend.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -5193,6 +5254,7 @@
 				608849091DC076C800FD819C /* guanzhu.png in Resources */,
 				60A0BA241FCE4C7400CC7082 /* iOS开发进阶_唐巧著_2015.01_244页.pdf in Resources */,
 				6088490D1DC076C800FD819C /* shoucang.png in Resources */,
+				84398E8322FD1B8D0034B888 /* bikaqiu.gif in Resources */,
 				609E3D0E2052787500D9A55C /* githubCommitAndUpData in Resources */,
 				ED8FB4AD223A2349005EFD99 /* mysong.mp3 in Resources */,
 				60B9110A2015B299005EB918 /* 2.jpg in Resources */,
@@ -5331,6 +5393,7 @@
 				843F033F22D6CEB90012AE17 /* AFURLSessionManager.m in Sources */,
 				ED2D8FDF2108867900DEF809 /* LoadWebViewController.m in Sources */,
 				ED2D902820D8DC1300C15624 /* FloadRoundEntryAnimator.m in Sources */,
+				84462B1C231CF8D900106FB8 /* SelecteToolsViewController.swift in Sources */,
 				ED2851462101CE5800178965 /* SDWebImageGIFCoder.m in Sources */,
 				ED1B74332177263500D51FF5 /* ISCutOutPictures.mm in Sources */,
 				EDC8D4BE218ACBE7000B3D6C /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
@@ -5371,6 +5434,7 @@
 				EDC8D49E218ACBE7000B3D6C /* GPUImageColorBlendFilter.m in Sources */,
 				EDC8D4CF218ACBE7000B3D6C /* GPUImageLuminosityBlendFilter.m in Sources */,
 				EDC8D444218ACBE6000B3D6C /* GPUImageSobelEdgeDetectionFilter.m in Sources */,
+				843B924F233079EE00D8EA1F /* DDPlainFlowLayout.swift in Sources */,
 				843A0C5B22E5568300DB8661 /* AppManager.m in Sources */,
 				EDC8D47C218ACBE7000B3D6C /* GPUImageSepiaFilter.m in Sources */,
 				EDC8D45D218ACBE6000B3D6C /* GPUImageTransformFilter.m in Sources */,
@@ -5427,6 +5491,7 @@
 				60AFF3491FC7C64900985769 /* MyAttributedString.m in Sources */,
 				6000451D1E949CF200F3471A /* UIScrollView+MJExtension.m in Sources */,
 				8429B2EF225F0B04007BEB10 /* HalfViewController.m in Sources */,
+				84373A2522F18D7700645962 /* SecneViewController.m in Sources */,
 				EDC8D440218ACBE6000B3D6C /* GPUImageChromaKeyFilter.m in Sources */,
 				8435196322C49AE200FA0852 /* UIImage+YYWebImage.m in Sources */,
 				60B910FF20158DF4005EB918 /* CustomPushAnimateViewController.m in Sources */,
@@ -5449,6 +5514,7 @@
 				EDFB35AB21DC585A009D8212 /* RunLoopViewController.m in Sources */,
 				8435198822C4B32900FA0852 /* PhotoGroupView.m in Sources */,
 				8435197022C49AE200FA0852 /* UIView+YYAdd.m in Sources */,
+				84462B1E231D194800106FB8 /* DateSelecteViewController.swift in Sources */,
 				8442D36022D2E60700FAB6C4 /* TOCropOverlayView.m in Sources */,
 				843F033822D6CEB90012AE17 /* UIButton+AFNetworking.m in Sources */,
 				8442D35E22D2E60700FAB6C4 /* TOCropScrollView.m in Sources */,
@@ -5573,6 +5639,7 @@
 				ED324D1121340B6B00D02F13 /* ViewController+MASAdditions.m in Sources */,
 				8435193922C49AE200FA0852 /* NSObject+YYModel.m in Sources */,
 				ED2DE3FB2136416200A41531 /* MyURLTools.mm in Sources */,
+				84382D1B232F22E500B11239 /* DateManager.swift in Sources */,
 				EDC8D475218ACBE7000B3D6C /* GPUImageOpacityFilter.m in Sources */,
 				EDC8D44D218ACBE6000B3D6C /* GPUImageTwoInputFilter.m in Sources */,
 				842F1BD6228950740005A338 /* TextHashTableViewController.m in Sources */,
@@ -5625,8 +5692,10 @@
 				8439761222E01C5F006491FF /* YDDUtils.m in Sources */,
 				8435198522C49AE200FA0852 /* CALayer+YYAdd.m in Sources */,
 				60761EB41D61B62000FC2F1F /* main.m in Sources */,
+				84373A2122F0452900645962 /* UILabel+YDDExtend.m in Sources */,
 				EDC8D443218ACBE6000B3D6C /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				ED39610720ABC26600D0658F /* ISH264Player.m in Sources */,
+				843B925123308CF300D8EA1F /* CalendarYearSelectedView.swift in Sources */,
 				60691A991FCFDC9D00009794 /* CoreTextTowViewController.m in Sources */,
 				EDC8D452218ACBE6000B3D6C /* GPUImageLevelsFilter.m in Sources */,
 				8435196C22C49AE200FA0852 /* UIApplication+YYAdd.m in Sources */,
@@ -5730,6 +5799,7 @@
 				ED2B7D2021378F300071F4D3 /* GCDAsyncSocket.mm in Sources */,
 				EDC8D48B218ACBE7000B3D6C /* GPUImageFramebuffer.m in Sources */,
 				ED2E64E821355F7F00ADCDFF /* ISVideoCameraTools.mm in Sources */,
+				84373A1C22EFF23800645962 /* TestStructVC.m in Sources */,
 				60757E8B1E763A94003463F3 /* IntrinsicView.m in Sources */,
 				60AF3C441F18593C00C8FBB9 /* UIViewController+KNSemiModal.m in Sources */,
 				ED8FB4AB223A232B005EFD99 /* RunInBackground.mm in Sources */,
@@ -5740,6 +5810,7 @@
 				ED2E64F321355F7F00ADCDFF /* LFGPUImageEmptyFilter.mm in Sources */,
 				842F06D922C5C3E30028BC7B /* KeyWordManager.m in Sources */,
 				EDC8D49D218ACBE7000B3D6C /* GPUImageCrosshairGenerator.m in Sources */,
+				8439388322FBFA3F008669D8 /* CompressGif.swift in Sources */,
 				ED2851072101CE5800178965 /* SDWebImageManager.m in Sources */,
 				6000450D1E949CF200F3471A /* MJRefreshBackFooter.m in Sources */,
 				843A0C6022E59C3B00DB8661 /* FileManager.m in Sources */,
@@ -5783,6 +5854,7 @@
 				EDC8D4C1218ACBE7000B3D6C /* GPUImageTextureOutput.m in Sources */,
 				ED324D1721340B6B00D02F13 /* MASConstraint.m in Sources */,
 				8435194F22C49AE200FA0852 /* YYTextAttribute.m in Sources */,
+				845BBF6C2325FA3100F994B1 /* BezierMaskViewController.swift in Sources */,
 				EDC8D43E218ACBE6000B3D6C /* GPUImageUnsharpMaskFilter.m in Sources */,
 				EDC8D4C0218ACBE7000B3D6C /* GPUImagePerlinNoiseFilter.m in Sources */,
 				6000450F1E949CF200F3471A /* MJRefreshFooter.m in Sources */,
@@ -5810,6 +5882,7 @@
 				84F48C4322C368C7001E0C8F /* CustomTabBarController.m in Sources */,
 				EDC8D4B1218ACBE7000B3D6C /* GPUImageMonochromeFilter.m in Sources */,
 				843F033C22D6CEB90012AE17 /* AFImageDownloader.m in Sources */,
+				843A4D5F232A1A5600BE3D24 /* TextFieldPosition.swift in Sources */,
 				EDC8D460218ACBE6000B3D6C /* GPUImageAmatorkaFilter.m in Sources */,
 				ED38AFF921BE536C0002508A /* GDataXMLNode.m in Sources */,
 				8435197622C49AE200FA0852 /* NSArray+YYAdd.m in Sources */,
@@ -5852,6 +5925,7 @@
 				ED49E93C221538A2004B86D1 /* AddressListViewController.m in Sources */,
 				EDC8D451218ACBE6000B3D6C /* GPUImageMovie.m in Sources */,
 				EDC8D438218ACBE6000B3D6C /* GPUImageMovieWriter.m in Sources */,
+				84382D1D232F770100B11239 /* CalendarViewController.swift in Sources */,
 				60691AA11FCFEF8200009794 /* UIImage+DrawRound.m in Sources */,
 				8447147522DECF6500B69CE7 /* HalfBaseViewController.m in Sources */,
 				ED2E64F421355F7F00ADCDFF /* ISCameraProgressViewLayer.mm in Sources */,

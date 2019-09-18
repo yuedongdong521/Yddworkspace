@@ -39,6 +39,6 @@ let IPHONE_X_SAFE_BOTTOM: CGFloat = IS_STANDARD_IPHONE_X ? 34 : 0
 
 let IPHONE_X_SAFE_TOP: CGFloat = IS_STANDARD_IPHONE_X ? 44 : 0
 
-func ColorHexRGBA(rgb:UInt,a:CGFloat)->UIColor {
+func ColorHexRGBA(rgb:UInt32,a:CGFloat)->UIColor {
    return UIColor.init(red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0, green: CGFloat((rgb & 0x00FF00) >> 8) / 255.0, blue: CGFloat((rgb & 0x0000FF)) / 255.0, alpha: a)
 }

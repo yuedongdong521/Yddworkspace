@@ -9,3 +9,5 @@
 #import "TOCropViewController.h"
 
 #import "lame.h"
+
+#import "UIImageView+PlayGIF.h"

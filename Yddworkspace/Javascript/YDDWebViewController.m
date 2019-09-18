@@ -57,25 +57,21 @@
     [self.view addSubview:self.webView];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
-    
-    
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
     
     [self addProgressView];
-    
-    
 }
+
 
 - (void) addProgressView{
     
     ///progressView
-    CGRect navBounds = self.navigationController.navigationBar.bounds;
+//    CGRect navBounds = self.navigationController.navigationBar.bounds;
     CGRect barFrame = CGRectMake(0,
-                                 64,
-                                 navBounds.size.width,
+                                 kStatusBarHeight,
+                                 ScreenWidth,
                                  2);
     _webViewProgressView = [[NJKWebViewProgressView alloc] initWithFrame:barFrame];
     _webViewProgressView.progressBarView.backgroundColor = UIColorHexRGBA(0Xb954fe, 1);
@@ -87,11 +83,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
 //    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"testJavascript" ofType:@"html"]]];
-    NSURL *fileURL = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:H5_URL ofType:@"html"]];
-//    [self.webView startLoadWithUrl:H5_URL];
+//    NSURL *fileURL = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:H5_URL ofType:@"html"]];
+    [self.webView startLoadWithUrl:@"https://www.cnblogs.com/Biaoac/p/5317012.html"];
 //    [self.webView startLoadRequest:request];
-    [self.webView startLoadFileURL:fileURL accessURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
+//    [self.webView startLoadFileURL:fileURL accessURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
 }
 
 - (void)webView:(YDDWebView *)webView loadProgress:(CGFloat)progress

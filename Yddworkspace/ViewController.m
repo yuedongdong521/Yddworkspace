@@ -152,14 +152,15 @@
       @"YDDWebViewController",
       @"TestHtmlViewController",
       @"DeleteCellViewController",
-      @"MoveCollectionViewController"
+      @"MoveCollectionViewController",
+      @"TestStructVC"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
       @"CoreTextTowViewController", @"MyCoreTextTestViewController",
       @"CoreTextSurroundViewController"
     ],
-    @[ @"MyViewController", @"ClosureViewController", @"UserInfoController", @"SwiftJSONViewController" ]
+    @[ @"MyViewController", @"ClosureViewController", @"UserInfoController", @"SwiftJSONViewController", @"SelecteToolsViewController", @"DateSelecteViewController", @"BezierMaskViewController", @"CalendarViewController" ]
   ];
 
   
@@ -294,6 +295,19 @@
     } else if ([itemStr isEqualToString:@"SwiftJSONViewController"]) {
       SwiftJSONViewController *jsonVC = [[SwiftJSONViewController alloc] init];
       [self.navigationController pushViewController:jsonVC animated:YES];
+    } else if ([itemStr isEqualToString:@"SelecteToolsViewController"]) {
+        SelecteToolsViewController *vc = [[SelecteToolsViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"DateSelecteViewController"]) {
+        DateSelecteViewController *vc = [[DateSelecteViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"BezierMaskViewController"]) {
+        BezierMaskViewController *vc = [[BezierMaskViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"CalendarViewController"]) {
+        CalendarViewController *vc = [[CalendarViewController alloc]init];
+        vc.year = 2019;
+        [self.navigationController pushViewController:vc animated:YES];
     }
     self.hidesBottomBarWhenPushed = NO;
   }

@@ -35,6 +35,29 @@ class MySwiftViewController : UIViewController
         viewButton.addTarget(self, action: #selector(viewButtonClick), for: UIControlEvents.touchUpInside)
         self.view.addSubview(viewButton)
         
+        do {
+            let data = try Data(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "bikaqiu", ofType: "gif") ?? ""))
+            let gitView = UIImageView(frame: CGRect(x: 20, y: 400, width: 100, height: 100))
+//            gitView.image = UIImage.init(data: data)
+            gitView.gifData = data
+            self.view.addSubview(gitView)
+            gitView.startGIF()
+            
+            let gitView2 = UIImageView(frame: CGRect(x: 20, y: 510, width: 100, height: 100))
+            let data2 = UIImage.scalGIFWithData(gitData: data, scalSize: CGSize(width: 100, height: 100))
+            gitView2.gifData = data2
+            self.view.addSubview(gitView2)
+            gitView2.startGIF()
+            
+            
+            print("data size \(data.count) , data2 size \((data2?.count ?? 0))")
+            
+        } catch {
+            print("读取gif失败")
+        }
+        
+        
+        
     }
     
     

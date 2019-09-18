@@ -13,8 +13,9 @@ typealias TestAddBlock = (Int, Int)->Int
 
 public class ClosureViewController : UIViewController {
 
-  
-  
+  var swiftObj = SwiftClass2()
+    
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
 
@@ -92,16 +93,19 @@ public class ClosureViewController : UIViewController {
         print(className)
       }
 //      requestAVAuthority();
+
+      self.swiftObj.testBlock()
+        
     }
   
   fileprivate lazy var testButton:UIButton? = {
-  let button = UIButton.init(type: UIButtonType.system);
+    let button = UIButton.init(type: UIButtonType.system);
     button.frame = CGRect(x:20, y:200, width:60, height:40)
     button.setTitle("textButton", for: UIControlState.normal)
     button.backgroundColor = UIColor.red;
     button.setTitleColor(UIColor.white, for: UIControlState.normal)
     button.addTarget(self, action: #selector(testButtonAction), for: UIControlEvents.touchUpInside)
-  return button;
+    return button;
   }()
   
   @objc fileprivate func testButtonAction(button: UIButton)-> Void {
@@ -173,6 +177,108 @@ fileprivate extension ClosureViewController {
     }
   }
   
+}
+
+
+class SwiftClass {
+    typealias BlockType = (String)->Void
+    
+    lazy var blockList:Array<BlockType> = {
+        let arr = Array<BlockType>()
+        return arr
+    }()
+    
+    func function1(str: String, block: @escaping (_ a:String)->Void) {
+        self.blockList.append(block)
+        self.function2(str: str)
+    }
+    
+    func function2(str: String) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.init(uptimeNanoseconds: 1)) {
+            if self.blockList.count == 0 {
+                return
+            }
+            let block = self.blockList.first
+            if block == nil {
+                return
+            }
+            block?(str)
+            var tmpArr = Array<BlockType>.init()
+            for a in 0..<self.blockList.count {
+                if a != 0 {
+                    tmpArr.append(self.blockList[a])
+                }
+            }
+            self.blockList = tmpArr
+        }
+    }
+    
+    func function3(str: String, block:(_ a:String)->Void) {
+        block(str)
+    }
+    
+    func printAction(name:String) {
+        print("my name is " + name)
+    }
+    
+    deinit {
+        print("SwiftClass 释放")
+    }
+}
+
+class SwiftClass2 {
+    
+    lazy var obj: SwiftClass = {
+        let sw = SwiftClass.init()
+        return sw
+    }()
+    
+    func testBlock() {
+        
+        // 逃逸闭包使用weak 修饰避免循环引用
+        self.obj.function1(str: "ydd") { [weak self] (name) in
+            let str1 = name + " 1"
+            self?.printAction(name: str1)
+        }
+        // 非逃逸闭包不需要weak修饰
+        self.obj.function3(str: "ydd") { (name) in
+            let str1 = name + " 2"
+            self.printAction(name: str1)
+        }
+        
+        self.obj.function3(str: "ydd") { (name) in
+            let str1 = name + " 3"
+            self.obj.printAction(name: str1)
+        }
+        
+        self.obj.function1(str: "ydd") { [weak self] (n) in
+            let str1 = n + " 4"
+            self?.obj.printAction(name: str1)
+        }
+    }
+    
+    func printAction(name:String) {
+        print("my name is " + name)
+    }
+    
+    deinit {
+        print("SwiftClass2 释放")
+    }
+    
+}
+
+typealias Callback = (Any...)->Void
+class Command {
+    init(_ fn: @escaping Callback) {
+        self.fn_ = fn
+    }
+    
+    var exec : (_ args: Any...)->Void {
+        get {
+            return fn_
+        }
+    }
+    var fn_ :Callback
 }
 
 

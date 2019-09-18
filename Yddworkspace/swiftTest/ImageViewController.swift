@@ -38,15 +38,23 @@ class ImageViewController: UIViewController {
         myImageView.addGestureRecognizer(tap)
         
    
+        
         NetWorkRequest().getNetworkRequest(requestUrlStr: "http://img06.tooopen.com/images/20170723/tooopen_sl_217707083674.jpg") { (data, response, error) in
             let imageUrl = URL.init(fileURLWithPath: Bundle.main.path(forResource: "0", ofType: "jpg")!)
-            let imageData = try? Data.init(contentsOf: imageUrl)
- 
-            let image = UIImage.init(data: data ?? imageData!)
-            DispatchQueue.main.async {
-                self.myImageView.image = image!
-            }
             
+            do {
+                let imageData = try Data.init(contentsOf: imageUrl)
+                let image = UIImage.init(data: data ?? imageData)
+                if image != nil {
+                    DispatchQueue.main.async {
+                        self.myImageView.image = image!
+                    }
+                }
+               
+            } catch {
+                print("imageData is nil")
+            }
+ 
             print(Thread.current)
         }
     }

@@ -25,9 +25,6 @@ import Foundation
     let subStr = str?[...lastStr.index(before: lastStr.endIndex)]
     let sub = String(describing: subStr)
     print("subStr : \(sub)")
-  
-
-    
   }
   
   
