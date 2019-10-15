@@ -25,6 +25,7 @@
 #import "HalfViewController.h"
 
 #define IS_iPhoneX [UIScreen mainScreen].bounds.size.height >= 812
+#define Weakself(self)  __weak typeof(self) weak##self = self
 
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -50,6 +51,7 @@
         (unsigned long)self.edgesForExtendedLayout);
   NSLog(@"ViewController.translucent = %d",
         self.navigationController.navigationBar.translucent);
+  
 
   if (@available(iOS 11.0, *)) {
     NSLog(@"ViewController.safeAreaInsets = %@",
@@ -160,7 +162,7 @@
       @"CoreTextTowViewController", @"MyCoreTextTestViewController",
       @"CoreTextSurroundViewController"
     ],
-    @[ @"MyViewController", @"ClosureViewController", @"UserInfoController", @"SwiftJSONViewController", @"SelecteToolsViewController", @"DateSelecteViewController", @"BezierMaskViewController", @"CalendarViewController" ]
+    @[ @"MyViewController", @"ClosureViewController", @"UserInfoController", @"SwiftJSONViewController", @"SelecteToolsViewController", @"DateSelecteViewController", @"BezierMaskViewController", @"CalendarViewController", @"AnimationTestViewController", @"DDCollectionViewController" ]
   ];
 
   
@@ -260,8 +262,8 @@
           [viewController
               isKindOfClass:[AVCaptureSessionViewController class]] ||
           [viewController isKindOfClass:[PresentationViewController class]] ||
-          [viewController isKindOfClass:[HalfViewController class]] ||
-          [viewController isKindOfClass:NSClassFromString(@"DeleteCellViewController")]) {
+          [viewController isKindOfClass:[HalfViewController class]] /* ||
+          [viewController isKindOfClass:NSClassFromString(@"DeleteCellViewController")]*/) {
         [self presentViewController:viewController animated:YES completion:nil];
         return;
       } else if ([viewController isKindOfClass:[ISPhotoAlbumViewController class]]) {
@@ -307,6 +309,12 @@
     } else if ([itemStr isEqualToString:@"CalendarViewController"]) {
         CalendarViewController *vc = [[CalendarViewController alloc]init];
         vc.year = 2019;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"AnimationTestViewController"]) {
+        AnimationTestViewController *vc = [[AnimationTestViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"DDCollectionViewController"]) {
+        DDCollectionViewController *vc = [[DDCollectionViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     self.hidesBottomBarWhenPushed = NO;

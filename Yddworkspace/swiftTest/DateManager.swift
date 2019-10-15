@@ -95,7 +95,7 @@ class DateManager: NSObject {
     }
     
     func getCompends(date:Date) -> DateComponents {
-        let calendar = Calendar.current
+        let calendar = Calendar.init(identifier: .gregorian)
         return calendar.dateComponents([.year,.month,.weekday,.day], from: date)
     }
     
@@ -115,7 +115,7 @@ class DateManager: NSObject {
     
     /** 获取date月份的天数 */
     func getCurMonthDays(date:Date) -> Int {
-        let calendar = Calendar.current
+        let calendar = Calendar.init(identifier: .gregorian)
         let range = calendar.range(of: .day, in: .month, for: date)
         if range == nil {
             return 0

@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void(^addImage)(void);
 
+@property (nonatomic, copy) void(^preporeImage)(BOOL openPre);
+
+
 - (void)addImage:(UIImage *)image;
 
 @end

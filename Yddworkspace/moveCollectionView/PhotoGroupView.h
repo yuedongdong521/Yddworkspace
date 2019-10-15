@@ -36,6 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL blurEffectBackground; ///< Default is YES
 @property (nonatomic, weak) id <PhotoGroupViewDelegate>delegate;
 
+@property (nonatomic, copy) void(^dismissCompleted)(void);
+
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 - (instancetype)initWithFrame:(CGRect)frame UNAVAILABLE_ATTRIBUTE;
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;

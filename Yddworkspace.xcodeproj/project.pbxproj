@@ -329,6 +329,7 @@
 		84373A1C22EFF23800645962 /* TestStructVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84373A1B22EFF23800645962 /* TestStructVC.m */; };
 		84373A2122F0452900645962 /* UILabel+YDDExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 84373A2022F0452900645962 /* UILabel+YDDExtend.m */; };
 		84373A2522F18D7700645962 /* SecneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84373A2422F18D7700645962 /* SecneViewController.m */; };
+		8437BD2F233CC5FF00B00D3E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8437BD2E233CC5FF00B00D3E /* Launch Screen.storyboard */; };
 		8438083122BB4DC80094708D /* CustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8438083022BB4DC80094708D /* CustomSlider.m */; };
 		8438083522BB8D430094708D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8438083422BB8D430094708D /* Podfile */; };
 		8438143D2271B7F700436CD8 /* NSString+yddSubByte.m in Sources */ = {isa = PBXBuildFile; fileRef = 8438143C2271B7F700436CD8 /* NSString+yddSubByte.m */; };
@@ -352,6 +353,12 @@
 		843B283322E829B100D39F07 /* CustomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 843B283222E829B100D39F07 /* CustomTransition.m */; };
 		843B924F233079EE00D8EA1F /* DDPlainFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B924E233079EE00D8EA1F /* DDPlainFlowLayout.swift */; };
 		843B925123308CF300D8EA1F /* CalendarYearSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B925023308CF300D8EA1F /* CalendarYearSelectedView.swift */; };
+		843BC614234ED01600540293 /* DDFlowLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BC613234ED01600540293 /* DDFlowLayoutProtocol.swift */; };
+		843BC616234F3B5200540293 /* AnimationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BC615234F3B5200540293 /* AnimationTestViewController.swift */; };
+		843BC618234F3CE400540293 /* AnimationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843BC617234F3CE400540293 /* AnimationWidget.swift */; };
+		843CADDE233320F50060E346 /* UINavigationController+StatuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CADDD233320F50060E346 /* UINavigationController+StatuBar.m */; };
+		843E459C2351D78D0040D68E /* DDCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E459B2351D78D0040D68E /* DDCollectionViewController.swift */; };
+		843EDA3C235564750014D521 /* ShowViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EDA3B235564750014D521 /* ShowViewAnimation.swift */; };
 		843F033322D6CEB90012AE17 /* AFN_README.md in Resources */ = {isa = PBXBuildFile; fileRef = 843F030D22D6CEB90012AE17 /* AFN_README.md */; };
 		843F033422D6CEB90012AE17 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 843F030F22D6CEB90012AE17 /* UIProgressView+AFNetworking.m */; };
 		843F033522D6CEB90012AE17 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 843F031122D6CEB90012AE17 /* UIRefreshControl+AFNetworking.m */; };
@@ -1463,6 +1470,7 @@
 		84373A2022F0452900645962 /* UILabel+YDDExtend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YDDExtend.m"; sourceTree = "<group>"; };
 		84373A2322F18D7700645962 /* SecneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecneViewController.h; sourceTree = "<group>"; };
 		84373A2422F18D7700645962 /* SecneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecneViewController.m; sourceTree = "<group>"; };
+		8437BD2E233CC5FF00B00D3E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8438082F22BB4DC80094708D /* CustomSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSlider.h; sourceTree = "<group>"; };
 		8438083022BB4DC80094708D /* CustomSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSlider.m; sourceTree = "<group>"; };
 		8438083422BB8D430094708D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
@@ -1498,6 +1506,13 @@
 		843B283222E829B100D39F07 /* CustomTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTransition.m; sourceTree = "<group>"; };
 		843B924E233079EE00D8EA1F /* DDPlainFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDPlainFlowLayout.swift; sourceTree = "<group>"; };
 		843B925023308CF300D8EA1F /* CalendarYearSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarYearSelectedView.swift; sourceTree = "<group>"; };
+		843BC613234ED01600540293 /* DDFlowLayoutProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDFlowLayoutProtocol.swift; sourceTree = "<group>"; };
+		843BC615234F3B5200540293 /* AnimationTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestViewController.swift; sourceTree = "<group>"; };
+		843BC617234F3CE400540293 /* AnimationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationWidget.swift; sourceTree = "<group>"; };
+		843CADDC233320F50060E346 /* UINavigationController+StatuBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+StatuBar.h"; sourceTree = "<group>"; };
+		843CADDD233320F50060E346 /* UINavigationController+StatuBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatuBar.m"; sourceTree = "<group>"; };
+		843E459B2351D78D0040D68E /* DDCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDCollectionViewController.swift; sourceTree = "<group>"; };
+		843EDA3B235564750014D521 /* ShowViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewAnimation.swift; sourceTree = "<group>"; };
 		843F030D22D6CEB90012AE17 /* AFN_README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = AFN_README.md; sourceTree = "<group>"; };
 		843F030F22D6CEB90012AE17 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		843F031022D6CEB90012AE17 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
@@ -2760,6 +2775,8 @@
 				608CBA541E16335D0004BBD4 /* swiftTest */,
 				60761EB51D61B62000FC2F1F /* AppDelegate.h */,
 				60761EB61D61B62000FC2F1F /* AppDelegate.m */,
+				843CADDC233320F50060E346 /* UINavigationController+StatuBar.h */,
+				843CADDD233320F50060E346 /* UINavigationController+StatuBar.m */,
 				842E0450228BB90700BD2C46 /* AppCrashManager.h */,
 				842E0451228BB90700BD2C46 /* AppCrashManager.m */,
 				843A0C5C22E5684000DB8661 /* resourInfo.json */,
@@ -2794,6 +2811,7 @@
 				60761EBB1D61B62000FC2F1F /* Main.storyboard */,
 				60761EBE1D61B62000FC2F1F /* Assets.xcassets */,
 				60761EC01D61B62000FC2F1F /* LaunchScreen.storyboard */,
+				8437BD2E233CC5FF00B00D3E /* Launch Screen.storyboard */,
 				60761EC31D61B62000FC2F1F /* Info.plist */,
 				604462381DB9B607004DE2BF /* PrefixHeader.pch */,
 				60761EB21D61B62000FC2F1F /* Supporting Files */,
@@ -2914,6 +2932,11 @@
 				84382D1C232F770100B11239 /* CalendarViewController.swift */,
 				843B925023308CF300D8EA1F /* CalendarYearSelectedView.swift */,
 				843B924E233079EE00D8EA1F /* DDPlainFlowLayout.swift */,
+				843BC613234ED01600540293 /* DDFlowLayoutProtocol.swift */,
+				843BC615234F3B5200540293 /* AnimationTestViewController.swift */,
+				843E459B2351D78D0040D68E /* DDCollectionViewController.swift */,
+				843EDA3B235564750014D521 /* ShowViewAnimation.swift */,
+				843BC617234F3CE400540293 /* AnimationWidget.swift */,
 			);
 			path = swiftTest;
 			sourceTree = "<group>";
@@ -5278,6 +5301,7 @@
 				60BD0B8E1D824B5400837C56 /* 0.jpg in Resources */,
 				60CA616A1E16538A00B03340 /* UMSocialSDKResources.bundle in Resources */,
 				608849131DC076C800FD819C /* zhibo.png in Resources */,
+				8437BD2F233CC5FF00B00D3E /* Launch Screen.storyboard in Resources */,
 				8430103122B0EB3F0034A2AD /* TestXibViewController.xib in Resources */,
 				60944EC61F0F911C00C02AFB /* speekTouchDown@2x.png in Resources */,
 				60CA61601E16538A00B03340 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -5358,6 +5382,7 @@
 				600045131E949CF200F3471A /* MJRefreshAutoStateFooter.m in Sources */,
 				ED284FEA210179DF00178965 /* CustomCollectionViewLayout.m in Sources */,
 				ED28512E2101CE5800178965 /* NSButton+WebCache.m in Sources */,
+				843BC614234ED01600540293 /* DDFlowLayoutProtocol.swift in Sources */,
 				EDC8D49F218ACBE7000B3D6C /* GPUImageAverageColor.m in Sources */,
 				843F034522D6D1E60012AE17 /* CustomURLRequest.m in Sources */,
 				EDC8D455218ACBE6000B3D6C /* GPUImageHistogramFilter.m in Sources */,
@@ -5602,6 +5627,7 @@
 				EDC8D478218ACBE7000B3D6C /* GPUImageTextureInput.m in Sources */,
 				60B91102201594F7005EB918 /* CustomTransitionPushControlle.m in Sources */,
 				EDC8D488218ACBE7000B3D6C /* GPUImageFilterPipeline.m in Sources */,
+				843BC618234F3CE400540293 /* AnimationWidget.swift in Sources */,
 				EDC8D48A218ACBE7000B3D6C /* GPUImageColorDodgeBlendFilter.m in Sources */,
 				842F1BD9228950A30005A338 /* HashTable.m in Sources */,
 				ED324CAA2134017500D02F13 /* TZImageManager.mm in Sources */,
@@ -5717,6 +5743,7 @@
 				EDC8D477218ACBE7000B3D6C /* GPUImagePixellateFilter.m in Sources */,
 				ED2E64EE21355F7F00ADCDFF /* MusicItemCollectionViewCell.mm in Sources */,
 				8435195822C49AE200FA0852 /* YYTextAsyncLayer.m in Sources */,
+				843CADDE233320F50060E346 /* UINavigationController+StatuBar.m in Sources */,
 				EDC8D4D5218ACBE7000B3D6C /* GPUImageLookupFilter.m in Sources */,
 				ED1177E421DCB74700CA45F4 /* MyTask.m in Sources */,
 				EDC8D4B2218ACBE7000B3D6C /* GPUImageHoughTransformLineDetector.m in Sources */,
@@ -5748,6 +5775,7 @@
 				ED28513A2101CE5800178965 /* SDWebImageTransition.m in Sources */,
 				60944EC81F0F911C00C02AFB /* SpeekViewController.m in Sources */,
 				EDC8D4D6218ACBE7000B3D6C /* GPUImageFilter.m in Sources */,
+				843EDA3C235564750014D521 /* ShowViewAnimation.swift in Sources */,
 				EDC8D476218ACBE7000B3D6C /* GPUImageCropFilter.m in Sources */,
 				8442D36222D2E60700FAB6C4 /* UIImage+CropRotate.m in Sources */,
 				60BEE78E1E2CC27400F71DB8 /* MyTableViewCell.m in Sources */,
@@ -5772,6 +5800,7 @@
 				60944EE81F0F93FC00C02AFB /* BezierPathViewController.m in Sources */,
 				6018DEDB1FC82E4500CDAF8E /* CTColumnView.m in Sources */,
 				EDC8D4A0218ACBE7000B3D6C /* GPUImageRGBDilationFilter.m in Sources */,
+				843BC616234F3B5200540293 /* AnimationTestViewController.swift in Sources */,
 				8442D36622D2EC9800FAB6C4 /* CropPhotoHelper.m in Sources */,
 				EDC8D45E218ACBE6000B3D6C /* GPUImageHueFilter.m in Sources */,
 				EDC8D4CC218ACBE7000B3D6C /* GPUImageSingleComponentGaussianBlurFilter.m in Sources */,
@@ -5867,6 +5896,7 @@
 				ED01F67021B12F2F006DAC28 /* Record.m in Sources */,
 				60430A791E2091FF0054656D /* UIViewXXYBoom.swift in Sources */,
 				8435196122C49AE200FA0852 /* UIImageView+YYWebImage.m in Sources */,
+				843E459C2351D78D0040D68E /* DDCollectionViewController.swift in Sources */,
 				843F033A22D6CEB90012AE17 /* UIWebView+AFNetworking.m in Sources */,
 				EDC8D4B9218ACBE7000B3D6C /* GPUImagePinchDistortionFilter.m in Sources */,
 				60BEE7761E2CC07100F71DB8 /* THCaptureUtilities.m in Sources */,

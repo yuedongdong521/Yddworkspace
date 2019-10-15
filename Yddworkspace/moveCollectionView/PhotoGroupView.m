@@ -827,6 +827,9 @@
             cell.imageContainerView.layer.anchorPoint = CGPointMake(0.5, 0.5);
             [self removeFromSuperview];
             if (completion) completion();
+            if (self.dismissCompleted) {
+                self.dismissCompleted();
+            }
         }];
     }];
     

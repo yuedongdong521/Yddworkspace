@@ -257,12 +257,21 @@
             _addImage();
         }
     } else {
+        if (_preporeImage) {
+            _preporeImage(YES);
+        }
         PhotoGroupView *view = [[PhotoGroupView alloc] initWithGroupItems:self.mutArr];
         view.delegate = self;
         [view hiddenPageControl:YES];
         [view presentFromCurItem:indexPath.item toContainer:self.superview animated:YES ompletion:^{
             
         }];
+        __weak typeof(self) weakself = self;
+        view.dismissCompleted = ^{
+            if (weakself.preporeImage) {
+                weakself.preporeImage(NO);
+            }
+        };
     }
 }
 

@@ -9,24 +9,17 @@
 import UIKit
 
 private struct CalendarModel {
-    var year = 0
-    var month = 0
+    var hasValue = false
+    var gComponents:DateComponents = DateComponents.init()
+    var zhComponents:DateComponents = DateComponents.init()
     var week = WeekEnum.init(rawValue: 0)
-    var day = 0
-    var chDay = 0
-    
-    func getDate() -> Date? {
-        let timeStr = "\(year)年\(month)月\(day)日 00:00:00"
-        return DateManager.shareManager().stringDate(str: timeStr)
-    }
-    
-    func chineseDay() -> Int {
-        let date = self.getDate()
-        if date == nil {
-            return 0
+    init(time date:Date?) {
+        if date != nil {
+            gComponents = DateManager.shareManager().getCompends(date: date!)
+            zhComponents = DateManager.shareManager().getChineseCompends(date: date!)
+            week = WeekEnum.init(rawValue: (gComponents.weekday!))
+            hasValue = true
         }
-        let comp = DateManager.shareManager().getChineseCompends(date: date!)
-        return comp.day ?? 0
     }
 }
 
@@ -64,14 +57,21 @@ class CalendarCell: UICollectionViewCell {
     }()
     
     fileprivate func updateCell(model: CalendarModel, isTaday: Bool) {
-        if model.day == 0 {
+        if !model.hasValue {
             self.contentLabel.backgroundColor = UIColor.clear
             self.contentLabel.text = ""
             self.chineseLabel.text = ""
             return
         }
-        self.contentLabel.text = String(model.day)
-        self.chineseLabel.text = String(model.chDay)
+        
+        self.contentLabel.text = String(model.gComponents.day!)
+        if model.zhComponents.day == 1 {
+            self.chineseLabel.text = String(model.zhComponents.month!) + "月"
+        } else {
+            self.chineseLabel.text = String(model.zhComponents.day!)
+            
+        }
+        
         if model.week == WeekEnum.sunday || model.week == WeekEnum.saturday {
             self.contentLabel.textColor = UIColor.red
         } else {
@@ -188,29 +188,39 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.dateArray.removeAll()
         let months = manager.getCurYearMonth(date: date!)
         var compend = manager.getCompends(date: date!)
-        let calendar = Calendar.current
+        let calendar = Calendar.init(identifier: .gregorian)
         for month in 1...months {
             var daysArr = Array<CalendarModel>()
             compend.month = month
             compend.day = 1
-            let monthDate = calendar.date(from: compend)
-            if monthDate == nil {
+            let fristDate = calendar.date(from: compend)
+            if fristDate == nil {
                 return
             }
-            let monthDay = manager.getCurMonthDays(date: monthDate!)
-            let monthCompend = manager.getCompends(date: monthDate!)
+            let monthDay = manager.getCurMonthDays(date: fristDate!)
+            let monthCompend = manager.getCompends(date: fristDate!)
             var week = monthCompend.weekday ?? 0
-            week = week > 0 ? week - 1 : 0
-            for day in 1...monthDay + week {
-                var model = CalendarModel.init()
-                if day > week {
-                    model.day = day - week
+             print("日历 ： week = \(week)")
+            week = week % 7
+           
+            if week > 0 {
+                for _ in 1..<week {
+                    daysArr.append(CalendarModel.init(time: nil))
                 }
-                let w = day % 7
-                model.year = self.year
-                model.month = month
-                model.week = WeekEnum.init(rawValue: w == 0 ? 7 : w)
-                model.chDay = model.chineseDay()
+            }
+            
+            for day in 1...monthDay {
+                var date: Date?
+                if day == 1 {
+                    date = fristDate
+                } else {
+                    compend.day = day
+                    date = calendar.date(from: compend)
+                    if date == nil {
+                        return
+                    }
+                }
+                let model = CalendarModel.init(time: date)
                 daysArr.append(model)
             }
             self.dateArray.append(daysArr)
@@ -224,7 +234,8 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     private lazy var collectionView: UICollectionView = {
         let flowLayout = DDPlainFlowLayout.init()
-        flowLayout.navHeight = 0
+        flowLayout.c_navHeight = 0
+        flowLayout.c_headStyle = .plain
         flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
         let width = self.view.bounds.size.width
         let size = (width - 8 * 10) / 7.0
@@ -263,7 +274,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CalendarCell
         let model = self.dateArray[indexPath.section][indexPath.item]
-        if self.tadayComp.month == model.month && self.tadayComp.day == model.day {
+        if model.gComponents == self.tadayComp {
             cell.updateCell(model: model, isTaday: true)
         } else {
             cell.updateCell(model: model, isTaday: false)
@@ -274,7 +285,9 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionElementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! CalendarHeader
-             header.contentLabel.text = "  " + String(indexPath.section + 1) + "月"
+            let model = self.dateArray[indexPath.section].last!
+            print("公历 \(model.gComponents.month!) 月份 month = \(model.zhComponents.month!)")
+             header.contentLabel.text = "  " + String(model.gComponents.month!) + "月"
             return header
             
         }

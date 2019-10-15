@@ -58,7 +58,7 @@
 
 //再次添加滤镜 形成滤镜链
 + (CIImage *)addfilterLinkerWithImage:(CIImage *)image{
-  CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"];
+  CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"]; // CIGaussianBlur
   [filter setValue:image forKey:kCIInputImageKey];
   
   [filter setValue:@0.5 forKey:kCIInputIntensityKey];

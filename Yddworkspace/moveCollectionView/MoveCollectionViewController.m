@@ -28,6 +28,8 @@
 
 @property (nonatomic, assign) NSIndexPath *seletedIndexPath;
 
+@property (nonatomic, assign) BOOL hidStatusBar;
+
 @end
 
 @implementation MoveCollectionViewController
@@ -72,6 +74,16 @@
 
 //
     
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleDefault;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return _hidStatusBar;
 }
 
 
@@ -234,6 +246,8 @@
     vc.imageUrl = self.mutArr[indexPath.item].largeImageURL;
     
     [self.navigationController pushViewController:vc animated:YES];
+    self.hidStatusBar = YES;
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (UIView *)getCurrentThumbViewWithPage:(NSInteger)page

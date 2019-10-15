@@ -14,6 +14,7 @@
 @interface DeleteCellViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) MoveView *contentView;
+@property (nonatomic, assign) BOOL hidStatusBar;
 
 @end
 
@@ -32,6 +33,10 @@
     };
     [self.view addSubview:moveView];
     _contentView = moveView;
+    _contentView.preporeImage = ^(BOOL openPre) {
+        weakself.hidStatusBar = openPre;
+        [weakself setNeedsStatusBarAppearanceUpdate];
+    };
     CGFloat navBh = kNavBarHeight;
     [moveView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(kNavBarHeight, 0, 0, 0));
@@ -45,6 +50,18 @@
 }
 
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleDefault;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return _hidStatusBar;
+}
+
+
+
 - (void)addNavigationBarView
 {
     CustomNavigationBarView *navigView = [[CustomNavigationBarView alloc] init];
@@ -54,7 +71,11 @@
     [navigView.rightBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     __weak typeof(self) weakself = self;
     navigView.leftAction = ^{
-        [weakself.navigationController popViewControllerAnimated:YES];
+        if (weakself.navigationController) {
+           [weakself.navigationController popViewControllerAnimated:YES];
+        } else {
+            [weakself dismissViewControllerAnimated:YES completion:nil];
+        }
     };
     navigView.rightAction = ^{
         NSLog(@"rightAction clicked");

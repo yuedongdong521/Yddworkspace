@@ -174,6 +174,15 @@
         }
         
     }];
+  
+    NSDictionary *dic = @{@"name":@"ydd", @"num":@(2)};
+       NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingFragmentsAllowed error:nil];
+       NSString *dicstr = [[NSString alloc] initWithUTF8String:data.bytes];
+       NSLog(@"str = %@", dicstr);
+       UILabel *diclabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 400, 200, 100)];
+    diclabel.numberOfLines = 0;
+       diclabel.text = dicstr;
+       [self.view addSubview:diclabel];
 }
 
 - (void)gradBtnAction:(CustomGradBtn *)btn
@@ -187,6 +196,8 @@
 - (void)alertBtnAction:(UIButton *)btn
 {
   [self alertShowFlag:0];
+    [self alertShowFlag:0];
+    [self alertShowFlag:0];
 }
 
 - (void)alertShowFlag:(int)flag

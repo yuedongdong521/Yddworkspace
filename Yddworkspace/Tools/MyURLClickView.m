@@ -74,15 +74,24 @@
             NSString* urlStr = [result.URL.absoluteString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             NSRange urlRange = [context rangeOfString:urlStr];
             if (urlRange.location != NSNotFound) {
-                if (startOffset >= urlRange.location && startOffset < urlRange.length + urlRange.location) {
+                if (NSLocationInRange(startOffset, urlRange)) {
                     return urlStr;
                 }
             } else {
+                
                 if ([urlStr hasPrefix:@"http://"]) {
                     NSString *tmpStr = [urlStr stringByReplacingOccurrencesOfString:@"http://" withString:@""];
                     urlRange = [context rangeOfString:tmpStr];
                     if (urlRange.location != NSNotFound) {
-                        if (startOffset >= urlRange.location && startOffset < urlRange.length + urlRange.location) {
+                        if (NSLocationInRange(startOffset, urlRange)) {
+                            return urlStr;
+                        }
+                    }
+                } else if ([urlStr hasPrefix:@"https://"]) {
+                    NSString *temStr = [urlStr stringByReplacingOccurrencesOfString:@"https://" withString:@""];
+                    urlRange = [context rangeOfString:temStr];
+                    if (urlRange.location != NSNotFound) {
+                        if (NSLocationInRange(startOffset, urlRange)) {
                             return urlStr;
                         }
                     }
