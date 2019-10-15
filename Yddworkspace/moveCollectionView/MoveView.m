@@ -194,7 +194,7 @@
                 
                 NSIndexPath *index = [self.collectionView indexPathForItemAtPoint:longPressPoint];
                 if (!index || index.item >= self.mutArr.count - 1) {
-                    [self.collectionView cancelInteractiveMovement];
+                    [self cancelMoveCollectionViewCell];
                     return;
                 }
                 
@@ -202,18 +202,29 @@
             }
         } break;
         default:
-            [self.collectionView cancelInteractiveMovement];
+            [self cancelMoveCollectionViewCell];
             break;
     }
 }
 
+- (void)cancelMoveCollectionViewCell
+{
+    [self.collectionView cancelInteractiveMovement];
+    if (@available(iOS 11.0, *)) {
+        
+    } else {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
+    }
+}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     [cell.imageView yy_setImageWithURL:self.mutArr[indexPath.item].largeImageURL options:YYWebImageOptionUseNSURLCache];
 //    cell.label.text = (NSString *)self.mutArr[indexPath.item];
-    
+    cell.hidden = NO;
     cell.indexPath = indexPath;
 //    cell.alpha = 1;
     
