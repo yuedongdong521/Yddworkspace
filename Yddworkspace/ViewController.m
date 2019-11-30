@@ -155,14 +155,17 @@
       @"TestHtmlViewController",
       @"DeleteCellViewController",
       @"MoveCollectionViewController",
-      @"TestStructVC"
+      @"TestStructVC",
+      @"MaskViewController",
+      @"CoverMothedViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
       @"CoreTextTowViewController", @"MyCoreTextTestViewController",
       @"CoreTextSurroundViewController"
     ],
-    @[ @"MyViewController", @"ClosureViewController", @"UserInfoController", @"SwiftJSONViewController", @"SelecteToolsViewController", @"DateSelecteViewController", @"BezierMaskViewController", @"CalendarViewController", @"AnimationTestViewController", @"DDCollectionViewController" ]
+    @[ @"MyViewController", @"ClosureViewController", @"UserInfoController", @"SwiftJSONViewController", @"SelecteToolsViewController", @"DateSelecteViewController", @"BezierMaskViewController", @"CalendarViewController", @"AnimationTestViewController", @"DDCollectionViewController", @"ExtensionViewController",
+        @"LoadingMaskLayerController"]
   ];
 
   
@@ -315,6 +318,12 @@
         [self.navigationController pushViewController:vc animated:YES];
     } else if ([itemStr isEqualToString:@"DDCollectionViewController"]) {
         DDCollectionViewController *vc = [[DDCollectionViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"ExtensionViewController"]) {
+        ExtensionViewController *vc = [[ExtensionViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"LoadingMaskLayerController"]) {
+        LoadingMaskLayerController *vc = [[LoadingMaskLayerController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     self.hidesBottomBarWhenPushed = NO;

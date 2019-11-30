@@ -167,6 +167,7 @@
         x = x > maxX ? maxX : x < minX ? minX : x;
         
         self.thumView.center = CGPointMake(x, frame.size.height * 0.5);
+        self.progress = x / self.frame.size.width;
     }
 }
 

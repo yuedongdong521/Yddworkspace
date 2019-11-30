@@ -19,6 +19,7 @@
 
 
 
+
 @interface MainViewController ()
 
 @property (nonatomic, strong) NSString *path;
@@ -183,6 +184,10 @@
     diclabel.numberOfLines = 0;
        diclabel.text = dicstr;
        [self.view addSubview:diclabel];
+    
+    
+    
+    
 }
 
 - (void)gradBtnAction:(CustomGradBtn *)btn

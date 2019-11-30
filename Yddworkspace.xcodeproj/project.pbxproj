@@ -230,6 +230,8 @@
 		60ED0F9220593D6A00756981 /* YddOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED0F9120593D6A00756981 /* YddOperation.m */; };
 		60FA5B111E8BC9BC00292181 /* qbScanbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FA5B0F1E8BC9BC00292181 /* qbScanbg@2x.png */; };
 		60FA5B121E8BC9BC00292181 /* qbScanLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60FA5B101E8BC9BC00292181 /* qbScanLight@2x.png */; };
+		840E4272237BAF3E00EC49F8 /* UIView+MaskAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E4271237BAF3E00EC49F8 /* UIView+MaskAnimation.m */; };
+		8418783523924682004587F6 /* CoverMothedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418783423924682004587F6 /* CoverMothedViewController.m */; };
 		8429B2EF225F0B04007BEB10 /* HalfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8429B2EE225F0B04007BEB10 /* HalfViewController.m */; };
 		8429B2F2225F16AD007BEB10 /* HalfMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8429B2F1225F16AD007BEB10 /* HalfMainViewController.m */; };
 		8429B2F5225F17D8007BEB10 /* HalfSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8429B2F4225F17D8007BEB10 /* HalfSecondViewController.m */; };
@@ -398,11 +400,17 @@
 		847137E022BCDAA3003BC0E4 /* YDDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137DF22BCDAA3003BC0E4 /* YDDWebViewController.m */; };
 		847137E622BCE093003BC0E4 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137E322BCE092003BC0E4 /* NJKWebViewProgress.m */; };
 		847137E722BCE093003BC0E4 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */; };
+		84752DE12376C23E003A4646 /* KXBeautySlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 84752DDF2376C23E003A4646 /* KXBeautySlider.m */; };
 		8478BE3322CEE94E0034B87D /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478BE3222CEE94E0034B87D /* CustomNavigationBarView.swift */; };
+		847AEAA9237B9DF3007E9BF8 /* MaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847AEAA8237B9DF3007E9BF8 /* MaskViewController.m */; };
+		847BA5ED2390BFA9000DC66F /* KXLiveStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BA5EC2390BFA9000DC66F /* KXLiveStickerView.m */; };
+		848F255F237953D100EE2B07 /* LoadingEmpyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F255E237953D100EE2B07 /* LoadingEmpyView.swift */; };
+		848F256123795D6600EE2B07 /* LoadingMaskLayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F256023795D6600EE2B07 /* LoadingMaskLayerController.swift */; };
 		84BBD53422CC76C2000FF0C5 /* TabHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBD53322CC76C2000FF0C5 /* TabHeaderViewController.m */; };
 		84BBD53722CCD01C000FF0C5 /* MoveCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBD53622CCD01C000FF0C5 /* MoveCollectionViewController.m */; };
 		84BBD53A22CCD0A9000FF0C5 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBD53922CCD0A9000FF0C5 /* CollectionCell.m */; };
 		84C5E94722CD995900846CDC /* UIImage+Compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5E94622CD995900846CDC /* UIImage+Compress.m */; };
+		84EF19142355988200E5AE9D /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF19132355988200E5AE9D /* ExtensionViewController.swift */; };
 		84F48C4222C368C7001E0C8F /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F48C3E22C368C7001E0C8F /* CustomNavigationController.m */; };
 		84F48C4322C368C7001E0C8F /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F48C4122C368C7001E0C8F /* CustomTabBarController.m */; };
 		84F48C4722C36E9F001E0C8F /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F48C4622C36E9F001E0C8F /* UIView+Extend.m */; };
@@ -458,8 +466,6 @@
 		ED28500E2101AF1C00178965 /* ISCollectionViewLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED284FFD2101AF1C00178965 /* ISCollectionViewLayout.mm */; };
 		ED28500F2101AF1C00178965 /* ISCollectionViewLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED284FFD2101AF1C00178965 /* ISCollectionViewLayout.mm */; };
 		ED2850122101BD2C00178965 /* UIImage+ImageSizeWithURL.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2850112101BD2C00178965 /* UIImage+ImageSizeWithURL.m */; };
-		ED2850132101BD2C00178965 /* UIImage+ImageSizeWithURL.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2850112101BD2C00178965 /* UIImage+ImageSizeWithURL.m */; };
-		ED2850142101BD2C00178965 /* UIImage+ImageSizeWithURL.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2850112101BD2C00178965 /* UIImage+ImageSizeWithURL.m */; };
 		ED2850172101BF2200178965 /* TestImageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2850162101BF2200178965 /* TestImageCollectionViewController.m */; };
 		ED2850182101BF2200178965 /* TestImageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2850162101BF2200178965 /* TestImageCollectionViewController.m */; };
 		ED2850192101BF2200178965 /* TestImageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2850162101BF2200178965 /* TestImageCollectionViewController.m */; };
@@ -1272,6 +1278,10 @@
 		60ED0F9120593D6A00756981 /* YddOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YddOperation.m; sourceTree = "<group>"; };
 		60FA5B0F1E8BC9BC00292181 /* qbScanbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qbScanbg@2x.png"; sourceTree = "<group>"; };
 		60FA5B101E8BC9BC00292181 /* qbScanLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qbScanLight@2x.png"; sourceTree = "<group>"; };
+		840E4270237BAF3E00EC49F8 /* UIView+MaskAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MaskAnimation.h"; sourceTree = "<group>"; };
+		840E4271237BAF3E00EC49F8 /* UIView+MaskAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+MaskAnimation.m"; sourceTree = "<group>"; };
+		8418783323924682004587F6 /* CoverMothedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoverMothedViewController.h; sourceTree = "<group>"; };
+		8418783423924682004587F6 /* CoverMothedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoverMothedViewController.m; sourceTree = "<group>"; };
 		8429B2ED225F0B04007BEB10 /* HalfViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfViewController.h; sourceTree = "<group>"; };
 		8429B2EE225F0B04007BEB10 /* HalfViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfViewController.m; sourceTree = "<group>"; };
 		8429B2F0225F16AD007BEB10 /* HalfMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfMainViewController.h; sourceTree = "<group>"; };
@@ -1589,7 +1599,15 @@
 		847137E322BCE092003BC0E4 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
 		847137E422BCE092003BC0E4 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
 		847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		84752DDF2376C23E003A4646 /* KXBeautySlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXBeautySlider.m; sourceTree = "<group>"; };
+		84752DE02376C23E003A4646 /* KXBeautySlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXBeautySlider.h; sourceTree = "<group>"; };
 		8478BE3222CEE94E0034B87D /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
+		847AEAA7237B9DF3007E9BF8 /* MaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskViewController.h; sourceTree = "<group>"; };
+		847AEAA8237B9DF3007E9BF8 /* MaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskViewController.m; sourceTree = "<group>"; };
+		847BA5EB2390BFA8000DC66F /* KXLiveStickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXLiveStickerView.h; sourceTree = "<group>"; };
+		847BA5EC2390BFA9000DC66F /* KXLiveStickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXLiveStickerView.m; sourceTree = "<group>"; };
+		848F255E237953D100EE2B07 /* LoadingEmpyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingEmpyView.swift; sourceTree = "<group>"; };
+		848F256023795D6600EE2B07 /* LoadingMaskLayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMaskLayerController.swift; sourceTree = "<group>"; };
 		84BBD53222CC76C2000FF0C5 /* TabHeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabHeaderViewController.h; sourceTree = "<group>"; };
 		84BBD53322CC76C2000FF0C5 /* TabHeaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabHeaderViewController.m; sourceTree = "<group>"; };
 		84BBD53522CCD01C000FF0C5 /* MoveCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveCollectionViewController.h; sourceTree = "<group>"; };
@@ -1598,6 +1616,7 @@
 		84BBD53922CCD0A9000FF0C5 /* CollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		84C5E94522CD995900846CDC /* UIImage+Compress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Compress.h"; sourceTree = "<group>"; };
 		84C5E94622CD995900846CDC /* UIImage+Compress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compress.m"; sourceTree = "<group>"; };
+		84EF19132355988200E5AE9D /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		84F48C3E22C368C7001E0C8F /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
 		84F48C3F22C368C7001E0C8F /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
 		84F48C4022C368C7001E0C8F /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
@@ -2783,8 +2802,13 @@
 				60B910FC20158D0B005EB918 /* 转场动画 */,
 				60CDC7A61FA9BAD2004A650A /* MyTabBarViewController.h */,
 				60CDC7A71FA9BAD2004A650A /* MyTabBarViewController.m */,
+				8418783323924682004587F6 /* CoverMothedViewController.h */,
+				8418783423924682004587F6 /* CoverMothedViewController.m */,
 				60CDC7A91FA9BD36004A650A /* MainViewController.h */,
 				60CDC7AA1FA9BD36004A650A /* MainViewController.m */,
+				847AEAA7237B9DF3007E9BF8 /* MaskViewController.h */,
+				847AEAA8237B9DF3007E9BF8 /* MaskViewController.m */,
+				848F256023795D6600EE2B07 /* LoadingMaskLayerController.swift */,
 				84373A1A22EFF23800645962 /* TestStructVC.h */,
 				84373A1B22EFF23800645962 /* TestStructVC.m */,
 				606850822008649B00878270 /* 位运算符 */,
@@ -2936,6 +2960,7 @@
 				843BC615234F3B5200540293 /* AnimationTestViewController.swift */,
 				843E459B2351D78D0040D68E /* DDCollectionViewController.swift */,
 				843EDA3B235564750014D521 /* ShowViewAnimation.swift */,
+				84EF19132355988200E5AE9D /* ExtensionViewController.swift */,
 				843BC617234F3CE400540293 /* AnimationWidget.swift */,
 			);
 			path = swiftTest;
@@ -3102,6 +3127,8 @@
 		60AFFD9B201F01A700335E45 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				847BA5EB2390BFA8000DC66F /* KXLiveStickerView.h */,
+				847BA5EC2390BFA9000DC66F /* KXLiveStickerView.m */,
 				843A0C5E22E59C3B00DB8661 /* FileManager.h */,
 				843A0C5F22E59C3B00DB8661 /* FileManager.m */,
 				8439761122E01C5E006491FF /* YDDUtils.h */,
@@ -3125,26 +3152,14 @@
 				ED31BA87210EA7C400ADB2DF /* WZLSerializeKit.h */,
 				ED2D8FD221084B1000DEF809 /* JSONKit.h */,
 				ED2D8FD121084B1000DEF809 /* JSONKit.m */,
-				60AFFD9C201F02C000335E45 /* UITextView+MyURLClick.h */,
-				60AFFD9D201F02C000335E45 /* UITextView+MyURLClick.m */,
 				60AFFDA2201F1F1000335E45 /* MyURLClickView.h */,
 				60AFFDA3201F1F1000335E45 /* MyURLClickView.m */,
 				60AFFD9F201F162300335E45 /* MyURLClickViewController.h */,
 				60AFFDA0201F162300335E45 /* MyURLClickViewController.m */,
-				609E3D1E2052811400D9A55C /* UIColor+ydd.h */,
-				609E3D1F2052811400D9A55C /* UIColor+ydd.m */,
-				ED2850102101BD2C00178965 /* UIImage+ImageSizeWithURL.h */,
-				ED2850112101BD2C00178965 /* UIImage+ImageSizeWithURL.m */,
 				EDEC452C2109C1FF008BEC94 /* FullImageAnimateView.h */,
 				EDEC452D2109C1FF008BEC94 /* FullImageAnimateView.m */,
 				ED9E0C7021B8C7DE00AF239D /* LoadPickerImageTool.h */,
 				ED9E0C7121B8C7DE00AF239D /* LoadPickerImageTool.m */,
-				ED9BDB9821BA071E00F3CB9A /* UIImage+ydd.h */,
-				ED9BDB9921BA071E00F3CB9A /* UIImage+ydd.m */,
-				EDCBF12621FAFC95007C2F9E /* NSString+CharacterSet.h */,
-				EDCBF12721FAFC95007C2F9E /* NSString+CharacterSet.m */,
-				8438143B2271B7F700436CD8 /* NSString+yddSubByte.h */,
-				8438143C2271B7F700436CD8 /* NSString+yddSubByte.m */,
 				ED20A5962240B48200565BA4 /* SendLoactionNotification.h */,
 				ED20A5972240B48200565BA4 /* SendLoactionNotification.m */,
 				842E0453228BFD0200BD2C46 /* TimeTools.h */,
@@ -3153,12 +3168,15 @@
 				8431034B22B7800B0072C11F /* CustomGradBtn.m */,
 				8438082F22BB4DC80094708D /* CustomSlider.h */,
 				8438083022BB4DC80094708D /* CustomSlider.m */,
+				84752DE02376C23E003A4646 /* KXBeautySlider.h */,
+				84752DDF2376C23E003A4646 /* KXBeautySlider.m */,
 				843F034322D6D1E60012AE17 /* CustomURLRequest.h */,
 				843F034422D6D1E60012AE17 /* CustomURLRequest.m */,
 				8442D36A22D3083700FAB6C4 /* CustomAlertSheepView.swift */,
 				8478BE3222CEE94E0034B87D /* CustomNavigationBarView.swift */,
 				8442D36C22D3321400FAB6C4 /* DeviceTools.swift */,
 				8439388222FBFA3F008669D8 /* CompressGif.swift */,
+				848F255E237953D100EE2B07 /* LoadingEmpyView.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -4095,12 +4113,26 @@
 		84F48C4422C36E36001E0C8F /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				840E4270237BAF3E00EC49F8 /* UIView+MaskAnimation.h */,
+				840E4271237BAF3E00EC49F8 /* UIView+MaskAnimation.m */,
 				84F48C4522C36E9F001E0C8F /* UIView+Extend.h */,
 				84F48C4622C36E9F001E0C8F /* UIView+Extend.m */,
 				84C5E94522CD995900846CDC /* UIImage+Compress.h */,
 				84C5E94622CD995900846CDC /* UIImage+Compress.m */,
 				84373A1F22F0452900645962 /* UILabel+YDDExtend.h */,
 				84373A2022F0452900645962 /* UILabel+YDDExtend.m */,
+				ED9BDB9821BA071E00F3CB9A /* UIImage+ydd.h */,
+				ED9BDB9921BA071E00F3CB9A /* UIImage+ydd.m */,
+				609E3D1E2052811400D9A55C /* UIColor+ydd.h */,
+				609E3D1F2052811400D9A55C /* UIColor+ydd.m */,
+				EDCBF12621FAFC95007C2F9E /* NSString+CharacterSet.h */,
+				EDCBF12721FAFC95007C2F9E /* NSString+CharacterSet.m */,
+				8438143B2271B7F700436CD8 /* NSString+yddSubByte.h */,
+				8438143C2271B7F700436CD8 /* NSString+yddSubByte.m */,
+				60AFFD9C201F02C000335E45 /* UITextView+MyURLClick.h */,
+				60AFFD9D201F02C000335E45 /* UITextView+MyURLClick.m */,
+				ED2850102101BD2C00178965 /* UIImage+ImageSizeWithURL.h */,
+				ED2850112101BD2C00178965 /* UIImage+ImageSizeWithURL.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -5418,6 +5450,7 @@
 				843F033F22D6CEB90012AE17 /* AFURLSessionManager.m in Sources */,
 				ED2D8FDF2108867900DEF809 /* LoadWebViewController.m in Sources */,
 				ED2D902820D8DC1300C15624 /* FloadRoundEntryAnimator.m in Sources */,
+				84EF19142355988200E5AE9D /* ExtensionViewController.swift in Sources */,
 				84462B1C231CF8D900106FB8 /* SelecteToolsViewController.swift in Sources */,
 				ED2851462101CE5800178965 /* SDWebImageGIFCoder.m in Sources */,
 				ED1B74332177263500D51FF5 /* ISCutOutPictures.mm in Sources */,
@@ -5590,6 +5623,7 @@
 				8435196F22C49AE200FA0852 /* UIScreen+YYAdd.m in Sources */,
 				8435194C22C49AE200FA0852 /* YYLabel.m in Sources */,
 				601C8C191F20C076001F50B9 /* LinkMicReminderView.mm in Sources */,
+				847AEAA9237B9DF3007E9BF8 /* MaskViewController.m in Sources */,
 				8435194622C49AE200FA0852 /* YYTextInput.m in Sources */,
 				EDC8D445218ACBE6000B3D6C /* GPUImageHighPassFilter.m in Sources */,
 				8438D7BF22D4490B00439BDA /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
@@ -5644,8 +5678,10 @@
 				ED03F71521E6E4A8005C4D27 /* TestKVOViewController.m in Sources */,
 				ED403D8820D3BE9C00D9658A /* BaseNavigationViewController.m in Sources */,
 				ED324CB62134017500D02F13 /* TZImageCropManager.mm in Sources */,
+				848F256123795D6600EE2B07 /* LoadingMaskLayerController.swift in Sources */,
 				ED2F86E2213FF17D0070482E /* CoreTextImageModel.m in Sources */,
 				ED2851522101CE5800178965 /* SDWebImageImageIOCoder.m in Sources */,
+				847BA5ED2390BFA9000DC66F /* KXLiveStickerView.m in Sources */,
 				EDC8D442218ACBE6000B3D6C /* GPUImageFilterGroup.m in Sources */,
 				EDC8D479218ACBE7000B3D6C /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				8435195522C49AE200FA0852 /* UIPasteboard+YYText.m in Sources */,
@@ -5809,6 +5845,7 @@
 				EDC8D4D3218ACBE7000B3D6C /* GPUImagePolkaDotFilter.m in Sources */,
 				8435193522C49AE200FA0852 /* YYAnimatedImageView.m in Sources */,
 				6043F7D11FD1516800F2188E /* MyCoreTextView.m in Sources */,
+				84752DE12376C23E003A4646 /* KXBeautySlider.m in Sources */,
 				8439761522E02112006491FF /* YDDTextField.m in Sources */,
 				EDC8D4BF218ACBE7000B3D6C /* GPUImageVideoCamera.m in Sources */,
 				ED1B74342177263500D51FF5 /* ISPhotoAlbumViewCell.mm in Sources */,
@@ -5819,6 +5856,7 @@
 				EDC8D482218ACBE7000B3D6C /* GPUImageDivideBlendFilter.m in Sources */,
 				ED324CB52134017500D02F13 /* TZVideoPlayerController.mm in Sources */,
 				ED28510D2101CE5800178965 /* SDWebImageFrame.m in Sources */,
+				8418783523924682004587F6 /* CoverMothedViewController.m in Sources */,
 				847137E022BCDAA3003BC0E4 /* YDDWebViewController.m in Sources */,
 				EDC8D4C8218ACBE7000B3D6C /* GPUImageNobleCornerDetectionFilter.m in Sources */,
 				ED324CB32134017500D02F13 /* TZImagePickerController.mm in Sources */,
@@ -5906,6 +5944,7 @@
 				60BEE7731E2CC07100F71DB8 /* CGContextCreator.m in Sources */,
 				60AA48051E1E390200839D8C /* MyLabelViewController.swift in Sources */,
 				60AA47FB1E1DF58D00839D8C /* MyViewController.swift in Sources */,
+				848F255F237953D100EE2B07 /* LoadingEmpyView.swift in Sources */,
 				60BEE7921E2CC27400F71DB8 /* MyTextView.m in Sources */,
 				ED39610A20ABC32C00D0658F /* DataConversionTool.m in Sources */,
 				ED324D202134138900D02F13 /* UIButton+IS_Highlight.mm in Sources */,
@@ -5959,6 +5998,7 @@
 				60691AA11FCFEF8200009794 /* UIImage+DrawRound.m in Sources */,
 				8447147522DECF6500B69CE7 /* HalfBaseViewController.m in Sources */,
 				ED2E64F421355F7F00ADCDFF /* ISCameraProgressViewLayer.mm in Sources */,
+				840E4272237BAF3E00EC49F8 /* UIView+MaskAnimation.m in Sources */,
 				8435197322C49AE200FA0852 /* UIImage+YYAdd.m in Sources */,
 				EDC8D458218ACBE6000B3D6C /* GPUImageVignetteFilter.m in Sources */,
 				8442D36D22D3321400FAB6C4 /* DeviceTools.swift in Sources */,
@@ -6038,7 +6078,6 @@
 				ED28500B2101AF1C00178965 /* ISDynamicTemplate.mm in Sources */,
 				ED2851142101CE5800178965 /* SDWebImageCodersManager.m in Sources */,
 				ED28514A2101CE5800178965 /* SDImageCacheConfig.m in Sources */,
-				ED2850132101BD2C00178965 /* UIImage+ImageSizeWithURL.m in Sources */,
 				ED2851412101CE5800178965 /* UIImageView+WebCache.m in Sources */,
 				ED2851082101CE5800178965 /* SDWebImageManager.m in Sources */,
 				ED2851292101CE5800178965 /* SDWebImagePrefetcher.m in Sources */,
@@ -6086,7 +6125,6 @@
 				ED28500C2101AF1C00178965 /* ISDynamicTemplate.mm in Sources */,
 				ED2851152101CE5800178965 /* SDWebImageCodersManager.m in Sources */,
 				ED28514B2101CE5800178965 /* SDImageCacheConfig.m in Sources */,
-				ED2850142101BD2C00178965 /* UIImage+ImageSizeWithURL.m in Sources */,
 				ED2851422101CE5800178965 /* UIImageView+WebCache.m in Sources */,
 				ED2851092101CE5800178965 /* SDWebImageManager.m in Sources */,
 				ED28512A2101CE5800178965 /* SDWebImagePrefetcher.m in Sources */,

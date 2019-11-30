@@ -68,7 +68,7 @@
     NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",@"58b7e78a"];
     
     //Configure and initialize iflytek services.(This interface must been invoked in application:didFinishLaunchingWithOptions:)
-    [IFlySpeechUtility createUtility:initString];
+//    [IFlySpeechUtility createUtility:initString];
     
     
 //    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",@"58b7e78a"];

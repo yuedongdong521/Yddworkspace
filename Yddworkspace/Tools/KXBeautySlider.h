@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) KXSliderType type;
 
-- (instancetype)initWithFrame:(CGRect)frame Height:(CGFloat)height type:(KXSliderType)type;
+- (instancetype)initWithFrame:(CGRect)frame height:(CGFloat)height type:(KXSliderType)type;
 
 @end
 

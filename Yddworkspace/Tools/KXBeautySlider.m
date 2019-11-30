@@ -35,7 +35,7 @@
 */
 
 
-- (instancetype)initWithFrame:(CGRect)frame Height:(CGFloat)height type:(KXSliderType)type
+- (instancetype)initWithFrame:(CGRect)frame height:(CGFloat)height type:(KXSliderType)type
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -49,7 +49,7 @@
         [self addSubview:self.thumView];
         [self addSubview:self.tipLabel];
         
-        self.bgColor = [UIColor colorWithHexString:@"#F0F0F0"];
+        self.bgColor = UIColorHexRGBA(0xF0F0F0, 1);
         [self layoutUI];
     }
     return self;
@@ -158,11 +158,11 @@
     _type = type;
     if (_type == KXSliderType_mid) {
         _sufCoverView.hidden = NO;
-        _sliderLayer.colors = @[(__bridge id)[UIColor colorWithHexString:@"#FF3255"].CGColor, (__bridge id)[UIColor colorWithHexString:@"#FFAC47"].CGColor, (__bridge id)[UIColor colorWithHexString:@"#FF3255"].CGColor];
+        _sliderLayer.colors = @[(__bridge id)UIColorHexRGBA(0xFF3255, 1).CGColor, (__bridge id)UIColorHexRGBA(0xFFAC47, 1).CGColor, (__bridge id)UIColorHexRGBA(0xFF3255, 1).CGColor];
         _sliderLayer.locations = @[@(0), @(0.5), @(1)];
     } else {
         _sufCoverView.hidden = YES;
-        _sliderLayer.colors = @[(__bridge id)[UIColor colorWithHexString:@"#FFAC47"].CGColor, (__bridge id)[UIColor colorWithHexString:@"#FF3255"].CGColor];
+        _sliderLayer.colors = @[(__bridge id)UIColorHexRGBA(0xFFAC47, 1).CGColor, (__bridge id)UIColorHexRGBA(0xFF3255, 1).CGColor];
         _sliderLayer.locations = @[@(0), @(1)];
     }
 }
@@ -172,10 +172,10 @@
     if (!_sliderLayer) {
         _sliderLayer = [[CAGradientLayer alloc] init];
         if (_type == KXSliderType_mid) {
-            _sliderLayer.colors = @[(__bridge id)[UIColor colorWithHexString:@"#FF3255"].CGColor, (__bridge id)[UIColor colorWithHexString:@"#FFAC47"].CGColor, (__bridge id)[UIColor colorWithHexString:@"#FF3255"].CGColor];
+            _sliderLayer.colors = @[(__bridge id)UIColorHexRGBA(0xFF3255, 1).CGColor, (__bridge id)UIColorHexRGBA(0xFFAC47, 1).CGColor, (__bridge id)UIColorHexRGBA(0xFF3255, 1).CGColor];
             _sliderLayer.locations = @[@(0), @(0.5), @(1)];
         } else {
-            _sliderLayer.colors = @[(__bridge id)[UIColor colorWithHexString:@"#FFAC47"].CGColor, (__bridge id)[UIColor colorWithHexString:@"#FF3255"].CGColor];
+            _sliderLayer.colors = @[(__bridge id)UIColorHexRGBA(0xFFAC47, 1).CGColor, (__bridge id)UIColorHexRGBA(0xFF3255, 1).CGColor];
             _sliderLayer.locations = @[@(0), @(1)];
         }
         
@@ -235,7 +235,7 @@
         _tipLabel.textAlignment = NSTextAlignmentCenter;
         _tipLabel.adjustsFontSizeToFitWidth = YES;
         _tipLabel.hidden = YES;
-        _tipLabel.font = kNumFontBold(16);
+        _tipLabel.font = [UIFont systemFontOfSize:16];
     }
     return _tipLabel;
 }
