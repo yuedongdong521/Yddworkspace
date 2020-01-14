@@ -1,14 +1,14 @@
 //
-//  GameLivePrepareView.m
+//  RedPacketView.m
 //  Yddworkspace
 //
-//  Created by ispeak on 2017/8/15.
-//  Copyright © 2017年 QH. All rights reserved.
+//  Created by ydd on 2020/1/10.
+//  Copyright © 2020 QH. All rights reserved.
 //
 
-#import "GameLivePrepareView.h"
+#import "RedPacketView.h"
 
-@implementation GameLivePrepareView
+@implementation RedPacketView
 
 /*
 // Only override drawRect: if you perform custom drawing.
