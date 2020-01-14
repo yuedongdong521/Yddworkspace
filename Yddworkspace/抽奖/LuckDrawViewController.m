@@ -7,6 +7,7 @@
 //
 
 #import "LuckDrawViewController.h"
+#import "KXLuckDrawView.h"
 
 @interface LuckDrawViewController ()
 
@@ -17,6 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    KXLuckDrawView *luckView = [[KXLuckDrawView alloc] init];
+    [self.view addSubview:luckView];
+    [luckView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(-34);
+        make.height.mas_equalTo(120);
+    }];
+    
 }
 
 /*

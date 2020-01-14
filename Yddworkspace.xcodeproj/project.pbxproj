@@ -93,8 +93,6 @@
 		608B2EB41E49B28800E254ED /* GraffitiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 608B2EB31E49B28800E254ED /* GraffitiViewController.m */; };
 		608C2F241E8289E800A19048 /* lame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608C2F231E8289E800A19048 /* lame.framework */; };
 		608CBA561E16338D0004BBD4 /* MySwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CBA551E16338D0004BBD4 /* MySwiftViewController.swift */; };
-		609133B31F42EF7C00D8972B /* GameLivePrepareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 609133B21F42EF7C00D8972B /* GameLivePrepareView.m */; };
-		609133B51F42EFCB00D8972B /* GameLivePrepareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 609133B41F42EFCB00D8972B /* GameLivePrepareView.xib */; };
 		60944EC01F0F911C00C02AFB /* IATConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 60944EAD1F0F911C00C02AFB /* IATConfig.m */; };
 		60944EC11F0F911C00C02AFB /* IFlySpeek.m in Sources */ = {isa = PBXBuildFile; fileRef = 60944EAF1F0F911C00C02AFB /* IFlySpeek.m */; };
 		60944EC21F0F911C00C02AFB /* IFlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60944EB11F0F911C00C02AFB /* IFlyViewController.m */; };
@@ -125,7 +123,6 @@
 		609E3D10205278B600D9A55C /* userCocoapods in Resources */ = {isa = PBXBuildFile; fileRef = 609E3D0F205278B600D9A55C /* userCocoapods */; };
 		609E3D202052811400D9A55C /* UIColor+ydd.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E3D1F2052811400D9A55C /* UIColor+ydd.m */; };
 		609E6C971F29B53100BAEB17 /* ModeloTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 609E6C961F29B53100BAEB17 /* ModeloTool.m */; };
-		609F68B41F4C0DB900ABC49A /* GameLiveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 609F68B31F4C0DB900ABC49A /* GameLiveHomeViewController.m */; };
 		60A0AE2D200468E3004DDA93 /* YDDpcmTOwav.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0AE2C200468E3004DDA93 /* YDDpcmTOwav.m */; };
 		60A0BA221FCE491A00CC7082 /* TQIOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0BA211FCE491A00CC7082 /* TQIOSViewController.m */; };
 		60A0BA241FCE4C7400CC7082 /* iOS开发进阶_唐巧著_2015.01_244页.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 60A0BA231FCE4C7400CC7082 /* iOS开发进阶_唐巧著_2015.01_244页.pdf */; };
@@ -396,16 +393,39 @@
 		84462B1C231CF8D900106FB8 /* SelecteToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84462B1B231CF8D900106FB8 /* SelecteToolsViewController.swift */; };
 		84462B1E231D194800106FB8 /* DateSelecteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84462B1D231D194800106FB8 /* DateSelecteViewController.swift */; };
 		8447147522DECF6500B69CE7 /* HalfBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447147422DECF6500B69CE7 /* HalfBaseViewController.m */; };
+		84500BBF23A8CA2F008AD74A /* LuckDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84500BBE23A8CA2F008AD74A /* LuckDrawViewController.m */; };
+		84500BC223A8CA78008AD74A /* KXLuckDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84500BC123A8CA78008AD74A /* KXLuckDrawView.m */; };
 		845BBF6C2325FA3100F994B1 /* BezierMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BBF6B2325FA3100F994B1 /* BezierMaskViewController.swift */; };
+		845C46DB23A0DC7100F80EAA /* KXPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C46DA23A0DC7100F80EAA /* KXPasswordView.m */; };
+		8470A67C23AA050200E3F94A /* PhotoNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470A67B23AA050200E3F94A /* PhotoNumber.m */; };
 		847137E022BCDAA3003BC0E4 /* YDDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137DF22BCDAA3003BC0E4 /* YDDWebViewController.m */; };
 		847137E622BCE093003BC0E4 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137E322BCE092003BC0E4 /* NJKWebViewProgress.m */; };
 		847137E722BCE093003BC0E4 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */; };
+		8473A27A23A2033400C4ED56 /* TextViewLinkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473A27923A2033400C4ED56 /* TextViewLinkVC.swift */; };
+		8474B6C123A7498A006797F1 /* UIApplication+ExtendTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474B6C023A7498A006797F1 /* UIApplication+ExtendTools.m */; };
+		8474B6C423A7579B006797F1 /* TestCurentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474B6C323A7579B006797F1 /* TestCurentViewController.m */; };
 		84752DE12376C23E003A4646 /* KXBeautySlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 84752DDF2376C23E003A4646 /* KXBeautySlider.m */; };
+		8475EFD623CC494500B7350B /* RedPacketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8475EFD523CC494500B7350B /* RedPacketViewController.m */; };
+		847850BB23CDA1E800C8C1AB /* img_red_packet_boom_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850B923CDA1E700C8C1AB /* img_red_packet_boom_1@3x.png */; };
+		847850BC23CDA1E800C8C1AB /* img_red_packet_boom_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850BA23CDA1E700C8C1AB /* img_red_packet_boom_1@2x.png */; };
+		847850BF23CDA21100C8C1AB /* img_red_packet_boom_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850BD23CDA21000C8C1AB /* img_red_packet_boom_2@2x.png */; };
+		847850C023CDA21100C8C1AB /* img_red_packet_boom_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850BE23CDA21100C8C1AB /* img_red_packet_boom_2@3x.png */; };
+		847850C323CDA22600C8C1AB /* img_red_packet_boom_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850C123CDA22600C8C1AB /* img_red_packet_boom_3@3x.png */; };
+		847850C423CDA22600C8C1AB /* img_red_packet_boom_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850C223CDA22600C8C1AB /* img_red_packet_boom_3@2x.png */; };
+		847850C723CDA24600C8C1AB /* img_red_packet_boom_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850C523CDA24600C8C1AB /* img_red_packet_boom_4@2x.png */; };
+		847850C823CDA24600C8C1AB /* img_red_packet_boom_4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850C623CDA24600C8C1AB /* img_red_packet_boom_4@3x.png */; };
+		847850CB23CDA25F00C8C1AB /* img_red_packet_boom_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850C923CDA25F00C8C1AB /* img_red_packet_boom_5@2x.png */; };
+		847850CC23CDA25F00C8C1AB /* img_red_packet_boom_5@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850CA23CDA25F00C8C1AB /* img_red_packet_boom_5@3x.png */; };
 		8478BE3322CEE94E0034B87D /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478BE3222CEE94E0034B87D /* CustomNavigationBarView.swift */; };
 		847AEAA9237B9DF3007E9BF8 /* MaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847AEAA8237B9DF3007E9BF8 /* MaskViewController.m */; };
+		847B283623C85E1100C575C5 /* img_red_packet@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847B283423C85E1100C575C5 /* img_red_packet@3x.png */; };
+		847B283723C85E1100C575C5 /* img_red_packet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847B283523C85E1100C575C5 /* img_red_packet@2x.png */; };
+		847B283E23C85E7000C575C5 /* RedPacketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B283D23C85E7000C575C5 /* RedPacketView.m */; };
+		847B284123C88A9100C575C5 /* KXDynamicVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B284023C88A9100C575C5 /* KXDynamicVideoPlayer.m */; };
 		847BA5ED2390BFA9000DC66F /* KXLiveStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847BA5EC2390BFA9000DC66F /* KXLiveStickerView.m */; };
 		848F255F237953D100EE2B07 /* LoadingEmpyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F255E237953D100EE2B07 /* LoadingEmpyView.swift */; };
 		848F256123795D6600EE2B07 /* LoadingMaskLayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F256023795D6600EE2B07 /* LoadingMaskLayerController.swift */; };
+		84A36DEF23AB674700DF5AA5 /* KXProvisionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A36DEE23AB674700DF5AA5 /* KXProvisionView.m */; };
 		84BBD53422CC76C2000FF0C5 /* TabHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBD53322CC76C2000FF0C5 /* TabHeaderViewController.m */; };
 		84BBD53722CCD01C000FF0C5 /* MoveCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBD53622CCD01C000FF0C5 /* MoveCollectionViewController.m */; };
 		84BBD53A22CCD0A9000FF0C5 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBD53922CCD0A9000FF0C5 /* CollectionCell.m */; };
@@ -1045,9 +1065,6 @@
 		608B2EB31E49B28800E254ED /* GraffitiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraffitiViewController.m; sourceTree = "<group>"; };
 		608C2F231E8289E800A19048 /* lame.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = lame.framework; sourceTree = "<group>"; };
 		608CBA551E16338D0004BBD4 /* MySwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwiftViewController.swift; sourceTree = "<group>"; };
-		609133B11F42EF7C00D8972B /* GameLivePrepareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLivePrepareView.h; sourceTree = "<group>"; };
-		609133B21F42EF7C00D8972B /* GameLivePrepareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLivePrepareView.m; sourceTree = "<group>"; };
-		609133B41F42EFCB00D8972B /* GameLivePrepareView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameLivePrepareView.xib; sourceTree = "<group>"; };
 		60944EAC1F0F911C00C02AFB /* IATConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IATConfig.h; sourceTree = "<group>"; };
 		60944EAD1F0F911C00C02AFB /* IATConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IATConfig.m; sourceTree = "<group>"; };
 		60944EAE1F0F911C00C02AFB /* IFlySpeek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFlySpeek.h; sourceTree = "<group>"; };
@@ -1104,8 +1121,6 @@
 		609E3D1F2052811400D9A55C /* UIColor+ydd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ydd.m"; sourceTree = "<group>"; };
 		609E6C951F29B53100BAEB17 /* ModeloTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeloTool.h; sourceTree = "<group>"; };
 		609E6C961F29B53100BAEB17 /* ModeloTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeloTool.m; sourceTree = "<group>"; };
-		609F68B21F4C0DB900ABC49A /* GameLiveHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLiveHomeViewController.h; sourceTree = "<group>"; };
-		609F68B31F4C0DB900ABC49A /* GameLiveHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLiveHomeViewController.m; sourceTree = "<group>"; };
 		60A0AE2B200468E3004DDA93 /* YDDpcmTOwav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDDpcmTOwav.h; sourceTree = "<group>"; };
 		60A0AE2C200468E3004DDA93 /* YDDpcmTOwav.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDDpcmTOwav.m; sourceTree = "<group>"; };
 		60A0BA201FCE491A00CC7082 /* TQIOSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TQIOSViewController.h; sourceTree = "<group>"; };
@@ -1592,22 +1607,55 @@
 		84462B1D231D194800106FB8 /* DateSelecteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelecteViewController.swift; sourceTree = "<group>"; };
 		8447147322DECF6500B69CE7 /* HalfBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfBaseViewController.h; sourceTree = "<group>"; };
 		8447147422DECF6500B69CE7 /* HalfBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfBaseViewController.m; sourceTree = "<group>"; };
+		84500BBD23A8CA2F008AD74A /* LuckDrawViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuckDrawViewController.h; sourceTree = "<group>"; };
+		84500BBE23A8CA2F008AD74A /* LuckDrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuckDrawViewController.m; sourceTree = "<group>"; };
+		84500BC023A8CA78008AD74A /* KXLuckDrawView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXLuckDrawView.h; sourceTree = "<group>"; };
+		84500BC123A8CA78008AD74A /* KXLuckDrawView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KXLuckDrawView.m; sourceTree = "<group>"; };
 		845BBF6B2325FA3100F994B1 /* BezierMaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierMaskViewController.swift; sourceTree = "<group>"; };
+		845C46D923A0DC7100F80EAA /* KXPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXPasswordView.h; sourceTree = "<group>"; };
+		845C46DA23A0DC7100F80EAA /* KXPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXPasswordView.m; sourceTree = "<group>"; };
+		8470A67A23AA050200E3F94A /* PhotoNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoNumber.h; sourceTree = "<group>"; };
+		8470A67B23AA050200E3F94A /* PhotoNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoNumber.m; sourceTree = "<group>"; };
 		847137DE22BCDAA3003BC0E4 /* YDDWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDDWebViewController.h; sourceTree = "<group>"; };
 		847137DF22BCDAA3003BC0E4 /* YDDWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDDWebViewController.m; sourceTree = "<group>"; };
 		847137E222BCE092003BC0E4 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
 		847137E322BCE092003BC0E4 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
 		847137E422BCE092003BC0E4 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
 		847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		8473A27923A2033400C4ED56 /* TextViewLinkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewLinkVC.swift; sourceTree = "<group>"; };
+		8474B6BF23A7498A006797F1 /* UIApplication+ExtendTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ExtendTools.h"; sourceTree = "<group>"; };
+		8474B6C023A7498A006797F1 /* UIApplication+ExtendTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ExtendTools.m"; sourceTree = "<group>"; };
+		8474B6C223A7579B006797F1 /* TestCurentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCurentViewController.h; sourceTree = "<group>"; };
+		8474B6C323A7579B006797F1 /* TestCurentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCurentViewController.m; sourceTree = "<group>"; };
 		84752DDF2376C23E003A4646 /* KXBeautySlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXBeautySlider.m; sourceTree = "<group>"; };
 		84752DE02376C23E003A4646 /* KXBeautySlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXBeautySlider.h; sourceTree = "<group>"; };
+		8475EFD423CC494500B7350B /* RedPacketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedPacketViewController.h; sourceTree = "<group>"; };
+		8475EFD523CC494500B7350B /* RedPacketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedPacketViewController.m; sourceTree = "<group>"; };
+		847850B923CDA1E700C8C1AB /* img_red_packet_boom_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_1@3x.png"; sourceTree = "<group>"; };
+		847850BA23CDA1E700C8C1AB /* img_red_packet_boom_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_1@2x.png"; sourceTree = "<group>"; };
+		847850BD23CDA21000C8C1AB /* img_red_packet_boom_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_2@2x.png"; sourceTree = "<group>"; };
+		847850BE23CDA21100C8C1AB /* img_red_packet_boom_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_2@3x.png"; sourceTree = "<group>"; };
+		847850C123CDA22600C8C1AB /* img_red_packet_boom_3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_3@3x.png"; sourceTree = "<group>"; };
+		847850C223CDA22600C8C1AB /* img_red_packet_boom_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_3@2x.png"; sourceTree = "<group>"; };
+		847850C523CDA24600C8C1AB /* img_red_packet_boom_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_4@2x.png"; sourceTree = "<group>"; };
+		847850C623CDA24600C8C1AB /* img_red_packet_boom_4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_4@3x.png"; sourceTree = "<group>"; };
+		847850C923CDA25F00C8C1AB /* img_red_packet_boom_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_5@2x.png"; sourceTree = "<group>"; };
+		847850CA23CDA25F00C8C1AB /* img_red_packet_boom_5@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_5@3x.png"; sourceTree = "<group>"; };
 		8478BE3222CEE94E0034B87D /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		847AEAA7237B9DF3007E9BF8 /* MaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskViewController.h; sourceTree = "<group>"; };
 		847AEAA8237B9DF3007E9BF8 /* MaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskViewController.m; sourceTree = "<group>"; };
+		847B283423C85E1100C575C5 /* img_red_packet@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet@3x.png"; sourceTree = "<group>"; };
+		847B283523C85E1100C575C5 /* img_red_packet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet@2x.png"; sourceTree = "<group>"; };
+		847B283C23C85E7000C575C5 /* RedPacketView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedPacketView.h; sourceTree = "<group>"; };
+		847B283D23C85E7000C575C5 /* RedPacketView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedPacketView.m; sourceTree = "<group>"; };
+		847B283F23C88A9100C575C5 /* KXDynamicVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXDynamicVideoPlayer.h; sourceTree = "<group>"; };
+		847B284023C88A9100C575C5 /* KXDynamicVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXDynamicVideoPlayer.m; sourceTree = "<group>"; };
 		847BA5EB2390BFA8000DC66F /* KXLiveStickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXLiveStickerView.h; sourceTree = "<group>"; };
 		847BA5EC2390BFA9000DC66F /* KXLiveStickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXLiveStickerView.m; sourceTree = "<group>"; };
 		848F255E237953D100EE2B07 /* LoadingEmpyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingEmpyView.swift; sourceTree = "<group>"; };
 		848F256023795D6600EE2B07 /* LoadingMaskLayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMaskLayerController.swift; sourceTree = "<group>"; };
+		84A36DED23AB674700DF5AA5 /* KXProvisionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXProvisionView.h; sourceTree = "<group>"; };
+		84A36DEE23AB674700DF5AA5 /* KXProvisionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KXProvisionView.m; sourceTree = "<group>"; };
 		84BBD53222CC76C2000FF0C5 /* TabHeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabHeaderViewController.h; sourceTree = "<group>"; };
 		84BBD53322CC76C2000FF0C5 /* TabHeaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabHeaderViewController.m; sourceTree = "<group>"; };
 		84BBD53522CCD01C000FF0C5 /* MoveCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveCollectionViewController.h; sourceTree = "<group>"; };
@@ -2385,6 +2433,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60CA61711E16542200B03340 /* CoreTelephony.framework in Frameworks */,
 				ED2DE43B2136478900A41531 /* libxml2.2.tbd in Frameworks */,
 				ED2E6485213516C500ADCDFF /* Photos.framework in Frameworks */,
 				60A6E03C1F08957200EB7FA6 /* libicucore.tbd in Frameworks */,
@@ -2396,7 +2445,6 @@
 				609A6C5F1E4D5610000B2567 /* Contacts.framework in Frameworks */,
 				609A6C5D1E4D55EE000B2567 /* CoreLocation.framework in Frameworks */,
 				609A6C5B1E4D55E0000B2567 /* AudioToolbox.framework in Frameworks */,
-				60CA61711E16542200B03340 /* CoreTelephony.framework in Frameworks */,
 				60CA616F1E16540C00B03340 /* SystemConfiguration.framework in Frameworks */,
 				609A6C591E4D5598000B2567 /* AVFoundation.framework in Frameworks */,
 				60BEE7A01E2CC58900F71DB8 /* CoreAudio.framework in Frameworks */,
@@ -2746,6 +2794,8 @@
 		60761EB11D61B62000FC2F1F /* Yddworkspace */ = {
 			isa = PBXGroup;
 			children = (
+				847B283223C85DDB00C575C5 /* RedPacket */,
+				84500BBC23A8CA0B008AD74A /* 抽奖 */,
 				84462B1A231CF88E00106FB8 /* SelecteTools */,
 				84373A2222F18D2D00645962 /* SceneKitTest */,
 				8442D36322D2EC1800FAB6C4 /* CropPhotoHelper */,
@@ -2794,6 +2844,8 @@
 				608CBA541E16335D0004BBD4 /* swiftTest */,
 				60761EB51D61B62000FC2F1F /* AppDelegate.h */,
 				60761EB61D61B62000FC2F1F /* AppDelegate.m */,
+				8474B6BF23A7498A006797F1 /* UIApplication+ExtendTools.h */,
+				8474B6C023A7498A006797F1 /* UIApplication+ExtendTools.m */,
 				843CADDC233320F50060E346 /* UINavigationController+StatuBar.h */,
 				843CADDD233320F50060E346 /* UINavigationController+StatuBar.m */,
 				842E0450228BB90700BD2C46 /* AppCrashManager.h */,
@@ -2804,10 +2856,15 @@
 				60CDC7A71FA9BAD2004A650A /* MyTabBarViewController.m */,
 				8418783323924682004587F6 /* CoverMothedViewController.h */,
 				8418783423924682004587F6 /* CoverMothedViewController.m */,
+				8473A27923A2033400C4ED56 /* TextViewLinkVC.swift */,
 				60CDC7A91FA9BD36004A650A /* MainViewController.h */,
 				60CDC7AA1FA9BD36004A650A /* MainViewController.m */,
+				8470A67A23AA050200E3F94A /* PhotoNumber.h */,
+				8470A67B23AA050200E3F94A /* PhotoNumber.m */,
 				847AEAA7237B9DF3007E9BF8 /* MaskViewController.h */,
 				847AEAA8237B9DF3007E9BF8 /* MaskViewController.m */,
+				847B283F23C88A9100C575C5 /* KXDynamicVideoPlayer.h */,
+				847B284023C88A9100C575C5 /* KXDynamicVideoPlayer.m */,
 				848F256023795D6600EE2B07 /* LoadingMaskLayerController.swift */,
 				84373A1A22EFF23800645962 /* TestStructVC.h */,
 				84373A1B22EFF23800645962 /* TestStructVC.m */,
@@ -2821,11 +2878,8 @@
 				60B7835B1F16123B00BD50D7 /* DrawImageColor */,
 				6047C1691E6AC434002FC1AC /* HZAViewController.h */,
 				6047C16A1E6AC434002FC1AC /* HZAViewController.m */,
-				609133B11F42EF7C00D8972B /* GameLivePrepareView.h */,
-				609133B21F42EF7C00D8972B /* GameLivePrepareView.m */,
-				609F68B21F4C0DB900ABC49A /* GameLiveHomeViewController.h */,
-				609F68B31F4C0DB900ABC49A /* GameLiveHomeViewController.m */,
-				609133B41F42EFCB00D8972B /* GameLivePrepareView.xib */,
+				8474B6C223A7579B006797F1 /* TestCurentViewController.h */,
+				8474B6C323A7579B006797F1 /* TestCurentViewController.m */,
 				60CC9C071F2ADCEC00FF4533 /* MutableThread */,
 				601C8C161F20C076001F50B9 /* LinkMicReminderView.h */,
 				601C8C171F20C076001F50B9 /* LinkMicReminderView.mm */,
@@ -3127,6 +3181,10 @@
 		60AFFD9B201F01A700335E45 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				845C46D923A0DC7100F80EAA /* KXPasswordView.h */,
+				845C46DA23A0DC7100F80EAA /* KXPasswordView.m */,
+				84A36DED23AB674700DF5AA5 /* KXProvisionView.h */,
+				84A36DEE23AB674700DF5AA5 /* KXProvisionView.m */,
 				847BA5EB2390BFA8000DC66F /* KXLiveStickerView.h */,
 				847BA5EC2390BFA9000DC66F /* KXLiveStickerView.m */,
 				843A0C5E22E59C3B00DB8661 /* FileManager.h */,
@@ -4084,6 +4142,17 @@
 			path = SelecteTools;
 			sourceTree = "<group>";
 		};
+		84500BBC23A8CA0B008AD74A /* 抽奖 */ = {
+			isa = PBXGroup;
+			children = (
+				84500BBD23A8CA2F008AD74A /* LuckDrawViewController.h */,
+				84500BBE23A8CA2F008AD74A /* LuckDrawViewController.m */,
+				84500BC023A8CA78008AD74A /* KXLuckDrawView.h */,
+				84500BC123A8CA78008AD74A /* KXLuckDrawView.m */,
+			);
+			path = "抽奖";
+			sourceTree = "<group>";
+		};
 		847137E122BCE092003BC0E4 /* NJKWebViewProgress */ = {
 			isa = PBXGroup;
 			children = (
@@ -4093,6 +4162,53 @@
 				847137E522BCE092003BC0E4 /* NJKWebViewProgressView.m */,
 			);
 			path = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
+		847850B823CDA1CB00C8C1AB /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				847850C523CDA24600C8C1AB /* img_red_packet_boom_4@2x.png */,
+				847850C923CDA25F00C8C1AB /* img_red_packet_boom_5@2x.png */,
+				847850CA23CDA25F00C8C1AB /* img_red_packet_boom_5@3x.png */,
+				847850C623CDA24600C8C1AB /* img_red_packet_boom_4@3x.png */,
+				847850C223CDA22600C8C1AB /* img_red_packet_boom_3@2x.png */,
+				847850C123CDA22600C8C1AB /* img_red_packet_boom_3@3x.png */,
+				847850BD23CDA21000C8C1AB /* img_red_packet_boom_2@2x.png */,
+				847850BE23CDA21100C8C1AB /* img_red_packet_boom_2@3x.png */,
+				847850BA23CDA1E700C8C1AB /* img_red_packet_boom_1@2x.png */,
+				847850B923CDA1E700C8C1AB /* img_red_packet_boom_1@3x.png */,
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
+		847B283223C85DDB00C575C5 /* RedPacket */ = {
+			isa = PBXGroup;
+			children = (
+				847B283B23C85E4B00C575C5 /* View */,
+				847B283323C85DF000C575C5 /* resource */,
+				8475EFD423CC494500B7350B /* RedPacketViewController.h */,
+				8475EFD523CC494500B7350B /* RedPacketViewController.m */,
+			);
+			path = RedPacket;
+			sourceTree = "<group>";
+		};
+		847B283323C85DF000C575C5 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				847850B823CDA1CB00C8C1AB /* animation */,
+				847B283523C85E1100C575C5 /* img_red_packet@2x.png */,
+				847B283423C85E1100C575C5 /* img_red_packet@3x.png */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		847B283B23C85E4B00C575C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				847B283C23C85E7000C575C5 /* RedPacketView.h */,
+				847B283D23C85E7000C575C5 /* RedPacketView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		84F48C3D22C368A4001E0C8F /* CustomTabBar */ = {
@@ -5287,9 +5403,11 @@
 			files = (
 				60CA61631E16538A00B03340 /* WeiboSDK.bundle in Resources */,
 				ED2F86D6213FB3A00070482E /* VideoDefaultBgImage@2x.png in Resources */,
+				847B283723C85E1100C575C5 /* img_red_packet@2x.png in Resources */,
 				60B243D51FCD6A440016BBAF /* frame.jpg in Resources */,
 				843A0C5D22E5684000DB8661 /* resourInfo.json in Resources */,
 				60AA48031E1E2B8D00839D8C /* Session.png in Resources */,
+				847850C323CDA22600C8C1AB /* img_red_packet_boom_3@3x.png in Resources */,
 				60757E811E71712B003463F3 /* File in Resources */,
 				6088490E1DC076C800FD819C /* shoucang1.png in Resources */,
 				ED2E64F721355F7F00ADCDFF /* GiftCheckmarkIcon@2x.png in Resources */,
@@ -5298,12 +5416,15 @@
 				6088490F1DC076C800FD819C /* weizhi.png in Resources */,
 				600EF34E1D9E627400A30927 /* photograph@3x.png in Resources */,
 				60CBBFF11FCBDA7F006545F1 /* zombie3.jpg in Resources */,
+				847850CB23CDA25F00C8C1AB /* img_red_packet_boom_5@2x.png in Resources */,
 				60944EE11F0F914A00C02AFB /* json_internalmap.inl in Resources */,
 				60E5949D1FFB569C00476F8D /* ispeak.h264 in Resources */,
 				60761EC21D61B62000FC2F1F /* LaunchScreen.storyboard in Resources */,
+				847850C823CDA24600C8C1AB /* img_red_packet_boom_4@3x.png in Resources */,
 				60CA61661E16538A00B03340 /* read_me.txt in Resources */,
 				6088490B1DC076C800FD819C /* homepagebannarimage@3x.jpg in Resources */,
 				60944EE41F0F914A00C02AFB /* json_valueiterator.inl in Resources */,
+				847850BF23CDA21100C8C1AB /* img_red_packet_boom_2@2x.png in Resources */,
 				60CBBFF01FCBDA7F006545F1 /* zombie2.jpg in Resources */,
 				600043D61E8F3EB400F3471A /* camera_focus_red@2x.png in Resources */,
 				608849091DC076C800FD819C /* guanzhu.png in Resources */,
@@ -5311,6 +5432,7 @@
 				6088490D1DC076C800FD819C /* shoucang.png in Resources */,
 				84398E8322FD1B8D0034B888 /* bikaqiu.gif in Resources */,
 				609E3D0E2052787500D9A55C /* githubCommitAndUpData in Resources */,
+				847850C023CDA21100C8C1AB /* img_red_packet_boom_2@3x.png in Resources */,
 				ED8FB4AD223A2349005EFD99 /* mysong.mp3 in Resources */,
 				60B9110A2015B299005EB918 /* 2.jpg in Resources */,
 				601C8C1A1F20C076001F50B9 /* LinkMicReminderView.xib in Resources */,
@@ -5318,6 +5440,7 @@
 				609E3D10205278B600D9A55C /* userCocoapods in Resources */,
 				608849121DC076C800FD819C /* yr1.png in Resources */,
 				ED31ECD721B9354D00124752 /* testJavascript.html in Resources */,
+				847B283623C85E1100C575C5 /* img_red_packet@3x.png in Resources */,
 				600EF34D1D9E627400A30927 /* photograph@2x.png in Resources */,
 				843445D6229241DE005EDCB3 /* mac添加zip密码 in Resources */,
 				ED1B744221772AE800D51FF5 /* cropBoardImageIphone6@2x.png in Resources */,
@@ -5347,17 +5470,20 @@
 				60944ECB1F0F911C00C02AFB /* voice_full@2x.png in Resources */,
 				60AFF34B1FC7F3AC00985769 /* test.text in Resources */,
 				60AF3C491F18604F00C8FBB9 /* background_01.png in Resources */,
+				847850BB23CDA1E800C8C1AB /* img_red_packet_boom_1@3x.png in Resources */,
 				60B6A6321E2A304500CC6F26 /* rank_150.png in Resources */,
 				60761EBF1D61B62000FC2F1F /* Assets.xcassets in Resources */,
+				847850C423CDA22600C8C1AB /* img_red_packet_boom_3@2x.png in Resources */,
 				6088490A1DC076C800FD819C /* homepagebannarimage@2x.jpg in Resources */,
 				608849061DC076C800FD819C /* dianzan1.png in Resources */,
 				60691AAA1FD0098000009794 /* coretextTest.txt in Resources */,
 				60CBBFEF1FCBDA7F006545F1 /* zombie1.jpg in Resources */,
 				60944EC71F0F911C00C02AFB /* speekTouchUp@2x.png in Resources */,
 				60FA5B121E8BC9BC00292181 /* qbScanLight@2x.png in Resources */,
+				847850BC23CDA1E800C8C1AB /* img_red_packet_boom_1@2x.png in Resources */,
+				847850C723CDA24600C8C1AB /* img_red_packet_boom_4@2x.png in Resources */,
 				60B911102015B2B3005EB918 /* 5.jpg in Resources */,
 				8434985C22C9A30A006D8EBA /* addImage.jpg in Resources */,
-				609133B51F42EFCB00D8972B /* GameLivePrepareView.xib in Resources */,
 				608848F01DC05F5100FD819C /* Unknown.png in Resources */,
 				608849081DC076C800FD819C /* duo1.png in Resources */,
 				60BD0B8C1D81720900837C56 /* Cat.mp4 in Resources */,
@@ -5373,6 +5499,7 @@
 				60AA47FD1E1DF5B900839D8C /* 1yasuo.jpg in Resources */,
 				60AF3C4A1F18604F00C8FBB9 /* background_01@2x.png in Resources */,
 				ED31ECD521B9350D00124752 /* testHtml.html in Resources */,
+				847850CC23CDA25F00C8C1AB /* img_red_packet_boom_5@3x.png in Resources */,
 				843F033322D6CEB90012AE17 /* AFN_README.md in Resources */,
 				60CBBFF21FCBDA7F006545F1 /* zombies.txt in Resources */,
 			);
@@ -5404,7 +5531,6 @@
 				EDC8D4B5218ACBE7000B3D6C /* GPUImageDirectionalNonMaximumSuppressionFilter.m in Sources */,
 				6000450E1E949CF200F3471A /* MJRefreshComponent.m in Sources */,
 				843FAE8B22EEF04C00D380F4 /* Swift_GCD.swift in Sources */,
-				609133B31F42EF7C00D8972B /* GameLivePrepareView.m in Sources */,
 				8435194222C49AE200FA0852 /* YYTextView.m in Sources */,
 				EDC8D4A5218ACBE7000B3D6C /* GPUImageSmoothToonFilter.m in Sources */,
 				EDC8D45A218ACBE6000B3D6C /* GPUImageSketchFilter.m in Sources */,
@@ -5534,6 +5660,7 @@
 				ED1B743C2177263500D51FF5 /* ISImageLibraryViewController.mm in Sources */,
 				EDC8D472218ACBE7000B3D6C /* GPUImageToonFilter.m in Sources */,
 				ED324D1C21340BE500D02F13 /* UIColor+Hex.mm in Sources */,
+				8474B6C423A7579B006797F1 /* TestCurentViewController.m in Sources */,
 				EDC8D467218ACBE7000B3D6C /* GPUImageSolidColorGenerator.m in Sources */,
 				EDC8D4A8218ACBE7000B3D6C /* GPUImageThreeInputFilter.m in Sources */,
 				EDC8D46F218ACBE7000B3D6C /* GPUImageAdaptiveThresholdFilter.m in Sources */,
@@ -5576,7 +5703,6 @@
 				8442D36022D2E60700FAB6C4 /* TOCropOverlayView.m in Sources */,
 				843F033822D6CEB90012AE17 /* UIButton+AFNetworking.m in Sources */,
 				8442D35E22D2E60700FAB6C4 /* TOCropScrollView.m in Sources */,
-				609F68B41F4C0DB900ABC49A /* GameLiveHomeViewController.m in Sources */,
 				8430103022B0EB3F0034A2AD /* TestXibViewController.m in Sources */,
 				ED2E64EC21355F7F00ADCDFF /* EditVideoViewController.mm in Sources */,
 				ED1B74322177263500D51FF5 /* ISAssetsManager.mm in Sources */,
@@ -5608,10 +5734,12 @@
 				ED2850012101AF1C00178965 /* ISTemplate.mm in Sources */,
 				60944EE51F0F914A00C02AFB /* json_writer.cpp in Sources */,
 				ED13778C21EC2A6100917013 /* TestVideoCaptureViewController.m in Sources */,
+				8470A67C23AA050200E3F94A /* PhotoNumber.m in Sources */,
 				843F033D22D6CEB90012AE17 /* AFURLResponseSerialization.m in Sources */,
 				8435197222C49AE200FA0852 /* UIGestureRecognizer+YYAdd.m in Sources */,
 				ED324CB22134017500D02F13 /* TZPhotoPreviewController.mm in Sources */,
 				EDC8D498218ACBE7000B3D6C /* GPUImageLuminosity.m in Sources */,
+				84A36DEF23AB674700DF5AA5 /* KXProvisionView.m in Sources */,
 				8435194522C49AE200FA0852 /* YYTextEffectWindow.m in Sources */,
 				ED2E64EB21355F7F00ADCDFF /* ISBrightnessFilter.mm in Sources */,
 				ED284FEB210179DF00178965 /* CollectionDataModel.m in Sources */,
@@ -5733,6 +5861,7 @@
 				EDC8D4B4218ACBE7000B3D6C /* GPUImageClosingFilter.m in Sources */,
 				8435198122C49AE200FA0852 /* NSNotificationCenter+YYAdd.m in Sources */,
 				ED2DE3F121363ADC00A41531 /* FBKVOController.mm in Sources */,
+				8473A27A23A2033400C4ED56 /* TextViewLinkVC.swift in Sources */,
 				8435193322C49AE200FA0852 /* YYImageCoder.m in Sources */,
 				8442D35922D2E60700FAB6C4 /* TOActivityCroppedImageProvider.m in Sources */,
 				ED2F86DC213FE7A20070482E /* MyCoreTextTestViewController.m in Sources */,
@@ -5758,6 +5887,7 @@
 				EDC8D443218ACBE6000B3D6C /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				ED39610720ABC26600D0658F /* ISH264Player.m in Sources */,
 				843B925123308CF300D8EA1F /* CalendarYearSelectedView.swift in Sources */,
+				847B284123C88A9100C575C5 /* KXDynamicVideoPlayer.m in Sources */,
 				60691A991FCFDC9D00009794 /* CoreTextTowViewController.m in Sources */,
 				EDC8D452218ACBE6000B3D6C /* GPUImageLevelsFilter.m in Sources */,
 				8435196C22C49AE200FA0852 /* UIApplication+YYAdd.m in Sources */,
@@ -5791,6 +5921,7 @@
 				EDC8D43C218ACBE6000B3D6C /* GPUImageColorBurnBlendFilter.m in Sources */,
 				EDEC452E2109C1FF008BEC94 /* FullImageAnimateView.m in Sources */,
 				60A3AD861F170A6A00FAA86D /* UIImage+ChangeColor.m in Sources */,
+				8474B6C123A7498A006797F1 /* UIApplication+ExtendTools.m in Sources */,
 				6076C3D01FBAF9DC007BBBB8 /* PresentationViewController.m in Sources */,
 				843516E222C4946900FA0852 /* YYPhotoGroupView.m in Sources */,
 				ED2851132101CE5800178965 /* SDWebImageCodersManager.m in Sources */,
@@ -5833,6 +5964,7 @@
 				EDC8D4A3218ACBE7000B3D6C /* GPUImageHalftoneFilter.m in Sources */,
 				843F034222D6CEB90012AE17 /* AFSecurityPolicy.m in Sources */,
 				EDB335E121E863AC0027F2F7 /* PageViewController.m in Sources */,
+				8475EFD623CC494500B7350B /* RedPacketViewController.m in Sources */,
 				60944EE81F0F93FC00C02AFB /* BezierPathViewController.m in Sources */,
 				6018DEDB1FC82E4500CDAF8E /* CTColumnView.m in Sources */,
 				EDC8D4A0218ACBE7000B3D6C /* GPUImageRGBDilationFilter.m in Sources */,
@@ -5884,6 +6016,7 @@
 				ED01F67321B13071006DAC28 /* AudioConstant.m in Sources */,
 				600045151E949CF200F3471A /* MJRefreshBackNormalFooter.m in Sources */,
 				8435194D22C49AE200FA0852 /* YYTextRunDelegate.m in Sources */,
+				847B283E23C85E7000C575C5 /* RedPacketView.m in Sources */,
 				60944EC11F0F911C00C02AFB /* IFlySpeek.m in Sources */,
 				ED2851282101CE5800178965 /* SDWebImagePrefetcher.m in Sources */,
 				8442D35F22D2E60700FAB6C4 /* TOCropView.m in Sources */,
@@ -5914,6 +6047,7 @@
 				60C48C2720061755004114F8 /* AudioPlayer.m in Sources */,
 				843B283322E829B100D39F07 /* CustomTransition.m in Sources */,
 				609E3D202052811400D9A55C /* UIColor+ydd.m in Sources */,
+				84500BC223A8CA78008AD74A /* KXLuckDrawView.m in Sources */,
 				ED2851222101CE5800178965 /* SDWebImageCoderHelper.m in Sources */,
 				EDC8D441218ACBE6000B3D6C /* GPUImageLuminanceThresholdFilter.m in Sources */,
 				ED39610520ABC26600D0658F /* ISH246TVDecode.m in Sources */,
@@ -5932,6 +6066,7 @@
 				8435195322C49AE200FA0852 /* NSParagraphStyle+YYText.m in Sources */,
 				8435193222C49AE200FA0852 /* YYImage.m in Sources */,
 				ED01F67021B12F2F006DAC28 /* Record.m in Sources */,
+				84500BBF23A8CA2F008AD74A /* LuckDrawViewController.m in Sources */,
 				60430A791E2091FF0054656D /* UIViewXXYBoom.swift in Sources */,
 				8435196122C49AE200FA0852 /* UIImageView+YYWebImage.m in Sources */,
 				843E459C2351D78D0040D68E /* DDCollectionViewController.swift in Sources */,
@@ -6051,6 +6186,7 @@
 				ED2DE405213641F400A41531 /* XPathQuery.m in Sources */,
 				8435195922C49AE200FA0852 /* YYTextWeakProxy.m in Sources */,
 				6039E3CD1E616EA9002D6B7C /* PriaseSendStructure.m in Sources */,
+				845C46DB23A0DC7100F80EAA /* KXPasswordView.m in Sources */,
 				EDC8D468218ACBE7000B3D6C /* GPUImageOverlayBlendFilter.m in Sources */,
 				EDC8D47F218ACBE7000B3D6C /* GPUImageBrightnessFilter.m in Sources */,
 				842E0452228BB90700BD2C46 /* AppCrashManager.m in Sources */,

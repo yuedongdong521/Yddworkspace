@@ -98,15 +98,10 @@ static void *BtnResponsEdgeKey = &"BtnResponsEdgeKey";
 - (UIViewController *)superViewController
 {
     UIResponder *responder = self.nextResponder;
-    while (responder) {
-        if ([responder isKindOfClass:[UIViewController class]]) {
-            return (UIViewController *)responder;
-        }
+    while (![responder isKindOfClass:[UIViewController class]]) {
         responder = responder.nextResponder;
     }
-    return nil;
+    return (UIViewController *)responder;
 }
-
-
 
 @end

@@ -28,12 +28,15 @@
     [[AppManager shareManager] addTabBar];
    
     
-    
     [UIFont.familyNames enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSLog(@"UIFont name : %@", obj);
     }];
+    if (0 == NULL) {
+        NSLog(@"0 == NULL");
+    }
     
-
+    NSString *mesg = [NSString stringWithFormat:@"%@", NULL];
+    NSLog(@"mesg = %@", mesg);
     
     UIFont *pfFont1 = [UIFont fontWithName:@"PingFang SC" size:18];
     UIFont *pfFont2 = [UIFont fontWithName:@"PingFangSC" size:18];

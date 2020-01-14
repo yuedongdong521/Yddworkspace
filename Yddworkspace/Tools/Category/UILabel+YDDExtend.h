@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setFontGradColors:(NSArray <UIColor *>*)colors;
 
++ (UILabel *)labelWithFont:(UIFont *)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment;
+
 @end
 
 NS_ASSUME_NONNULL_END

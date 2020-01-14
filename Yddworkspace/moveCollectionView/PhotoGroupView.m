@@ -353,6 +353,10 @@
 
 @property (nonatomic, readonly) NSInteger currentPage;
 
+@property (nonatomic, assign) CGPoint startCenter;
+
+@property (nonatomic, assign) BOOL startPan;
+
 @end
 
 @implementation PhotoGroupView
@@ -1081,137 +1085,89 @@
         activityViewController.popoverPresentationController.sourceView = self;
     }
     
-    UIViewController *toVC = self.toContainerView.viewController;
-    if (!toVC) toVC = self.viewController;
-    [toVC presentViewController:activityViewController animated:YES completion:nil];
+//    UIViewController *toVC = self.toContainerView.viewController;
+//    if (!toVC) toVC = self.viewController;
+    [[UIApplication curentViewController] presentViewController:activityViewController animated:YES completion:nil];
 }
 
 - (void)pan:(UIPanGestureRecognizer *)g {
-//    PhotoGroupCell *tile = [self cellForPage:self.currentPage];
-//    if (tile && tile.zoomScale != 1) {
-//        return;
-//    }
+
+    if (self.scrollView.zoomScale != 1) {
+        return;
+    }
+    CGPoint p = [g locationInView:self];
+    
     switch (g.state) {
         case UIGestureRecognizerStateBegan: {
-            self.scrollView.transform = CGAffineTransformIdentity;
             NSLog(@"scrollView orign center : %@, frame : %@", NSStringFromCGPoint(_scrollView.center), NSStringFromCGRect(self.scrollView.frame));
-            if (_isPresented) {
-                _panGestureBeginPoint = [g locationInView:self];
-            } else {
-                _panGestureBeginPoint = CGPointZero;
-            }
+            _panGestureBeginPoint = p;
+            self.startCenter = self.contentView.center;
+            self.startPan = NO;
         } break;
         case UIGestureRecognizerStateChanged: {
-            if (_panGestureBeginPoint.x == 0 && _panGestureBeginPoint.y == 0) return;
-            CGPoint p = [g locationInView:self];
-            CGFloat deltaY = p.y - _panGestureBeginPoint.y;
-            CGFloat deltaX = p.x - _panGestureBeginPoint.x;
-//            _scrollView.top = deltaY;
-            
-            CGFloat alphaDelta = 300;
-            CGFloat alpha = (alphaDelta - fabs(deltaY) + 100) / alphaDelta;
-            alpha = YY_CLAMP(alpha, 0, 1);
-            
-//            if (deltaY > 0) {
-            CGFloat scale =  (ScreenHeight - fabs(deltaY)) / ScreenHeight;
-                CGPoint moveP = [g translationInView:self];
-            
-//            scale = scale > 0.6 ? scale : 0.6;
-            CGFloat tx = moveP.x; // p.x - _panGestureBeginPoint.x; // moveP.x;// + (1 - scale) * ScreenWidth * 0.5; //* moveScale;
-            CGFloat ty = moveP.y;// p.y - _panGestureBeginPoint.y; // moveP.y; //+ (1 - scale) * ScreenHeight * 0.5 ; //* moveScale;
-            
-//            }
-            
-//            CGPoint scrollViewPanPoint = CGPointMake(_panGestureBeginPoint.x * scale, _panGestureBeginPoint.y * scale);
-////            CGPoint coverPoint = [self.scrollView convertPoint:scrollViewPanPoint fromView:self];
-//            if (deltaY > 0) {
-//                ty -= (0.5 * ScreenHeight * (1 - scale));
-//            } else {
-//                ty += (0.5 * ScreenHeight * (1 - scale));
-//            }
-//            if (deltaX > 0) {
-//                tx -= (0.5 * ScreenWidth * (1 - scale));
-//            } else {
-//                tx += (0.5 * ScreenWidth * (1 - scale));
-//            }
-            
-            
-            
-//            CGPoint newCenter = CGRectGetCenter(self.scrollView.frame);
-            
-            NSLog(@"\n scrollView center : %@, \n movepoint : %@, \n frame : %@ \n tx = %f, \n ty = %f", NSStringFromCGPoint(CGRectGetCenter(self.scrollView.frame)), NSStringFromCGPoint(moveP), NSStringFromCGRect(self.scrollView.frame), tx, ty);
-            
-            
-            
-            
-            [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveLinear animations:^{
+            if (self.startPan) {
+                CGFloat deltaY = fabs(p.y - _panGestureBeginPoint.y);
+                
+                CGFloat alpha = 1 - (MIN(deltaY, 100)) / 100.0;
+                alpha = YY_CLAMP(alpha, 0.3, 1);
+                CGFloat scale =  (ScreenHeight - deltaY) / ScreenHeight;
+                
+                self.contentView.center = p;
                 self.blurBackground.alpha = alpha;
                 self.pager.alpha = alpha;
-                self.scrollView.transform = CGAffineTransformMake(scale, 0, 0, scale, tx, ty);
-            } completion:nil];
+                self.contentView.transform = CGAffineTransformMakeScale(scale, scale);
+                
+            } else {
+                CGRect startFrame = self.contentView.frame;
+                CGFloat anchorX = p.x / startFrame.size.width;
+                CGFloat anchorY = p.y / startFrame.size.height;
+                self.contentView.layer.anchorPoint = CGPointMake(anchorX, anchorY);
+                self.contentView.center = p;
+                _panGestureBeginPoint = p;
+                self.startPan = YES;
+                NSLog(@"location p = %@, startPan = %d", NSStringFromCGPoint(p), self.startPan);
+            }
+            
+            
             
         } break;
         case UIGestureRecognizerStateEnded: {
             if (_panGestureBeginPoint.x == 0 && _panGestureBeginPoint.y == 0) return;
             // 手指移动速度, fasb(v.y) > fabs(v.x)竖直方向移动,反之水方向移动
             CGPoint v = [g velocityInView:self];
-            // 手指在self上的位置
-            CGPoint p = [g locationInView:self];
             CGFloat deltaY = p.y - _panGestureBeginPoint.y;
             
             if (fabs(v.y) > 1000 || fabs(deltaY) > 120) {
-                /*
-                [self cancelAllImageLoad];
-                
-                _isPresented = NO;
-                [[UIApplication sharedApplication] setStatusBarHidden:_fromNavigationBarHidden withAnimation:UIStatusBarAnimationFade];
-                
-                BOOL moveToTop = (v.y < - 50 || (v.y < 50 && deltaY < 0));
-                CGFloat vy = fabs(v.y);
-                if (vy < 1) vy = 1;
-                CGFloat duration = (moveToTop ? _scrollView.bottom : self.height - _scrollView.top) / vy;
-                duration *= 0.8;
-                duration = YY_CLAMP(duration, 0.05, 0.3);
-                
-                [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionBeginFromCurrentState animations:^{
-                    self.blurBackground.alpha = 0;
-                    self.pager.alpha = 0;
-                    if (moveToTop) {
-                        self.scrollView.bottom = 0;
-                    } else {
-                        self.scrollView.top = self.height;
-                    }
-                } completion:^(BOOL finished) {
-                    [self removeFromSuperview];
-                }];
-                
-                _background.image = _snapshotImage;
-                [_background.layer addFadeAnimationWithDuration:0.3 curve:UIViewAnimationCurveEaseInOut];
-                 */
                 [self dismissAnimated:YES completion:^{
                     
                 }];
                 
             } else {
-                [UIView animateWithDuration:0.4 delay:0 usingSpringWithDamping:0.9 initialSpringVelocity:v.y / 1000 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState animations:^{
-//                    self.scrollView.top = 0;
-                    self.blurBackground.alpha = 1;
-                    self.pager.alpha = 1;
-                    self.scrollView.transform = CGAffineTransformIdentity;
-                } completion:^(BOOL finished) {
-                    
-                }];
+                self.blurBackground.alpha = 1;
+                self.pager.alpha = 1;
+               
+                self.contentView.layer.anchorPoint = CGPointMake(0.5, 0.5);
+                self.contentView.center = self.startCenter;
+                 self.contentView.transform = CGAffineTransformIdentity;
             }
-            
+            self.startPan = NO;
         } break;
         case UIGestureRecognizerStateCancelled : {
-//            _scrollView.top = 0;
             _blurBackground.alpha = 1;
-            self.scrollView.transform = CGAffineTransformIdentity;
+            self.pager.alpha = 1;
+            
+            self.contentView.layer.anchorPoint = CGPointMake(0.5, 0.5);
+            self.contentView.center = self.startCenter;
+            self.contentView.transform = CGAffineTransformIdentity;
+            self.startPan = NO;
         }
-        default:break;
+        default:
+            break;
     }
 }
+
+
+
 
 - (void)hiddenPageControl:(BOOL)isHidden
 {

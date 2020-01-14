@@ -7,11 +7,11 @@
 //
 
 #import "KXDynamicVideoPlayer.h"
-#import "KXVideoPlayerView.h"
+//#import "KXVideoPlayerView.h"
 
 @interface KXDynamicVideoPlayer ()
 
-@property (nonatomic, strong) KXVideoPlayerView *playerView;
+@property (nonatomic, strong) UIView *playerView;
 
 @property (nonatomic, copy) void(^dismissBlock)(void);
 
@@ -75,10 +75,10 @@
     } else {
         startTime = 0;
     }
-    [_playerView.player setStartTime:startTime];
-    [_playerView playerURLStr:url];
+//    [_playerView.player setStartTime:startTime];
+//    [_playerView playerURLStr:url];
 }
-
+/*
 - (KXVideoPlayerView *)playerView
 {
     if (!_playerView) {
@@ -93,10 +93,19 @@
     }
     return _playerView;
 }
+ */
+
+- (UIView *)playerView
+{
+    if (!_playerView) {
+        _playerView = [[UIView alloc] init];
+    }
+    return _playerView;
+}
 
 - (void)dismiss
 {
-    [_playerView destroy];
+//    [_playerView destroy];
     [self closePreVideo];
 }
 
@@ -203,7 +212,7 @@
 - (void)setStartPan:(BOOL)startPan
 {
     _startPan = startPan;
-    [self.playerView hidVideoControl:startPan];
+//    [self.playerView hidVideoControl:startPan];
 }
 
 

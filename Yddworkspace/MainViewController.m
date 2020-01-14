@@ -16,7 +16,8 @@
 #import "CustomGradBtn.h"
 #import "CustomSlider.h"
 #import "UIView+Extend.h"
-
+#import "NSString+yddSubByte.h"
+#import "KXDynamicVideoPlayer.h"
 
 
 
@@ -39,7 +40,7 @@
     self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = [UIColor grayColor];
     
-    
+    [self sortArr];
     NSUInteger timeStamp = [TimeTools timeStampSincel1970];
     NSLog(@"timeStamp = %lu", (unsigned long)timeStamp);
     NSString *date = [TimeTools timeWithStyle:@"yyyy/MM/dd - HH:mm:ss" timeStamp:timeStamp];
@@ -185,8 +186,12 @@
        diclabel.text = dicstr;
        [self.view addSubview:diclabel];
     
+    NSString *nickName = @"(*￣︶￣)123😊ydd_123Daf_*&^%$#@!~wer";
+    NSString *nickName0 = [nickName filterStringSpecialStr];
+    NSString *nickName1 = [nickName filterSpecialCharactor];
+    NSLog(@"nickName0 = %@\nnickName = %@", nickName0,nickName1);
     
-    
+//    [nickName componentsSeparatedByString:@";"];
     
 }
 
@@ -200,9 +205,13 @@
 
 - (void)alertBtnAction:(UIButton *)btn
 {
-  [self alertShowFlag:0];
-    [self alertShowFlag:0];
-    [self alertShowFlag:0];
+    [KXDynamicVideoPlayer showPlayerWithVideoURl:@"" startTime:0 image:[UIImage imageNamed:@"0.jpg"] dismissBlock:^{
+        
+    }];
+    
+//  [self alertShowFlag:0];
+//    [self alertShowFlag:0];
+//    [self alertShowFlag:0];
 }
 
 - (void)alertShowFlag:(int)flag
@@ -398,6 +407,15 @@
   
 }
 
+
+- (void)sortArr
+{
+    NSArray <NSString *>*arr = @[@"agrnee", @"agreen123"];
+    NSArray *newarr = [arr sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return [obj1 compare:obj2 options:NSForcedOrderingSearch];
+    }];
+    NSLog(@"new arr = %@", newarr);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

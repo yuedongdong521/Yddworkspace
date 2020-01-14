@@ -7,6 +7,7 @@
 //
 
 #import "KXPasswordView.h"
+#import "UILabel+YDDExtend.h"
 
 @interface KXPasswordItem : UIView
 
@@ -40,7 +41,7 @@
         }];
         
         UIView *line = [[UIView alloc] init];
-        line.backgroundColor = [UIColor colorWithHexString:@"#CDCDCD"];
+        line.backgroundColor = UIColorHexRGBA(0xCDCDCD, 1);
         [self addSubview:line];
         [line mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.mas_equalTo(0);
@@ -54,7 +55,7 @@
 - (UILabel *)passwordLabel
 {
     if (!_passwordLabel) {
-        _passwordLabel = [UILabel labelWithFont:kNumFontBold(14) textColor:[UIColor colorWithHexString:@"#333333"] textAlignment:NSTextAlignmentCenter];
+        _passwordLabel = [UILabel labelWithFont:[UIFont systemFontOfSize:16] textColor:UIColorHexRGBA(0x333333,1) textAlignment:NSTextAlignmentCenter];
     }
     return _passwordLabel;
 }
@@ -63,8 +64,9 @@
 {
     if (!_hidView) {
         _hidView = [[UIView alloc] init];
-        _hidView.backgroundColor = [UIColor colorWithHexString:@"#D8D8D8"];
-        [_hidView setRadius:3.5];
+        _hidView.backgroundColor = UIColorHexRGBA(0xD8D8D8,1);
+        _hidView.layer.cornerRadius = 3.5;
+         _hidView.layer.masksToBounds = YES;
     }
     return _hidView;
 }

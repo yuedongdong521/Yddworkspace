@@ -53,7 +53,7 @@ static const void *ClickURLKey = &ClickURLKey;
             NSString* urlStr = [result.URL.absoluteString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             NSRange urlRange = [context rangeOfString:urlStr];
             if (urlRange.location != NSNotFound) {
-                if (startOffset >= urlRange.location && startOffset < urlRange.length + urlRange.location) {
+                if (startOffset >= urlRange.location && startOffset < NSMaxRange(urlRange)) {
                     return urlStr;
                 }
             } else {
@@ -61,7 +61,7 @@ static const void *ClickURLKey = &ClickURLKey;
                     NSString *tmpStr = [urlStr stringByReplacingOccurrencesOfString:@"http://" withString:@""];
                     urlRange = [context rangeOfString:tmpStr];
                     if (urlRange.location != NSNotFound) {
-                        if (startOffset >= urlRange.location && startOffset < urlRange.length + urlRange.location) {
+                        if (startOffset >= urlRange.location && startOffset < NSMaxRange(urlRange)) {
                             return urlStr;
                         }
                     }

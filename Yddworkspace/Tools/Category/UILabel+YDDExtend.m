@@ -60,7 +60,14 @@ const void *_fontGradColorLayer;
 }
 
 
-
++ (UILabel *)labelWithFont:(UIFont *)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment
+{
+    UILabel *label = [[UILabel alloc] init];
+    label.font = font;
+    label.textColor = color;
+    label.textAlignment = alignment;
+    return label;
+}
 
 
 @end

@@ -24,6 +24,7 @@
 #import "ISPhotoAlbumViewController.h"
 #import "HalfViewController.h"
 
+
 #define IS_iPhoneX [UIScreen mainScreen].bounds.size.height >= 812
 #define Weakself(self)  __weak typeof(self) weak##self = self
 
@@ -157,7 +158,10 @@
       @"MoveCollectionViewController",
       @"TestStructVC",
       @"MaskViewController",
-      @"CoverMothedViewController"
+      @"CoverMothedViewController",
+      @"TestCurentViewController",
+      @"LuckDrawViewController",
+      @"RedPacketViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
@@ -165,7 +169,7 @@
       @"CoreTextSurroundViewController"
     ],
     @[ @"MyViewController", @"ClosureViewController", @"UserInfoController", @"SwiftJSONViewController", @"SelecteToolsViewController", @"DateSelecteViewController", @"BezierMaskViewController", @"CalendarViewController", @"AnimationTestViewController", @"DDCollectionViewController", @"ExtensionViewController",
-        @"LoadingMaskLayerController"]
+        @"LoadingMaskLayerController", @"TextViewLinkVC"]
   ];
 
   
@@ -324,6 +328,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     } else if ([itemStr isEqualToString:@"LoadingMaskLayerController"]) {
         LoadingMaskLayerController *vc = [[LoadingMaskLayerController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"TextViewLinkVC"]) {
+        TextViewLinkVC *vc = [[TextViewLinkVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     self.hidesBottomBarWhenPushed = NO;

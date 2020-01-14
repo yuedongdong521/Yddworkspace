@@ -32,6 +32,14 @@ NS_ASSUME_NONNULL_BEGIN
 /** 按照过滤不匹配正则规则regex的字符 */
 - (NSString *)filterCharactorWithRegex:(NSString *)regexStr;
 
+- (NSString *)filterSpecialCharactor;
+
+/** 获取汉字，字母，数字 */
+- (NSString *)filterStringSpecialStr;
+
+/// 是否为纯数字
+- (BOOL)isNumber;
+
 @end
 
 NS_ASSUME_NONNULL_END

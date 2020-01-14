@@ -164,5 +164,55 @@
     return result;
 }
 
+- (NSString *)filterSpecialCharactor
+{
+    NSCharacterSet *dontWant = [NSCharacterSet characterSetWithCharactersInString:@"[]{}（#%-*+=_）\\|~(＜＞$%^&*)_+,.;':|/@!? "];
+    
+    NSArray *results = [self componentsSeparatedByCharactersInSet:dontWant];
+    NSString *result = [results componentsJoinedByString:@""];
+    result = [result stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return result;
+}
+
+// 提取字符串中的中文、数字和字母
+- (NSString *)filterStringSpecialStr {
+    NSString *regex = @"[^a-zA-Z0-9\u4e00-\u9fa5]";
+    return [self stringByReplacingOccurrencesOfString:regex withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, self.length)];
+}
+
+- (BOOL)isNumber
+{
+    NSString *str = [self stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+    return str.length == 0;
+}
+
++ (BOOL)JudgeTheillegalCharacter:(NSString *)content
+{
+    //提示标签不能输入特殊字符
+    NSString *str =@"^[A-Za-z0-9\\u4e00-\u9fa5]+$";
+    NSPredicate* emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", str];
+    if (![emailTest evaluateWithObject:content]) {
+        return YES;
+    }
+    
+    return NO;
+    
+}
+
+// 密码
++ (BOOL)judgePassWordLegal:(NSString *)pass
+{
+    BOOL result ;
+    // 判断长度大于6位后再接着判断是否同时包含数字和大小写字母
+    NSString * regex =@"^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    
+    result = [pred evaluateWithObject:pass];
+    
+    NSLog(@"%d",result);
+    
+    return result;
+    
+}
 
 @end

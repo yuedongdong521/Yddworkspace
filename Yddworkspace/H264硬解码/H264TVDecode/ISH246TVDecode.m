@@ -16,7 +16,7 @@
 static const uint8_t* avc_find_startcode_internal(const uint8_t* p,
                                                   const uint8_t* end) {
   const uint8_t* a =
-      p + 4 - ((intptr_t)p & 3);  // char 1个字节 8位 用2位十六进制数表示
+      p + 4 - ((intptr_t)p & 3);  // char 1个字节 8位 用十六进制数表示
 
   // 计算返回h264码流的起始码位置，并从起始位置开始返回
   for (end -= 3; p < a && p < end; p++) {

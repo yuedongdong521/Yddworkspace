@@ -7,7 +7,7 @@
 //
 
 #import "RedPacketViewController.h"
-
+#import "RedPacketView.h"
 @interface RedPacketViewController ()
 
 @end
@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    RedPacketView *redView = [[RedPacketView alloc] init];
+    [self.view addSubview:redView];
+    redView.frame = self.view.bounds;
 }
 
 /*
