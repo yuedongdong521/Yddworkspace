@@ -416,6 +416,15 @@
 		847850C823CDA24600C8C1AB /* img_red_packet_boom_4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850C623CDA24600C8C1AB /* img_red_packet_boom_4@3x.png */; };
 		847850CB23CDA25F00C8C1AB /* img_red_packet_boom_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850C923CDA25F00C8C1AB /* img_red_packet_boom_5@2x.png */; };
 		847850CC23CDA25F00C8C1AB /* img_red_packet_boom_5@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850CA23CDA25F00C8C1AB /* img_red_packet_boom_5@3x.png */; };
+		847850D423CDC90100C8C1AB /* EmitterTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847850CE23CDC90100C8C1AB /* EmitterTestViewController.m */; };
+		847850D523CDC90100C8C1AB /* EmitterListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847850D023CDC90100C8C1AB /* EmitterListTableViewController.m */; };
+		847850D623CDC90100C8C1AB /* EmitterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847850D223CDC90100C8C1AB /* EmitterDetailViewController.m */; };
+		847850D823CDCF0000C8C1AB /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850D723CDCF0000C8C1AB /* fire.png */; };
+		847850DA23CDCF3F00C8C1AB /* snow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850D923CDCF3F00C8C1AB /* snow@2x.png */; };
+		847850DC23CDCF6900C8C1AB /* sparkle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850DB23CDCF6900C8C1AB /* sparkle@2x.png */; };
+		847850DE23CDCFB900C8C1AB /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 847850DD23CDCFB900C8C1AB /* dot.png */; };
+		847850E123CDE98500C8C1AB /* Bezier3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847850E023CDE98500C8C1AB /* Bezier3ViewController.m */; };
+		847850E423CDE9CA00C8C1AB /* BezierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847850E323CDE9CA00C8C1AB /* BezierView.m */; };
 		8478BE3322CEE94E0034B87D /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8478BE3222CEE94E0034B87D /* CustomNavigationBarView.swift */; };
 		847AEAA9237B9DF3007E9BF8 /* MaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847AEAA8237B9DF3007E9BF8 /* MaskViewController.m */; };
 		847B283623C85E1100C575C5 /* img_red_packet@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847B283423C85E1100C575C5 /* img_red_packet@3x.png */; };
@@ -1641,6 +1650,20 @@
 		847850C623CDA24600C8C1AB /* img_red_packet_boom_4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_4@3x.png"; sourceTree = "<group>"; };
 		847850C923CDA25F00C8C1AB /* img_red_packet_boom_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_5@2x.png"; sourceTree = "<group>"; };
 		847850CA23CDA25F00C8C1AB /* img_red_packet_boom_5@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_red_packet_boom_5@3x.png"; sourceTree = "<group>"; };
+		847850CE23CDC90100C8C1AB /* EmitterTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterTestViewController.m; sourceTree = "<group>"; };
+		847850CF23CDC90100C8C1AB /* EmitterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmitterDetailViewController.h; sourceTree = "<group>"; };
+		847850D023CDC90100C8C1AB /* EmitterListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterListTableViewController.m; sourceTree = "<group>"; };
+		847850D123CDC90100C8C1AB /* EmitterTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmitterTestViewController.h; sourceTree = "<group>"; };
+		847850D223CDC90100C8C1AB /* EmitterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterDetailViewController.m; sourceTree = "<group>"; };
+		847850D323CDC90100C8C1AB /* EmitterListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmitterListTableViewController.h; sourceTree = "<group>"; };
+		847850D723CDCF0000C8C1AB /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
+		847850D923CDCF3F00C8C1AB /* snow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snow@2x.png"; sourceTree = "<group>"; };
+		847850DB23CDCF6900C8C1AB /* sparkle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sparkle@2x.png"; sourceTree = "<group>"; };
+		847850DD23CDCFB900C8C1AB /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
+		847850DF23CDE98500C8C1AB /* Bezier3ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bezier3ViewController.h; sourceTree = "<group>"; };
+		847850E023CDE98500C8C1AB /* Bezier3ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bezier3ViewController.m; sourceTree = "<group>"; };
+		847850E223CDE9CA00C8C1AB /* BezierView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BezierView.h; sourceTree = "<group>"; };
+		847850E323CDE9CA00C8C1AB /* BezierView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BezierView.m; sourceTree = "<group>"; };
 		8478BE3222CEE94E0034B87D /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		847AEAA7237B9DF3007E9BF8 /* MaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskViewController.h; sourceTree = "<group>"; };
 		847AEAA8237B9DF3007E9BF8 /* MaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskViewController.m; sourceTree = "<group>"; };
@@ -2794,6 +2817,7 @@
 		60761EB11D61B62000FC2F1F /* Yddworkspace */ = {
 			isa = PBXGroup;
 			children = (
+				847850CD23CDC90100C8C1AB /* CAEmitterLayer */,
 				847B283223C85DDB00C575C5 /* RedPacket */,
 				84500BBC23A8CA0B008AD74A /* 抽奖 */,
 				84462B1A231CF88E00106FB8 /* SelecteTools */,
@@ -3025,6 +3049,10 @@
 			children = (
 				60944EE61F0F93FC00C02AFB /* BezierPathViewController.h */,
 				60944EE71F0F93FC00C02AFB /* BezierPathViewController.m */,
+				847850DF23CDE98500C8C1AB /* Bezier3ViewController.h */,
+				847850E023CDE98500C8C1AB /* Bezier3ViewController.m */,
+				847850E223CDE9CA00C8C1AB /* BezierView.h */,
+				847850E323CDE9CA00C8C1AB /* BezierView.m */,
 			);
 			path = BezierPath;
 			sourceTree = "<group>";
@@ -4179,6 +4207,23 @@
 				847850B923CDA1E700C8C1AB /* img_red_packet_boom_1@3x.png */,
 			);
 			path = animation;
+			sourceTree = "<group>";
+		};
+		847850CD23CDC90100C8C1AB /* CAEmitterLayer */ = {
+			isa = PBXGroup;
+			children = (
+				847850DD23CDCFB900C8C1AB /* dot.png */,
+				847850DB23CDCF6900C8C1AB /* sparkle@2x.png */,
+				847850D923CDCF3F00C8C1AB /* snow@2x.png */,
+				847850D723CDCF0000C8C1AB /* fire.png */,
+				847850D223CDC90100C8C1AB /* EmitterDetailViewController.m */,
+				847850CF23CDC90100C8C1AB /* EmitterDetailViewController.h */,
+				847850D023CDC90100C8C1AB /* EmitterListTableViewController.m */,
+				847850D323CDC90100C8C1AB /* EmitterListTableViewController.h */,
+				847850CE23CDC90100C8C1AB /* EmitterTestViewController.m */,
+				847850D123CDC90100C8C1AB /* EmitterTestViewController.h */,
+			);
+			path = CAEmitterLayer;
 			sourceTree = "<group>";
 		};
 		847B283223C85DDB00C575C5 /* RedPacket */ = {
@@ -5442,6 +5487,7 @@
 				ED31ECD721B9354D00124752 /* testJavascript.html in Resources */,
 				847B283623C85E1100C575C5 /* img_red_packet@3x.png in Resources */,
 				600EF34D1D9E627400A30927 /* photograph@2x.png in Resources */,
+				847850D823CDCF0000C8C1AB /* fire.png in Resources */,
 				843445D6229241DE005EDCB3 /* mac添加zip密码 in Resources */,
 				ED1B744221772AE800D51FF5 /* cropBoardImageIphone6@2x.png in Resources */,
 				60944ECA1F0F911C00C02AFB /* voice_empty@2x.png in Resources */,
@@ -5478,6 +5524,7 @@
 				608849061DC076C800FD819C /* dianzan1.png in Resources */,
 				60691AAA1FD0098000009794 /* coretextTest.txt in Resources */,
 				60CBBFEF1FCBDA7F006545F1 /* zombie1.jpg in Resources */,
+				847850DE23CDCFB900C8C1AB /* dot.png in Resources */,
 				60944EC71F0F911C00C02AFB /* speekTouchUp@2x.png in Resources */,
 				60FA5B121E8BC9BC00292181 /* qbScanLight@2x.png in Resources */,
 				847850BC23CDA1E800C8C1AB /* img_red_packet_boom_1@2x.png in Resources */,
@@ -5490,6 +5537,7 @@
 				60FA5B111E8BC9BC00292181 /* qbScanbg@2x.png in Resources */,
 				60AF3C4B1F18604F00C8FBB9 /* Contents.json in Resources */,
 				60761EBD1D61B62000FC2F1F /* Main.storyboard in Resources */,
+				847850DA23CDCF3F00C8C1AB /* snow@2x.png in Resources */,
 				6000451A1E949CF200F3471A /* MJRefresh.bundle in Resources */,
 				60E594A21FFB72A000476F8D /* test.h264 in Resources */,
 				608849031DC076C800FD819C /* cool.jpg in Resources */,
@@ -5500,6 +5548,7 @@
 				60AF3C4A1F18604F00C8FBB9 /* background_01@2x.png in Resources */,
 				ED31ECD521B9350D00124752 /* testHtml.html in Resources */,
 				847850CC23CDA25F00C8C1AB /* img_red_packet_boom_5@3x.png in Resources */,
+				847850DC23CDCF6900C8C1AB /* sparkle@2x.png in Resources */,
 				843F033322D6CEB90012AE17 /* AFN_README.md in Resources */,
 				60CBBFF21FCBDA7F006545F1 /* zombies.txt in Resources */,
 			);
@@ -5531,6 +5580,7 @@
 				EDC8D4B5218ACBE7000B3D6C /* GPUImageDirectionalNonMaximumSuppressionFilter.m in Sources */,
 				6000450E1E949CF200F3471A /* MJRefreshComponent.m in Sources */,
 				843FAE8B22EEF04C00D380F4 /* Swift_GCD.swift in Sources */,
+				847850E123CDE98500C8C1AB /* Bezier3ViewController.m in Sources */,
 				8435194222C49AE200FA0852 /* YYTextView.m in Sources */,
 				EDC8D4A5218ACBE7000B3D6C /* GPUImageSmoothToonFilter.m in Sources */,
 				EDC8D45A218ACBE6000B3D6C /* GPUImageSketchFilter.m in Sources */,
@@ -5631,6 +5681,7 @@
 				ED5BAA5F21E7651800BF2656 /* TestAutoreleasepoolViewController.m in Sources */,
 				EDC8D494218ACBE7000B3D6C /* GPUImageGaussianBlurFilter.m in Sources */,
 				ED752A7A2122A9B900802367 /* RuntimeLibrary.m in Sources */,
+				847850D523CDC90100C8C1AB /* EmitterListTableViewController.m in Sources */,
 				ED324D1321340B6B00D02F13 /* MASConstraintMaker.m in Sources */,
 				ED9BDB9A21BA071E00F3CB9A /* UIImage+ydd.m in Sources */,
 				ED1B742E2177263500D51FF5 /* ISImageresizerView.mm in Sources */,
@@ -5659,6 +5710,7 @@
 				ED32EB3621B7652300B9EBA8 /* ScreenShotViewController.m in Sources */,
 				ED1B743C2177263500D51FF5 /* ISImageLibraryViewController.mm in Sources */,
 				EDC8D472218ACBE7000B3D6C /* GPUImageToonFilter.m in Sources */,
+				847850E423CDE9CA00C8C1AB /* BezierView.m in Sources */,
 				ED324D1C21340BE500D02F13 /* UIColor+Hex.mm in Sources */,
 				8474B6C423A7579B006797F1 /* TestCurentViewController.m in Sources */,
 				EDC8D467218ACBE7000B3D6C /* GPUImageSolidColorGenerator.m in Sources */,
@@ -5777,6 +5829,7 @@
 				EDC8D4A4218ACBE7000B3D6C /* GPUImageRawDataOutput.m in Sources */,
 				8435196E22C49AE200FA0852 /* UIScrollView+YYAdd.m in Sources */,
 				60944EC41F0F911C00C02AFB /* MySpeekViewController.m in Sources */,
+				847850D623CDC90100C8C1AB /* EmitterDetailViewController.m in Sources */,
 				EDC8D4D1218ACBE7000B3D6C /* GPUImageChromaKeyBlendFilter.m in Sources */,
 				ED324CB42134017500D02F13 /* TZAssetModel.mm in Sources */,
 				8442D35B22D2E60700FAB6C4 /* TOCroppedImageAttributes.m in Sources */,
@@ -6149,6 +6202,7 @@
 				60AFF35E1FC81A0100985769 /* CTScrollView.m in Sources */,
 				847137E722BCE093003BC0E4 /* NJKWebViewProgressView.m in Sources */,
 				ED2E64EF21355F7F00ADCDFF /* ISVideoCountDownView.mm in Sources */,
+				847850D423CDC90100C8C1AB /* EmitterTestViewController.m in Sources */,
 				EDC8D462218ACBE6000B3D6C /* GPUImageBilateralFilter.m in Sources */,
 				EDC8D44E218ACBE6000B3D6C /* GPUImageEmbossFilter.m in Sources */,
 				8435197522C49AE200FA0852 /* UIFont+YYAdd.m in Sources */,

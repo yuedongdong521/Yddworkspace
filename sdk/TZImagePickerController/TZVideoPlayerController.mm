@@ -94,7 +94,7 @@
 - (void)configBottomToolBar {
     CGFloat toolBarHeight = 44.f;
     if (IS_IPHONE_X) {
-        toolBarHeight = 44.f + IS_TABBAR_ADD_HEIGHT;
+        toolBarHeight = 44.f + IS_BOTTOM_HEIGHT;
     }
     _toolBar = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.tz_height - toolBarHeight, self.view.tz_width, toolBarHeight)];
     CGFloat rgb = 34 / 255.0;

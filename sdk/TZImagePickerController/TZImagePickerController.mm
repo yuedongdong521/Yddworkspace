@@ -677,7 +677,7 @@
                  [self.view addSubview:_tableView];
                  if (IS_IPHONE_X) {
                    _tableView.contentInset =
-                       UIEdgeInsetsMake(0, 0, IS_TABBAR_ADD_HEIGHT, 0);
+                       UIEdgeInsetsMake(0, 0, IS_BOTTOM_HEIGHT, 0);
                    _tableView.scrollIndicatorInsets = _tableView.contentInset;
                  }
                } else {

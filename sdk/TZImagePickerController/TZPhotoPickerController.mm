@@ -161,14 +161,14 @@ static CGSize AssetGridThumbnailSize;
       if (iOS7Later) top += kStatusBarHeight;
       collectionViewHeight =
           tzImagePickerVc.showSelectBtn
-              ? self.view.tz_height - 44 - IS_TABBAR_ADD_HEIGHT - top
+              ? self.view.tz_height - 44 - IS_BOTTOM_HEIGHT - top
               : self.view.tz_height - top;
     } else {
       CGFloat navigationHeight = kNavBarHeight;
       if (iOS7Later) navigationHeight += kStatusBarHeight;
       collectionViewHeight = tzImagePickerVc.showSelectBtn
                                  ? self.view.tz_height - 44 -
-                                       IS_TABBAR_ADD_HEIGHT - navigationHeight
+                                       IS_BOTTOM_HEIGHT - navigationHeight
                                  : self.view.tz_height - navigationHeight;
     }
   } else {
@@ -247,7 +247,7 @@ static CGSize AssetGridThumbnailSize;
   CGFloat yOffset = 0;
   CGFloat bottomBarHeight = 50.f;
   if (IS_IPHONE_X) {
-    bottomBarHeight = 44.f + IS_TABBAR_ADD_HEIGHT;
+    bottomBarHeight = 44.f + IS_BOTTOM_HEIGHT;
   }
 
   if (self.navigationController.navigationBar.isTranslucent) {

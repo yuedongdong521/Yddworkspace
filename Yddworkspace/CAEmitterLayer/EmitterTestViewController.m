@@ -12,21 +12,31 @@
 {
     CAEmitterLayer *_testEmitter;
 }
-@property (weak, nonatomic) IBOutlet UISegmentedControl *shapeSegmentView;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegmentView;
+@property (nonatomic, strong) UISegmentedControl *shapeSegmentView;
+@property (nonatomic, strong) UISegmentedControl *modeSegmentView;
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *degreeSegmentView;
-@property (weak, nonatomic) IBOutlet UISlider *slider;
-
+@property (nonatomic, strong) UISegmentedControl *degreeSegmentView;
+@property (nonatomic, strong) UISlider *slider;
 @end
 
 @implementation EmitterTestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view addSubview:self.slider];
+    self.slider.frame = CGRectMake(20, ScreenHeight - 300, ScreenWidth - 40, 50);
     
-    _slider.transform = CGAffineTransformMakeRotation(-M_PI_2);
+    [self.view addSubview:self.shapeSegmentView];
+    [self.view addSubview:self.degreeSegmentView];
+    [self.view addSubview:self.modeSegmentView];
+    
+    self.shapeSegmentView.frame = CGRectMake(20, ScreenHeight - 230, ScreenWidth - 40, 50);
+    self.degreeSegmentView.frame = CGRectMake(20, ScreenHeight - 170, ScreenWidth - 40, 50);
+    self.modeSegmentView.frame = CGRectMake(20, ScreenHeight - 110, ScreenWidth - 40, 50);
+    
     [self configureTestEmitter];
+    
+    
 }
 
 - (void)configureTestEmitter{
@@ -63,7 +73,7 @@
 
 #pragma mark - event methods
 
-- (IBAction)shapeAction:(UISegmentedControl *)sender {
+- (void)shapeAction:(UISegmentedControl *)sender {
     
     NSInteger index = sender.selectedSegmentIndex;
     
@@ -84,7 +94,7 @@
     
     
 }
-- (IBAction)modeAction:(UISegmentedControl *)sender {
+- (void)modeAction:(UISegmentedControl *)sender {
     NSInteger index = sender.selectedSegmentIndex;
     
     switch (index) {
@@ -98,7 +108,7 @@
             break;
     }
 }
-- (IBAction)degreeAction:(UISegmentedControl *)sender {
+- (void)degreeAction:(UISegmentedControl *)sender {
     
     NSInteger index = sender.selectedSegmentIndex;
     
@@ -114,9 +124,52 @@
     }
 }
 
-- (IBAction)sliderAction:(UISlider *)sender {
+- (void)sliderAction:(UISlider *)sender {
     float value = sender.value / 100;
     [_testEmitter setValue:@(value * 20)   forKeyPath:@"emitterCells.testCell.birthRate"];
+}
+
+- (UISlider *)slider
+{
+    if (!_slider) {
+        _slider = [[UISlider alloc] init];
+        [_slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+        _slider.maximumValue = 100;
+        _slider.minimumValue = 0;
+    }
+    return _slider;
+}
+
+
+- (UISegmentedControl *)shapeSegmentView
+{
+    if (!_shapeSegmentView) {
+        _shapeSegmentView = [[UISegmentedControl alloc] initWithItems:@[@"point", @"line", @"rectangle", @"cuboid", @"circle", @"sphere"]];
+        [_shapeSegmentView addTarget:self action:@selector(shapeAction:) forControlEvents:UIControlEventValueChanged];
+        _shapeSegmentView.selectedSegmentIndex = 0;
+    }
+    return _shapeSegmentView;
+}
+
+- (UISegmentedControl *)degreeSegmentView
+{
+    if (!_degreeSegmentView) {
+        _degreeSegmentView = [[UISegmentedControl alloc] initWithItems:@[@"0", @"90", @"180", @"270"]];
+        [_degreeSegmentView addTarget:self action:@selector(degreeAction:) forControlEvents:UIControlEventValueChanged];
+        _degreeSegmentView.selectedSegmentIndex = 0;
+    }
+    return _degreeSegmentView;
+}
+
+
+- (UISegmentedControl *)modeSegmentView
+{
+    if (!_modeSegmentView) {
+        _modeSegmentView = [[UISegmentedControl alloc] initWithItems:@[@"point", @"outline", @"surface", @"volumn"]];
+        [_modeSegmentView addTarget:self action:@selector(modeAction:) forControlEvents:UIControlEventValueChanged];
+        _modeSegmentView.selectedSegmentIndex = 0;
+    }
+    return _modeSegmentView;
 }
 
 

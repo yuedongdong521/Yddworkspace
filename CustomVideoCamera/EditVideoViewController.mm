@@ -243,9 +243,9 @@ typedef NS_ENUM(NSUInteger, choseType) {
   [self.view addSubview:_musicBottomBar];
   [_musicBottomBar mas_makeConstraints:^(MASConstraintMaker* make) {
     make.top.equalTo(
-        @(ScreenHeight - 160 - IS_TABBAR_ADD_HEIGHT)) /*.offset(160)*/;
+        @(ScreenHeight - 160 - IS_BOTTOM_HEIGHT)) /*.offset(160)*/;
     make.left.right.equalTo(self.view);
-    make.height.equalTo(@(160 + IS_TABBAR_ADD_HEIGHT));
+    make.height.equalTo(@(160 + IS_BOTTOM_HEIGHT));
   }];
 
   UIBlurEffect* blurEffrct =

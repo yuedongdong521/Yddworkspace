@@ -65,7 +65,7 @@
   // 返回拍照
   UIButton* bacButton = [UIButton buttonWithType:UIButtonTypeCustom];
   bacButton.frame =
-      CGRectMake(50, ScreenHeight - 105.0 - IS_TABBAR_ADD_HEIGHT, 50.0, 50.0);
+      CGRectMake(50, ScreenHeight - 105.0 - IS_BOTTOM_HEIGHT, 50.0, 50.0);
   [bacButton setImage:[UIImage imageNamed:@"icon_video_reset_photo"]
              forState:UIControlStateNormal];
   [bacButton addTarget:self
@@ -76,7 +76,7 @@
   // 完成
   UIButton* completeButton = [[UIButton alloc] init];
   completeButton.frame =
-      CGRectMake(ScreenWidth - 100, ScreenHeight - 105.0 - IS_TABBAR_ADD_HEIGHT,
+      CGRectMake(ScreenWidth - 100, ScreenHeight - 105.0 - IS_BOTTOM_HEIGHT,
                  50.0, 50.0);
   UIImage* img3 = [UIImage imageNamed:@"complete"];
   [completeButton setImage:img3 forState:UIControlStateNormal];

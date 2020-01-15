@@ -23,6 +23,7 @@
 #import "ISAssetsManager.h"
 #import "ISPhotoAlbumViewController.h"
 #import "HalfViewController.h"
+#import "Bezier3ViewController.h"
 
 
 #define IS_iPhoneX [UIScreen mainScreen].bounds.size.height >= 812
@@ -161,7 +162,9 @@
       @"CoverMothedViewController",
       @"TestCurentViewController",
       @"LuckDrawViewController",
-      @"RedPacketViewController"
+      @"RedPacketViewController",
+      @"EmitterListTableViewController",
+      @"Bezier3ViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",

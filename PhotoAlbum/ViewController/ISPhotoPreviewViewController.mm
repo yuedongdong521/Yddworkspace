@@ -88,8 +88,8 @@
 
 - (void)createToolbarView {
   self.toolbarView = [[UIView alloc]
-      initWithFrame:CGRectMake(0, ScreenHeight - 44 - IS_TABBAR_ADD_HEIGHT,
-                               ScreenWidth, 44 + IS_TABBAR_ADD_HEIGHT)];
+      initWithFrame:CGRectMake(0, ScreenHeight - 44 - IS_BOTTOM_HEIGHT,
+                               ScreenWidth, 44 + IS_BOTTOM_HEIGHT)];
   self.toolbarView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.3];
   [self.view addSubview:self.toolbarView];
 

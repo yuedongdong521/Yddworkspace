@@ -28,6 +28,8 @@ static NSString *const cellID = @"cellID";
 }
 
 - (void)initData{
+    self.tableView.contentInset = UIEdgeInsetsMake(kNavBarHeight, 0, IS_BOTTOM_HEIGHT, 0);
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
     _datas = @[@"火焰效果", @"雪花效果", @"烟花效果", @"test"];
 }
 - (void)didReceiveMemoryWarning {
@@ -73,12 +75,12 @@ static NSString *const cellID = @"cellID";
 }
 
 - (void)pushToDetailVCWithType:(EmitterType)type{
-    EmitterDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"EmitterDetailViewController"];
+    EmitterDetailViewController *vc = [[EmitterDetailViewController alloc] init];
     vc.emitterType = type;
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)pushToTestVC{
-    EmitterTestViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"EmitterTestViewController"];
+    EmitterTestViewController *vc = [[EmitterTestViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

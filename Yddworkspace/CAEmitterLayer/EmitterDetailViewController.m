@@ -16,8 +16,7 @@
     
     CADisplayLink *_timer;
 }
-@property (weak, nonatomic) IBOutlet UISlider *slider;
-
+@property (nonatomic, strong) UISlider *slider;
 
 @end
 
@@ -33,13 +32,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _slider.transform = CGAffineTransformMakeRotation(-M_PI_2);
+    self.slider.frame = CGRectMake(20, ScreenHeight - 200, ScreenWidth - 40, 50);
     [self  configureTitle];
     [self configureEmitterWithType:_emitterType];
     
     if (_emitterType == EmitterTypeSparkle) {
         [self setupTimer];
     }
+    
+    [self.view addSubview:self.slider];
     
     
 }
@@ -179,7 +180,7 @@
 
 #pragma mark - event methods
 
-- (IBAction)sliderAction:(UISlider *)sender {
+- (void)sliderAction:(UISlider *)sender {
     
     float value = sender.value / 100;
     
@@ -203,6 +204,18 @@
             break;
     }
 }
+
+- (UISlider *)slider
+{
+    if (!_slider) {
+        _slider = [[UISlider alloc] init];
+        [_slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+        _slider.maximumValue = 100;
+        _slider.minimumValue = 0;
+    }
+    return _slider;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

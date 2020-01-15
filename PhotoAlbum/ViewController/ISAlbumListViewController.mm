@@ -148,9 +148,9 @@
     _albumListTableView.backgroundColor = [UIColor clearColor];
     if (IS_IPHONE_X) {
       _albumListTableView.contentInset =
-          UIEdgeInsetsMake(0, 0, IS_TABBAR_ADD_HEIGHT, 0);
+          UIEdgeInsetsMake(0, 0, IS_BOTTOM_HEIGHT, 0);
       _albumListTableView.scrollIndicatorInsets =
-          UIEdgeInsetsMake(0, 0, IS_TABBAR_ADD_HEIGHT, 0);
+          UIEdgeInsetsMake(0, 0, IS_BOTTOM_HEIGHT, 0);
     }
   }
   return _albumListTableView;

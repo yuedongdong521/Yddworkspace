@@ -42,7 +42,7 @@
 #define kNavBarHeight (kStatusBarHeight + kNavBarCententHeight)
 #define kTabBarHeight (kStatusBarHeight > 20 ? 83 : 49)
 
-#define IS_TABBAR_ADD_HEIGHT (IS_IPHONE_X ? 34.0 : 0)
+#define IS_BOTTOM_HEIGHT (IS_IPHONE_X ? 34.0 : 0)
 
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IS_IPHONE_X \

@@ -132,7 +132,7 @@
 
 - (void)createToolbarView {
   self.toolbar = [[UIView alloc]
-      initWithFrame:CGRectMake(0, ScreenHeight - 50 - IS_TABBAR_ADD_HEIGHT,
+      initWithFrame:CGRectMake(0, ScreenHeight - 50 - IS_BOTTOM_HEIGHT,
                                ScreenWidth, 50)];
   self.toolbar.backgroundColor = [UIColor whiteColor];
   [self.view addSubview:self.toolbar];
@@ -218,7 +218,7 @@
                initWithFrame:CGRectMake(0, kNavBarHeight, ScreenWidth,
                                         ScreenHeight - 50 -
                                             kNavBarHeight -
-                                            IS_TABBAR_ADD_HEIGHT)
+                                            IS_BOTTOM_HEIGHT)
         collectionViewLayout:photoFlowLayout];
     _photoCollectionView.delegate = self;
     _photoCollectionView.dataSource = self;

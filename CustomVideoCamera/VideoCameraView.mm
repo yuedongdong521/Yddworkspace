@@ -213,7 +213,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   _beginTipLabel.font = [UIFont systemFontOfSize:16];
   _beginTipLabel.frame =
       CGRectMake((ScreenWidth - 200) / 2.f,
-                 ScreenHeight - 147 - IS_TABBAR_ADD_HEIGHT, 200, 25);
+                 ScreenHeight - 147 - IS_BOTTOM_HEIGHT, 200, 25);
   _beginTipLabel.textColor = [UIColor colorWithWhite:0 alpha:1];
   _beginTipLabel.shadowColor =
       [UIColor colorWithRed:0 green:0 blue:0 alpha:0.35];
@@ -223,7 +223,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   // 开始录制
   _photoCaptureButton = [[UIButton alloc]
       initWithFrame:CGRectMake(SCREEN_WIDTH / 2.f - 65 / 2.f,
-                               SCREEN_HEIGHT - 112.5 - IS_TABBAR_ADD_HEIGHT, 65,
+                               SCREEN_HEIGHT - 112.5 - IS_BOTTOM_HEIGHT, 65,
                                65)];
   [_photoCaptureButton addTarget:self
                           action:@selector(togglePhoto:)
@@ -244,7 +244,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   _videoCompleteButton.hidden = YES;
   _videoCompleteButton.frame =
       CGRectMake(SCREEN_WIDTH - 100,
-                 SCREEN_HEIGHT - 105.0 - IS_TABBAR_ADD_HEIGHT, 50, 50.0);
+                 SCREEN_HEIGHT - 105.0 - IS_BOTTOM_HEIGHT, 50, 50.0);
   UIImage* img3 = [UIImage imageNamed:@"complete"];
   [_videoCompleteButton setImage:img3 forState:UIControlStateNormal];
   [_videoCompleteButton addTarget:self
@@ -256,7 +256,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   _dleButton = [[UIButton alloc] init];
   _dleButton.hidden = YES;
   _dleButton.frame =
-      CGRectMake(50, SCREEN_HEIGHT - 105.0 - IS_TABBAR_ADD_HEIGHT, 50, 50.0);
+      CGRectMake(50, SCREEN_HEIGHT - 105.0 - IS_BOTTOM_HEIGHT, 50, 50.0);
   UIImage* img4 = [UIImage imageNamed:@"del"];
   [_dleButton setImage:img4 forState:UIControlStateNormal];
   UIImage* delSelectedImage = [UIImage imageNamed:@"icon_video_del_selected"];
@@ -271,7 +271,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   // 上传本地视频
   _inputLocalVieoBtn = [[UIButton alloc] init];
   _inputLocalVieoBtn.frame =
-      CGRectMake(50, SCREEN_HEIGHT - 105.0 - IS_TABBAR_ADD_HEIGHT, 50, 50.0);
+      CGRectMake(50, SCREEN_HEIGHT - 105.0 - IS_BOTTOM_HEIGHT, 50, 50.0);
   UIImage* img5 = [UIImage imageNamed:@"record_ico_input_1"];
   [_inputLocalVieoBtn setImage:img5 forState:UIControlStateNormal];
   [_inputLocalVieoBtn addTarget:self
@@ -364,7 +364,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   // 录制进度条
   CGFloat orgionY = SCREEN_HEIGHT - 4;
   if (IS_IPHONE_X) {
-    orgionY = orgionY - IS_TABBAR_ADD_HEIGHT;
+    orgionY = orgionY - IS_BOTTOM_HEIGHT;
   }
   _videoProgressView = [[ISCameraProgressView alloc]
       initWithFrame:CGRectMake(0, orgionY, SCREEN_WIDTH, 4)
@@ -378,7 +378,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
   // 倒计时提示视图
   _countDownView = [[ISVideoCountDownView alloc]
       initWithFrame:CGRectMake(SCREEN_WIDTH / 2.f - 52,
-                               SCREEN_HEIGHT / 2.f - 52 - IS_TABBAR_ADD_HEIGHT,
+                               SCREEN_HEIGHT / 2.f - 52 - IS_BOTTOM_HEIGHT,
                                104, 104)];
   [filteredVideoView addSubview:_countDownView];
   _countDownView.hidden = YES;
@@ -1209,7 +1209,7 @@ typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
     _delayShootTipLabel = [[UILabel alloc] init];
     _delayShootTipLabel.frame =
         CGRectMake(SCREEN_WIDTH / 2.f - 65,
-                   SCREEN_HEIGHT - 170 - IS_TABBAR_ADD_HEIGHT, 130, 35);
+                   SCREEN_HEIGHT - 170 - IS_BOTTOM_HEIGHT, 130, 35);
     _delayShootTipLabel.layer.cornerRadius = 4;
     _delayShootTipLabel.clipsToBounds = YES;
     _delayShootTipLabel.textColor = [UIColor whiteColor];
