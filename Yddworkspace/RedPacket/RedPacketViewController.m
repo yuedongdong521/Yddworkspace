@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"红包雨";
     RedPacketView *redView = [[RedPacketView alloc] init];
     [self.view addSubview:redView];
     redView.frame = self.view.bounds;

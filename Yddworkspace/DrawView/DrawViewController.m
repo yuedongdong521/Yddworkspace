@@ -8,7 +8,9 @@
 
 #import "DrawViewController.h"
 
+
 @interface DrawViewController ()
+
 
 @end
 
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    DrawView *drawView = [[DrawView alloc] initWithFrame:CGRectMake(0, kNavBarHeight, ScreenWidth, ScreenHeight - kNavBarHeight - IS_BOTTOM_HEIGHT)];
+    drawView.type = self.type;
+    [self.view addSubview:drawView];
 }
 
 /*

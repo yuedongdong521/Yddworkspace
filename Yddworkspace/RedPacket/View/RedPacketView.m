@@ -37,15 +37,21 @@
     return self;
 }
 
-- (void)startAnimation
+- (void)startAnimation:(BOOL)clicked
 {
     self.animationImages = [self createAnimationImages];
     self.animationDuration = 0.4;
     [self startAnimating];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self stopAnimating];
-        if (self.clickedBlock) {
-            self.clickedBlock(self.redPacketId);
+        if (clicked) {
+            if (self.animationFinished) {
+                self.animationFinished();
+            }
+        } else {
+            if (self.clickedBlock) {
+                self.clickedBlock(self.redPacketId);
+            }
         }
     });
     
@@ -66,7 +72,7 @@
 - (void)tapAction:(UITapGestureRecognizer *)tap
 {
     NSLog(@"cur item = %ld", (long)self.redPacketId);
-    [self startAnimation];
+    [self startAnimation:YES];
     
 }
 
@@ -79,7 +85,7 @@
     animation.duration = 3.0f;
     // 重复次数为最大值
     animation.repeatCount = 1; // FLT_MAX;
-    animation.removedOnCompletion = YES;
+    animation.removedOnCompletion = NO;
     animation.fillMode = kCAFillModeForwards;
     animation.delegate = self;
     // 将动画添加到动画视图上
@@ -88,9 +94,14 @@
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
-    if (self.animationFinished) {
-        self.animationFinished();
+    if (self.superview && !self.animating) {
+        [self startAnimation:NO];
+    } else {
+        if (self.animationFinished) {
+            self.animationFinished();
+        }
     }
+   
 }
 
 + (UIBezierPath *)pathWithStartPoint:(CGPoint)startPoint
@@ -179,7 +190,7 @@
     item.image = [UIImage imageNamed:@"img_red_packet"];
     item.frame = CGRectMake(x, 0, 79, 86);
     [self addSubview:item];
-    UIBezierPath *path = [RedPacketItem pathWithStartPoint:item.center endPoint:CGPointMake(item.center.x, ScreenHeight)];
+    UIBezierPath *path = [RedPacketItem pathWithStartPoint:item.center endPoint:CGPointMake(item.center.x, self.bounds.size.height - 43)];
     [item addAnimationWithPath:path];
     [self.packetArr addObject:item];
     
@@ -211,7 +222,7 @@
        item.image = [UIImage imageNamed:@"img_red_packet"];
        item.frame = CGRectMake(ScreenWidth * 0.5, 0, 79, 86);
     [[UIColor redColor] set];
-    UIBezierPath *path = [RedPacketItem pathWithStartPoint:item.center endPoint:CGPointMake(item.center.x, ScreenHeight)];
+    UIBezierPath *path = [RedPacketItem pathWithStartPoint:item.center endPoint:CGPointMake(item.center.x, ScreenHeight - 43)];
     [path stroke];
 }
 

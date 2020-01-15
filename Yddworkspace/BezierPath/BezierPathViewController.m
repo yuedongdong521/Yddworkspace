@@ -38,9 +38,9 @@
     
     _tanView = [self creatBezierPathViewWithFrame:CGRectMake(20, 300, 30 * 2 * M_PI, 60) WithBankgroundColor:[UIColor grayColor]];
     
-//    [self drawSinLayer];
-//    [self drawCosLayer];
-//    [self drawTanLayer];
+    [self drawSinLayer];
+    [self drawCosLayer];
+    [self drawTanLayer];
 }
 
 - (UIView *)creatBezierPathViewWithFrame:(CGRect)frame WithBankgroundColor:(UIColor *)color

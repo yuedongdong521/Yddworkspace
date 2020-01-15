@@ -164,7 +164,8 @@
       @"LuckDrawViewController",
       @"RedPacketViewController",
       @"EmitterListTableViewController",
-      @"Bezier3ViewController"
+      @"Bezier3ViewController",
+      @"DrawListViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",

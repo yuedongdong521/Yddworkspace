@@ -397,6 +397,9 @@
 		84500BC223A8CA78008AD74A /* KXLuckDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84500BC123A8CA78008AD74A /* KXLuckDrawView.m */; };
 		845BBF6C2325FA3100F994B1 /* BezierMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BBF6B2325FA3100F994B1 /* BezierMaskViewController.swift */; };
 		845C46DB23A0DC7100F80EAA /* KXPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C46DA23A0DC7100F80EAA /* KXPasswordView.m */; };
+		846F4FE323CED8AB005729AE /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F4FE223CED8AB005729AE /* DrawView.m */; };
+		846F4FE623CEDC2E005729AE /* DrawListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F4FE523CEDC2E005729AE /* DrawListViewController.m */; };
+		846F4FE923CEDC3D005729AE /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F4FE823CEDC3D005729AE /* DrawViewController.m */; };
 		8470A67C23AA050200E3F94A /* PhotoNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470A67B23AA050200E3F94A /* PhotoNumber.m */; };
 		847137E022BCDAA3003BC0E4 /* YDDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137DF22BCDAA3003BC0E4 /* YDDWebViewController.m */; };
 		847137E622BCE093003BC0E4 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 847137E322BCE092003BC0E4 /* NJKWebViewProgress.m */; };
@@ -1623,6 +1626,12 @@
 		845BBF6B2325FA3100F994B1 /* BezierMaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierMaskViewController.swift; sourceTree = "<group>"; };
 		845C46D923A0DC7100F80EAA /* KXPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXPasswordView.h; sourceTree = "<group>"; };
 		845C46DA23A0DC7100F80EAA /* KXPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXPasswordView.m; sourceTree = "<group>"; };
+		846F4FE123CED8AB005729AE /* DrawView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
+		846F4FE223CED8AB005729AE /* DrawView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		846F4FE423CEDC2E005729AE /* DrawListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawListViewController.h; sourceTree = "<group>"; };
+		846F4FE523CEDC2E005729AE /* DrawListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawListViewController.m; sourceTree = "<group>"; };
+		846F4FE723CEDC3D005729AE /* DrawViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
+		846F4FE823CEDC3D005729AE /* DrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		8470A67A23AA050200E3F94A /* PhotoNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoNumber.h; sourceTree = "<group>"; };
 		8470A67B23AA050200E3F94A /* PhotoNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoNumber.m; sourceTree = "<group>"; };
 		847137DE22BCDAA3003BC0E4 /* YDDWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDDWebViewController.h; sourceTree = "<group>"; };
@@ -2901,6 +2910,7 @@
 				60AF3C411F18593C00C8FBB9 /* Source */,
 				60B7835B1F16123B00BD50D7 /* DrawImageColor */,
 				6047C1691E6AC434002FC1AC /* HZAViewController.h */,
+				846F4FE023CED890005729AE /* DrawView */,
 				6047C16A1E6AC434002FC1AC /* HZAViewController.m */,
 				8474B6C223A7579B006797F1 /* TestCurentViewController.h */,
 				8474B6C323A7579B006797F1 /* TestCurentViewController.m */,
@@ -4179,6 +4189,19 @@
 				84500BC123A8CA78008AD74A /* KXLuckDrawView.m */,
 			);
 			path = "抽奖";
+			sourceTree = "<group>";
+		};
+		846F4FE023CED890005729AE /* DrawView */ = {
+			isa = PBXGroup;
+			children = (
+				846F4FE123CED8AB005729AE /* DrawView.h */,
+				846F4FE223CED8AB005729AE /* DrawView.m */,
+				846F4FE423CEDC2E005729AE /* DrawListViewController.h */,
+				846F4FE523CEDC2E005729AE /* DrawListViewController.m */,
+				846F4FE723CEDC3D005729AE /* DrawViewController.h */,
+				846F4FE823CEDC3D005729AE /* DrawViewController.m */,
+			);
+			path = DrawView;
 			sourceTree = "<group>";
 		};
 		847137E122BCE092003BC0E4 /* NJKWebViewProgress */ = {
@@ -5747,6 +5770,7 @@
 				6000451E1E949CF200F3471A /* UIScrollView+MJRefresh.m in Sources */,
 				8435195622C49AE200FA0852 /* YYTextTransaction.m in Sources */,
 				8435194922C49AE200FA0852 /* YYTextSelectionView.m in Sources */,
+				846F4FE623CEDC2E005729AE /* DrawListViewController.m in Sources */,
 				60BEE7751E2CC07100F71DB8 /* THCapture.m in Sources */,
 				EDFB35AB21DC585A009D8212 /* RunLoopViewController.m in Sources */,
 				8435198822C4B32900FA0852 /* PhotoGroupView.m in Sources */,
@@ -5758,6 +5782,7 @@
 				8430103022B0EB3F0034A2AD /* TestXibViewController.m in Sources */,
 				ED2E64EC21355F7F00ADCDFF /* EditVideoViewController.mm in Sources */,
 				ED1B74322177263500D51FF5 /* ISAssetsManager.mm in Sources */,
+				846F4FE923CEDC3D005729AE /* DrawViewController.m in Sources */,
 				EDC8D483218ACBE7000B3D6C /* GPUImageOutput.m in Sources */,
 				6000450C1E949CF200F3471A /* MJRefreshAutoFooter.m in Sources */,
 				84BBD53722CCD01C000FF0C5 /* MoveCollectionViewController.m in Sources */,
@@ -5899,6 +5924,7 @@
 				843F033622D6CEB90012AE17 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				EDC8D453218ACBE6000B3D6C /* GPUImageCannyEdgeDetectionFilter.m in Sources */,
 				ED49E93822151333004B86D1 /* ISAVWindowManager.mm in Sources */,
+				846F4FE323CED8AB005729AE /* DrawView.m in Sources */,
 				EDC8D49B218ACBE7000B3D6C /* GPUImageSoftLightBlendFilter.m in Sources */,
 				ED28510A2101CE5800178965 /* UIImageView+HighlightedWebCache.m in Sources */,
 				ED2E64E621355F7F00ADCDFF /* PKChatMessagePlayerView.mm in Sources */,

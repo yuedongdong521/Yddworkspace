@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    BezierView *bezierView = [[BezierView alloc]initWithFrame:CGRectMake(0, (ScreenHeight - ScreenWidth) * 0.5, ScreenWidth, 200)];
+    BezierView *bezierView = [[BezierView alloc]initWithFrame:CGRectMake(0, kNavBarHeight, ScreenWidth, ScreenHeight - kNavBarHeight - IS_BOTTOM_HEIGHT)];
     [self.view addSubview:bezierView];
     bezierView.backgroundColor = [UIColor whiteColor];
 }
