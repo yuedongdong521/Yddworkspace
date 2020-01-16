@@ -2,4 +2,4 @@
     学习记录
 ## README练习
     添加红包雨效果图
-    ![image](https://github.com/yuedongdong521/Yddworkspace/blob/master/redPacket.gif)
+    <img src="https://github.com/yuedongdong521/Yddworkspace/blob/master/redPacket.gif?raw=true" width="218px" height="448px">
