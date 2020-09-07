@@ -8,6 +8,8 @@
 
 #import "SideBarView.h"
 #import "UIView+Extend.h"
+#import "AppManager.h"
+#import "PresentationViewController.h"
 
 @interface SideBarView ()
 
@@ -32,8 +34,13 @@
 
 - (void)sideBarAction
 {
-    UIViewController *vc = [self superViewController];
+    UINavigationController *vc = [UIApplication sharedApplication].delegate.window.rootViewController;
     NSLog(@"%@",NSStringFromSelector(_cmd));
+    PresentationViewController *pvc = [[PresentationViewController alloc] init];
+//    [vc presentViewController:pvc animated:YES completion:^{
+//
+//    }];
+    [vc pushViewController:pvc animated:YES];
 }
 
 /*

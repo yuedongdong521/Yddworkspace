@@ -81,6 +81,7 @@
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:self.startPoint];
     [path addCurveToPoint:self.endPoint controlPoint1:self.controlPoint1 controlPoint2:self.controlPoint2];
+//    [path addQuadCurveToPoint:self.endPoint controlPoint:self.controlPoint1];
     [[UIColor greenColor] set];
     [path stroke];
 }

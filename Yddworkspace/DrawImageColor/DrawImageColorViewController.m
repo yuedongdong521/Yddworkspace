@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *orginImageView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *changeColorImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *rightImage;
+@property (weak, nonatomic) IBOutlet UIImageView *leftImage;
 
 @end
 
@@ -38,6 +40,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     _orginImageView.image = [UIImage imageNamed:@"0.jpg"];
+    
+    self.rightImage.image = [UIImage imageWithColor:[UIColor cyanColor] size:self.rightImage.frame.size];
+    self.leftImage.image = [UIImage imageWithColor:[UIColor greenColor] size:self.leftImage.frame.size text:@"测试颜色" textAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:22]} circular:YES];
 
 }
 

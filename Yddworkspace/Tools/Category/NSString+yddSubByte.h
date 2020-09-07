@@ -40,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否为纯数字
 - (BOOL)isNumber;
 
+- (NSString *)vi_md5;
+
 @end
 
 NS_ASSUME_NONNULL_END

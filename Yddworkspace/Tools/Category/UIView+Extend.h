@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIViewController *)superViewController;
 
+- (void)addMaskLayerImage:(UIImage *)image;
 
 @end
 

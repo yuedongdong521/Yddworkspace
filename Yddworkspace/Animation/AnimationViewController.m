@@ -7,24 +7,56 @@
 //
 
 #import "AnimationViewController.h"
+#import "TextRollAnimationLabel.h"
+#import "UIView+Extend.h"
 
 @interface AnimationViewController ()
 
 @property(nonatomic, retain) UIImageView *animationView;
 @property (nonatomic, assign) int angle;
+@property (nonatomic, strong) TextRollAnimationLabel *label;
+
+
 @end
 
 @implementation AnimationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.angle = 0;
     self.animationView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"0" ofType:@"jpg"]]];
     self.animationView.contentMode = UIViewContentModeScaleAspectFill;
     self.animationView.frame = self.view.bounds;
     [self.view addSubview:self.animationView];
     [self iOS8BlurImageImplement];
-    // Do any additional setup after loading the view.
+//     Do any additional setup after loading the view.
+    
+    
+    _label = [[TextRollAnimationLabel alloc] init];
+    _label.text = @"self.animationView.contentMode = UIViewContentModeScaleAspectFill;";
+    _label.speed = 100;
+    _label.repeatCount = MAXFLOAT;
+    _label.dealyTime = 1;
+    [self.view addSubview:self.label];
+    [self.label mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.top.mas_equalTo(100);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(40);
+    }];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"0.jpg"]];
+    imageView.frame = CGRectMake(20, 500, 50, 50);
+    [imageView addMaskLayerImage:[UIImage imageNamed:@"headBoxCrown"]];
+    [self.view addSubview:imageView];
+    
+//    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(20);
+//        make.bottom.mas_equalTo(50);
+//        make.left.right.mas_equalTo(50);
+//    }];
+    
 }
 
 - (void)iOS8BlurImageImplement
@@ -38,7 +70,11 @@
 
  - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-//    [self startAnimation];
+    [self.label startAnimationFinished:^(BOOL flag) {
+        
+    }];
+    
+    [self startAnimation];
 }
 
 -(void)startAnimation

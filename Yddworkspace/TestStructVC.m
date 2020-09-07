@@ -141,6 +141,22 @@ struct model {
     animation.delegate = self;
     [layer5 addAnimation:animation forKey:@"AnimationMoveX"];
     
+    
+    UILabel *label5 = [UILabel labelWithFont:[UIFont systemFontOfSize:20] textColor:[UIColor whiteColor] textAlignment:NSTextAlignmentCenter];
+    
+    label5.text = @"第一序列";
+    [self.view addSubview:label5];
+    
+    [label5 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.centerY.equalTo(self.view.mas_centerY);
+        make.height.mas_equalTo(40);
+    }];
+    
+    label5.fontGradLayer = layer;
+    
+    
+    
 }
 
 - (void)animationStart

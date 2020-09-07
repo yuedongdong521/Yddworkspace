@@ -24,6 +24,7 @@
 #import "ISPhotoAlbumViewController.h"
 #import "HalfViewController.h"
 #import "Bezier3ViewController.h"
+#import "AlphaPlayerViewController.h"
 
 
 #define IS_iPhoneX [UIScreen mainScreen].bounds.size.height >= 812
@@ -165,7 +166,16 @@
       @"RedPacketViewController",
       @"EmitterListTableViewController",
       @"Bezier3ViewController",
-      @"DrawListViewController"
+      @"DrawListViewController",
+      @"EmitterGoldViewController",
+      @"CAKeyAnimationViewController",
+      @"StackViewController",
+      @"AlphaPlayerViewController",
+      @"GlodAnimationViewController",
+      @"DarkModeViewController",
+      @"NetDuagnoViewController",
+      @"TimeAnimationViewController",
+      @"GCDTimerViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
@@ -176,7 +186,6 @@
         @"LoadingMaskLayerController", @"TextViewLinkVC"]
   ];
 
-  
   _myTestMtbArray =
       [NSMutableArray arrayWithObjects:@"1", @"2", @"3", @"4", nil];
   CGFloat navigMaxY = IS_iPhoneX ? 24 + 64 : 64;
@@ -273,8 +282,10 @@
           [viewController
               isKindOfClass:[AVCaptureSessionViewController class]] ||
           [viewController isKindOfClass:[PresentationViewController class]] ||
-          [viewController isKindOfClass:[HalfViewController class]] /* ||
-          [viewController isKindOfClass:NSClassFromString(@"DeleteCellViewController")]*/) {
+          [viewController isKindOfClass:[HalfViewController class]]
+//          || [viewController isKindOfClass:[AlphaPlayerViewController class]]
+          )
+      {
         [self presentViewController:viewController animated:YES completion:nil];
         return;
       } else if ([viewController isKindOfClass:[ISPhotoAlbumViewController class]]) {

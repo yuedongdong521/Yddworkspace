@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UILabel *)labelWithFont:(UIFont *)font textColor:(UIColor *)color textAlignment:(NSTextAlignment)alignment;
 
++ (void)eachObjects:(NSArray *)objects objBlock:(void(^)(id obj))objBlock;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
