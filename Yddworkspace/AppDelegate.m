@@ -24,15 +24,24 @@
     // Override point for customization after application launch.
     
     [self initIFlySDK];
-    
-    [[AppManager shareManager] addTabBar];
    
+    [[AppManager shareManager] addTabBar];
     
     [UIFont.familyNames enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSLog(@"UIFont name : %@", obj);
     }];
     if (0 == NULL) {
         NSLog(@"0 == NULL");
+    }
+    
+    NSArray *array = @[@"1", @"2"];
+    
+    if (1 > (NSInteger)array.count - 12) {
+        NSLog(@"%@", array);
+    }
+    NSInteger num = array.count - 12;
+    if (3 > num) {
+        NSLog(@"%@", array);
     }
     
     NSString *mesg = [NSString stringWithFormat:@"%@", NULL];
@@ -50,7 +59,7 @@
     
     [self test16Str];
   [self getAppInfo];
-    
+
     return YES;
 }
 
@@ -62,6 +71,27 @@
 
 - (void)initTabBar
 {
+    
+    NSArray *arr = @[@(11), @(12), @(9), @(8)];
+    
+    for (int i = 0; i < arr.count; i++) {
+        switch ([arr[i] intValue]) {
+            case 11:
+                NSLog(@"11111");
+                break;
+            case 8:
+                NSLog(@"22222");
+                break;
+                
+            case 12:
+            case 9:
+                NSLog(@"33333");
+                break;
+                
+            default:
+                break;
+        }
+    }
     
 }
 

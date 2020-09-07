@@ -136,29 +136,22 @@ extension UIView {
        
        muteLayer = CAShapeLayer.init()
        muteLayer!.backgroundColor = UIColor.gray.cgColor
-       muteLayer!.fillColor = UIColor.green.cgColor
+       muteLayer!.fillColor = UIColor.clear.cgColor
        muteLayer!.strokeColor = UIColor.blue.cgColor
        muteLayer!.path = path.cgPath
        self.layer.insertSublayer(muteLayer!, at: 0)
        self.frame = CGRect(x: x, y: y, width: width, height: height)
         if animation {
-//            let animation = CATransition()
-//            animation.duration = 0.3
-//            animation.type = "PageCurl"
-//            animation.subtype = kCATransitionFromTop
-//            animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
-//            self.layer.add(animation, forKey: kMuteAnimationKey)
-           
             UIView.animate(withDuration: 1, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
                 self.alpha = 1
             }) { (finished) in
                 completed?(finished)
-                self.animationCompleted?(finished)
                 self.dismissMute(animation: true)
             }
             
         } else {
             self.isHidden = false
+            self.animationCompleted?(true)
         }
    }
     
@@ -170,10 +163,9 @@ extension UIView {
             self.transform = CGAffineTransform.init(a: 0.5, b: 0.0, c: 0.0, d: 0.5, tx: x, ty: y)
             self.alpha = 0.5
         }) { (finished) in
-            if finished {
-                self.alpha = 0
-                self.transform = CGAffineTransform.identity
-            }
+            self.alpha = 0
+            self.transform = CGAffineTransform.identity
+            self.animationCompleted?(finished)
         }
         
         

@@ -25,9 +25,9 @@
     gradientLayer.locations = startLocations;
     gradientLayer.startPoint = CGPointMake(0 - (size * 2.0), 0.5);
     gradientLayer.endPoint = CGPointMake(1 + size, 0.5);
-    [gradientLayer setColors:@[(id)UIColorHexRGBA(0xFFFFFF, 0.1).CGColor,
+    [gradientLayer setColors:@[(id)UIColorHexRGBA(0xFFFFFF, 0.5).CGColor,
                                (id)UIColorHexRGBA(0xFFFFFF, 1).CGColor,
-                               (id)UIColorHexRGBA(0xFFFFFF, 0.1).CGColor]];
+                               (id)UIColorHexRGBA(0xFFFFFF, 0.5).CGColor]];
     
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"locations"];
     animation.fromValue = startLocations;

@@ -46,8 +46,8 @@
 }
 
 - (void)setupTimer{
-    _timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(changeColor:)];
-    [_timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+//    _timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(changeColor:)];
+//    [_timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
      
 - (void)configureTitle{

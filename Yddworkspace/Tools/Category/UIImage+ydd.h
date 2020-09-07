@@ -17,6 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIImage*)screenShotView:(UIView*)view shotLayer:(BOOL)isShotLayer;
 + (UIImage*)mergeImageWithImages:(NSArray<UIImage*>*)images;
+
++ (UIImage*)mergedImage:(UIImage*)image
+               subImage:(UIImage*)subImage
+               subLevel:(CGFloat)subLevel;
+
 /**
  生成二维码
  

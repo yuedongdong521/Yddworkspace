@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ExtensionViewController: UIViewController {
 
     lazy var muteView: UIView = {
@@ -31,16 +32,61 @@ class ExtensionViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        self.muteView.removeFromSuperview()
-        
-        
         let p = touches.first?.location(in: self.view) ?? CGPoint.zero
-  
-        self.view.addSubview(self.muteView)
-        self.muteView.showView(TopPoint: p, IsLeft: p.x < self.view.center.x, Space: 10, Radius: 20, Animation: true) { (finished) in
+//        self.showMuteView(p)
+//        self.showLabel(p)
+        self.showCenterMuteView(p)
+        
+     
+    }
+    
+    
+    func showMuteView(_ p: CGPoint) {
+        let muteView = UIView.init(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        
+        self.view.addSubview(muteView)
+        muteView.showView(TopPoint: p, IsLeft: p.x < self.view.center.x, Space: 10, Radius: 20, Animation: true) { (finished) in
             print("mute \(finished)")
+            muteView.removeFromSuperview()
         }
     }
+    
+    func showLabel(_ p : CGPoint) {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "菜单"
+        label.textAlignment = .center
+        label.sizeToFit()
+        label.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        self.view.addSubview(label)
+        label.showView(TopPoint: p, IsLeft: p.x < self.view.center.x, Space: 10, Radius: 5, Animation: true) { (finished) in
+            label.removeFromSuperview()
+        }
+    }
+    
+    func showCenterMuteView(_ p : CGPoint) {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "菜单"
+        label.textAlignment = .center
+        label.sizeToFit()
+        label.frame = CGRect(x: p.x, y: p.y, width: 40, height: 40)
+        label.layer.cornerRadius = 5
+        label.layer.masksToBounds = true
+        label.layer.borderColor = UIColor.blue.cgColor
+        label.layer.borderWidth = 1
+        self.view.addSubview(label)
+        
+        label.showCenterView { (finish) in
+        
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
+                label.dismissCenter { (finished) in
+                    
+                }
+            }
+        }
+    }
+    
     
     deinit {
         print("deinit ExtensionViewController")

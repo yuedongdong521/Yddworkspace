@@ -13,6 +13,38 @@ const void *_fontGradColorLayer;
 
 @implementation UILabel (YDDExtend)
 
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        SEL layoutAction = @selector(layoutSubviews);
+        SEL newAction = @selector(newLayoutSubviews);
+        
+        Method layoutMethod = class_getInstanceMethod(self, layoutAction);
+        Method newMethod = class_getInstanceMethod(self, newAction);
+        
+        BOOL isAdd = class_addMethod(self, layoutAction, method_getImplementation(newMethod), method_getTypeEncoding(newMethod));
+
+        if (isAdd) {
+            class_replaceMethod(self, newAction, method_getImplementation(layoutMethod), method_getTypeEncoding(layoutMethod));
+        } else {
+            method_exchangeImplementations(layoutMethod, newMethod);
+        }
+        
+    });
+}
+
+- (void)newLayoutSubviews
+{
+    [self newLayoutSubviews];
+    if (self.fontGradLayer) {
+    
+    }
+    
+    
+}
+
+
 - (void)setFontGradColors:(NSArray <UIColor *>*)colors
 {
     UIView *superView = self.superview;
@@ -51,6 +83,7 @@ const void *_fontGradColorLayer;
     if (!superView) {
         return;
     }
+    [self layoutIfNeeded];
     self.backgroundColor = [UIColor clearColor];
     fontGradLayer.frame = self.frame;
     [superView.layer addSublayer:fontGradLayer];
@@ -67,6 +100,15 @@ const void *_fontGradColorLayer;
     label.textColor = color;
     label.textAlignment = alignment;
     return label;
+}
+
++ (void)eachObjects:(NSArray *)objects objBlock:(void(^)(id obj))objBlock
+{
+    [objects enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (objBlock) {
+            objBlock(obj);
+        }
+    }];
 }
 
 

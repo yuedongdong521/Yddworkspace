@@ -98,10 +98,22 @@ static void *BtnResponsEdgeKey = &"BtnResponsEdgeKey";
 - (UIViewController *)superViewController
 {
     UIResponder *responder = self.nextResponder;
-    while (![responder isKindOfClass:[UIViewController class]]) {
+    while (responder && ![responder isKindOfClass:[UIViewController class]]) {
         responder = responder.nextResponder;
     }
+    
     return (UIViewController *)responder;
+}
+
+
+- (void)addMaskLayerImage:(UIImage *)image
+{
+    CALayer *maskLayer = [[CALayer alloc] init];
+    maskLayer.frame = self.bounds;
+    maskLayer.contents = (__bridge id)[image CGImage];
+//    maskLayer.contentsRect = CGRectMake(0, 0, 1, 1);
+    maskLayer.contentsCenter = CGRectMake(0.5, 0.5, 0.1, 0.1);
+    self.layer.mask = maskLayer;
 }
 
 @end

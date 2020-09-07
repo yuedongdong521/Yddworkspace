@@ -31,5 +31,59 @@
     return img;
 }
 
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
+{
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 1);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+/**
+ 绘制图片
+ 
+ @param color 背景色
+ @param size 大小
+ @param text 文字
+ @param textAttributes 字体设置
+ @param isCircular 是否圆形
+ @return 图片
+ */
++ (UIImage *)imageWithColor:(UIColor *)color
+                          size:(CGSize)size
+                          text:(NSString *)text
+                textAttributes:(NSDictionary *)textAttributes
+                      circular:(BOOL)isCircular
+{
+    if (!color || size.width <= 0 || size.height <= 0) return nil;
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // circular
+    if (isCircular) {
+        CGPathRef path = CGPathCreateWithEllipseInRect(rect, NULL);
+        CGContextAddPath(context, path);
+        CGContextClip(context);
+        CGPathRelease(path);
+    }
+    
+    // color
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    
+    // text
+    CGSize textSize = [text sizeWithAttributes:textAttributes];
+    [text drawInRect:CGRectMake((size.width - textSize.width) / 2, (size.height - textSize.height) / 2, textSize.width, textSize.height) withAttributes:textAttributes];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 
 @end

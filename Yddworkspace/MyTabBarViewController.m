@@ -48,15 +48,15 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-  if (viewController) {
-    if ([viewController isKindOfClass:[BaseNavigationViewController class]]) {
-      [WeChatWindow shareWeChatWindow].navController = (BaseNavigationViewController *)viewController;
-    } else if (viewController.navigationController) {
-      [WeChatWindow shareWeChatWindow].navController = viewController.navigationController;
-    } else {
-      [WeChatWindow shareWeChatWindow].hidden = YES;
-    }
-  }
+//  if (viewController) {
+//    if ([viewController isKindOfClass:[BaseNavigationViewController class]]) {
+//      [WeChatWindow shareWeChatWindow].navController = (BaseNavigationViewController *)viewController;
+//    } else if (viewController.navigationController) {
+//      [WeChatWindow shareWeChatWindow].navController = viewController.navigationController;
+//    } else {
+//      [WeChatWindow shareWeChatWindow].hidden = YES;
+//    }
+//  }
   
 }
 

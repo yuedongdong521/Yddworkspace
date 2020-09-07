@@ -29,6 +29,16 @@ static NSString* const kInputCorrectionLevel = @"inputCorrectionLevel";
   return image;
 }
 
+- (UIImage *)scaleWithImageSize:(CGSize)size
+{
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContextWithOptions(rect.size,NO, UIScreen.mainScreen.scale);
+    [self drawInRect:rect];
+    UIImage * returnImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return returnImage;
+}
+
 + (UIImage*)mergeImageWithImages:(NSArray<UIImage*>*)images {
   CGFloat locationX = 0;
   CGFloat locationY = 0;

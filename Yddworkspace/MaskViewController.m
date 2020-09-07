@@ -40,7 +40,7 @@
     [self.view addSubview:label];
     [label sizeToFit];
     CGSize size = label.frame.size;
-    label.frame = CGRectMake((ScreenWidth - size.width) * 0.5, (ScreenHeight - size.height) * 0.5, size.width, size.height);
+    label.frame = CGRectMake((ScreenWidth - size.width) * 0.5, (ScreenHeight - size.height) * 0.5 + 50, size.width, size.height);
 //    [self addCoverView:label];
 //    [label setFontGradColors:@[UIColorHexRGBA(0xFF7FDB, 0.3), UIColorHexRGBA(0xFF7FDB, 1), UIColorHexRGBA(0xFF7FDB, 0.3)]];
     
@@ -62,14 +62,25 @@
         make.bottom.mas_equalTo(-50);
     }];
     
-    UIImage *image = [UIImage imageNamed:@"0.jpg"];
+//    UIImage *image = [UIImage imageNamed:@"0.jpg"];
+//
+//    CALayer *imageLayer = [[CALayer alloc] init];
+//    imageLayer.frame = CGRectMake(20, 100, 200, image.size.height * 200 / image.size.width);
+//    imageLayer.contents = (__bridge id)[image CGImage];
+//    [self.view.layer addSublayer:imageLayer];
+//    _imageLayer = imageLayer;
     
-    CALayer *imageLayer = [[CALayer alloc] init];
-    imageLayer.frame = CGRectMake(20, 100, 200, image.size.height * 200 / image.size.width);
-    imageLayer.contents = (__bridge id)[image CGImage];
-    [self.view.layer addSublayer:imageLayer];
-    _imageLayer = imageLayer;
+    UIImage *image = [UIImage imageNamed:@"noble_bubble_marquis"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     
+    imageView.frame = CGRectMake(20, 200, 100, 100 / image.size.width * image.size.height);
+    [self.view addSubview:imageView];
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectInset(imageView.bounds, 2, 2)];
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.path = path.CGPath;
+    maskLayer.frame = imageView.bounds;
+    imageView.layer.mask = maskLayer;
     
     
 }

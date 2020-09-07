@@ -218,12 +218,12 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    RedPacketItem *item = [[RedPacketItem alloc] init];
-       item.image = [UIImage imageNamed:@"img_red_packet"];
-       item.frame = CGRectMake(ScreenWidth * 0.5, 0, 79, 86);
-    [[UIColor redColor] set];
-    UIBezierPath *path = [RedPacketItem pathWithStartPoint:item.center endPoint:CGPointMake(item.center.x, ScreenHeight - 43)];
-    [path stroke];
+//    RedPacketItem *item = [[RedPacketItem alloc] init];
+//       item.image = [UIImage imageNamed:@"img_red_packet"];
+//       item.frame = CGRectMake(ScreenWidth * 0.5, 0, 79, 86);
+//    [[UIColor redColor] set];
+//    UIBezierPath *path = [RedPacketItem pathWithStartPoint:item.center endPoint:CGPointMake(item.center.x, ScreenHeight - 43)];
+//    [path stroke];
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event

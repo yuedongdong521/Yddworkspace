@@ -18,7 +18,11 @@
 #import "UIView+Extend.h"
 #import "NSString+yddSubByte.h"
 #import "KXDynamicVideoPlayer.h"
-
+#import "KXAudioAnimationView.h"
+#import "KXTextScrollView.h"
+#import "LoadingAnimationView.h"
+#import "KXVideoLoadMoreView.h"
+#import "UIImage+ydd.h"
 
 
 @interface MainViewController ()
@@ -39,6 +43,17 @@
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = [UIColor grayColor];
+    
+    UIScrollView *scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 100, 50, 50)];
+    [self.view addSubview:scroller];
+    scroller.zoomScale = 0;
+    
+    KXAudioAnimationView *audioView = [[KXAudioAnimationView alloc] initWithFrame:CGRectMake(ScreenWidth - 51, ScreenHeight - 300, 41, 36)];
+    [self.view addSubview:audioView];
+    [audioView startAnimation];
+    
+    
+    [self testScrollText];
     
     [self sortArr];
     NSUInteger timeStamp = [TimeTools timeStampSincel1970];
@@ -193,6 +208,40 @@
     
 //    [nickName componentsSeparatedByString:@";"];
     
+    
+    LoadingAnimationView *loadView = [[LoadingAnimationView alloc] init];
+    [self.view addSubview:loadView];
+    [loadView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.width.height.mas_equalTo(200);
+    }];
+    
+    
+    KXVideoLoadMoreView *loadMoreView = [[KXVideoLoadMoreView alloc] initWithFrame:CGRectMake(20, 200, 300, 5)];
+    [self.view addSubview:loadMoreView];
+    
+    
+    [loadMoreView startAnimation];
+    
+    UITextView *text = [[UITextView alloc] init];
+    for (UIGestureRecognizer *ges in text.gestureRecognizers) {
+        NSLog(@"textView ges description : %@", ges.description);
+    }
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        UIImage *orignImage = [UIImage imageNamed:@"0.jpg"];
+        orignImage = [orignImage scallImageWidthScallSize:CGSizeMake(20, 20)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:orignImage];
+            [self.view addSubview:imageView];
+            [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.center.equalTo(self.view);
+                make.height.width.mas_equalTo(20);
+            }];
+        });
+    });
+    
+    
 }
 
 - (void)gradBtnAction:(CustomGradBtn *)btn
@@ -247,6 +296,30 @@
   [self alertShowFlag:flag + 1];
 }
 
+- (void)testScrollText
+{
+    
+    UIView *textView = [[UIView alloc] initWithFrame:CGRectMake(20, ScreenHeight - 250, 100, 30)];
+    [self.view addSubview:textView];
+    
+    CAGradientLayer *gradientLayer = [[CAGradientLayer alloc] init];
+    gradientLayer.frame = textView.bounds;
+    id color1 = (id)[UIColor colorWithWhite:0 alpha:0].CGColor;
+    id color2 = (id)[UIColor colorWithWhite:0 alpha:0.5].CGColor;
+    id color3 = (id)[UIColor colorWithWhite:0 alpha:1].CGColor;
+    gradientLayer.colors = @[color1, color2, color3, color3, color2, color1];
+    gradientLayer.locations = @[@0, @0.1f, @0.2f, @0.8f, @0.9f, @1];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1, 0);
+    textView.layer.mask = gradientLayer;
+    
+    
+    KXTextScrollView *textScrollView = [[KXTextScrollView alloc] initWithFrame:textView.bounds inteval:20 fontSize:[UIFont systemFontOfSize:17]];
+    [textView addSubview:textScrollView];
+    [textScrollView updataArray:@[@"测试文本首位相接无线循环滚动"]];
+    [textScrollView startTimer];
+}
+
 
 - (NSString *)base64Encode:(NSString *)str
 {
@@ -272,6 +345,7 @@
 - (void)pushVC
 {
   WeChatTestFloatViewController *vc = [[WeChatTestFloatViewController alloc] init];
+    vc.isNeedCustomTransition = YES;
   [self.navigationController pushViewController:vc animated:YES];
 }
 
