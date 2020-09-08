@@ -183,7 +183,7 @@
       @"CoreTextSurroundViewController"
     ],
     @[ @"MyViewController", @"ClosureViewController", @"UserInfoController", @"SwiftJSONViewController", @"SelecteToolsViewController", @"DateSelecteViewController", @"BezierMaskViewController", @"CalendarViewController", @"AnimationTestViewController", @"DDCollectionViewController", @"ExtensionViewController",
-        @"LoadingMaskLayerController", @"TextViewLinkVC"]
+       @"LoadingMaskLayerController", @"TextViewLinkVC", @"GCDDemoViewController"]
   ];
 
   _myTestMtbArray =
@@ -346,6 +346,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     } else if ([itemStr isEqualToString:@"TextViewLinkVC"]) {
         TextViewLinkVC *vc = [[TextViewLinkVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"GCDDemoViewController"]) {
+        GCDDemoViewController *vc = [[GCDDemoViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     self.hidesBottomBarWhenPushed = NO;

@@ -99,5 +99,7 @@ enum CONTACT_PHOTOLIST_WITH_ALBUMTYPE {
 
 #define UIColorHexRGBA(rgb,a) [UIColor colorWithRed:((float)((rgb & 0xFF0000) >> 16))/255.0 green:((float)((rgb & 0x00FF00) >> 8))/255.0 blue:((float)(rgb & 0x0000FF))/255.0 alpha:((float)a)]
 
+#define UIFontPFMedium(size) [UIFont fontWithName:@"PingFangSC-Medium" size:size]
+#define UIFontName(name, size) [UIFont fontWithName:name size:size]
 
 #endif /* PrefixHeader_pch */

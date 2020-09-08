@@ -38,3 +38,335 @@ func createGCDQueue(queueName name : String, priorityQos qos : DispatchQoS, attr
     return queue
 }
 
+class GCDDemoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    lazy var tableView :UITableView = {
+        let tab = UITableView.init(frame: self.view.bounds, style: .plain)
+        tab.delegate = self
+        tab.dataSource = self
+        tab.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+        return tab
+    }()
+    
+    let methedList = ["mainQueueAfterResponds", "customQueueAferResponds", "concurrentQueue", "qosQueue", "workItem", "dispatchTimer", "dispatchGroup", "dispatchSemaphore", "dispatchBarrier", "gcdTimer", "active"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addSubview(self.tableView)
+        self.tableView.mas_makeConstraints { (make) in
+            make?.edges.mas_equalTo()(UIEdgeInsetsMake(64, 0, 0, 0))
+        }
+        self.tableView.reloadData()
+        
+        self.userActiveQueue()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return methedList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else { return UITableViewCell()
+        }
+        cell.textLabel?.text = methedList[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            mainQueueAfterResponds(aferTime: 2) {
+                print("mainQueueAfterResponds : " + "2")
+            }
+        case 1:
+            customQueueAferResponds(aferTime: 2) {
+                print("customQueueAferResponds : " + "2")
+            }
+        case 2:
+            concurrentQueue()
+        case 3:
+            qosQueue()
+        case 4:
+            workItem()
+        case 5:
+            dispatchTimer()
+        case 6:
+            dispatchGroup()
+        case 7:
+            dispatchSemaphore()
+        case 8:
+            dispatchBarrier()
+        case 9:
+            if gcdTimerStart {
+                self.cancelTimer()
+            } else {
+               self.startTimer()
+            }
+        case 10:
+            if #available(iOS 10.0, *) {
+                self.activeQueue.activate()
+            }
+        default:
+            break
+        }
+    }
+    
+    
+    // MARK: 主线程延迟处理
+    func mainQueueAfterResponds(aferTime:NSInteger, completed:@escaping ()->Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(aferTime)) {
+            completed()
+        }
+    }
+    
+    // MARK:自定义队列延迟处理
+    func customQueueAferResponds(aferTime:NSInteger, completed:@escaping ()->Void) {
+        let queue = DispatchQueue.init(label: "queue-after")
+        queue.asyncAfter(deadline: .now() + .seconds(2)) {
+            completed()
+        }
+    }
+    
+    // MARK: 并发队列
+    func concurrentQueue() {
+        let queue = DispatchQueue.init(label: "concurrentQueue", qos: .utility, attributes: .concurrent)
+        queue.async {
+            for n in 0...100 {
+                let name = Thread.current.name ?? "null"
+                print("concurrent 1 queue name" + name + String(n))
+            }
+        }
+        queue.async {
+            for n in 0...10 {
+                let name = Thread.current.name ?? "null"
+                print("concurrent 2 queue name" + name + String(n))
+            }
+        }
+    }
+    
+    // MARK: 多队列优先级处理
+    func qosQueue() {
+        let defQueue = DispatchQueue.init(label: "qosQueue_def", qos: .default)
+        let initatedQueue = DispatchQueue.init(label: "qosQueue_initated", qos: .userInitiated)
+        defQueue.async {
+            for n in 0...10 {
+                let thread = Thread.current.name ?? "nill"
+                print("defQueue : " + thread + " n = \(n)")
+            }
+        }
+        initatedQueue.async {
+            for n in 0...100 {
+                let thread = Thread.current.name ?? "nill"
+                print("initatedQueue : " + thread + " n = \(n)")
+            }
+        }
+        
+    }
+    
+    // MARK: DispatchWorkItem 派遣工作项目
+    func workItem() {
+        var value = 10
+        let workItem = DispatchWorkItem {
+            value += 5
+        }
+        let queue = DispatchQueue.global(qos: .utility)
+        workItem.notify(queue: DispatchQueue.main) {
+            print("workItem value : \(value)")
+        }
+        queue.async(execute: workItem)
+    }
+    // MARK: DispatchSourceTimer 定时任务
+    func dispatchTimer() {
+        let timer = DispatchSource.makeTimerSource()
+        // 定时触发
+        timer.setEventHandler { // timer作为属性是注意循环引用问题 [weak self] in
+            print("timer fired at \(NSDate())")
+        }
+        // 结束触发
+        timer.setCancelHandler {
+            print("timer canceled at \(NSDate())")
+        }
+        
+        
+        // deadline 表示开始时间
+        // leeway   表示能够容忍的误差。
+        //repeating 标识间隔时间
+        timer.schedule(deadline: .now() + .seconds(1), repeating: 2.0, leeway: .microseconds(10))
+        
+        print("timer resume at \(NSDate())")
+        // 启动定时任务
+        timer.resume()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(20)) {
+            timer.cancel()
+        }
+        
+        
+    }
+    
+    
+    
+    // MARK: DispatchGroup
+    func dispatchGroup() {
+        let group = DispatchGroup()
+        
+        group.enter()
+        request(name: "1") {
+            group.leave()
+        }
+        group.enter()
+        request(name: "2") {
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            print("请求结束")
+        }
+    }
+    
+    // MARK:DispatchSemaphore 信号量
+    func dispatchSemaphore() {
+        let semaphore = DispatchSemaphore.init(value: 2)
+        let queue = DispatchQueue(label: "dispatchSemaphore", qos: .default, attributes: .concurrent)
+        queue.async {
+            semaphore.wait()
+            self.taskAction(time: 2, des: "DispatchSemaphore 1") {
+                semaphore.signal()
+            }
+        }
+        
+        queue.async {
+            semaphore.wait()
+            self.taskAction(time: 3, des: "DispatchSemaphore 2") {
+                semaphore.signal()
+            }
+        }
+        // 当前型号量数是2  任务数大于2 需要等之前任务结束 信号量消费完 执行新的任务
+        queue.async {
+            semaphore.wait()
+            self.taskAction(time: 1, des: "DispatchSemaphore 3") {
+                semaphore.signal()
+            }
+        }
+    }
+    
+    // MARK: Dispatch Barrier 任务队列添加栅栏处理
+    func dispatchBarrier() {
+        let queue = DispatchQueue.init(label: "concurrent_Barrier_queue", attributes: .concurrent)
+        queue.async {
+            self.taskAction(time: 2, des: "concurrent_Barrier_queue 1") {
+                
+            }
+        }
+        queue.async {
+            self.taskAction(time: 2, des: "concurrent_Barrier_queue 2") {
+                
+            }
+        }
+        
+        queue.async(flags: .barrier, execute: {
+            print("task barrier 1 begin")
+            sleep(3)
+            print("task barrier 1 end")
+        })
+        
+        queue.async {
+            self.taskAction(time: 2, des: "concurrent_Barrier_queue 3") {
+                
+            }
+        }
+        
+    }
+    
+    var gcdTimer : DispatchSourceTimer?
+    
+    func cretateTimer() -> DispatchSourceTimer {
+        let timer = DispatchSource.makeTimerSource()
+        timer.schedule(deadline: .now(), repeating: 1.0)
+        timer.setEventHandler { [weak self] in
+            self?.timeAction()
+        }
+        timer.setCancelHandler { [weak self] in
+            self?.timeCancle()
+        }
+        return timer
+    }
+    
+    var gcdTimerStart = false
+    func startTimer() {
+        if gcdTimer != nil {
+            self.cancelTimer()
+        }
+        gcdTimerStart = true
+        self.gcdTimer = cretateTimer()
+        self.gcdTimer?.resume()
+    }
+    
+    func cancelTimer() {
+        gcdTimer?.cancel()
+        gcdTimer = nil
+        gcdTimerStart = false
+        count = 0;
+    }
+    
+    var count = 0
+    func timeAction() {
+        count += 1
+        print("触发定时器 count : \(count)")
+        if count == 10 {
+            self.cancelTimer()
+        }
+    }
+    
+    func timeCancle() {
+        count = 0
+        print("停止定时器")
+        gcdTimerStart = false
+    }
+    
+    
+    var activeQueue : DispatchQueue = DispatchQueue.init(label: "active_queue")
+    
+    // MARK: 手动启动队列
+    func userActiveQueue() {
+        guard #available(iOS 10.0, *) else {
+            return
+        }
+        self.activeQueue = DispatchQueue.init(label: "active_queue", attributes: .initiallyInactive)
+        self.activeQueue.async {
+            print("手动任务处理 \(Thread.current)")
+        }
+
+        print("设置手动任务")
+
+    }
+    
+}
+
+extension GCDDemoViewController {
+    func request(name:NSString, completed:@escaping ()->Void) {
+        print("request name prepare : \(name)")
+        DispatchQueue.global().async {
+            sleep(2)
+            DispatchQueue.main.async {
+                print("request name completed : \(name)")
+                completed()
+            }
+        }
+    }
+    
+    func taskAction(time:Int, des:NSString, completed:()->Void) {
+        print("taskAction pre des : \(des)")
+        sleep(UInt32(time))
+        print("taskAction completed des : \(des)")
+        completed()
+    }
+    
+    
+    
+}
+
