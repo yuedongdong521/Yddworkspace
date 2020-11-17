@@ -36,7 +36,7 @@ class TextViewLinkVC: UIViewController, UITextViewDelegate {
         self.view.backgroundColor = UIColor.white
         
         self.textView.mas_makeConstraints { (make) in
-            make?.edges.mas_equalTo()(UIEdgeInsetsMake(100, 20, 100, 20))
+            make?.edges.mas_equalTo()(UIEdgeInsets(top: 100, left: 20, bottom: 100, right: 20))
         }
         
         let str = "UITextView 添加富文本点击事件，屏蔽UITextView其他多余手势事件"
@@ -45,11 +45,11 @@ class TextViewLinkVC: UIViewController, UITextViewDelegate {
         let range:Range! = str.range(of: "点击")
         
         
-        mutAtt.addAttributes([NSAttributedStringKey.link : "click://", NSAttributedStringKey.foregroundColor : UIColor.red], range: str.nsRange(from: range))
+        mutAtt.addAttributes([NSAttributedString.Key.link : "click://", NSAttributedString.Key.foregroundColor : UIColor.red], range: str.nsRange(from: range))
         
         let paragraph = NSMutableParagraphStyle.init()
         paragraph.lineBreakMode = NSLineBreakMode.byCharWrapping
-        mutAtt.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraph, range: NSMakeRange(0, mutAtt.length))
+        mutAtt.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraph, range: NSMakeRange(0, mutAtt.length))
         self.textView.attributedText = mutAtt
         
     }

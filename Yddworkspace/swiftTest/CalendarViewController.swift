@@ -124,7 +124,7 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.viewDidLoad()
         self.navigationController?.navigationBar.isTranslucent = false
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "选择", style: UIBarButtonItemStyle.plain, target: self, action: #selector(rightBarAction))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "选择", style: UIBarButtonItem.Style.plain, target: self, action: #selector(rightBarAction))
         
         self.view.backgroundColor = UIColor.white
         self.title = String(year) + "年"
@@ -251,10 +251,10 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
         collection.dataSource = self
         
         collection.register(CalendarCell.classForCoder(), forCellWithReuseIdentifier: "cell")
-        collection.register(CalendarHeader.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
+        collection.register(CalendarHeader.classForCoder(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
         
         if #available(iOS 11.0, *) {
-            collection.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.never
+            collection.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never
         } else {
              self.automaticallyAdjustsScrollViewInsets = false
         }
@@ -283,8 +283,8 @@ class CalendarViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionElementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! CalendarHeader
+        if kind == UICollectionView.elementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! CalendarHeader
             let model = self.dateArray[indexPath.section].last!
             print("公历 \(model.gComponents.month!) 月份 month = \(model.zhComponents.month!)")
              header.contentLabel.text = "  " + String(model.gComponents.month!) + "月"

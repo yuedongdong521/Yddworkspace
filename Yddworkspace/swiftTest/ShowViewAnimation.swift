@@ -23,7 +23,7 @@ extension UIView {
     }
     
     func dismissCenter(Completed completed:((_ finished:Bool) -> Void)?) {
-        UIView.animate(withDuration: 0.3, delay: 2, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 2, options: UIView.AnimationOptions.curveEaseInOut, animations: {
             self.transform = CGAffineTransform.identity.scaledBy(x: 0.1, y: 0.1)
         }) { (finished) in
             self.removeFromSuperview()
@@ -142,7 +142,7 @@ extension UIView {
        self.layer.insertSublayer(muteLayer!, at: 0)
        self.frame = CGRect(x: x, y: y, width: width, height: height)
         if animation {
-            UIView.animate(withDuration: 1, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+            UIView.animate(withDuration: 1, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
                 self.alpha = 1
             }) { (finished) in
                 completed?(finished)
@@ -159,7 +159,7 @@ extension UIView {
         let x = (orignPoint.x - self.center.x) * 0.5
         let y = (orignPoint.y - self.center.y) * 0.5
         
-        UIView.animate(withDuration: 0.3, delay: 1, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 1, options: UIView.AnimationOptions.curveEaseInOut, animations: {
             self.transform = CGAffineTransform.init(a: 0.5, b: 0.0, c: 0.0, d: 0.5, tx: x, ty: y)
             self.alpha = 0.5
         }) { (finished) in

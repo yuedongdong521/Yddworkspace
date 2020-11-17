@@ -27,7 +27,7 @@ import UIKit
     lazy var leftBtn :UIButton = {
        let button = UIButton.init(type: .custom)
         button.setImage(UIImage.init(named: "nav_back"), for: .normal)
-        button.imageEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0);
         button.addTarget(self, action: #selector(leftBtnAction(button:)), for: .touchUpInside)
         
        return button
@@ -43,7 +43,7 @@ import UIKit
     
         let button = UIButton.init(type: .custom)
         button.addTarget(self, action: #selector(rightBtnAction(button:)), for: .touchUpInside)
-         button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 15);
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15);
         self.addSubview(button)
         button.mas_makeConstraints({ (make: MASConstraintMaker?) in
             make?.right.equalTo()(0)

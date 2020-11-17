@@ -934,6 +934,8 @@ typedef NS_ENUM(NSUInteger, LinePosition) {
     [bgPath appendPath:framePath];
   }
 
+    
+    
   if (duration > 0) {
     void (^layerPathAnimate)(CAShapeLayer* layer, UIBezierPath* path) =
         ^(CAShapeLayer* layer, UIBezierPath* path) {

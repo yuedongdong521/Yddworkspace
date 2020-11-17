@@ -62,11 +62,11 @@ class DDPlainFlowLayout: UICollectionViewFlowLayout {
             var supplementaryDic = Dictionary<String,UICollectionViewLayoutAttributes>.init()
             
             if headerHeight > 0 {
-                let attributes = UICollectionViewLayoutAttributes.init(forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, with:IndexPath.init(item: 0, section: session))
+                let attributes = UICollectionViewLayoutAttributes.init(forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, with:IndexPath.init(item: 0, section: session))
                 attributes.frame = CGRect(x: headerInset.left, y: self.c_contentHeight + headerInset.top, width: self.collectionView?.frame.size.width ?? 0 - headerInset.left - headerInset.right, height: headerHeight)
                 
                 self.c_allAttrsArr.append(attributes)
-                supplementaryDic[UICollectionElementKindSectionHeader] = attributes
+                supplementaryDic[UICollectionView.elementKindSectionHeader] = attributes
                 
                 self.c_contentHeight = attributes.frame.maxY + headerInset.bottom + sectionInset.top
                 
@@ -132,10 +132,10 @@ class DDPlainFlowLayout: UICollectionViewFlowLayout {
             
             // 尾部布局
             if (footerHeight > 0) {
-                let attributes = UICollectionViewLayoutAttributes.init(forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, with: IndexPath.init(item: 0, section: session))
+                let attributes = UICollectionViewLayoutAttributes.init(forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, with: IndexPath.init(item: 0, section: session))
                 attributes.frame = CGRect(x: fooderInset.left, y: self.c_contentHeight + fooderInset.top, width: self.collectionView!.frame.size.width - fooderInset.left - fooderInset.right, height: footerHeight)
                 self.c_allAttrsArr.append(attributes)
-                supplementaryDic[UICollectionElementKindSectionFooter] = attributes
+                supplementaryDic[UICollectionView.elementKindSectionFooter] = attributes
                 
                 self.c_contentHeight = attributes.frame.maxY - fooderInset.bottom
             }
@@ -227,7 +227,7 @@ class DDPlainFlowLayout: UICollectionViewFlowLayout {
         for attributes in attributesArray {
             if let kind = attributes.representedElementKind {
                 //如果当前的元素是一个header，将header所在的section从数组中移除
-                if kind == UICollectionElementKindSectionHeader {
+                if kind == UICollectionView.elementKindSectionHeader {
                     noneHeaderSections.remove(attributes.indexPath.section)
                 }
             }
@@ -238,14 +238,14 @@ class DDPlainFlowLayout: UICollectionViewFlowLayout {
             // 取到当前section中第一个item的indexPath
             let indexPath = IndexPath.init(item: 0, section: index)
             // 获取当前section在正常情况下已经离开屏幕的header结构信息
-            if let attributes = self.layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: indexPath) {
+            if let attributes = self.layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: indexPath) {
                 // 如果当前分区确实有因为离开屏幕而被系统回收的header，将该header结构信息重新加入到superArray中去
                 attributesArray.append(attributes)
             }
         }
         // 遍历superArray，改变header结构信息中的参数，使它可以在当前section还没完全离开屏幕的时候一直显示
         for attributes in attributesArray {
-            if attributes.representedElementKind == UICollectionElementKindSectionHeader {
+            if attributes.representedElementKind == UICollectionView.elementKindSectionHeader {
                 let session = attributes.indexPath.section
                 let firstItemIndexPath = IndexPath.init(item: 0, section: session)
                 var numberOfItemsInSection = 0

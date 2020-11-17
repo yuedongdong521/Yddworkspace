@@ -58,7 +58,7 @@ class DDCollectionViewController: UIViewController {
             contentView.transform = CGAffineTransform.identity
         }) { (finish) in
             if finish {
-                UIView.animate(withDuration: 0.3, delay: 2, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                UIView.animate(withDuration: 0.3, delay: 2, options: UIView.AnimationOptions.curveEaseInOut, animations: {
                     contentView.transform = CGAffineTransform.identity.scaledBy(x: 0.1, y: 0.1)
                 }) { (finished) in
                     print("cententView center \(contentView.center)")

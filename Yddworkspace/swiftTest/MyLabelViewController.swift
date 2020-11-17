@@ -24,9 +24,9 @@ class MyLabelViewController: UIViewController {
         
         let myButton = UIButton.init(frame: CGRect(x:20, y:200, width:100, height:30))
         myButton.backgroundColor = UIColor.red
-        myButton.setTitle("myButton", for: UIControlState.normal)
-        myButton.setTitleColor(UIColor.green, for: UIControlState.normal)
-        myButton.addTarget(self, action: #selector(buttonClick(button:)), for: UIControlEvents.touchUpInside)
+        myButton.setTitle("myButton", for: UIControl.State.normal)
+        myButton.setTitleColor(UIColor.green, for: UIControl.State.normal)
+        myButton.addTarget(self, action: #selector(buttonClick(button:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(myButton)
         
     }
@@ -53,7 +53,7 @@ class MyLabelViewController: UIViewController {
     func getLabelSize(labelStr:String, font:UIFont, maxSize:CGSize) -> CGSize {
         let tmpstr :NSString = labelStr as NSString
       let dic = NSDictionary.init(object: font, forKey: kCTFontAttributeName as! NSCopying)
-        let returnSize = tmpstr.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedStringKey : Any], context: nil).size
+        let returnSize = tmpstr.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedString.Key : Any], context: nil).size
         return returnSize
         
     }

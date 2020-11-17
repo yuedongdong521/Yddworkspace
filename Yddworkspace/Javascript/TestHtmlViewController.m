@@ -22,6 +22,10 @@
   NSString *path = [[NSBundle mainBundle] pathForResource:@"testHtml" ofType:@"html"];
   NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]];
   [self.webView loadRequest:request];
+    
+    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(kNavBarHeight, 0, 0, 0));
+    }];
 
 }
 

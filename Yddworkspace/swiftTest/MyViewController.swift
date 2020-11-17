@@ -20,7 +20,7 @@ class MyTabeleViewCell: UITableViewCell {
     weak open var myDelegate : MyTableViewCellDelegate?;
     var indexRow : NSInteger = 0;
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         headImageView = UIImageView.init(frame: CGRect(x:20, y:10, width:50, height:50))
@@ -31,9 +31,9 @@ class MyTabeleViewCell: UITableViewCell {
         
         decLabel = UILabel.init(frame: CGRect(x:headImageView.frame.size.width + headImageView.frame.origin.x + 10, y:headImageView.frame.origin.y, width:100, height: self.contentView.frame.size.height - 2 * headImageView.frame.origin.y))
         
-        let button = UIButton.init(type: UIButtonType.system)
+        let button = UIButton.init(type: UIButton.ButtonType.system)
         button.frame = CGRect(x:self.contentView.frame.size.width - 80, y:self.decLabel.frame.origin.y, width:50, height:50)
-        button.setTitle("删除", for: UIControlState.normal)
+        button.setTitle("删除", for: UIControl.State.normal)
       button.addTarget(self, action: #selector(delegateAction), for: .touchUpInside)
         button.tag = indexRow
         self.contentView.addSubview(button)
@@ -78,7 +78,7 @@ class MyTabeleViewCell: UITableViewCell {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.alpha = 1.0
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "返回", style: UIBarButtonItemStyle.plain, target: self, action: #selector(navigationBarLeftAction))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "返回", style: UIBarButtonItem.Style.plain, target: self, action: #selector(navigationBarLeftAction))
 
         array.addObjects(from: [["ImageView", "0.jpg"], ["Label+Button", "1.jpg"],["View", "0.jpg"]])
     
@@ -90,7 +90,7 @@ class MyTabeleViewCell: UITableViewCell {
             print("testArray11 = \(self.testArray) \n p_testArray11 = \(self.p_testArray)")
         }
         
-        myTableView = UITableView(frame:CGRect(x:0, y:0, width:375, height:667), style: UITableViewStyle.plain)
+        myTableView = UITableView(frame:CGRect(x:0, y:0, width:375, height:667), style: UITableView.Style.plain)
         myTableView.delegate = self
         myTableView.dataSource = self
 
@@ -148,7 +148,7 @@ class MyTabeleViewCell: UITableViewCell {
     func deleteActionDelegate(index: NSInteger) {
         array.removeObject(at: index)
         
-        myTableView.deleteRows(at: [IndexPath.init(row: index, section: 0)], with: UITableViewRowAnimation.fade)
+        myTableView.deleteRows(at: [IndexPath.init(row: index, section: 0)], with: UITableView.RowAnimation.fade)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

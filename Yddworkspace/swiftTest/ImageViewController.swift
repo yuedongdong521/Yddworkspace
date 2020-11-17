@@ -68,7 +68,7 @@ class ImageViewController: UIViewController {
          ScaleAspectFit: 图片保持原来的比例，宽度填充，高度自适应
          ScaleAspectFill： 图片保持原来的比例，高度填充，宽度自适应
          */
-        imageView.contentMode = UIViewContentMode.scaleToFill
+        imageView.contentMode = UIView.ContentMode.scaleToFill
         
         return imageView;
     }

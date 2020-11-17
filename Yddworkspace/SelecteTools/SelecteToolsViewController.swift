@@ -20,7 +20,7 @@ class PickerItems: UIView {
         super.init(frame: frame)
         self.addSubview(self.titleLabel)
         self.titleLabel.mas_makeConstraints { (make: MASConstraintMaker?) in
-            make?.edges.mas_equalTo()(UIEdgeInsetsMake(0, 0, 0, 0))
+            make?.edges.mas_equalTo()(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         }
         self.backgroundColor = UIColor.cyan
     }

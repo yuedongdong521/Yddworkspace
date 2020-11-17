@@ -30,9 +30,9 @@ class MySwiftViewController : UIViewController
         self.view.addSubview(myView)
         
         let viewButton = UIButton(frame:CGRect(x:20, y:320, width:100, height:50))
-        viewButton.setTitle("点击", for: UIControlState.normal)
+        viewButton.setTitle("点击", for: UIControl.State.normal)
         viewButton.backgroundColor = UIColor.yellow
-        viewButton.addTarget(self, action: #selector(viewButtonClick), for: UIControlEvents.touchUpInside)
+        viewButton.addTarget(self, action: #selector(viewButtonClick), for: UIControl.Event.touchUpInside)
         self.view.addSubview(viewButton)
         
         do {

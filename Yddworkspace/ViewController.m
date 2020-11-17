@@ -27,8 +27,10 @@
 #import "AlphaPlayerViewController.h"
 
 
+
 #define IS_iPhoneX [UIScreen mainScreen].bounds.size.height >= 812
 #define Weakself(self)  __weak typeof(self) weak##self = self
+#define Strongself(self) __strong typeof(self) strong##self = self
 
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -175,7 +177,10 @@
       @"DarkModeViewController",
       @"NetDuagnoViewController",
       @"TimeAnimationViewController",
-      @"GCDTimerViewController"
+      @"GCDTimerViewController",
+      @"BeautyIdViewController",
+      @"InvocationViewController",
+      @"DownLoadAnimationViewController"
     ],
     @[
       @"CoreTextViewController", @"CTViewController",
@@ -183,7 +188,7 @@
       @"CoreTextSurroundViewController"
     ],
     @[ @"MyViewController", @"ClosureViewController", @"UserInfoController", @"SwiftJSONViewController", @"SelecteToolsViewController", @"DateSelecteViewController", @"BezierMaskViewController", @"CalendarViewController", @"AnimationTestViewController", @"DDCollectionViewController", @"ExtensionViewController",
-       @"LoadingMaskLayerController", @"TextViewLinkVC", @"GCDDemoViewController"]
+       @"LoadingMaskLayerController", @"TextViewLinkVC", @"GCDDemoViewController", @"ListTimerViewcontroller", @"TestIOS14ViewController", @"ShakingVC"]
   ];
 
   _myTestMtbArray =
@@ -349,6 +354,15 @@
         [self.navigationController pushViewController:vc animated:YES];
     } else if ([itemStr isEqualToString:@"GCDDemoViewController"]) {
         GCDDemoViewController *vc = [[GCDDemoViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"ListTimerViewcontroller"]) {
+        ListTimerViewcontroller *vc = [[ListTimerViewcontroller alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"TestIOS14ViewController"]) {
+        TestIOS14ViewController *vc = [[TestIOS14ViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if ([itemStr isEqualToString:@"ShakingVC"]) {
+        ShakingVC *vc = [[ShakingVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     self.hidesBottomBarWhenPushed = NO;

@@ -1,0 +1,88 @@
+
+
+Core Animation(核心动画) 中KeyPath的取值
+
+一、可动画属性
+
+1. 几何属性 (Geometry Properties)
+
+      keyPath               描述
+transform.rotation.x        按x轴旋转的弧度
+transform.rotation.y        按y轴旋转的弧度
+transform.rotation.z        按z轴旋转的弧度
+transform.rotation          按z轴旋转的弧度, 和transform.rotation.z效果一样
+transform.scale.x           在x轴按比例放大缩小
+transform.scale.y           在x轴按比例放大缩小
+transform.scale.z           在z轴按比例放大缩小
+transform.scale             按比例放大缩小
+transform.translation.x     沿x轴平移
+transform.translation.y     沿y轴平移
+transform.translation.z     沿z轴平移
+transform.translation       x,y 坐标均发生改变
+transform                   CATransform3D 4*4矩阵
+bounds                      layer大小
+position                    layer位置
+frame                       不支持 frme 属性
+anchorPoint                 锚点位置
+cornerRadius                圆角大小
+zPosition                   z轴位置
+
+
+2.背景属性 (Background Properties)
+
+backgroundColor    背景颜色
+
+
+3.Layer内容 (Layer Content)
+
+contents                    Layer内容，呈现在背景颜色之上
+contentsRect
+masksToBounds
+
+
+4.子Layer内容 (Sublayers Content)
+
+sublayers                   子Layer数组
+sublayerTransform           子Layer的Transform
+
+
+5.边界属性 (Border Attributes)
+
+borderColor
+borderWidth
+
+6.阴影属性 (Shadow Properties)
+
+shadowColor                 阴影颜色
+shadowOffset                阴影偏移距离
+shadowOpacity               阴影透明度
+shadowRadius                阴影圆角
+shadowPath                  阴影路径
+
+
+7.透明度 (Opacity Property)
+
+opacity    透明度
+hiden
+
+
+8.遮罩 (Mask Properties)
+
+mask
+
+
+9.ShapeLayer属性 (ShapeLayer)
+
+fillColor
+strokeColor
+strokeStart             从无到有
+strokeEnd               从有到无
+lineWidth               路径的线宽
+miterLimit              相交长度的最大值
+lineDashPhase           虚线样式
+
+
+这里特别需要注意的是 layer的 frame 是不支持动画的，我们可以通过改变position和````bounds``` 变通实现
+
+
+

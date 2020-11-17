@@ -21,7 +21,6 @@ typedef enum : NSUInteger {
 @property (nonatomic, retain) UITableView *myTableView;
 @property (nonatomic, retain) NSMutableArray *dataArray;
 @property (nonatomic, retain) UITextField *textField;
-@property (nonatomic, retain) UIView *textBgView;
 
 @property (nonatomic, retain) MyTableViewModel *myTableViewModel;
 @property (nonatomic, assign) NSInteger contentType;
@@ -54,25 +53,15 @@ typedef enum : NSUInteger {
 
 - (void)initTextField
 {
-    self.textBgView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.textBgView.backgroundColor = [UIColor clearColor];
-    self.textBgView.hidden = YES;
-    [self.view addSubview:self.textBgView];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyboard)];
-    tap.numberOfTouchesRequired = 1;
-    tap.numberOfTapsRequired = 1;
-    [self.textBgView addGestureRecognizer:tap];
-    
     self.textField = [[UITextField alloc] init];
-    self.textField.frame = CGRectMake(10, ScreenHeight, ScreenWidth - 20, 40);
+    self.textField.frame = CGRectMake(10, ScreenHeight - 40, ScreenWidth - 20, 40);
     self.textField.layer.borderWidth = 0.2;
     self.textField.layer.cornerRadius = 5.0;
     self.textField.layer.masksToBounds = YES;
     self.textField.layer.borderColor = [UIColor grayColor].CGColor;
     self.textField.delegate = self;
     self.textField.returnKeyType = UIReturnKeySend;
-    [self.textBgView addSubview:_textField];
+    [self.view addSubview:self.textField];
 }
 
 - (void)hiddenKeyboard
@@ -283,6 +272,9 @@ typedef enum : NSUInteger {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    if (self.textField.isFirstResponder) {
+        [self.textField resignFirstResponder];
+    }
 }
 
 - (void)myTabelViewDelegateLeaveMessage:(MyTableViewModel *)myModel ForPlaceholderStr:(NSString *)str
@@ -291,7 +283,6 @@ typedef enum : NSUInteger {
     
     if (![self.textField resignFirstResponder]) {
         self.textField.placeholder = str;
-        self.textBgView.hidden = NO;
         [self.textField becomeFirstResponder];
         if ([str isEqualToString:@"留言:"]) {
             self.contentType = ContentTypeOne;
@@ -300,7 +291,6 @@ typedef enum : NSUInteger {
         }
         
     } else {
-        self.textBgView.hidden = YES;
     }
 }
 
@@ -327,13 +317,12 @@ typedef enum : NSUInteger {
     }
     
     if (ishide) {
-        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            self.textField.frame = CGRectMake(0, ScreenHeight, ScreenWidth, 40);
+        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            self.textField.frame = CGRectMake(0, ScreenHeight - 40, ScreenWidth, 40);
         } completion:^(BOOL finished) {
-            self.textBgView.hidden = YES;
         }];
     } else {
-        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
             self.textField.frame = CGRectMake(0, ScreenHeight - keyHeight - 40, ScreenWidth, 40);
         } completion:^(BOOL finished) {
             

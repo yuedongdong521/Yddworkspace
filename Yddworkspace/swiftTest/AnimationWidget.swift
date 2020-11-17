@@ -50,7 +50,7 @@ class AnimationWidget: UIView {
     lazy var mainImageView :UIImageView = {
         let imageView = UIImageView.init()
         imageView.isUserInteractionEnabled = true
-        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        imageView.contentMode = UIView.ContentMode.scaleAspectFill
         imageView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(mainTapAction)))
         imageView.addGestureRecognizer(UIPanGestureRecognizer.init(target: self, action: #selector(mainPanAction(pan:))))
         return imageView

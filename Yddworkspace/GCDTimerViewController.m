@@ -65,12 +65,7 @@
     });
     dispatch_resume(_timer);
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSInteger i = 0;
-        while (1) {
-            i++;
-        }
-    });
+
     
 }
 

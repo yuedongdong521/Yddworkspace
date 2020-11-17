@@ -60,14 +60,14 @@ extension UIView{
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleAnimation.toValue = 0.01
         scaleAnimation.duration = duration//0.15
-        scaleAnimation.fillMode = kCAFillModeForwards
+        scaleAnimation.fillMode = CAMediaTimingFillMode.forwards
         
         //透明度
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
         opacityAnimation.fromValue = 1
         opacityAnimation.toValue = 0
         opacityAnimation.duration = duration//0.15
-        opacityAnimation.fillMode = kCAFillModeForwards
+        opacityAnimation.fillMode = CAMediaTimingFillMode.forwards
         
         layer.add(scaleAnimation, forKey: "lscale")
         layer.add(opacityAnimation, forKey: "lopacity")
@@ -83,7 +83,7 @@ extension UIView{
             let moveAnimation = CAKeyframeAnimation(keyPath: "position")
             moveAnimation.path = makeRandomPath(shape).cgPath
             moveAnimation.isRemovedOnCompletion = false
-            moveAnimation.fillMode = kCAFillModeForwards
+            moveAnimation.fillMode = CAMediaTimingFillMode.forwards
             moveAnimation.timingFunction = CAMediaTimingFunction(controlPoints: 0.240000, 0.590000, 0.506667, 0.026667)
             moveAnimation.duration = TimeInterval(arc4random()%10) * 0.05 + 0.3
             
@@ -91,7 +91,7 @@ extension UIView{
             scaleAnimation.toValue = makeScaleValue()
             scaleAnimation.duration = moveAnimation.duration
             scaleAnimation.isRemovedOnCompletion = false
-            scaleAnimation.fillMode = kCAFillModeForwards
+            scaleAnimation.fillMode = CAMediaTimingFillMode.forwards
             
             let opacityAnimation = CABasicAnimation(keyPath: "opacity")
             opacityAnimation.fromValue = shape.opacity//1
@@ -99,7 +99,7 @@ extension UIView{
             opacityAnimation.duration = moveAnimation.duration
             opacityAnimation.delegate = nil
             opacityAnimation.isRemovedOnCompletion = true
-            opacityAnimation.fillMode = kCAFillModeForwards
+            opacityAnimation.fillMode = CAMediaTimingFillMode.forwards
             opacityAnimation.timingFunction = CAMediaTimingFunction(controlPoints: 0.380000, 0.033333, 0.963333, 0.260000)
             
             shape.opacity = 0
@@ -227,7 +227,7 @@ extension UIView{
     }
     
     //MARK: - 生命周期相关，在从父View移除的时候释放粒子
-  static open func myInitialize() {
+    static public func myInitialize() {
         struct Static {
             static var token: Int = 0
         }

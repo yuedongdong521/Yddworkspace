@@ -10,7 +10,7 @@
 
 @interface MyTestTextView()
 {
- 
+    dispatch_semaphore_t _lock;
 }
 
 @property(nonatomic, assign) NSRange selectRange;
@@ -133,6 +133,8 @@
 
 - (void)selectAll:(id)sender
 {
+    
+    
 }
 
 - (void)tapGes:(UITapGestureRecognizer*)ges

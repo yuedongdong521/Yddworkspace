@@ -58,10 +58,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
+        make.edges.mas_equalTo(UIEdgeInsetsMake(kNavBarHeight, 0, 0, 0));
     }];
     
     [self addProgressView];
+    
+    
+    
 }
 
 
@@ -83,12 +86,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
 //    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"testJavascript" ofType:@"html"]]];
-//    NSURL *fileURL = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:H5_URL ofType:@"html"]];
-    [self.webView startLoadWithUrl:@"https://www.cnblogs.com/Biaoac/p/5317012.html"];
+    NSURL *fileURL = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:H5_URL ofType:@"html"]];
+//    [self.webView startLoadWithUrl:@"https://www.cnblogs.com/Biaoac/p/5317012.html"];
 //    [self.webView startLoadRequest:request];
-//    [self.webView startLoadFileURL:fileURL accessURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
+    [self.webView startLoadFileURL:fileURL accessURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
 }
 
 - (void)webView:(YDDWebView *)webView loadProgress:(CGFloat)progress

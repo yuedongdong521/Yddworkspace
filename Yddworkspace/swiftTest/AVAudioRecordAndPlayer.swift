@@ -27,7 +27,7 @@ class RecordManager: NSObject {
         //设置session类型
         do {
             if #available(iOS 11.0, *) {
-                try session.setCategory(AVAudioSessionCategoryPlayAndRecord, mode: AVAudioSessionModeDefault, routeSharingPolicy: AVAudioSessionRouteSharingPolicy.default, options: AVAudioSessionCategoryOptions.defaultToSpeaker)
+                try session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, policy: AVAudioSession.RouteSharingPolicy.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
             } else {
                 // Fallback on earlier versions
             }

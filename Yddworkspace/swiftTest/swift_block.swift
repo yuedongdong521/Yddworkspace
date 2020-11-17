@@ -12,18 +12,18 @@ import AVFoundation
 typealias TestAddBlock = (Int, Int)->Int
 
 public class ClosureViewController : UIViewController {
-
-  var swiftObj = SwiftClass2()
+    
+    var swiftObj = SwiftClass2()
     
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //闭包一般形式
-//        {
-//            (参数) -> 返回值类型 in
-//            statements
-//        }
+        //        {
+        //            (参数) -> 返回值类型 in
+        //            statements
+        //        }
         //1.一般形式
         let calAdd:(Int,Int)->(Int) = {
             (a:Int, b:Int) -> Int in
@@ -45,18 +45,18 @@ public class ClosureViewController : UIViewController {
         //4.如果闭包没有参数，可以直接省略in
         let calAddThird:()->(Int) = {return 100 + 150}
         print("calAddThird:\(calAddThird())")
-
+        
         //5.没有返回值
         let calAddFour:(Int, Int) ->Void = {
             (a, b) in
             print("calAddFour \(a + b)")
         }
         calAddFour(100, 150)
-       /*
-        归纳
-        闭包类型是由参数类型和返回值类型决定，和函数是一样的。比如上面前三种写法的闭包的闭包类型就是(Int,Int)->(Int),后面的类型分别是()->Int和()->Void。分析下上面的代码：let calAdd：(add类型)。这里的add类型就是闭包类型 (Int,Int)->(Int)。意思就是声明一个calAdd常量，其类型是个闭包类型。
-        "="右边是一个代码块，即闭包的具体实现，相当于给左边的add常量赋值。兄弟们，是不是感觉很熟悉了，有点像OC中的block代码块。
-        */
+        /*
+         归纳
+         闭包类型是由参数类型和返回值类型决定，和函数是一样的。比如上面前三种写法的闭包的闭包类型就是(Int,Int)->(Int),后面的类型分别是()->Int和()->Void。分析下上面的代码：let calAdd：(add类型)。这里的add类型就是闭包类型 (Int,Int)->(Int)。意思就是声明一个calAdd常量，其类型是个闭包类型。
+         "="右边是一个代码块，即闭包的具体实现，相当于给左边的add常量赋值。兄弟们，是不是感觉很熟悉了，有点像OC中的block代码块。
+         */
         
         //使用typealias重命名
         let addBlock :TestAddBlock = {
@@ -66,10 +66,10 @@ public class ClosureViewController : UIViewController {
         print("typealias \(addBlock(100, 150))")
         
         /*
-        逃逸闭包
-        当一个闭包作为参数传到一个函数中，需要这个闭包在函数返回之后才被执行，我们就称该闭包从函数种逃逸。一般如果闭包在函数体内涉及到异步操作，但函数却是很快就会执行完毕并返回的，闭包必须要逃逸掉，以便异步操作的回调。
-        逃逸闭包一般用于异步函数的回调，比如网络请求成功的回调和失败的回调。语法：在函数的闭包行参前加关键字“@escaping”。
-        */
+         逃逸闭包
+         当一个闭包作为参数传到一个函数中，需要这个闭包在函数返回之后才被执行，我们就称该闭包从函数种逃逸。一般如果闭包在函数体内涉及到异步操作，但函数却是很快就会执行完毕并返回的，闭包必须要逃逸掉，以便异步操作的回调。
+         逃逸闭包一般用于异步函数的回调，比如网络请求成功的回调和失败的回调。语法：在函数的闭包行参前加关键字“@escaping”。
+         */
         
         //栗子
         doSomething { (a, b) in
@@ -78,47 +78,47 @@ public class ClosureViewController : UIViewController {
         
         
         view.backgroundColor = UIColor.white
-        let button = UIButton.init(type: UIButtonType.system)
+        let button = UIButton.init(type: UIButton.ButtonType.system)
         button.frame = CGRect(x:20, y:100, width:50, height:40)
-        button.setTitle("闭包测试", for: UIControlState.normal)
+        button.setTitle("闭包测试", for: UIControl.State.normal)
         button.backgroundColor = UIColor.blue
-        button.addTarget(self, action: #selector(ajaxToolTow), for: UIControlEvents.touchUpInside)
+        button.addTarget(self, action: #selector(ajaxToolTow), for: UIControl.Event.touchUpInside)
         view.addSubview(button)
-      
-      view.addSubview(testButton!);
-      
-      var className:String = "类名为:"
-      testBlockClassName { (name) in
-        className.append(name)
-        print(className)
-      }
-//      requestAVAuthority();
-
-      self.swiftObj.testBlock()
+        
+        view.addSubview(testButton!);
+        
+        var className:String = "类名为:"
+        testBlockClassName { (name) in
+            className.append(name)
+            print(className)
+        }
+        //      requestAVAuthority();
+        
+        self.swiftObj.testBlock()
         
     }
-  
-  fileprivate lazy var testButton:UIButton? = {
-    let button = UIButton.init(type: UIButtonType.system);
-    button.frame = CGRect(x:20, y:200, width:60, height:40)
-    button.setTitle("textButton", for: UIControlState.normal)
-    button.backgroundColor = UIColor.red;
-    button.setTitleColor(UIColor.white, for: UIControlState.normal)
-    button.addTarget(self, action: #selector(testButtonAction), for: UIControlEvents.touchUpInside)
-    return button;
-  }()
-  
-  @objc fileprivate func testButtonAction(button: UIButton)-> Void {
-    let tmp:UIButton = button
-    if tmp.backgroundColor == UIColor.cyan {
-      print("testButtonAction ture ");
-      tmp.backgroundColor = UIColor.red
-    } else {
-      print("testButtonAction false ");
-      button.backgroundColor = UIColor.cyan
+    
+    fileprivate lazy var testButton:UIButton? = {
+        let button = UIButton.init(type: UIButton.ButtonType.system);
+        button.frame = CGRect(x:20, y:200, width:60, height:40)
+        button.setTitle("textButton", for: UIControl.State.normal)
+        button.backgroundColor = UIColor.red;
+        button.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(testButtonAction), for: UIControl.Event.touchUpInside)
+        return button;
+    }()
+    
+    @objc fileprivate func testButtonAction(button: UIButton)-> Void {
+        let tmp:UIButton = button
+        if tmp.backgroundColor == UIColor.cyan {
+            print("testButtonAction ture ");
+            tmp.backgroundColor = UIColor.red
+        } else {
+            print("testButtonAction false ");
+            button.backgroundColor = UIColor.cyan
+        }
+        
     }
-  
-  }
     
     func doSomething(some:@escaping (Int, Int) -> Void){
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { 
@@ -128,9 +128,9 @@ public class ClosureViewController : UIViewController {
     
     
     func ajaxTools(name:String ,complated:(_ runStr: String,_ isStop:Bool) -> String) -> String {
-       
+        
         let resStr = name + "覆水难收"
-         print(resStr + "1")
+        print(resStr + "1")
         let complatedStr = complated(resStr, true)
         
         return resStr + " - 内部函数返回" + complatedStr
@@ -144,39 +144,39 @@ public class ClosureViewController : UIViewController {
         
         print(ajax + "3")
     }
-  
-  
-
+    
+    
+    
 }
 
 fileprivate extension ClosureViewController {
-  func testBlockClassName(blockClassName:@escaping(String)-> Void) -> Void {
-    let nameCoder:String = NSStringFromClass(self.classForCoder)
-    
-    let name:String = NSStringFromClass(self.classForKeyedArchiver!)
-    print("classForKeyedArchiver: " + name)
-    blockClassName(nameCoder);
-  }
-
-  func requestAVAuthority(blockAuthor:@escaping(Bool)-> Void) {
-    let statue:AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
-    print("摄像头权限 statue: " + String(statue.rawValue))
-    switch statue {
-    case AVAuthorizationStatus.notDetermined:
-//      AVCaptureDevice re
-      break
-    case AVAuthorizationStatus.restricted:
-      blockAuthor(false);
-      break
-    case AVAuthorizationStatus.denied:
-      blockAuthor(true);
-      break
-    default:
-
-      break
+    func testBlockClassName(blockClassName:@escaping(String)-> Void) -> Void {
+        let nameCoder:String = NSStringFromClass(self.classForCoder)
+        
+        let name:String = NSStringFromClass(self.classForKeyedArchiver!)
+        print("classForKeyedArchiver: " + name)
+        blockClassName(nameCoder);
     }
-  }
-  
+    
+    func requestAVAuthority(blockAuthor:@escaping(Bool)-> Void) {
+        let statue:AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        print("摄像头权限 statue: " + String(statue.rawValue))
+        switch statue {
+        case AVAuthorizationStatus.notDetermined:
+            //      AVCaptureDevice re
+            break
+        case AVAuthorizationStatus.restricted:
+            blockAuthor(false);
+            break
+        case AVAuthorizationStatus.denied:
+            blockAuthor(true);
+            break
+        default:
+            
+            break
+        }
+    }
+    
 }
 
 

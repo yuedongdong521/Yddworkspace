@@ -54,7 +54,7 @@ class GCDDemoViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         self.view.addSubview(self.tableView)
         self.tableView.mas_makeConstraints { (make) in
-            make?.edges.mas_equalTo()(UIEdgeInsetsMake(64, 0, 0, 0))
+            make?.edges.mas_equalTo()(UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0))
         }
         self.tableView.reloadData()
         
@@ -133,6 +133,7 @@ class GCDDemoViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK: 并发队列
     func concurrentQueue() {
+        // 默认是串行队列， concurrent ：并发队列
         let queue = DispatchQueue.init(label: "concurrentQueue", qos: .utility, attributes: .concurrent)
         queue.async {
             for n in 0...100 {

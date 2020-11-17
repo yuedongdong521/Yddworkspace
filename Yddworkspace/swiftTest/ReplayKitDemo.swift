@@ -66,7 +66,7 @@ class ScreenRecorder
                 {
                     
                     DispatchQueue.main.async { [weak self] in
-                        if self?.assetWriter.status == AVAssetWriterStatus.unknown {
+                        if self?.assetWriter.status == AVAssetWriter.Status.unknown {
                             print("AVAssetWriterStatus.unknown")
                             if !(self?.assetWriter.startWriting())! {
                                 return
@@ -81,7 +81,7 @@ class ScreenRecorder
                         //                        self.assetWriter.startSession(atSourceTime: CMSampleBufferGetPresentationTimeStamp(sample))
                         //                        self?.startSesstion = true
                     }
-                    if self.assetWriter.status == AVAssetWriterStatus.failed {
+                    if self.assetWriter.status == AVAssetWriter.Status.failed {
                         
                         print("Error occured, status = \(String(describing: self.assetWriter.status.rawValue)), \(String(describing: self.assetWriter.error!.localizedDescription)) \(String(describing: self.assetWriter.error))")
                         recordingHandler(self.assetWriter.error)

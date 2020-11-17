@@ -47,12 +47,7 @@
             index++;
         }
     }];
-    
-    
 }
-
-
-
 
 - (UIButton *)centerBtn
 {
@@ -141,7 +136,10 @@ static CustomTabBarController *_tabBar;
 
 
 
-- (void)addChildVc:(UIViewController *)childVc title:(NSString *)title normalImg:(UIImage *)normalImg selectImg:(UIImage *)selectImg
+- (void)addChildVc:(UIViewController *)childVc
+             title:(NSString *)title
+         normalImg:(UIImage *)normalImg
+         selectImg:(UIImage *)selectImg
 {
     childVc.tabBarItem.image =  [normalImg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     childVc.tabBarItem.selectedImage = [selectImg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

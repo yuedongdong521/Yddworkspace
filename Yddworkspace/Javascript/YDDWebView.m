@@ -348,6 +348,28 @@
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler
+{
+    if ([navigationResponse.response isKindOfClass:[NSHTTPURLResponse class]]) {
+        NSHTTPURLResponse *response = (NSHTTPURLResponse *)navigationResponse.response;
+        if (response.statusCode == 200) {
+            if (decisionHandler) {
+                decisionHandler(WKNavigationResponsePolicyAllow);
+            }
+        } else {
+            if (decisionHandler) {
+                decisionHandler(WKNavigationResponsePolicyCancel);
+            }
+            NSString *msg = [NSString stringWithFormat:@"url(%@), statusCode(%ld)", response.URL.absoluteString, (long)response.statusCode];
+            NSLog(@"yddWebView request fail : %@", msg);
+        }
+    } else {
+        if (decisionHandler) {
+            decisionHandler(WKNavigationResponsePolicyAllow);
+        }
+    }
+}
+
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView
 {
     NSLog(@"网页===WKWebView总体内存占用过大");

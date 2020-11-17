@@ -385,7 +385,7 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      Forward status bar status style changes to the crop view controller
      :nodoc:
      */
-    open override var childViewControllerForStatusBarStyle: UIViewController? {
+    open override var childForStatusBarStyle: UIViewController? {
         return toCropViewController
     }
     
@@ -393,7 +393,7 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      Forward status bar status visibility changes to the crop view controller
      :nodoc:
      */
-    open override var childViewControllerForStatusBarHidden: UIViewController? {
+    open override var childForStatusBarHidden: UIViewController? {
         return toCropViewController
     }
     
@@ -552,10 +552,10 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
 
 extension CropViewController {
     fileprivate func setUpCropController() {
-        addChildViewController(toCropViewController)
+        addChild(toCropViewController)
         transitioningDelegate = (toCropViewController as! UIViewControllerTransitioningDelegate)
         toCropViewController.delegate = self
-        toCropViewController.didMove(toParentViewController: self)
+        toCropViewController.didMove(toParent: self)
     } 
     
     fileprivate func setUpDelegateHandlers() {
