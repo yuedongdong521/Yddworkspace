@@ -40,6 +40,8 @@ func createGCDQueue(queueName name : String, priorityQos qos : DispatchQoS, attr
 
 class GCDDemoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    
     lazy var tableView :UITableView = {
         let tab = UITableView.init(frame: self.view.bounds, style: .plain)
         tab.delegate = self
@@ -49,6 +51,8 @@ class GCDDemoViewController: UIViewController, UITableViewDelegate, UITableViewD
     }()
     
     let methedList = ["mainQueueAfterResponds", "customQueueAferResponds", "concurrentQueue", "qosQueue", "workItem", "dispatchTimer", "dispatchGroup", "dispatchSemaphore", "dispatchBarrier", "gcdTimer", "active"]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -344,6 +348,16 @@ class GCDDemoViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         print("设置手动任务")
 
+    }
+    
+    func createQueueTag() {
+        if #available(iOS 10.0, *) {
+            let testQueue = DispatchQueue.init(label: "test_queue_tag", qos: .default, attributes: [], autoreleaseFrequency: .workItem)
+        } else {
+            // Fallback on earlier versions
+        }
+//        DispatchSpecificKey.init()
+        
     }
     
 }

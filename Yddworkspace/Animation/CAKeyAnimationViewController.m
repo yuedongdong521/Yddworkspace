@@ -71,6 +71,8 @@
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     animation.repeatCount = MAXFLOAT;
     animation.removedOnCompletion = NO;
+    /// 设置calculationMode可以避免动画循环时的卡顿问题，但是会导致keyTimes和timingFunction属性失效
+    animation.calculationMode = kCAAnimationPaced;
     animation.delegate = self;
     [self.imageView.layer addAnimation:animation forKey:@"liveBgImageViewJitter"];
 }

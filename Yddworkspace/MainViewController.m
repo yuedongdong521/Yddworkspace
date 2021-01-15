@@ -241,7 +241,7 @@
         });
     });
     
-    
+    [self testFourNum];
 }
 
 - (void)gradBtnAction:(CustomGradBtn *)btn
@@ -490,6 +490,36 @@
     }];
     NSLog(@"new arr = %@", newarr);
 }
+
+- (void)testFourNum
+{
+    NSArray *arr = @[@(1e4), @(1e4 + 16), @(1e4 + 6666), @(1e4 + 100), @(1e4 + 1000), @(1e4 + 1511), @(1e5), @(1e5 + 11), @(1e5 + 10), @(1e5 + 111), @(1e5 + 110), @(1e5 + 1111), @(1e5 + 1000), @(1e7 + 17345),@(1e8), @(1e8 + 10), @(1e8 + 12355678), @(1e8 + 100), @(1e8 + 1000), @(1e8 + 11111)];
+    
+    for (NSNumber *num in arr) {
+        NSInteger v = [num integerValue];
+        
+        NSString *vStr = [NSString maxFourNum:v];
+        NSString *vStr2 = [NSString maxFourNum2:v];
+        NSLog(@"测试 v = %ld, vStr = %@, vStr2 = %@", (long)v, vStr, vStr2);
+    }
+    
+    
+    NSString *str = @"1.14";
+    
+    NSString *descStr = [NSString decimalWithNum:str roundModel:NSRoundBankers scale:1];
+    
+    NSString *descStr1 = [NSString decimalWithNum:@"1.05" roundModel:NSRoundBankers scale:1];
+    
+    
+    NSString *descStr3 = [NSString decimalWithNum:@"1.16" roundModel:NSRoundBankers scale:1];
+    
+    NSLog(@"测试 v = %@, v2 = %@, v3 = %@", descStr, descStr1, descStr3);
+    
+    
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

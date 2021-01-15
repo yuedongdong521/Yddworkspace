@@ -26,6 +26,7 @@
 
 - (void)backAction
 {
+    [_webView removeJavascrpitActionAll];
     if (_needGoBack) {
         if (![self.webView goBack]) {
             [self.navigationController popViewControllerAnimated:YES];
@@ -62,9 +63,6 @@
     }];
     
     [self addProgressView];
-    
-    
-    
 }
 
 

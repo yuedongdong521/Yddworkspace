@@ -42,6 +42,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)vi_md5;
 
+
++ (NSString *)maxFourNum:(NSInteger)num;
+
++ (NSString *)maxFourNum2:(NSInteger)num;
+
++ (NSString *)decimalWithNum:(NSString *)numStr roundModel:(NSRoundingMode)model  scale:(short)scale;
+
 @end
 
 NS_ASSUME_NONNULL_END

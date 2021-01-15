@@ -229,4 +229,219 @@
     return ret;
 }
 
++ (NSString *)fourNum:(CGFloat)num
+{
+    
+    if (num < 0) {
+        return [NSString stringWithFormat:@"%f", num];
+    }
+    
+    if (num == 0) {
+        return @"0";
+    }
+    
+    if (num >= 1e3) {
+        return [NSString stringWithFormat:@"%ld", (long)num];
+    }
+    
+    if (num >= 1e2) {
+        if ((NSInteger)(num * 10) % 10 == 0) {
+            return [NSString stringWithFormat:@"%ld", (long)num];
+        }
+        return [NSString stringWithFormat:@"%.1f", num];
+    }
+    
+    if (num >= 1e1) {
+    
+        NSInteger tmpNum = num * 100;
+        
+        if (tmpNum % 10 != 0) {
+            return [NSString stringWithFormat:@"%.2f", num];
+        }
+        
+        if (tmpNum % 100 != 0) {
+            return [NSString stringWithFormat:@"%.1f", num];
+        }
+        
+        return [NSString stringWithFormat:@"%ld", (long)num];
+    }
+    
+    NSInteger tmpNum = num * 1000;
+    
+    if (tmpNum % 10 != 0) {
+        return [NSString stringWithFormat:@"%.3f", num];
+    }
+    
+    if (tmpNum % 100 != 0) {
+        return [NSString stringWithFormat:@"%.2f", num];
+    }
+    
+    if (tmpNum % 1000 != 0) {
+        return [NSString stringWithFormat:@"%.1f", num];
+    }
+    
+    return [NSString stringWithFormat:@"%ld", (long)num];
+    
+}
+
+- (NSString *)subFourNumberStr
+{
+    if (self.length <= 4) {
+        return self;
+    }
+    
+    NSRange range = [self rangeOfString:@"."];
+    NSString *valueStr = self;
+    if (range.location != NSNotFound) {
+        NSInteger index = range.location;
+        if (index >= 4) {
+            valueStr = [valueStr substringToIndex:4];
+        } else {
+            if (valueStr.length > 5) {
+                valueStr = [valueStr substringToIndex:5];
+            }
+        }
+        NSArray <NSString *> *arr = [valueStr componentsSeparatedByString:@"."];
+        if ([arr.lastObject integerValue] == 0) {
+            return arr.firstObject;
+        }
+    }
+    return valueStr;
+}
+
++ (NSString *)maxFourNum:(NSInteger)num
+{
+    if (num < 1e4) {
+        return [NSString stringWithFormat:@"%ld", (long)num];
+    }
+    
+    NSDecimalNumber *decNum = [[NSDecimalNumber alloc] initWithInteger:num];
+    NSDecimalNumber *num1 = [[NSDecimalNumber alloc] initWithDouble:1e4];
+    
+    NSDecimalNumber *valueNum = [decNum decimalNumberByDividingBy:num1];
+
+    
+    CGFloat value = valueNum.floatValue;
+    if (value < 1e4) {
+        NSString *valueStr = [valueNum stringValue];
+        valueStr = [valueStr subFourNumberStr];
+        return [NSString stringWithFormat:@"%@万", valueStr];
+    }
+    
+    NSDecimalNumber *num2 = [[NSDecimalNumber alloc] initWithDouble:1e8];
+    
+    valueNum = [decNum decimalNumberByDividingBy:num2];
+    
+    value = valueNum.floatValue;
+    if (value < 1e4) {
+        NSString *valueStr = [valueNum stringValue];
+        valueStr = [valueStr subFourNumberStr];
+        return [NSString stringWithFormat:@"%@亿", valueStr];
+    }
+    
+    return [NSString stringWithFormat:@"%@亿", [valueNum stringValue]];
+}
+
+
+/**
+ 一定位数的小数 四舍五入
+
+ @param num 原始数据
+ @param scale 要保留的小数位数
+ @return 小数
+ */
++ (NSString *)decimal:(NSString *)num scale:(short)scale
+{
+    NSDecimalNumberHandler *behavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain scale:scale raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    NSDecimalNumber *numResult1 = [NSDecimalNumber decimalNumberWithString:num];
+    
+    numResult1 = [numResult1 decimalNumberByRoundingAccordingToBehavior:behavior];
+    
+    return [NSString stringWithFormat:@"%@", numResult1];
+}
+
+
++ (NSString *)decimalWithNum:(NSString *)numStr roundModel:(NSRoundingMode)model  scale:(short)scale
+{
+    NSDecimalNumber *num = [[NSDecimalNumber alloc] initWithString:numStr];
+    
+
+    NSDecimalNumberHandler *behavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:model scale:scale raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    
+    NSDecimalNumber *newNum = [num decimalNumberByRoundingAccordingToBehavior:behavior];
+    
+    return [newNum stringValue];;
+}
+
+/// 四舍五入
+/// @param num 目标数据
+/// @param scale 保留小数位
++ (NSString *)decimalWithDeciNum:(NSDecimalNumber *)num scale:(short)scale
+{
+    /*
+        NSRoundPlain,   // Round up on a tie 四舍五入
+        NSRoundDown,    // Always down == truncate 只舍不入
+        NSRoundUp,      // Always up 只入不舍
+        NSRoundBankers  // 四舍六入。当末尾为5时，如果上一位为偶数则舍，为奇数则入
+     
+        raiseOnExactness   发生精确错误时是否抛出异常，一般为NO
+        raiseOnOverflow    发生溢出错误时是否抛出异常，一般为NO
+        raiseOnUnderflow    发生不足错误时是否抛出异常，一般为NO
+        raiseOnDivideByZero    被0除时是否抛出异常，一般为YES
+     
+    */
+    NSDecimalNumberHandler *behavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain scale:scale raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    NSDecimalNumber *newNum = [num decimalNumberByRoundingAccordingToBehavior:behavior];
+    return [newNum stringValue];
+}
+
+
+
++ (NSString *)subFourNumber:(NSDecimalNumber *)number
+{
+    CGFloat value = [number floatValue];
+    
+    NSString *result = @"";
+    if (value >= 1e3) {
+        result = [self decimalWithDeciNum:number scale:0];
+    } else if (value >= 1e2) {
+        result = [self decimalWithDeciNum:number scale:1];
+    } else if (value >= 1e1) {
+        result = [self decimalWithDeciNum:number scale:2];
+    } else {
+        result = [self decimalWithDeciNum:number scale:3];
+    }
+    return result;
+}
+
++ (NSString *)maxFourNum2:(NSInteger)num
+{
+    if (num < 1e4) {
+        return [NSString stringWithFormat:@"%ld", (long)num];
+    }
+    
+    NSDecimalNumber *decNum = [[NSDecimalNumber alloc] initWithInteger:num];
+    NSDecimalNumber *num1 = [[NSDecimalNumber alloc] initWithDouble:1e4];
+    
+    NSDecimalNumber *valueNum = [decNum decimalNumberByDividingBy:num1];
+
+    
+    CGFloat value = valueNum.floatValue;
+    if (value < 1e4) {
+        NSString *valueStr = [NSString subFourNumber:valueNum];
+        return [NSString stringWithFormat:@"%@万", valueStr];
+    }
+    
+    NSDecimalNumber *num2 = [[NSDecimalNumber alloc] initWithDouble:1e8];
+    valueNum = [decNum decimalNumberByDividingBy:num2];
+    
+    value = valueNum.floatValue;
+    if (value < 1e4) {
+        NSString *valueStr = [NSString subFourNumber:valueNum];
+        return [NSString stringWithFormat:@"%@亿", valueStr];
+    }
+    
+    return [NSString stringWithFormat:@"%ld亿", (long)[valueNum integerValue]];
+}
+
 @end

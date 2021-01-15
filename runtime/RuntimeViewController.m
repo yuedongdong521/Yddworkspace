@@ -13,6 +13,7 @@
 #import "UIButtonCount.h"
 #import "MyCoderModel.h"
 #import "NSObject+KeyValue.h"
+#import "RuntimeTestModel.h"
 
 /*
 runtime 简称运行时，是系统在运行的时候的一些机制，其中最主要的是消息机制。它是一套比较底层的纯 C 语言 API, 属于一个 C 语言库，包含了很多底层的 C 语言 API。我们平时编写的 OC 代码，在程序运行过程时，其实最终都是转成了 runtime 的 C 语言代码。如下所示:
@@ -151,7 +152,12 @@ runtime 简称运行时，是系统在运行的时候的一些机制，其中最
 - (NSMutableArray *)dataArr
 {
   if (!_dataArr) {
-    _dataArr = [NSMutableArray arrayWithArray:@[@"更改属性值", @"动态添加属性", @"动态添加方法", @"交换方法实现", @"拦截并替换方法",@"在方法上增加额外功能", @"归档解档", @"字典转模型"]];
+    _dataArr = [NSMutableArray arrayWithArray:
+                @[@"更改属性值", @"动态添加属性",
+                  @"动态添加方法", @"交换方法实现",
+                  @"拦截并替换方法",@"在方法上增加额外功能",
+                  @"归档解档", @"字典转模型",
+                  @"动态方法解析实践"]];
   }
   return _dataArr;
 }
@@ -203,31 +209,34 @@ runtime 简称运行时，是系统在运行的时候的一些机制，其中最
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  switch (indexPath.row) {
-    case 0:
-      [self changeObjectValue];
-      break;
-    case 1:
-      [self addObjectAttribute];
-      break;
-    case 2:
-      [self addMethod];
-      break;
-    case 3:
-      [self exChangeMethod];
-      break;
-    case 4:
-      [self interceptMethod];
-      break;
-    case 6:
-      [self buttonClick];
-      break;
-    case 7:
-      [self testKeyValueModel];
-      break;
-    default:
-      break;
-  }
+    switch (indexPath.row) {
+        case 0:
+            [self changeObjectValue];
+            break;
+        case 1:
+            [self addObjectAttribute];
+            break;
+        case 2:
+            [self addMethod];
+            break;
+        case 3:
+            [self exChangeMethod];
+            break;
+        case 4:
+            [self interceptMethod];
+            break;
+        case 6:
+            [self buttonClick];
+            break;
+        case 7:
+            [self testKeyValueModel];
+            break;
+        case 8:
+            [self testDynamicModel];
+            break;
+        default:
+            break;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -281,9 +290,10 @@ runtime 简称运行时，是系统在运行的时候的一些机制，其中最
   /*
    动态添加 coding 方法
    (IMP)codingOC 意思是 codingOC 的地址指针;
-   "v@:" 意思是，v 代表无返回值 void，如果是 i 则代表 int；@代表 id sel; : 代表 SEL _cmd;
+   "v@:" 意思是，v 代表无返回值 void，如果是 i 则代表 int；@代表 id; sel : 代表 SEL _cmd;
    “v@:@@” 意思是，两个参数的没有返回值。
    */
+    
   class_addMethod([_person class], @selector(coding), (IMP)codingOC, "v@:");
   // 调用 coding方法响应事件
   if ([_person respondsToSelector:@selector(coding)]) {
@@ -294,9 +304,15 @@ runtime 简称运行时，是系统在运行的时候的一些机制，其中最
   }
 }
 
+- (void)coding
+{
+    
+}
+
 void codingOC(id self, SEL _cmd) {
   NSLog(@"添加方法成功");
 }
+
 
 #pragma mark - 交换方法
 - (void)exChangeMethod
@@ -342,7 +358,7 @@ void codingOC(id self, SEL _cmd) {
     NSLog(@"phoneNumber : %@",coding.phoneNumber);
   }
 }
-
+/// 字典转mode
 - (void)testKeyValueModel
 {
   MyCoderModel *coding = self.modelArray.firstObject;
@@ -368,6 +384,14 @@ void codingOC(id self, SEL _cmd) {
       break;
   }
   modelcount++;
+}
+/// 动态方法解析
+- (void)testDynamicModel
+{
+    RuntimeTestModel *testModel = [[RuntimeTestModel alloc] init];
+    testModel.prop1 = @"hello ";
+    testModel.prop2 = @"world!";
+    NSLog(@"%s , dic : %@", __func__ , testModel.dictionary);
 }
 
 

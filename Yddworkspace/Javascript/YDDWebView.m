@@ -117,8 +117,6 @@
 - (void)startLoadWithUrl:(NSString *)url {
     _urlString = url;
     [self startLoadRequest:[self getCurrentURLReuqest]];
-    // 调用js方法
-    
 }
 
 

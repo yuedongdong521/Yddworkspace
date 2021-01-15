@@ -8,7 +8,173 @@
 
 #import "InvocationViewController.h"
 
-@interface InvocationViewController ()
+@protocol InvocationDelegate <NSObject>
+
+@optional
+
+- (void)invocationName:(NSString *)name index:(NSInteger)index;
+
+- (void)inocationIcon:(NSString *)icon  index:(NSInteger)index;
+
+@end
+
+@interface InvocationObjc : NSObject<InvocationDelegate>
+{
+   id _delegate;
+}
+ 
+
+@end
+
+static InvocationObjc *_invocationObjc;
+
+@implementation InvocationObjc
+
++ (instancetype)shareInvocation
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _invocationObjc = [[InvocationObjc alloc] init];
+    });
+    return _invocationObjc;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (void)updateDelegate:(id)delegate
+{
+    if (_delegate) {
+        _delegate = nil;
+    }
+    _delegate = delegate;
+    
+}
+
+- (void)doNothing
+{
+    NSLog(@"方法没有实现");
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
+{
+    NSMethodSignature *result = [_delegate methodSignatureForSelector:aSelector];
+    if (result) {
+        return result;
+    }
+    return [[self class] instanceMethodSignatureForSelector:@selector(doNothing)];
+}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation
+{
+    SEL selector = [anInvocation selector];
+    
+    if ([_delegate respondsToSelector:selector]) {
+        NSInvocation *dupInvocation = [self duplicateInvocation:anInvocation];
+        [dupInvocation invokeWithTarget:_delegate];
+    }
+}
+
+- (NSInvocation *)duplicateInvocation:(NSInvocation *)origInvocation
+{
+    NSMethodSignature *methodSignature = [origInvocation methodSignature];
+    
+    NSInvocation *dupInvocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+    [dupInvocation setSelector:[origInvocation selector]];
+    
+    NSUInteger i, count = [methodSignature numberOfArguments];
+    for (i = 2; i < count; i++)
+    {
+        const char *type = [methodSignature getArgumentTypeAtIndex:i];
+        
+        if (*type == *@encode(BOOL))
+        {
+            BOOL value;
+            [origInvocation getArgument:&value atIndex:i];
+            [dupInvocation setArgument:&value atIndex:i];
+        }
+        else if (*type == *@encode(char) || *type == *@encode(unsigned char))
+        {
+            char value;
+            [origInvocation getArgument:&value atIndex:i];
+            [dupInvocation setArgument:&value atIndex:i];
+        }
+        else if (*type == *@encode(short) || *type == *@encode(unsigned short))
+        {
+            short value;
+            [origInvocation getArgument:&value atIndex:i];
+            [dupInvocation setArgument:&value atIndex:i];
+        }
+        else if (*type == *@encode(int) || *type == *@encode(unsigned int))
+        {
+            int value;
+            [origInvocation getArgument:&value atIndex:i];
+            [dupInvocation setArgument:&value atIndex:i];
+        }
+        else if (*type == *@encode(long) || *type == *@encode(unsigned long))
+        {
+            long value;
+            [origInvocation getArgument:&value atIndex:i];
+            [dupInvocation setArgument:&value atIndex:i];
+        }
+        else if (*type == *@encode(long long) || *type == *@encode(unsigned long long))
+        {
+            long long value;
+            [origInvocation getArgument:&value atIndex:i];
+            [dupInvocation setArgument:&value atIndex:i];
+        }
+        else if (*type == *@encode(double))
+        {
+            double value;
+            [origInvocation getArgument:&value atIndex:i];
+            [dupInvocation setArgument:&value atIndex:i];
+        }
+        else if (*type == *@encode(float))
+        {
+            float value;
+            [origInvocation getArgument:&value atIndex:i];
+            [dupInvocation setArgument:&value atIndex:i];
+        }
+        else if (*type == '@')
+        {
+            void *value;
+            [origInvocation getArgument:&value atIndex:i];
+            [dupInvocation setArgument:&value atIndex:i];
+        }
+        else if (*type == '^')
+        {
+            void *block;
+            [origInvocation getArgument:&block atIndex:i];
+            [dupInvocation setArgument:&block atIndex:i];
+        }
+        else
+        {
+            NSString *selectorStr = NSStringFromSelector([origInvocation selector]);
+            
+            NSString *format = @"Argument %lu to method %@ - Type(%c) not supported";
+            NSString *reason = [NSString stringWithFormat:format, (unsigned long)(i - 2), selectorStr, *type];
+            
+            [[NSException exceptionWithName:NSInvalidArgumentException reason:reason userInfo:nil] raise];
+        }
+    }
+    
+    [dupInvocation retainArguments];
+    
+    return dupInvocation;
+}
+
+
+
+@end
+
+
+@interface InvocationViewController ()<InvocationDelegate>
 
 @end
 
@@ -21,6 +187,8 @@
     [self createUI];
     
     [self invocation];
+    
+    [self createInvocationObjc];
     
     NSLog(@"多参数函数： %@", [self addMoreArguments:@"hello", @"world", @"this", @"is", @"a", @"test", nil]);
     
@@ -68,6 +236,16 @@
         make.left.mas_equalTo(20);
         make.size.mas_equalTo(CGSizeMake(100, 50));
         make.top.mas_equalTo(80);
+    }];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"点击" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.size.mas_equalTo(CGSizeMake(100, 50));
+        make.top.mas_equalTo(200);
     }];
     
 }
@@ -190,6 +368,23 @@
      va_end(args);
      return allStr;
 }
+
+- (void)createInvocationObjc
+{
+    [[InvocationObjc shareInvocation] updateDelegate:self];
+}
+
+- (void)invocationName:(NSString *)name index:(NSInteger)index
+{
+    NSLog(@"invocation name : %@, index : %ld", name, (long)index);
+}
+
+- (void)buttonClicked:(UIButton *)btn
+{
+    [[InvocationObjc shareInvocation] invocationName:@"ydd" index:0];
+    [[InvocationObjc shareInvocation] inocationIcon:@"123" index:1];
+}
+
 
 /*
 #pragma mark - Navigation
