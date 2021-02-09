@@ -54,27 +54,14 @@
 
 - (void)selectedAnimation:(BOOL)selected
 {
-    _didSelected = selected;
-    if (selected) {
-        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            self.titleLabel.textColor = [UIColor colorWithWhite:1 alpha:1];
-            
-            self.titleLabel.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
-        } completion:^(BOOL finished) {
-            
-        }];
-    } else {
-        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            self.titleLabel.textColor = [UIColor colorWithWhite:1 alpha:0.8];
-            self.titleLabel.transform =
-            CGAffineTransformScale(CGAffineTransformIdentity, 0.7, 0.7);
-        } completion:^(BOOL finished) {
-            
-        }];
-    }
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self updateCellSelected:selected];
+    } completion:^(BOOL finished) {
+        if (!finished) {
+            [self updateCellSelected:selected];
+        }
+    }];
 }
-
-
 
 @end
 
@@ -87,9 +74,6 @@
 
 @property (nonatomic, assign) NSInteger currIndex;
 
-@property (nonatomic, weak) MenueCell *curCell;
-
-@property (nonatomic, weak) MenueCell *lastCell;
 
 @end
 
@@ -114,12 +98,9 @@
         
         [self.collectionView addSubview:self.lineView];
         
+        
         self.currIndex = 0;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self lineViewAnimation:NO index:self.currIndex completed:nil];
-        });
-        
-        
+       
     }
     return self;
 }
@@ -128,6 +109,22 @@
 {
     _menues = menues;
     [self.collectionView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self lineViewAnimation:NO index:self.currIndex completed:nil];
+    });
+    
+    
+}
+
+- (void)setCurrIndex:(NSInteger)currIndex
+{
+    if (_currIndex != currIndex) {
+        MenueCell *lastCell = [self getCellWithIndex:_currIndex];
+        MenueCell *curCell = [self getCellWithIndex:currIndex];
+        [lastCell selectedAnimation:NO];
+        [curCell selectedAnimation:YES];
+    }
+    _currIndex = currIndex;
 }
 
 - (void)setSeletcedIndex:(NSInteger)seletcedIndex
@@ -142,24 +139,20 @@
         seletcedIndex = self.menues.count - 1;
     }
     
-    if (self.currIndex != seletcedIndex) {
-        self.lastCell = [self getCellWithIndex:self.currIndex];
-    }
+   
     self.currIndex = seletcedIndex;
     _seletcedIndex = seletcedIndex;
-    self.curCell = [self getCellWithIndex:self.currIndex];
-    [self.lastCell selectedAnimation:NO];
-    [self.curCell selectedAnimation:YES];
-        
 
-    [self lineViewAnimation:YES index:self.currIndex completed:nil];
+
+    [CATransaction begin];
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:seletcedIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView reloadData];
-        if ([self.delegate respondsToSelector:@selector(menue:selectedIndex:)]) {
-            [self.delegate menue:self selectedIndex:seletcedIndex];
-        }
-    });
+    if ([self.delegate respondsToSelector:@selector(menue:selectedIndex:)]) {
+        [self.delegate menue:self selectedIndex:seletcedIndex];
+    }
+    [CATransaction setCompletionBlock:^{
+        [self lineViewAnimation:NO index:self.currIndex completed:nil];
+    }];
+    [CATransaction commit];
 }
 
 - (void)setScrollIndex:(CGFloat)scrollIndex
@@ -189,11 +182,24 @@
         CGFloat space = CGRectGetMidX(curFrame) - CGRectGetMidX(newFrame);
         CGRect lineFrame = [self getLineFrameWithCellFrame:curFrame];
         CGFloat roat =  ceil(scrollIndex) - scrollIndex;
-        lineFrame.origin.x -= space * roat;
+        
+        if (self.animationType == MenueAnimationType_line) {
+            if (roat <= 0.5) {
+                lineFrame.size.width += (space * roat * 2);
+                lineFrame.origin.x -= (space * roat * 2);
+            } else {
+                lineFrame.origin.x -= space;
+                lineFrame.size.width = (lineFrame.size.width + space) - (space * (roat - 0.5) * 2);
+            }
+        } else {
+            lineFrame.origin.x -= space * roat;
+        }
+        
+        
         
         NSLog(@">>>>>>> {");
         NSLog(@"space : %.2f, roat : %.2f", space, roat);
-        NSLog(@"lineFrame.origin.x : %.2f", lineFrame.origin.x);
+        NSLog(@"lineFrame.origin.x : %.2f, w : %.2f", lineFrame.origin.x, lineFrame.size.width);
         NSLog(@"curIndex : %ld", (long)self.currIndex);
         NSLog(@">>>>>>> }");
         
@@ -217,10 +223,23 @@
         CGFloat space = CGRectGetMidX(newFrame) - CGRectGetMidX(curFrame);
         CGRect lineFrame = [self getLineFrameWithCellFrame:curFrame];
         CGFloat roat = scrollIndex - floor(scrollIndex);
-        lineFrame.origin.x += space * roat;
+        
+        if (self.animationType == MenueAnimationType_line) {
+            if (roat <= 0.5) {
+                lineFrame.size.width += (space * roat * 2);
+            } else {
+                lineFrame.size.width = (lineFrame.size.width + space) - (space * (roat - 0.5) * 2);
+                lineFrame.origin.x += (space * (roat - 0.5) * 2);
+            }
+        } else {
+            lineFrame.origin.x += space * roat;
+        }
+        
+        
+        
         NSLog(@"<<<<<<< {");
         NSLog(@"space : %.2f, roat : %.2f", space, roat);
-        NSLog(@"lineFrame.origin.x : %.2f", lineFrame.origin.x);
+        NSLog(@"lineFrame.origin.x : %.2f, w : %.2f", lineFrame.origin.x, lineFrame.size.width);
         NSLog(@"curIndex : %ld", (long)self.currIndex);
         NSLog(@"<<<<<<< }");
         self.lineView.frame = lineFrame;
@@ -237,7 +256,6 @@
     if (index >= [self.collectionView numberOfItemsInSection:0]) {
         return nil;
     }
-    [self.collectionView layoutIfNeeded];
     return (MenueCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
 }
 
@@ -257,14 +275,15 @@
 
 - (void)lineViewAnimation:(BOOL)animation index:(NSInteger)index completed:(void(^)(void))completed
 {
+
     CGRect frame = [self getCellFrameWithIndex:self.currIndex];
  
     CGRect rect = [self getLineFrameWithCellFrame:frame];
-    NSLog(@" cell : %@", self.curCell);
+    NSLog(@" cell : %@", NSStringFromCGRect(frame));
     NSLog(@" rect : %@ ", NSStringFromCGRect(rect));
     NSLog(@" content : %@ ", NSStringFromCGSize(self.collectionView.contentSize));
     if (animation) {
-        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             self.lineView.frame = rect;
         } completion:^(BOOL finished) {
             if (!finished) {
@@ -347,7 +366,7 @@
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
-//    [self selectedAnimation:YES completed:nil];
+    
 }
 
 - (UICollectionView *)collectionView

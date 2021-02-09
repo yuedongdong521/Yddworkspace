@@ -10,6 +10,11 @@
 
 @class MenueScrollView;
 
+typedef NS_ENUM(NSUInteger, MenueAnimationType) {
+    MenueAnimationType_default = 0,
+    MenueAnimationType_line,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MenueScrollViewDelegate <NSObject>
@@ -33,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat rightSpace;
 
 @property (nonatomic, weak) id<MenueScrollViewDelegate>delegate;
+
+@property (nonatomic, assign) MenueAnimationType animationType;
 
 @end
 

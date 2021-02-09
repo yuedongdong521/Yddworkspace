@@ -80,6 +80,7 @@
     _menueView.rightSpace = 10;
     _menueView.space = 10;
     _menueView.delegate = self;
+    _menueView.animationType = MenueAnimationType_line;
     [self.view addSubview:self.menueView];
     [self.menueView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.slider.mas_bottom).mas_offset(20);
@@ -250,9 +251,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    
     self.menueView.scrollIndex = scrollView.contentOffset.x / scrollView.bounds.size.width;
-    
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -265,7 +264,7 @@
 - (void)menue:(MenueScrollView *)view selectedIndex:(NSInteger)index
 {
 //    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
-    [self.collectionView setContentOffset:CGPointMake(index * 200, 0)];
+    [self.collectionView setContentOffset:CGPointMake(index * 200, 0) animated:YES];
 }
 
 /*
